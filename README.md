@@ -1,5 +1,5 @@
 
-# 두목 Personal CV Website (GitHub Pages)
+# 김세원 Personal CV Website (GitHub Pages)
 
 이 저장소는 **정적 HTML/CSS**로 만든 원페이지 포트폴리오입니다. 빌드 과정 없이 바로 GitHub Pages에서 호스팅됩니다.
 

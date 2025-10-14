@@ -11,124 +11,121 @@
 <body>
   <div class="container">
     <header class="header">
-      <div class="avatar" aria-label="profile photo"></div>
-      <div class="title">
-        <div class="kicker">Personal Site</div>
-        <div class="h1">두목 (Computer Engineering · JBNU)</div>
-        <div class="subtitle">AI · 데이터 · 모바일 | 대학원 석사 준비생 (해외) | 부산 사나이 텐션으로 씽씽</div>
-        <div class="badges">
-          <span class="badge">Machine Learning</span>
-          <span class="badge">NLP · RAG</span>
-          <span class="badge">LoRa · IoT</span>
-          <span class="badge">Android · Kotlin</span>
-          <span class="badge">C/C++</span>
+      <div class="name">두목</div>
+      <div class="affiliation">
+        <div class="position">Computer Engineering Undergraduate</div>
+        <div class="university">Jeonbuk National University</div>
+        <div class="contact">example@jbnu.ac.kr</div>
+        <div class="links">
+          <a href="https://github.com/your-id">GitHub</a> | 
+          <a href="https://www.linkedin.com/in/your-id">LinkedIn</a> | 
+          <a href="#contact">Contact</a>
         </div>
-        <nav class="nav">
-          <a href="#about">소개</a>
-          <a href="#highlights">하이라이트</a>
-          <a href="#projects">프로젝트</a>
-          <a href="#research">연구/세미나</a>
-          <a href="#awards">수상</a>
-          <a href="#skills">기술/과목</a>
-          <a href="#contact">연락처</a>
-        </nav>
+      </div>
+      <div class="bio">
+        <p>
+          전북대학교 컴퓨터공학부 4학년 재학 중입니다. 데이터 마이닝·머신러닝·모바일 프로그래밍에 관심이 있으며, 
+          최근에는 RAG/Knowledge Graph와 스마트 센서(LoRa) 프로젝트에 집중하고 있습니다. 
+          해외 대학원 석사 진학을 목표로 실전형 연구·개발 포트폴리오를 구축하고 있습니다.
+        </p>
       </div>
     </header>
 
-    <section id="about" class="section">
-      <h2>소개</h2>
-      <p>
-        안녕하세요! 전북대학교 컴퓨터공학부 4학년 <strong>두목</strong>입니다. 데이터 마이닝·머신러닝·모바일 프로그래밍을 좋아하고,
-        최근엔 <em>RAG / Knowledge Graph</em>랑 <em>스마트 센서(LoRa)</em> 프로젝트에 진심입니다.
-        목표는 해외 대학원 석사 진학(컴퓨터공학/AI)이고, 실전형 연구·개발 포트폴리오를 쌓고 있습니다.
-      </p>
-      <blockquote>“실용과 임팩트! 보여줄 건 성능, 말보단 결과.”</blockquote>
-    </section>
-
-    <section id="highlights" class="section">
-      <h2>하이라이트</h2>
-      <div class="grid cols-2">
-        <div class="card">
-          <h3>HippoRAG·GraphRAG 코드 분석 & 데모 실행</h3>
-          <p class="meta">2025 · NLP/RAG 연구</p>
-          <p>로컬 임베딩(GritLM, MiniLM)로 트리플 추출·KG 구축·질의 응답 파이프라인 실행. 인퍼런스 오류 해결과 멀티프로세싱 이슈 디버깅 경험 보유.</p>
-          <div class="chips">
-            <span class="chip">Python</span><span class="chip">NLP</span><span class="chip">KG</span>
-          </div>
-        </div>
-        <div class="card">
-          <h3>LoRa 기반 Smart-Dust 프로토타입</h3>
-          <p class="meta">2025 · 임베디드/네트워킹</p>
-          <p>ESP32 LoRa(V3)로 메시 통신 실험, 온습도·소리 센싱, 슬립/웨이크 설계. 라즈베리파이 게이트웨이 및 데이터 시각화 PoC.</p>
-          <div class="chips">
-            <span class="chip">ESP32</span><span class="chip">LoRa</span><span class="chip">Raspberry Pi</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="projects" class="section">
-      <h2>프로젝트</h2>
-      <div class="list">
-        <div class="item">
-          <div class="left">
-            <strong>Heritage Services App</strong> — 문화유산 점검/사진 업로드/손상부 조사 앱 (Flutter+Firebase)
-            <div class="chips"><span class="chip">Flutter</span><span class="chip">FastAPI</span><span class="chip">Firebase</span></div>
-            <p class="meta">역할: 전체 구조 설계, 파이어베이스 스키마, FastAPI 연동, 이미지 업로드/삭제, 맵 미리보기</p>
+      <h2>PROJECTS</h2>
+      <div class="two-column">
+        <div class="left-column">
+          <div class="item">
+            <div class="title">Heritage Services App</div>
+            <div class="description">문화유산 점검/사진 업로드/손상부 조사 앱</div>
+            <div class="tech">Flutter · FastAPI · Firebase</div>
+            <div class="role">역할: 전체 구조 설계, 파이어베이스 스키마, FastAPI 연동</div>
           </div>
-          <div class="meta">2024–2025</div>
+          <div class="item">
+            <div class="title">Hangul Automaton</div>
+            <div class="description">자모 입력을 실시간 완성형 한글로 조합하는 파이썬 프로그램</div>
+            <div class="tech">Python · Automata Theory</div>
+            <div class="role">백스페이스 기호 처리, 상태 전이 테이블 최적화</div>
+          </div>
+          <div class="item">
+            <div class="title">HippoRAG·GraphRAG 분석</div>
+            <div class="description">로컬 임베딩으로 트리플 추출·KG 구축·질의 응답 파이프라인</div>
+            <div class="tech">Python · NLP · Knowledge Graph</div>
+            <div class="role">인퍼런스 오류 해결, 멀티프로세싱 이슈 디버깅</div>
+          </div>
+          <div class="item">
+            <div class="title">LoRa Smart-Dust 프로토타입</div>
+            <div class="description">ESP32 LoRa로 메시 통신, 온습도·소리 센싱, 슬립/웨이크 설계</div>
+            <div class="tech">ESP32 · LoRa · Raspberry Pi</div>
+            <div class="role">게이트웨이 및 데이터 시각화 PoC</div>
+          </div>
         </div>
-        <div class="item">
-          <div class="left">
-            <strong>Hangul Automaton</strong> — 자모 입력을 실시간 완성형 한글로 조합하는 파이썬 콘솔 프로그램 (내장 라이브러리만)
-            <div class="chips"><span class="chip">Python</span><span class="chip">Automata</span></div>
-            <p class="meta">백스페이스 기호 &lt; 처리, 상태 전이 테이블 최적화, 입력 루프</p>
-          </div>
-          <div class="meta">2025</div>
+        <div class="right-column">
+          <div class="date">2024–2025</div>
+          <div class="date">2025</div>
+          <div class="date">2025</div>
+          <div class="date">2025</div>
         </div>
       </div>
     </section>
 
     <section id="research" class="section">
-      <h2>연구/세미나</h2>
-      <div class="list">
-        <div class="item">
-          <div class="left">
-            <strong>Paper Seminar</strong>: <em>HippoRAG 2, GraphRAG, Query-Focused Summarization via GraphRAG</em>
-            <p class="meta">Methodology, 실험결과, 한계 및 재현 포인트를 중심으로 학부/대학원 세미나 진행</p>
+      <h2>RESEARCH & SEMINARS</h2>
+      <div class="two-column">
+        <div class="left-column">
+          <div class="item">
+            <div class="title">Paper Seminar</div>
+            <div class="description">HippoRAG 2, GraphRAG, Query-Focused Summarization via GraphRAG</div>
+            <div class="role">Methodology, 실험결과, 한계 및 재현 포인트를 중심으로 학부/대학원 세미나 진행</div>
           </div>
-          <div class="meta">2025</div>
+        </div>
+        <div class="right-column">
+          <div class="date">2025</div>
         </div>
       </div>
     </section>
 
     <section id="awards" class="section">
-      <h2>수상 & 활동</h2>
-      <ul class="list">
-        <li class="item"><div class="left"><strong>전북대 문화인재상(총장상)</strong> 후보 · HRC 우수학생상(총장상) 수상</div><div class="meta">2024–2025</div></li>
-        <li class="item"><div class="left"><strong>빅데이터 혁신융합대학 - Big Data Supporters</strong> 활동</div><div class="meta">2024</div></li>
-        <li class="item"><div class="left"><strong>Linux Programming 조교</strong> · 멘토링 프로그램 운영</div><div class="meta">2024–2025</div></li>
-      </ul>
-    </section>
-
-    <section id="skills" class="section">
-      <h2>기술/과목</h2>
-      <div class="grid cols-2">
-        <div class="card">
-          <h3>Stack</h3>
-          <p>Python(기초 라이브러리 중심), C/C++, Kotlin(Android), Flutter/Dart, FastAPI, Firebase(Firestore/Storage/Auth)</p>
-          <p class="meta">도구: Git/GitHub, VS Code, Android Studio, Docker(기초)</p>
+      <h2>AWARDS & ACTIVITIES</h2>
+      <div class="two-column">
+        <div class="left-column">
+          <div class="item">
+            <div class="title">전북대 문화인재상(총장상) 후보</div>
+            <div class="description">HRC 우수학생상(총장상) 수상</div>
+          </div>
+          <div class="item">
+            <div class="title">빅데이터 혁신융합대학</div>
+            <div class="description">Big Data Supporters 활동</div>
+          </div>
+          <div class="item">
+            <div class="title">Linux Programming 조교</div>
+            <div class="description">멘토링 프로그램 운영</div>
+          </div>
         </div>
-        <div class="card">
-          <h3>Relevant Coursework</h3>
-          <p>데이터 마이닝, 머신러닝, 데이터 통신, 모바일 프로그래밍, 데이터베이스, 알고리즘, 운영체제</p>
+        <div class="right-column">
+          <div class="date">2024–2025</div>
+          <div class="date">2024</div>
+          <div class="date">2024–2025</div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section">
-      <h2>연락처</h2>
-      <p>이메일: <a href="mailto:example@jbnu.ac.kr">example@jbnu.ac.kr</a> · GitHub: <a href="https://github.com/your-id">your-id</a> · LinkedIn: <a href="https://www.linkedin.com/in/your-id">your-id</a></p>
+    <section id="skills" class="section">
+      <h2>TECHNICAL SKILLS</h2>
+      <div class="skills-content">
+        <div class="skill-category">
+          <div class="category-title">Programming Languages & Frameworks</div>
+          <div class="skill-items">Python, C/C++, Kotlin, Flutter/Dart, FastAPI, Firebase</div>
+        </div>
+        <div class="skill-category">
+          <div class="category-title">Tools & Technologies</div>
+          <div class="skill-items">Git/GitHub, VS Code, Android Studio, Docker, ESP32, LoRa, Raspberry Pi</div>
+        </div>
+        <div class="skill-category">
+          <div class="category-title">Relevant Coursework</div>
+          <div class="skill-items">데이터 마이닝, 머신러닝, 데이터 통신, 모바일 프로그래밍, 데이터베이스, 알고리즘, 운영체제</div>
+        </div>
+      </div>
     </section>
 
     <footer class="footer">
