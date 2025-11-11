@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>갤러리 | 김세원</title>
+  <meta name="description" content="사진 갤러리 - 김세원 포트폴리오">
+  <meta name="author" content="Sewon Kim">
+  <meta name="theme-color" content="#b25d79">
+
+  <link rel="canonical" href="https://andimsewon.github.io/ko/gallery.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../styles.css">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"갤러리 | 김세원","url":"https://andimsewon.github.io/ko/gallery.html"}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#gallery">본문으로 건너뛰기</a>
+  <nav class="top-nav" aria-label="Primary">
+    <div class="nav-container">
+      <div class="nav-name"><a href="index.html" style="color: #ffffff; text-decoration: none;">김세원</a></div>
+      <div class="nav-links">
+        <a href="index.html">홈</a>
+        <a href="research.html">연구</a>
+        <a href="projects.html">프로젝트</a>
+        <a href="awards.html">수상</a>
+        <a href="gallery.html" class="active">갤러리</a>
+        <a href="activities.html">교내 활동</a>
+        <a href="../gallery.html" lang="en" hreflang="en">EN</a>
+      </div>
+    </div>
+  </nav>
+
+  <section id="gallery" class="page-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="page-title">사진 갤러리</h2>
+      </div>
+      <div class="content-wrapper">
+        <p class="gallery-intro">프로젝트, 교내 활동, 연구 관련 사진을 공유합니다.</p>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="../assets/gallery/2025Purdue_KSW1.jpeg" alt="Professor Tony's farm" class="gallery-image" data-caption="Professor Tony's farm" loading="lazy">
+            <div class="gallery-caption">Professor Tony's farm</div>
+          </div>
+          <div class="gallery-item">
+            <img src="../assets/gallery/2025Purdue_KSW.jpeg" alt="2025_Purdue_KSW" class="gallery-image" data-caption="2025_Purdue_KSW" loading="lazy">
+            <div class="gallery-caption">2025_Purdue_KSW</div>
+          </div>
+        </div>
+        <p class="gallery-note"><em>사진 추가: 이미지를 <code>assets/gallery/</code> 폴더에 넣고 HTML을 갱신하세요.</em></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox-backdrop" id="lightbox" role="dialog" aria-modal="true" aria-label="이미지 미리보기">
+    <div class="lightbox-content">
+      <div class="lightbox-close" id="lightboxClose" aria-label="닫기">×</div>
+      <img src="" alt="" id="lightboxImg" class="lightbox-img">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <footer class="footer">© <span id="y"></span> Sewon Kim · Built on GitHub Pages</footer>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose = document.getElementById('lightboxClose');
+    function openLightbox(src, caption) { lightboxImg.src = src; lightboxCaption.textContent = caption || ''; lightbox.classList.add('active'); document.body.style.overflow = 'hidden'; }
+    function closeLightbox() { lightbox.classList.remove('active'); document.body.style.overflow = ''; lightboxImg.src = ''; lightboxCaption.textContent = ''; }
+    document.querySelectorAll('.gallery-image').forEach((img) => { img.addEventListener('click', () => { const caption = img.getAttribute('data-caption') || img.alt || ''; openLightbox(img.src, caption); }); });
+    if (lightboxClose) { lightboxClose.addEventListener('click', closeLightbox); }
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) { closeLightbox(); } });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lightbox.classList.contains('active')) { closeLightbox(); } });
+  </script>
+</body>
+</html>
+
