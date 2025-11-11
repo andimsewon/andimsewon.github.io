@@ -12,9 +12,10 @@ andimsewon.github.io/
 ├── 404.html                # GitHub Pages 404 페이지
 ├── robots.txt              # 검색 엔진 크롤링 지시
 ├── sitemap.xml             # 간단한 사이트맵 (SEO)
+├── start-server.sh         # 로컬 서버 실행 스크립트 (편의용)
 ├── assets/                 # 이미지 및 미디어 파일
 │   ├── profile.jpeg        # 프로필 사진
-│   └── favicon.svg         # 파비콘 (브라우저 탭 아이콘)
+│   ├── favicon.svg         # 파비콘 (브라우저 탭 아이콘)
 │   └── gallery/           # 갤러리 사진 폴더
 ├── sections/               # 각 카테고리별 모듈화된 섹션
 │   ├── main.html          # 메인 페이지 (기본 정보, 교육, 기술 스킬, 교수 경험)
@@ -23,30 +24,64 @@ andimsewon.github.io/
 │   ├── awards.html        # 수상 내역, 리더십, 자격증 섹션
 │   └── gallery.html       # 사진 갤러리 섹션
 └── js/                    # JavaScript 파일
-    └── loader.js          # 섹션 동적 로더 (사용 중)
+    └── loader.js          # 섹션 동적 로더 (에러 처리 개선됨)
 ```
 
 ## 🚀 배포 방법
 
-### GitHub Pages 배포
+### GitHub Pages 배포 (현재 배포됨 ✅)
 
-1. **저장소 생성**
-   - GitHub에서 `<your-username>.github.io` 이름으로 저장소 생성
-   - 또는 기존 저장소의 Settings > Pages에서 GitHub Pages 활성화
+1. **저장소 확인**
+   - 저장소: `andimsewon/andimsewon.github.io`
+   - GitHub Pages 자동 활성화됨
 
-2. **파일 업로드**
+2. **변경사항 배포**
    ```bash
-   git clone <your-repo-url>
-   cd andimsewon.github.io
-   # 파일들을 모두 복사한 후
    git add .
-   git commit -m "Initial commit"
+   git commit -m "Update content"
    git push origin main
    ```
 
 3. **접속 확인**
-   - 브라우저에서 `https://<your-username>.github.io` 접속
-   - 배포에는 몇 분 정도 소요될 수 있습니다
+   - 배포 주소: **https://andimsewon.github.io**
+   - 배포에는 1-3분 정도 소요됩니다
+
+## 🔧 로컬 개발 환경
+
+### ⚡ 가장 쉬운 방법: 스크립트 실행
+
+터미널에서 다음 명령어만 실행하면 됩니다:
+
+```bash
+./start-server.sh
+```
+
+그 다음 브라우저에서 **http://localhost:8000** 접속
+
+### 수동으로 서버 실행
+
+#### Python 사용 (권장)
+```bash
+# Python 3
+python3 -m http.server 8000
+
+# 또는 Python 2
+python -m http.server 8000
+```
+
+#### Node.js 사용
+```bash
+npx http-server -p 8000
+# 또는
+npx serve
+```
+
+### ⚠️ 파일 직접 열기 주의사항
+
+- `index.html` 파일을 브라우저로 직접 열면 섹션이 로드되지 않습니다
+- `file://` 프로토콜에서는 JavaScript의 `fetch` API가 보안상 작동하지 않습니다
+- **반드시 로컬 서버를 사용해야 합니다** (위의 방법 중 하나 선택)
+- 파일을 직접 열었을 때는 친절한 안내 메시지가 표시됩니다
 
 ## ✏️ 커스터마이징 가이드
 
@@ -111,6 +146,7 @@ html, body {
 - **반응형 디자인**: 모바일, 태블릿, 데스크톱 모든 기기에서 최적화
 - **부드러운 스크롤**: 네비게이션 클릭 시 해당 섹션으로 부드럽게 이동
 - **깔끔한 레이아웃**: 박스나 테두리 없이 타이포그래피와 간격으로만 구성
+- **스크롤 스파이**: 현재 보고 있는 섹션에 맞춰 네비게이션 하이라이트
 
 ## 📱 네비게이션 구조
 
@@ -122,27 +158,6 @@ html, body {
 4. **Awards** - 수상 내역, 리더십, 자격증
 5. **Gallery** - 프로젝트 및 활동 관련 사진
 
-## 🔧 로컬 개발 환경
-
-### 간단한 HTTP 서버 실행
-
-Python이 설치되어 있다면:
-```bash
-python -m http.server 8000
-# 브라우저에서 http://localhost:8000 접속
-```
-
-Node.js가 설치되어 있다면:
-```bash
-npx http-server
-# 또는
-npx serve
-```
-
-### 파일 직접 열기
-- `index.html` 파일을 브라우저로 직접 열어도 확인 가능합니다
-- 단, 동적 로딩 기능은 로컬 서버에서만 정상 작동합니다
-
 ## 📝 업데이트 방법
 
 ### 내용 추가/수정
@@ -152,14 +167,14 @@ npx serve
    ```bash
    git add sections/your-section.html
    git commit -m "Update section content"
-   git push
+   git push origin main
    ```
 
 ### 새 섹션 추가
 1. `sections/` 폴더에 새 HTML 파일 생성
-2. `index.html`의 `sections` 배열에 새 파일 경로 추가:
+2. `js/loader.js`의 `sections` 배열에 새 파일 경로 추가:
    ```javascript
-   const sections = [
+   this.sections = [
      'sections/main.html',
      'sections/your-new-section.html',  // 추가
      // ...
@@ -169,25 +184,29 @@ npx serve
 ## 🐛 문제 해결
 
 ### 섹션이 로드되지 않는 경우
+- **로컬에서 확인**: 로컬 서버를 실행했는지 확인 (`./start-server.sh` 또는 `python3 -m http.server 8000`)
+- **온라인에서 확인**: GitHub Pages 배포가 완료되었는지 확인 (1-3분 소요)
 - 브라우저 콘솔(F12)에서 에러 확인
 - 파일 경로가 정확한지 확인
-- GitHub Pages에서는 상대 경로 사용 확인
- - JavaScript가 비활성화되어 있으면 로드되지 않습니다 (noscript 안내 메시지 표시)
+- JavaScript가 비활성화되어 있으면 로드되지 않습니다 (noscript 안내 메시지 표시)
+- 파일을 직접 열었을 때는 친절한 안내 메시지가 표시됩니다
 
 ### 스타일이 적용되지 않는 경우
 - `styles.css` 파일 경로 확인
 - 브라우저 캐시 삭제 후 새로고침 (Ctrl+F5 또는 Cmd+Shift+R)
 
-## 🔍 SEO/접근성 개선 사항
-
-- Open Graph/Twitter 메타 태그 추가로 링크 공유 미리보기 개선
-- `robots.txt`, `sitemap.xml` 추가로 검색 엔진 색인 도움
-- 키보드 사용자 위한 Skip link, 포커스 스타일, 활성 네비게이션 표시
-
 ### 이미지가 표시되지 않는 경우
 - 이미지 파일 경로 확인
 - `assets/` 폴더 구조 확인
 - 파일명 대소문자 일치 확인
+
+## 🔍 SEO/접근성 개선 사항
+
+- **Open Graph/Twitter 메타 태그**: 링크 공유 시 미리보기 개선
+- **robots.txt, sitemap.xml**: 검색 엔진 색인 최적화
+- **키보드 접근성**: Skip link, 포커스 스타일, 활성 네비게이션 표시
+- **시맨틱 HTML**: 적절한 HTML5 태그 사용
+- **에러 처리**: 파일 직접 열기 시 친절한 안내 메시지
 
 ## 📄 라이선스
 
@@ -197,6 +216,7 @@ npx serve
 
 - **이메일**: sewonkim1018@gmail.com
 - **GitHub**: [github.com/andimsewon](https://github.com/andimsewon)
+- **웹사이트**: [andimsewon.github.io](https://andimsewon.github.io)
 
 ---
 

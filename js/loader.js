@@ -61,30 +61,30 @@ class SectionLoader {
       warn.style.border = '1px solid #f0e0e6';
       warn.innerHTML = `
         <div style="color:#b87a95; font-size: 24px; font-weight: 600; margin-bottom: 16px;">
-          ⚠️ 섹션을 로드할 수 없습니다
+          ⚠️ Could not load sections
         </div>
         <div style="color:#5a5a5a; font-size: 16px; line-height: 1.8; margin-bottom: 24px;">
-          파일을 직접 열었기 때문에 섹션이 로드되지 않습니다.<br>
-          로컬 서버를 실행하여 확인해주세요.
+          Sections are not loading because this file was opened directly.<br>
+          Please run a local server to view the site properly.
         </div>
         <div style="background: #ffffff; padding: 20px; border-radius: 6px; border: 1px solid #f0e0e6; text-align: left; max-width: 600px; margin: 0 auto;">
           <div style="color:#2d2d2d; font-weight: 600; margin-bottom: 12px; font-size: 18px;">
-            📋 로컬 서버 실행 방법:
+            📋 How to run a local server
           </div>
           <div style="color:#5a5a5a; font-size: 14px; line-height: 1.8;">
-            <strong>1. 터미널을 열고 프로젝트 폴더로 이동:</strong><br>
+            <strong>1. Open a terminal and go to the project folder:</strong><br>
             <code style="background: #f5f5f5; padding: 4px 8px; border-radius: 4px; font-family: monospace;">cd /Users/kimsewon/andimsewon.github.io</code>
             <br><br>
-            <strong>2. 다음 명령어 중 하나를 실행:</strong><br>
+            <strong>2. Run one of the following commands:</strong><br>
             <code style="background: #f5f5f5; padding: 4px 8px; border-radius: 4px; font-family: monospace;">python3 -m http.server 8000</code><br>
-            또는<br>
+            or<br>
             <code style="background: #f5f5f5; padding: 4px 8px; border-radius: 4px; font-family: monospace;">python -m http.server 8000</code>
             <br><br>
-            <strong>3. 브라우저에서 접속:</strong><br>
+            <strong>3. Open in your browser:</strong><br>
             <code style="background: #f5f5f5; padding: 4px 8px; border-radius: 4px; font-family: monospace;">http://localhost:8000</code>
             <br><br>
             <div style="color:#b87a95; font-size: 13px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #f0e0e6;">
-              💡 GitHub Pages에 배포하면 온라인에서 바로 접속할 수 있습니다!
+              💡 Once deployed to GitHub Pages, you can access it online.
             </div>
           </div>
         </div>
