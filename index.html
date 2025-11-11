@@ -5,153 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sewon Kim | CS Undergrad · JBNU</title>
   <meta name="description" content="Sewon Kim's Academic Portfolio · Research · Projects · Awards">
+  <meta name="author" content="Sewon Kim">
+  <meta name="theme-color" content="#b25d79">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sewon Kim | CS Undergrad · JBNU">
+  <meta property="og:description" content="Academic portfolio: research, projects, awards, and gallery.">
+  <meta property="og:image" content="https://andimsewon.github.io/assets/profile.jpeg">
+  <meta property="og:url" content="https://andimsewon.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="canonical" href="https://andimsewon.github.io/">
+  <!-- Web fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav class="top-nav">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="top-nav" aria-label="Primary">
     <div class="nav-container">
       <div class="nav-name">Sewon Kim</div>
       <div class="nav-links">
         <a href="#main">Main page</a>
         <a href="#research">Research</a>
         <a href="#projects">Projects</a>
+        <a href="#awards">Awards</a>
         <a href="#gallery">Gallery</a>
       </div>
     </div>
   </nav>
 
-  <div class="container" id="main">
-    <div class="main-layout">
-      <div class="content-column">
-        <header class="header">
-          <div class="name">Sewon Kim (김세원)</div>
-          <ul class="affiliation-list">
-            <li>Computer Science & Engineering Undergraduate, Jeonbuk National University (JBNU)</li>
-            <li>Expected Graduation: June 2025</li>
-          </ul>
-
-          <div class="section-title">Contacts:</div>
-          <ul class="contact-list">
-            <li>Phone: <a href="tel:+821026185336">+82-10-2618-5336</a></li>
-            <li>Email: <a href="mailto:sewonkim1018@gmail.com">sewonkim1018@gmail.com</a></li>
-            <li>Location: Jeonju, South Korea</li>
-            <li>Links: <a href="https://github.com/andimsewon" target="_blank" rel="noopener noreferrer">GitHub</a>, <a href="https://www.linkedin.com/in/your-id" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          </ul>
-
-          <div class="section-title">Research Interests:</div>
-          <ul class="info-list">
-            <li>Natural Language Processing, Large Language Models, Knowledge-Augmented Generation</li>
-            <li>Multi-Modal AI Systems, Embodied AI, Graph-based Retrieval/Reasoning</li>
-          </ul>
-
-          <div class="section-title">Education:</div>
-          <ul class="info-list">
-            <li>B.Eng., 2021-2025, Computer Science & Engineering, Jeonbuk National University (JBNU)
-              <ul class="sub-list">
-                <li>- GPA: 3.74/4.0</li>
-                <li>- Relevant Coursework: Machine Learning, Data Mining, NLP, Computer Vision, Deep Learning</li>
-              </ul>
-            </li>
-            <li>Exchange Student, Feb 2023 – Aug 2023, University of Malaya, Kuala Lumpur, Malaysia
-              <ul class="sub-list">
-                <li>- GPA: 3.5/4.0</li>
-                <li>- Focus: Advanced Computer Engineering, cross-cultural research collaboration</li>
-              </ul>
-            </li>
-          </ul>
-
-          <div class="section-title">Research Experience:</div>
-          <ul class="info-list">
-            <li>Undergraduate Researcher, Feb 2025 – Present, Natural Language Learning Lab (Advisor: Prof. Hyun-je Song), JBNU
-              <ul class="sub-list">
-                <li>- Built knowledge-graph-enhanced RAG pipelines to improve factuality and multi-hop reasoning</li>
-                <li>- Designed graph-coupled embedding retrieval with PyTorch/LangChain; entity linking & relation extraction ablations to optimize precision</li>
-              </ul>
-            </li>
-            <li>International Research Scholar, Jun 2025 – Aug 2025, Smart Sensor & IoT (IITP-funded), Purdue University, West Lafayette, IN, USA
-              <ul class="sub-list">
-                <li>- Designed LoRa-based distributed IoT network for real-time environmental monitoring</li>
-                <li>- Analyzed energy–reliability trade-offs on low-power wireless; integrated edge computing and multi-agent coordination</li>
-              </ul>
-            </li>
-          </ul>
-
-          <div class="section-title">Selected Projects:</div>
-          <ul class="info-list">
-            <li>IoT-Enabled Smart Beehive Monitoring (2025)
-              <ul class="sub-list">
-                <li>- Architecture: WiFi LoRa 32 (V3) + MQTT + Raspberry Pi</li>
-                <li>- Fused temperature/humidity/acoustic signals for predictive monitoring; field-tested for scalability and robustness</li>
-              </ul>
-            </li>
-            <li>Cultural Heritage Damage Detection App (2024–2025)
-              <ul class="sub-list">
-                <li>- Flutter (front-end) + FastAPI (back-end), Firebase integration</li>
-                <li>- Fine-tuned DETR/ViT for multi-class damage detection; real-time inference pipeline (reported mAP 89%)</li>
-              </ul>
-            </li>
-            <li>Hybrid Deep Learning for Urban Air Quality (2025)
-              <ul class="sub-list">
-                <li>- Gaussian Diffusion + LSTM-CNN hybrid for spatio-temporal emission impact prediction</li>
-                <li>- Built AWS streaming data pipeline; compared against AERMOD baseline</li>
-              </ul>
-            </li>
-          </ul>
-
-          <div class="section-title">Technical Skills:</div>
-          <ul class="info-list">
-            <li><strong>Programming:</strong> Python, C/C++, Java, SQL</li>
-            <li><strong>AI/ML:</strong> PyTorch, TensorFlow, Hugging Face Transformers, LangChain, scikit-learn, OpenCV</li>
-            <li><strong>Back-end & Tools:</strong> FastAPI, Flask, Firebase, AWS, Docker, Git, Linux</li>
-            <li><strong>Areas:</strong> NLP, Knowledge Graphs, RAG, Computer Vision, IoT Systems</li>
-          </ul>
-
-          <div class="section-title">Teaching Experience:</div>
-          <ul class="info-list">
-            <li>Teaching Assistant, Sep 2025 – Present, Algorithms & Linux Programming, JBNU
-              <ul class="sub-list">
-                <li>- Mentored 80+ students on algorithm design/complexity and systems programming</li>
-                <li>- Designed/graded programming assignments and held weekly office hours</li>
-              </ul>
-            </li>
-          </ul>
-
-          <div class="section-title">Honors & Awards:</div>
-          <ul class="info-list">
-            <li>University President's Award — 6 Core Competencies Outstanding Student (Cultural Talent) (2026)</li>
-            <li>University President's Award — "Keun-Saram" Black Belt Scholarship Program (2025)</li>
-            <li>University President's Award — Honors Residential College (HRC) Representative (2025)</li>
-            <li>Capstone Design Excellence Award, College of Engineering, JBNU (Feb 2025)</li>
-            <li>President's Award, JBNU (Top 1% Academic Achievement) (Dec 2024)</li>
-            <li>SW-Centered University Project Competition — Excellence Award (Dec 2024)</li>
-            <li>Big Data Supporters Recognition, Ministry of Science and ICT, Korea (Dec 2023)</li>
-          </ul>
-
-          <div class="section-title">Leadership & Service:</div>
-          <ul class="info-list">
-            <li>Student Representative, Honors Residential College (HRC), JBNU (2022 – Present)</li>
-            <li>Lead Student Representative, Big Data Supporters, Big Data Innovation College, JBNU (Mar 2024 – Mar 2025)</li>
-            <li>President, SHARK Swimming Club (Official University Organization), JBNU (2024)</li>
-          </ul>
-
-          <div class="section-title">Certifications & Languages:</div>
-          <ul class="info-list">
-            <li>Data Architecture Semi-Professional (DAsP), Korea Data Agency (Oct 2025)</li>
-            <li>TOEIC 890 (Feb 2024)</li>
-            <li><strong>Languages:</strong> Korean (native), English (proficient)</li>
-          </ul>
-        </header>
-      </div>
-
-      <div class="photo-column">
-        <img src="./assets/profile.png" alt="Profile Photo" class="profile-photo">
-      </div>
-    </div>
-  </div>
+  <!-- Sections will be loaded here dynamically -->
+  <div id="sections-container"></div>
 
   <footer class="footer">
     © <span id="y"></span> Sewon Kim · Built on GitHub Pages
   </footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  <noscript>
+    <div class="container" style="padding-top:20px;color:#8a8a8a;">
+      JavaScript is disabled. Enable it to load sections.
+    </div>
+  </noscript>
+  <script src="js/loader.js" defer></script>
 </body>
 </html>
