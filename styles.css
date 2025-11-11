@@ -10,7 +10,7 @@
   --border-light: rgba(155, 95, 109, 0.18);
   --bg-white: #faf5f7;          /* very soft blush */
   --bg-pink: #f7e9ee;           /* gallery/fallback */
-  --nav-bg: #6e3b49;            /* rosewood, readable with white */
+  --nav-bg: #763145;            /* rosewood, readable with white */
   --paper: #ffffff;             /* content panels */
 }
 
@@ -25,7 +25,7 @@
   --border-light: rgba(255, 255, 255, 0.14);
   --bg-white: #000000;
   --bg-pink: #000000;
-  --nav-bg: #9b5f6d;
+  --nav-bg: #aa5669;
   --paper: #171318;
 }
 
