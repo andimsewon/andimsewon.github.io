@@ -14,6 +14,21 @@
   --paper: #ffffff;             /* content panels */
 }
 
+/* Dark theme overrides */
+[data-theme="dark"] {
+  --text-primary: #f1e9ed;
+  --text-secondary: #d8c4ce;
+  --text-muted: #b79eaa;
+  --accent: #e09ab3;
+  --accent-dark: #f0acc3;
+  --section-title: #f0a8c2;
+  --border-light: rgba(255, 255, 255, 0.14);
+  --bg-white: #0f0c10;
+  --bg-pink: #21151a;
+  --nav-bg: #4a2534;
+  --paper: #1a1519;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -33,6 +48,12 @@ html, body {
   -webkit-text-size-adjust: 100%; /* iOS 텍스트 크기 조정 방지 */
   width: 100%;
   box-sizing: border-box;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
 }
 
 a {
@@ -93,6 +114,24 @@ a:hover {
   opacity: 0.8;
   text-decoration: none;
 }
+
+/* Theme toggle button */
+.theme-toggle {
+  border: 1px solid rgba(255,255,255,0.3);
+  background: transparent;
+  color: #ffffff;
+  border-radius: 999px;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.theme-toggle:hover { opacity: 0.85; }
+.theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
 .nav-links a.active {
   position: relative;
@@ -195,6 +234,7 @@ a:focus-visible {
   border-radius: 10px;
   box-shadow: 0 6px 18px rgba(178, 93, 121, 0.08);
 }
+[data-theme="dark"] .container { box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35); }
 
 /* Main Layout - Two Column */
 .main-layout {
@@ -323,6 +363,7 @@ a:focus-visible {
   border: 1px solid var(--border-light);
   box-shadow: 0 4px 12px rgba(178, 93, 121, 0.12);
 }
+[data-theme="dark"] .profile-photo { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); }
 
 /* Footer */
 .footer {
