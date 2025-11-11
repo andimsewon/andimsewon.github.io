@@ -203,21 +203,21 @@ npx serve
 **라이트 모드:**
 ```css
 :root {
-  --text-primary: #3b2a30;      /* 주요 텍스트 */
-  --text-secondary: #6b4c57;     /* 보조 텍스트 */
-  --accent: #d88ca1;            /* 강조 색상 */
-  --section-title: #b25d79;     /* 섹션 제목 */
-  --nav-bg: #8a425e;            /* 네비게이션 배경 */
-  --bg-white: #fff7fa;          /* 배경색 */
+  --text-primary: #2e2a2c;      /* 주요 텍스트 */
+  --text-secondary: #5f4e55;    /* 보조 텍스트 */
+  --accent: #c48fa0;            /* 강조 색상 */
+  --section-title: #9b5f6d;     /* 섹션 제목 */
+  --nav-bg: #6e3b49;            /* 네비게이션 배경 */
+  --bg-white: #faf5f7;          /* 배경색 */
 }
 ```
 
 **다크 모드:**
 ```css
 [data-theme="dark"] {
-  --text-primary: #f1e9ed;
-  --text-secondary: #d8c4ce;
-  --accent: #e09ab3;
+  --text-primary: #eee9ec;
+  --text-secondary: #d9c9cf;
+  --accent: #e3b8c4;
   --section-title: #f0a8c2;
   --nav-bg: #4a2534;
   --bg-white: #0f0c10;

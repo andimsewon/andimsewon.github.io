@@ -1,32 +1,32 @@
-/* Soft, subtle pink theme */
+/* Business-friendly, soft dusty rose theme */
 :root {
   /* Palette */
-  --text-primary: #3b2a30;      /* deep plum-brown */
-  --text-secondary: #6b4c57;    /* muted mauve */
-  --text-muted: #9b7b86;        /* dusty pink */
-  --accent: #d88ca1;            /* soft pink */
-  --accent-dark: #D38C9D;       /* deeper rose */
-  --section-title: #b25d79;     /* dusty rose */
-  --border-light: rgba(178, 93, 121, 0.18);
-  --bg-white: #F7DAE7;          /* blush background */
-  --bg-pink: #fdeaf1;           /* gallery/fallback */
-  --nav-bg: #A55166;           /* soft pink for navbar */
+  --text-primary: #2e2a2c;      /* deep charcoal with plum tint */
+  --text-secondary: #5f4e55;    /* taupe mauve */
+  --text-muted: #8b757d;        /* dusty mauve */
+  --accent: #c48fa0;            /* muted rose */
+  --accent-dark: #8e5d6a;       /* old rose (links) */
+  --section-title: #9b5f6d;     /* dusty rose */
+  --border-light: rgba(155, 95, 109, 0.18);
+  --bg-white: #faf5f7;          /* very soft blush */
+  --bg-pink: #f7e9ee;           /* gallery/fallback */
+  --nav-bg: #6e3b49;            /* rosewood, readable with white */
   --paper: #ffffff;             /* content panels */
 }
 
 /* Dark theme overrides */
 [data-theme="dark"] {
-  --text-primary: #f1e9ed;
-  --text-secondary: #d8c4ce;
-  --text-muted: #b79eaa;
-  --accent: #e09ab3;
-  --accent-dark: #f0acc3;
-  --section-title: #f0a8c2;
+  --text-primary: #eee9ec;
+  --text-secondary: #d9c9cf;
+  --text-muted: #bdaab1;
+  --accent: #e3b8c4;
+  --accent-dark: #f0c9d3;
+  --section-title: #e7b0bf;
   --border-light: rgba(255, 255, 255, 0.14);
   --bg-white: #000000;
   --bg-pink: #000000;
-  --nav-bg: #4a2534;
-  --paper: #1a1519;
+  --nav-bg: #3a2430;
+  --paper: #171318;
 }
 
 * {
@@ -41,7 +41,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'Nunito', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-  background: linear-gradient(180deg, #fff0f6 0%, var(--bg-white) 65%);
+  background: linear-gradient(180deg, #fff7f9 0%, var(--bg-white) 65%);
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden; /* 가로 스크롤 방지 */
@@ -79,7 +79,7 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 6px rgba(138, 66, 94, 0.15);
+  box-shadow: 0 2px 6px rgba(110, 59, 73, 0.15);
 }
 
 .nav-container {
@@ -237,7 +237,7 @@ a:focus-visible {
   width: 100%;
   box-sizing: border-box;
   border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(178, 93, 121, 0.08);
+  box-shadow: 0 6px 18px rgba(155, 95, 109, 0.08);
 }
 [data-theme="dark"] .container { box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35); }
 
@@ -340,7 +340,7 @@ a:focus-visible {
   top: 8px;
   width: 10px;
   height: 10px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23b25d79' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%239b5f6d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3C/svg%3E");
   background-size: 10px 10px;
   background-repeat: no-repeat;
   opacity: 0.9;
@@ -366,7 +366,7 @@ a:focus-visible {
   height: auto;
   border-radius: 6px;
   border: 1px solid var(--border-light);
-  box-shadow: 0 4px 12px rgba(178, 93, 121, 0.12);
+  box-shadow: 0 4px 12px rgba(155, 95, 109, 0.12);
 }
 [data-theme="dark"] .profile-photo { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); }
 
@@ -611,13 +611,13 @@ a:focus-visible {
 
 .gallery-image:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(178, 93, 121, 0.25);
+  box-shadow: 0 6px 14px rgba(155, 95, 109, 0.25);
 }
 
 .gallery-placeholder {
   width: 100%;
   aspect-ratio: 4 / 3;
-  background: linear-gradient(180deg, #fdeaf1, #ffffff);
+  background: linear-gradient(180deg, #f7e9ee, #ffffff);
   border: 1px solid var(--border-light);
   display: flex;
   align-items: center;
@@ -633,7 +633,7 @@ a:focus-visible {
 
 .gallery-placeholder:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(178, 93, 121, 0.15);
+  box-shadow: 0 6px 14px rgba(155, 95, 109, 0.15);
 }
 
 .gallery-placeholder span {
@@ -656,7 +656,7 @@ a:focus-visible {
 }
 
 .gallery-note code {
-  background: #fdeaf1;
+  background: #f7e9ee;
   padding: 2px 6px;
   border-radius: 3px;
   font-size: 11px;
