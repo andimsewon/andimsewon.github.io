@@ -28,50 +28,37 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <nav class="top-nav" aria-label="Primary">
     <div class="nav-container">
-      <div class="nav-name"><a href="index.html" style="color: #ffffff; text-decoration: none;">Sewon Kim</a></div>
+      <div class="nav-name">Sewon Kim</div>
       <div class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="research.html">Research</a>
-        <a href="projects.html">Projects</a>
-        <a href="awards.html">Awards</a>
-        <a href="gallery.html">Gallery</a>
+        <a href="#main">Main page</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#awards">Awards</a>
+        <a href="#gallery">Gallery</a>
       </div>
     </div>
   </nav>
 
-  <!-- Main Page Section -->
-  <section id="main" class="page-section">
-    <div class="container">
-      <div class="main-layout">
-        <div class="content-column">
-          <div class="name">Sewon Kim</div>
+  <!-- Sections will be loaded here dynamically from sections/ -->
+  <div id="sections-container"></div>
 
-          <p style="margin: 0 0 16px 0; color: var(--text-secondary);">
-            Hello! I'm a CS undergraduate at JBNU focusing on NLP, LLMs, and Embodied AI systems. 
-            You can find a brief overview here and explore my work through the links below.
-          </p>
-
-          <div class="contact-header" style="margin-top: 8px;">
-            <span class="contact-item-inline">🔗 <a href="https://github.com/andimsewon" target="_blank" rel="noopener noreferrer">GitHub</a></span>
-            <span class="contact-separator">|</span>
-            <span class="contact-item-inline">📄 <a href="./SewonKim_CV.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a></span>
-            <span class="contact-separator">|</span>
-            <span class="contact-item-inline">💼 <a href="https://www.linkedin.com/in/sewon-kim-742a492a6/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
-          </div>
-        </div>
-
-        <div class="photo-column">
-          <img src="./assets/profile.jpeg" alt="Profile Photo" class="profile-photo">
-        </div>
-      </div>
+  <!-- Lightbox Modal -->
+  <div class="lightbox-backdrop" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+    <div class="lightbox-content">
+      <div class="lightbox-close" id="lightboxClose" aria-label="Close">×</div>
+      <img src="" alt="" id="lightboxImg" class="lightbox-img">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
-  </section>
+  </div>
 
   <footer class="footer">
     © <span id="y"></span> Sewon Kim · Built on GitHub Pages
   </footer>
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <noscript>
+    <div class="container" style="padding-top:20px;color:#8a8a8a;">
+      JavaScript is disabled. Enable it to load sections.
+    </div>
+  </noscript>
+  <script src="js/loader.js" defer></script>
 </body>
 </html>
