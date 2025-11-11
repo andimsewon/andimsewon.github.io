@@ -40,48 +40,12 @@
         <p class="gallery-intro">Projects, activities, and research-related photos.</p>
         <div class="gallery-grid">
           <div class="gallery-item">
-            <img src="./assets/gallery/2025Purdue_KSW1.jpeg" alt="Professor Tony's farm" style="width:100%; height:auto; border-radius:4px; border:1px solid var(--border-light);"/>
+            <img src="./assets/gallery/2025Purdue_KSW1.jpeg" alt="Professor Tony's farm" class="gallery-image" data-caption="Professor Tony's farm">
             <div class="gallery-caption">Professor Tony's farm</div>
           </div>
           <div class="gallery-item">
-            <img src="./assets/gallery/2025Purdue_KSW.jpeg" alt="2025_Purdue_KSW" style="width:100%; height:auto; border-radius:4px; border:1px solid var(--border-light);"/>
+            <img src="./assets/gallery/2025Purdue_KSW.jpeg" alt="2025_Purdue_KSW" class="gallery-image" data-caption="2025_Purdue_KSW">
             <div class="gallery-caption">2025_Purdue_KSW</div>
-          </div>
-          <div class="gallery-item">
-            <div class="gallery-placeholder">
-              <span>Project Photo 1</span>
-            </div>
-            <div class="gallery-caption">Cultural Heritage Damage Detection App</div>
-          </div>
-          <div class="gallery-item">
-            <div class="gallery-placeholder">
-              <span>Project Photo 2</span>
-            </div>
-            <div class="gallery-caption">IoT Smart Beehive Monitoring</div>
-          </div>
-          <div class="gallery-item">
-            <div class="gallery-placeholder">
-              <span>Research Photo 1</span>
-            </div>
-            <div class="gallery-caption">Research at Natural Language Learning Lab</div>
-          </div>
-          <div class="gallery-item">
-            <div class="gallery-placeholder">
-              <span>Research Photo 2</span>
-            </div>
-            <div class="gallery-caption">Purdue University Research</div>
-          </div>
-          <div class="gallery-item">
-            <div class="gallery-placeholder">
-              <span>Activity Photo 1</span>
-            </div>
-            <div class="gallery-caption">Teaching Assistant Activities</div>
-          </div>
-          <div class="gallery-item">
-            <div class="gallery-placeholder">
-              <span>Activity Photo 2</span>
-            </div>
-            <div class="gallery-caption">Leadership & Service</div>
           </div>
         </div>
         <p class="gallery-note">
@@ -91,12 +55,63 @@
     </div>
   </section>
 
+  <!-- Lightbox Modal -->
+  <div class="lightbox-backdrop" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+    <div class="lightbox-content">
+      <div class="lightbox-close" id="lightboxClose" aria-label="Close">×</div>
+      <img src="" alt="" id="lightboxImg" class="lightbox-img">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
   <footer class="footer">
     © <span id="y"></span> Sewon Kim · Built on GitHub Pages
   </footer>
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    function openLightbox(src, caption) {
+      lightboxImg.src = src;
+      lightboxCaption.textContent = caption || '';
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      lightboxImg.src = '';
+      lightboxCaption.textContent = '';
+    }
+
+    document.querySelectorAll('.gallery-image').forEach((img) => {
+      img.addEventListener('click', () => {
+        const caption = img.getAttribute('data-caption') || img.alt || '';
+        openLightbox(img.src, caption);
+      });
+    });
+
+    if (lightboxClose) {
+      lightboxClose.addEventListener('click', closeLightbox);
+    }
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        closeLightbox();
+      }
+    });
   </script>
 </body>
 </html>
-
