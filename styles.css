@@ -10,7 +10,7 @@
   --border-light: rgba(178, 93, 121, 0.18);
   --bg-white: #fff7fa;          /* blush background */
   --bg-pink: #fdeaf1;           /* gallery/fallback */
-  --nav-bg: #8a425e;            /* deep rose for navbar */
+  --nav-bg: #c88fa3;            /* soft pink for navbar */
   --paper: #ffffff;             /* content panels */
 }
 
@@ -23,8 +23,8 @@
   --accent-dark: #f0acc3;
   --section-title: #f0a8c2;
   --border-light: rgba(255, 255, 255, 0.14);
-  --bg-white: #0f0c10;
-  --bg-pink: #21151a;
+  --bg-white: #000000;
+  --bg-pink: #000000;
   --nav-bg: #4a2534;
   --paper: #1a1519;
 }
@@ -48,6 +48,11 @@ html, body {
   -webkit-text-size-adjust: 100%; /* iOS 텍스트 크기 조정 방지 */
   width: 100%;
   box-sizing: border-box;
+}
+
+[data-theme="dark"] html,
+[data-theme="dark"] body {
+  background: #000000;
 }
 
 /* Respect reduced motion preferences */
@@ -620,6 +625,10 @@ a:focus-visible {
   border-radius: 4px;
   margin-bottom: 8px;
   transition: transform 0.2s, box-shadow 0.2s;
+}
+
+[data-theme="dark"] .gallery-placeholder {
+  background: #000000;
 }
 
 .gallery-placeholder:hover {
