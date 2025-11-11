@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects | Sewon Kim</title>
+  <meta name="description" content="Selected Projects - Sewon Kim's Academic Portfolio">
+  <meta name="author" content="Sewon Kim">
+  <meta name="theme-color" content="#b25d79">
+
+  <link rel="canonical" href="https://andimsewon.github.io/projects.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#projects">Skip to content</a>
+  <nav class="top-nav" aria-label="Primary">
+    <div class="nav-container">
+      <div class="nav-name"><a href="index.html" style="color: #ffffff; text-decoration: none;">Sewon Kim</a></div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="awards.html">Awards</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="./SewonKim_CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+        <a href="https://github.com/andimsewon" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/sewon-kim-742a492a6/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Projects Section -->
+  <section id="projects" class="page-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="page-title">SELECTED PROJECTS</h2>
+      </div>
+      <div class="content-wrapper">
+        <ul class="info-list">
+          <li>IoT-Enabled Smart Beehive Monitoring with Multi-Modal Sensor Fusion (2025)
+            <ul class="sub-list">
+              <li>Architected end-to-end IoT system using WiFi LoRa 32 (V3), MQTT protocol, and Raspberry Pi for real-time hive condition monitoring</li>
+              <li>Implemented sensor fusion algorithms combining temperature, humidity, and acoustic data for predictive analytics</li>
+              <li>Deployed and validated the system in field conditions at Purdue University research site, demonstrating robustness and scalability</li>
+            </ul>
+          </li>
+          <li>Cultural Heritage Damage Detection using Vision Transformers (2024–2025)
+            <ul class="sub-list">
+              <li>Developed mobile application with Flutter frontend and FastAPI backend for AI-powered damage assessment of cultural heritage sites</li>
+              <li>Fine-tuned DETR (DEtection TRansformer) model on a custom dataset for multi-class structural degradation detection</li>
+              <li>Deployed cloud-based inference pipeline with Firebase integration, achieving real-time detection with 89% mAP</li>
+            </ul>
+          </li>
+          <li>Hybrid Deep Learning for Urban Air Quality Prediction (2025)
+            <ul class="sub-list">
+              <li>Designed Gaussian Diffusion + LSTM-CNN hybrid architecture for spatiotemporal emission forecasting in industrial zones</li>
+              <li>Built scalable data pipeline with AWS streaming architecture for real-time environmental analytics</li>
+              <li>Validated model predictions against AERMOD physical simulations, demonstrating improved accuracy in complex dispersion scenarios</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    © <span id="y"></span> Sewon Kim · Built on GitHub Pages
+  </footer>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+

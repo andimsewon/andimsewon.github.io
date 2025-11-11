@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery | Sewon Kim</title>
+  <meta name="description" content="Photo Gallery - Sewon Kim's Academic Portfolio">
+  <meta name="author" content="Sewon Kim">
+  <meta name="theme-color" content="#b25d79">
+
+  <link rel="canonical" href="https://andimsewon.github.io/gallery.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#gallery">Skip to content</a>
+  <nav class="top-nav" aria-label="Primary">
+    <div class="nav-container">
+      <div class="nav-name"><a href="index.html" style="color: #ffffff; text-decoration: none;">Sewon Kim</a></div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html">Projects</a>
+        <a href="awards.html">Awards</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="./SewonKim_CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+        <a href="https://github.com/andimsewon" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/sewon-kim-742a492a6/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="page-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="page-title">PHOTO GALLERY</h2>
+      </div>
+      <div class="content-wrapper">
+        <p class="gallery-intro">Projects, activities, and research-related photos.</p>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <div class="gallery-placeholder">
+              <span>Project Photo 1</span>
+            </div>
+            <div class="gallery-caption">Cultural Heritage Damage Detection App</div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder">
+              <span>Project Photo 2</span>
+            </div>
+            <div class="gallery-caption">IoT Smart Beehive Monitoring</div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder">
+              <span>Research Photo 1</span>
+            </div>
+            <div class="gallery-caption">Research at Natural Language Learning Lab</div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder">
+              <span>Research Photo 2</span>
+            </div>
+            <div class="gallery-caption">Purdue University Research</div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder">
+              <span>Activity Photo 1</span>
+            </div>
+            <div class="gallery-caption">Teaching Assistant Activities</div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder">
+              <span>Activity Photo 2</span>
+            </div>
+            <div class="gallery-caption">Leadership & Service</div>
+          </div>
+        </div>
+        <p class="gallery-note">
+          <em>To add photos, place images in <code>assets/gallery/</code> folder and update the HTML.</em>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    © <span id="y"></span> Sewon Kim · Built on GitHub Pages
+  </footer>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
