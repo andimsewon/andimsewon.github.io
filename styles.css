@@ -65,6 +65,7 @@ a:hover {
   align-items: center;
   width: 100%;
   box-sizing: border-box;
+  flex-wrap: wrap; /* Allow name/links to wrap on mid widths */
 }
 
 .nav-name {
@@ -78,6 +79,7 @@ a:hover {
   display: flex;
   gap: 24px;
   align-items: center;
+  flex-wrap: wrap; /* Prevent overflow cutting off last items */
 }
 
 .nav-links a {
