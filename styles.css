@@ -1,11 +1,15 @@
-/* Clean, minimal CV-style CSS - inspired by academic CV design */
+/* Clean, minimal CV-style CSS with soft pink theme */
 :root {
-  --text-primary: #000000;
-  --text-secondary: #666666;
-  --text-muted: #999999;
-  --accent: #0066cc;
-  --border-light: #e0e0e0;
-  --bg-white: #ffffff;
+  --text-primary: #2d2d2d;
+  --text-secondary: #5a5a5a;
+  --text-muted: #8a8a8a;
+  --accent: #d4a5b8;
+  --accent-dark: #c88fa3;
+  --section-title: #b87a95;
+  --border-light: #f0e0e6;
+  --bg-white: #fefefe;
+  --bg-pink: #fef8fa;
+  --nav-bg: #2d2d2d;
 }
 
 * {
@@ -22,176 +26,160 @@ html, body {
 }
 
 a {
-  color: var(--accent);
+  color: var(--accent-dark);
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
+  color: var(--section-title);
 }
 
+/* Top Navigation */
+.top-nav {
+  background: var(--nav-bg);
+  color: #ffffff;
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #ffffff;
+  font-size: 14px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.nav-links a:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+/* Container */
 .container {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
 }
 
+/* Main Layout - Two Column */
+.main-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 40px;
+  align-items: start;
+}
+
+.content-column {
+  min-width: 0;
+}
+
+.photo-column {
+  position: sticky;
+  top: 80px;
+}
+
 /* Header Section */
 .header {
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 
 .name {
   font-size: 36px;
   font-weight: 700;
+  color: var(--section-title);
+  margin-bottom: 12px;
   font-family: 'Times New Roman', serif;
-  margin-bottom: 8px;
-  text-align: center;
 }
 
-.affiliation {
-  text-align: center;
-  margin-bottom: 20px;
+.affiliation-list,
+.contact-list,
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
 }
 
-.position {
-  font-weight: 600;
-  font-size: 16px;
-  margin-bottom: 4px;
-}
-
-.university {
-  font-size: 16px;
-  margin-bottom: 4px;
-}
-
-.contact {
-  font-size: 16px;
-  margin-bottom: 8px;
-}
-
-.links {
-  font-size: 14px;
-  color: var(--text-secondary);
-}
-
-.links a {
-  color: var(--text-secondary);
-}
-
-.bio {
-  margin-top: 20px;
-  text-align: left;
-}
-
-.bio p {
+.affiliation-list li,
+.contact-list li,
+.info-list li {
+  margin-bottom: 6px;
   font-size: 15px;
-  line-height: 1.7;
-  margin: 0;
+  line-height: 1.6;
   color: var(--text-primary);
 }
 
-/* Section Headers */
-.section {
-  margin-bottom: 30px;
+.contact-list li {
+  margin-bottom: 4px;
 }
 
-.section h2 {
-  font-size: 18px;
-  font-weight: 700;
-  margin: 0 0 20px 0;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border-bottom: 1px solid var(--border-light);
-  padding-bottom: 8px;
+.sub-list {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 4px;
 }
 
-/* Two Column Layout */
-.two-column {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 20px;
-  align-items: start;
-}
-
-.left-column {
-  min-width: 0;
-}
-
-.right-column {
-  text-align: right;
-  white-space: nowrap;
-}
-
-/* Items in sections */
-.item {
-  margin-bottom: 16px;
-}
-
-.item:last-child {
-  margin-bottom: 0;
-}
-
-.item .title {
-  font-weight: 600;
-  font-size: 15px;
-  margin-bottom: 2px;
-}
-
-.item .description {
+.sub-list li {
   font-size: 14px;
   color: var(--text-secondary);
   margin-bottom: 4px;
 }
 
-.item .tech {
-  font-size: 13px;
-  color: var(--text-muted);
-  font-style: italic;
-  margin-bottom: 4px;
+.sub-list li:before {
+  content: "- ";
+  margin-right: 4px;
 }
 
-.item .role {
-  font-size: 13px;
-  color: var(--text-secondary);
-}
-
-/* Date styling */
-.date {
-  font-size: 13px;
-  color: var(--text-muted);
-  font-weight: 500;
-  text-transform: uppercase;
+/* Section Titles */
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--section-title);
+  margin: 32px 0 12px 0;
   letter-spacing: 0.3px;
 }
 
-/* Skills section */
-.skills-content {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.section-title:first-of-type {
+  margin-top: 0;
 }
 
-.skill-category {
-  margin-bottom: 12px;
-}
-
-.category-title {
-  font-weight: 600;
-  font-size: 14px;
-  margin-bottom: 4px;
-  color: var(--text-primary);
-}
-
-.skill-items {
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.5;
+/* Profile Photo */
+.profile-photo {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 2px 8px rgba(184, 122, 149, 0.15);
 }
 
 /* Footer */
 .footer {
-  margin-top: 40px;
+  margin-top: 60px;
   padding-top: 20px;
   border-top: 1px solid var(--border-light);
   text-align: center;
@@ -200,44 +188,65 @@ a:hover {
 }
 
 /* Responsive Design */
+@media (max-width: 968px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .photo-column {
+    position: static;
+    order: -1;
+    text-align: center;
+  }
+  
+  .profile-photo {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 20px 15px;
+  }
+  
+  .nav-container {
+    padding: 0 15px;
+  }
+  
+  .nav-links {
+    gap: 16px;
+    font-size: 13px;
   }
   
   .name {
     font-size: 28px;
   }
   
-  .two-column {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-  
-  .right-column {
-    text-align: left;
-    margin-bottom: 16px;
-  }
-  
-  .date {
-    font-size: 12px;
-  }
-  
-  .section h2 {
+  .section-title {
     font-size: 16px;
   }
 }
 
 @media (max-width: 480px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+  }
+  
   .name {
     font-size: 24px;
   }
   
-  .position, .university, .contact {
+  .affiliation-list li,
+  .contact-list li,
+  .info-list li {
     font-size: 14px;
   }
   
-  .bio p {
-    font-size: 14px;
+  .profile-photo {
+    max-width: 150px;
   }
 }
