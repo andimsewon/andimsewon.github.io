@@ -69,30 +69,86 @@
       </div>
       <div class="content-wrapper">
         <div class="project-item">
-          <h3 class="project-title">AI-Based Urban Air Impact Analysis System for Factory and Power Plant Emissions (GAIA Project)</h3>
-          <div class="project-description">
-            <p>This project aims to analyze and predict the urban air quality impact of industrial and power plant emissions using artificial intelligence.</p>
-            <p>Based on seven years (2018–2024) of time-series data collected from the national Tele-Monitoring System (TMS), the team developed a hybrid prediction model combining the AERMOD physical diffusion model with a Transformer-based deep learning architecture.</p>
-            <p>A data pipeline automatically collects multi-source datasets from TMS, the Korea Meteorological Administration, and AirKorea APIs. It performs data cleaning, gap filling (Forward Fill, Interpolation, LSTM Imputation), and temporal feature engineering. The PyTorch-based Transformer model learns multivariate time-series relationships among wind, weather, and pollutant levels, while a Gaussian Diffusion algorithm probabilistically models diffusion uncertainty.</p>
-            <p>The prediction results are visualized in real time through a Streamlit web dashboard, enabling users to interactively explore emission scenarios, 3D plume diffusion maps, and real vs. predicted data comparisons. Visualization modules use Folium, GeoPandas, and Xarray for spatial heatmaps and time-lapse animations.</p>
-            <p>The GAIA system serves as a data-driven decision support platform for environmental policy planning, industrial strategy analysis, and disaster response simulation. Future work includes integrating IoT sensors and extending the platform to nationwide and climate-change scenarios.</p>
-          </div>
-          <div class="project-tech">Tech Stack: PyTorch, NumPy, Pandas, Scikit-learn, Folium, GeoPandas, Xarray, Streamlit</div>
-          <div class="project-links">
-            <a href="https://github.com/GAIAinCapstone" target="_blank" rel="noopener noreferrer">🔗 GitHub</a>
-            <a href="assets/2025-1캡스톤디자인_가이아.pdf" target="_blank" rel="noopener noreferrer">📄 Poster (PDF)</a>
-            <a href="https://swuniv.jbnu.ac.kr/festival/jbnusw?gc=893BAOF&do=view&scenter=list&festival_id=gvyje9Tei6W679047c5&syear=2025&content_id=ei0T9CXQxsB68870b78" target="_blank" rel="noopener noreferrer">🎥 Presentation Video</a>
+          <div class="project-content-wrapper">
+            <div class="project-main">
+              <h3 class="project-title">AI-Based Urban Air Impact Analysis System for Factory and Power Plant Emissions (GAIA Project)</h3>
+              <div class="project-description">
+                <p>This project aims to analyze and predict the urban air quality impact of industrial and power plant emissions using artificial intelligence.</p>
+                <p>Based on seven years (2018–2024) of time-series data collected from the national Tele-Monitoring System (TMS), the team developed a hybrid prediction model combining the AERMOD physical diffusion model with a Transformer-based deep learning architecture.</p>
+                <p>A data pipeline automatically collects multi-source datasets from TMS, the Korea Meteorological Administration, and AirKorea APIs. It performs data cleaning, gap filling (Forward Fill, Interpolation, LSTM Imputation), and temporal feature engineering. The PyTorch-based Transformer model learns multivariate time-series relationships among wind, weather, and pollutant levels, while a Gaussian Diffusion algorithm probabilistically models diffusion uncertainty.</p>
+                <p>The prediction results are visualized in real time through a Streamlit web dashboard, enabling users to interactively explore emission scenarios, 3D plume diffusion maps, and real vs. predicted data comparisons. Visualization modules use Folium, GeoPandas, and Xarray for spatial heatmaps and time-lapse animations.</p>
+                <p>The GAIA system serves as a data-driven decision support platform for environmental policy planning, industrial strategy analysis, and disaster response simulation. Future work includes integrating IoT sensors and extending the platform to nationwide and climate-change scenarios.</p>
+              </div>
+              <div class="project-tech">Tech Stack: PyTorch, NumPy, Pandas, Scikit-learn, Folium, GeoPandas, Xarray, Streamlit</div>
+              <div class="project-links">
+                <a href="https://github.com/GAIAinCapstone" target="_blank" rel="noopener noreferrer">🔗 GitHub</a>
+                <a href="https://swuniv.jbnu.ac.kr/festival/jbnusw?gc=893BAOF&do=view&scenter=list&festival_id=gvyje9Tei6W679047c5&syear=2025&content_id=ei0T9CXQxsB68870b78" target="_blank" rel="noopener noreferrer">🎥 Presentation Video</a>
+              </div>
+            </div>
+            <div class="project-poster-thumbnail" id="posterThumbnail" data-pdf="assets/2025_1_Capstone.pdf">
+              <iframe src="assets/2025_1_Capstone.pdf#page=1&zoom=50" style="width: 100%; height: 280px; border: none; pointer-events: none;"></iframe>
+              <div class="project-poster-label">Click to view poster</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- PDF Lightbox Modal -->
+  <div class="pdf-lightbox-backdrop" id="pdfLightbox" role="dialog" aria-modal="true" aria-label="PDF preview">
+    <div class="pdf-lightbox-content">
+      <div class="pdf-lightbox-close" id="pdfLightboxClose" aria-label="Close">×</div>
+      <iframe src="" id="pdfLightboxIframe" class="pdf-lightbox-iframe" title="PDF Preview"></iframe>
+    </div>
+  </div>
+
   <footer class="footer">
     © <span id="y"></span> Sewon Kim · Built on GitHub Pages
   </footer>
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+    
+    // PDF Lightbox functionality
+    const pdfLightbox = document.getElementById('pdfLightbox');
+    const pdfLightboxIframe = document.getElementById('pdfLightboxIframe');
+    const pdfLightboxClose = document.getElementById('pdfLightboxClose');
+    const posterThumbnail = document.getElementById('posterThumbnail');
+    
+    function openPdfLightbox(pdfPath) {
+      pdfLightboxIframe.src = pdfPath;
+      pdfLightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closePdfLightbox() {
+      pdfLightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      pdfLightboxIframe.src = '';
+    }
+    
+    if (posterThumbnail) {
+      posterThumbnail.addEventListener('click', () => {
+        const pdfPath = posterThumbnail.getAttribute('data-pdf');
+        openPdfLightbox(pdfPath);
+      });
+    }
+    
+    if (pdfLightboxClose) {
+      pdfLightboxClose.addEventListener('click', closePdfLightbox);
+    }
+    
+    pdfLightbox.addEventListener('click', (e) => {
+      if (e.target === pdfLightbox) {
+        closePdfLightbox();
+      }
+    });
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && pdfLightbox.classList.contains('active')) {
+        closePdfLightbox();
+      }
+    });
     (function(){
       const btn = document.getElementById('themeToggle');
       if (!btn) return;

@@ -410,6 +410,107 @@ a:focus-visible {
   font-style: italic;
 }
 
+/* Project layout with poster thumbnail */
+.project-content-wrapper {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.project-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.project-poster-thumbnail {
+  flex-shrink: 0;
+  width: 200px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-poster-thumbnail:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.project-poster-thumbnail img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.project-poster-label {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+/* PDF Lightbox */
+.pdf-lightbox-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.pdf-lightbox-backdrop.active {
+  display: flex;
+}
+
+.pdf-lightbox-content {
+  max-width: 95vw;
+  max-height: 95vh;
+  position: relative;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.pdf-lightbox-iframe {
+  width: 100%;
+  height: 95vh;
+  border: none;
+  display: block;
+}
+
+.pdf-lightbox-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  z-index: 1001;
+  transition: background 0.2s ease;
+}
+
+.pdf-lightbox-close:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
 /* Section Titles */
 .section-title {
   font-size: 18px;
@@ -613,6 +714,17 @@ b, strong {
   .project-links a {
     font-size: 13px;
     margin-right: 12px;
+  }
+  
+  .project-content-wrapper {
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .project-poster-thumbnail {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
   }
   
   .contact-header {
