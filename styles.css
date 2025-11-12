@@ -651,7 +651,7 @@ a:focus-visible {
 
 .project-video-wrapper video {
   width: 100%;
-  max-width: 500px;
+  max-height: 400px;
   border-radius: 8px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   background: var(--paper);
