@@ -62,120 +62,38 @@
         <h2 class="page-title">선정 프로젝트</h2>
       </div>
       <div class="content-wrapper">
-        <div class="project-item">
-          <div class="project-content-wrapper">
-            <div class="project-main">
-              <h3 class="project-title">AI 기반 공장 및 발전소 배출가스의 도시 대기 영향 분석 시스템 (GAIA Project)</h3>
-              <div class="project-description">
-                <p>이 프로젝트는 발전소와 공장에서 배출되는 대기오염 물질이 도시 대기질에 미치는 영향을 인공지능으로 분석하기 위해 수행한 캡스톤디자인 연구이다.</p>
-                <p>국가 대기오염 관측망(TMS)에서 수집된 7년간(2018–2024)의 시계열 데이터를 기반으로, AERMOD 물리 확산 모델과 Transformer 기반 딥러닝 모델을 융합한 하이브리드 예측 시스템을 구축하였다.</p>
-                <p>데이터 파이프라인 단계에서는 TMS, 기상청, 에어코리아 데이터를 자동 수집하고, 결측치 보정(Fill, Interpolation, LSTM 기반 Imputation) 및 시간·계절 요인 엔지니어링을 수행하였다. 이후 PyTorch 기반 Transformer 모델을 이용해 풍향, 풍속, 오염물질 농도 등 다변량 시계열 데이터를 학습하였으며, 가우시안 확산(Gaussian Diffusion) 알고리즘을 통해 오염물질의 확산 불확실성을 확률적으로 모델링하였다.</p>
-                <p>예측 결과는 Streamlit 웹 대시보드에서 실시간으로 시각화된다. 사용자는 발전소별 배출량, 예측 대기질 변화, 오염 확산 경로(3D 플룸 모델)를 직관적으로 확인할 수 있으며, 사용자 입력값에 따라 다양한 시나리오를 시뮬레이션할 수 있다. 지도 기반 시각화에는 Folium, GeoPandas, Xarray 등을 활용하였다.</p>
-                <p>본 시스템은 단순 분석을 넘어 정책 수립과 환경 규제 검토를 지원하는 데이터 기반 의사결정 도구로 활용 가능하며, 향후 드론·IoT 센서 연동 및 기후변화 시나리오 반영을 통해 전국 단위 예측 플랫폼으로 확장할 계획이다.</p>
-              </div>
-              <div class="project-tech">기술 스택: PyTorch, NumPy, Pandas, Scikit-learn, Folium, GeoPandas, Xarray, Streamlit</div>
-              <div class="project-links">
-                <a href="https://github.com/GAIAinCapstone" target="_blank" rel="noopener noreferrer">🔗 GitHub</a>
-                <a href="../assets/2025_1_Capstone.pdf" target="_blank" rel="noopener noreferrer">📄 포스터 (PDF)</a>
-                <a href="https://swuniv.jbnu.ac.kr/festival/jbnusw?gc=893BAOF&do=view&scenter=list&festival_id=gvyje9Tei6W679047c5&syear=2025&content_id=ei0T9CXQxsB68870b78" target="_blank" rel="noopener noreferrer">🎥 발표 영상</a>
-              </div>
-            </div>
-            <div class="project-presentation" id="presentationThumbnail1" data-pdf="../assets/2025_1_Capstone_Presentation.pdf">
-              <iframe src="../assets/2025_1_Capstone_Presentation.pdf#page=1&zoom=50" style="width: 100%; height: 600px; border: none; pointer-events: none;"></iframe>
-              <div class="project-presentation-label">클릭하여 발표 자료 보기</div>
-            </div>
+        <a href="gaia-project.html" class="project-card">
+          <div class="project-card-visual">
+            <iframe src="../assets/2025_1_Capstone_Presentation.pdf#page=1&zoom=50" style="width: 100%; height: 300px; border: none; pointer-events: none;"></iframe>
           </div>
-        </div>
+          <div class="project-card-content">
+            <span class="project-card-category">AI & 데이터 분석</span>
+            <h3 class="project-card-title">AI 기반 공장 및 발전소 배출가스의 도시 대기 영향 분석 시스템 (GAIA Project)</h3>
+            <p class="project-card-description">이 프로젝트는 발전소와 공장에서 배출되는 대기오염 물질이 도시 대기질에 미치는 영향을 인공지능으로 분석하기 위해 수행한 캡스톤디자인 연구이다. 국가 대기오염 관측망(TMS)에서 수집된 7년간(2018–2024)의 시계열 데이터를 기반으로, AERMOD 물리 확산 모델과 Transformer 기반 딥러닝 모델을 융합한 하이브리드 예측 시스템을 구축하였다.</p>
+            <div class="project-card-date">2025년 1학기, 캡스톤 디자인 경진대회, 전북대학교</div>
+            <div class="project-card-read-more">더 보기 ></div>
+          </div>
+        </a>
         
-        <div class="project-item">
-          <div class="project-content-wrapper">
-            <div class="project-main">
-              <h3 class="project-title">작물 품질 상태 판별: 이미지 프로세싱 및 인공지능 기술 (Guardians of Farm Project)</h3>
-              <div class="project-description">
-                <p>이 프로젝트는 스마트팜 환경에서 작물의 생육 상태와 질병 여부를 효율적으로 판별하기 위해 개발한 인공지능 기반 품질 분석 시스템이다.</p>
-                <p>초기에는 GroundingDINO와 SAM(Segment Anything) 모델을 결합해 비지도 방식으로 잎 영역을 탐지하고 RGB 평균값을 기반으로 정상·비정상 잎을 구분하였다. 그러나 데이터 불균형 상황에서 평균값 왜곡으로 오탐률이 높아지는 문제가 발생하였다.</p>
-                <p>이 문제를 해결하기 위해, Kaggle 오픈소스 데이터와 실생활 촬영 데이터를 포함한 대규모 라벨링 데이터셋을 구축하고, RoboFlow를 활용해 라벨링 및 증강(Augmentation)을 진행하였다. 이후 YOLOv8 모델을 이용해 객체 탐지 기반의 지도 학습 모델로 전환하여 학습 효율과 정확도를 크게 향상시켰다.</p>
-                <p>최종 시스템은 이미지 입력 시 정상·비정상 잎을 색상별 바운딩박스로 시각화하고, 각 잎의 비율을 계산하여 건강 상태를 Normal, Caution, Warning, Danger, Critical 5단계로 분류한다. 이 과정에서 YOLOv8 모델은 평균 mAP@0.5 0.81, Diseased 클래스 AP 0.846을 기록하며 안정적인 성능을 보였다.</p>
-                <p>본 연구는 GroundingDINO–SAM 비지도 탐지에서 YOLOv8 지도 모델로의 전환 과정을 통해 AI 식물 품질 판별의 실용성을 입증했으며, 나아가 IoT 스마트팜 시스템과 연동 가능한 경량 품질 진단 모듈로 확장 가능함을 제시하였다.</p>
-              </div>
-              <div class="project-tech">기술 스택: Python, PyTorch, YOLOv8, GroundingDINO, SAM, RoboFlow, OpenCV, NumPy</div>
-              <div class="project-links">
-                <a href="https://github.com/andimsewon/Capstone_GuardiansofFarm" target="_blank" rel="noopener noreferrer">🔗 GitHub</a>
-                <a href="../assets/2024_2_Capstone.pdf" target="_blank" rel="noopener noreferrer">📄 포스터 (PDF)</a>
-              </div>
-            </div>
-            <div class="project-presentation" id="presentationThumbnail2" data-pdf="../assets/2024_2_Capstone_Presentation.pdf">
-              <iframe src="../assets/2024_2_Capstone_Presentation.pdf#page=1&zoom=50" style="width: 100%; height: 600px; border: none; pointer-events: none;"></iframe>
-              <div class="project-presentation-label">클릭하여 발표 자료 보기</div>
-            </div>
+        <a href="guardians-of-farm-project.html" class="project-card">
+          <div class="project-card-visual">
+            <iframe src="../assets/2024_2_Capstone_Presentation.pdf#page=1&zoom=50" style="width: 100%; height: 300px; border: none; pointer-events: none;"></iframe>
           </div>
-        </div>
+          <div class="project-card-content">
+            <span class="project-card-category">AI & 컴퓨터 비전</span>
+            <h3 class="project-card-title">작물 품질 상태 판별: 이미지 프로세싱 및 인공지능 기술 (Guardians of Farm Project)</h3>
+            <p class="project-card-description">이 프로젝트는 스마트팜 환경에서 작물의 생육 상태와 질병 여부를 효율적으로 판별하기 위해 개발한 인공지능 기반 품질 분석 시스템이다. GroundingDINO–SAM 비지도 탐지에서 YOLOv8 지도 모델로의 전환 과정을 통해 AI 식물 품질 판별의 실용성을 입증했다.</p>
+            <div class="project-card-date">2024년 2학기, 캡스톤 디자인 경진대회, 전북대학교</div>
+            <div class="project-card-read-more">더 보기 ></div>
+          </div>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- PDF Lightbox Modal -->
-  <div class="pdf-lightbox-backdrop" id="pdfLightbox" role="dialog" aria-modal="true" aria-label="PDF 미리보기">
-    <div class="pdf-lightbox-content">
-      <div class="pdf-lightbox-close" id="pdfLightboxClose" aria-label="닫기">×</div>
-      <iframe src="" id="pdfLightboxIframe" class="pdf-lightbox-iframe" title="PDF 미리보기"></iframe>
-    </div>
-  </div>
-
   <footer class="footer">© <span id="y"></span> Sewon Kim · Built on GitHub Pages</footer>
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
-    
-    // PDF Lightbox functionality
-    const pdfLightbox = document.getElementById('pdfLightbox');
-    const pdfLightboxIframe = document.getElementById('pdfLightboxIframe');
-    const pdfLightboxClose = document.getElementById('pdfLightboxClose');
-    const posterThumbnail = document.getElementById('posterThumbnail');
-    
-    function openPdfLightbox(pdfPath) {
-      pdfLightboxIframe.src = pdfPath;
-      pdfLightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-    
-    function closePdfLightbox() {
-      pdfLightbox.classList.remove('active');
-      document.body.style.overflow = '';
-      pdfLightboxIframe.src = '';
-    }
-    
-    const presentationThumbnail1 = document.getElementById('presentationThumbnail1');
-    const presentationThumbnail2 = document.getElementById('presentationThumbnail2');
-    
-    if (presentationThumbnail1) {
-      presentationThumbnail1.addEventListener('click', () => {
-        const pdfPath = presentationThumbnail1.getAttribute('data-pdf');
-        openPdfLightbox(pdfPath);
-      });
-    }
-    
-    if (presentationThumbnail2) {
-      presentationThumbnail2.addEventListener('click', () => {
-        const pdfPath = presentationThumbnail2.getAttribute('data-pdf');
-        openPdfLightbox(pdfPath);
-      });
-    }
-    
-    if (pdfLightboxClose) {
-      pdfLightboxClose.addEventListener('click', closePdfLightbox);
-    }
-    
-    pdfLightbox.addEventListener('click', (e) => {
-      if (e.target === pdfLightbox) {
-        closePdfLightbox();
-      }
-    });
-    
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && pdfLightbox.classList.contains('active')) {
-        closePdfLightbox();
-      }
-    });
     (function(){
       const btn = document.getElementById('themeToggle');
       if (!btn) return;

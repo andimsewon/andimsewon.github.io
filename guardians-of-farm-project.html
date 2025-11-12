@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guardians of Farm Project | Sewon Kim</title>
+  <meta name="description" content="Crop Quality Assessment Using Image Processing and Artificial Intelligence - Sewon Kim's Academic Portfolio">
+  <meta name="author" content="Sewon Kim">
+  <meta name="theme-color" content="#9b5f6d">
+  <script>
+    (function() {
+      try {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="canonical" href="https://andimsewon.github.io/guardians-of-farm-project.html">
+  <link rel="alternate" hreflang="en" href="https://andimsewon.github.io/guardians-of-farm-project.html">
+  <link rel="alternate" hreflang="ko" href="https://andimsewon.github.io/ko/guardians-of-farm-project.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Guardians of Farm Project | Sewon Kim",
+    "url": "https://andimsewon.github.io/guardians-of-farm-project.html"
+  }
+  </script>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sewon Kim">
+  <meta property="og:title" content="Guardians of Farm Project | Sewon Kim">
+  <meta property="og:description" content="Crop Quality Assessment Using Image Processing and Artificial Intelligence">
+  <meta property="og:image" content="https://andimsewon.github.io/assets/profile.jpeg">
+  <meta property="og:url" content="https://andimsewon.github.io/guardians-of-farm-project.html">
+  <meta property="og:locale" content="en_US">
+</head>
+<body>
+  <a class="skip-link" href="#project">Skip to content</a>
+  <nav class="top-nav" aria-label="Primary">
+    <div class="nav-container">
+      <div class="nav-name"><a href="index.html" style="color: #ffffff; text-decoration: none;">Sewon Kim</a></div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html" class="active" aria-current="page">Projects</a>
+        <a href="awards.html">Awards</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="activities.html">Activities</a>
+        <a href="ko/guardians-of-farm-project.html" lang="ko" hreflang="ko">한국어</a>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Project Detail Section -->
+  <section id="project" class="page-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="page-title">Crop Quality Assessment Using Image Processing and Artificial Intelligence (Guardians of Farm Project)</h2>
+      </div>
+      <div class="content-wrapper">
+        <div class="project-item">
+          <div class="project-content-wrapper">
+            <div class="project-main">
+              <div class="project-description">
+                <p>This project developed an AI-based crop quality assessment system designed to detect plant diseases and evaluate leaf health efficiently in smart farming environments.</p>
+                <p>The initial approach utilized GroundingDINO and SAM (Segment Anything Model) for unsupervised leaf segmentation and RGB-based classification of normal and diseased leaves. However, the system showed limitations under data imbalance, where average RGB values were biased, leading to false classifications.</p>
+                <p>To overcome this, the team built a large-scale labeled dataset by combining open-source images from Kaggle with real-world collected photos and performed data labeling and augmentation using RoboFlow. The detection framework was then replaced with a YOLOv8-based supervised learning model, significantly improving both accuracy and inference speed.</p>
+                <p>The final system visualizes detected leaves with colored bounding boxes and quantifies crop health into five levels—Normal, Caution, Warning, Danger, and Critical—based on the ratio of healthy to diseased leaves. The trained YOLOv8 model achieved a mean mAP@0.5 of 0.81 and AP of 0.846 for diseased leaves, validating its robustness and applicability.</p>
+                <p>This project demonstrates a successful transition from unsupervised visual grounding models (GroundingDINO + SAM) to a high-performance YOLOv8-based supervised framework, and proposes its potential integration into IoT-driven smart farming systems for real-time crop quality monitoring.</p>
+              </div>
+              <div class="project-tech">Tech Stack: Python, PyTorch, YOLOv8, GroundingDINO, SAM, RoboFlow, OpenCV, NumPy</div>
+              <div class="project-links">
+                <a href="https://github.com/andimsewon/Capstone_GuardiansofFarm" target="_blank" rel="noopener noreferrer">🔗 GitHub</a>
+                <a href="assets/2024_2_Capstone.pdf" target="_blank" rel="noopener noreferrer">📄 Poster (PDF)</a>
+              </div>
+            </div>
+            <div class="project-presentation" id="presentationThumbnail" data-pdf="assets/2024_2_Capstone_Presentation.pdf">
+              <iframe src="assets/2024_2_Capstone_Presentation.pdf#page=1&zoom=50" style="width: 100%; height: 600px; border: none; pointer-events: none;"></iframe>
+              <div class="project-presentation-label">Click to view presentation</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PDF Lightbox Modal -->
+  <div class="pdf-lightbox-backdrop" id="pdfLightbox" role="dialog" aria-modal="true" aria-label="PDF preview">
+    <div class="pdf-lightbox-content">
+      <div class="pdf-lightbox-close" id="pdfLightboxClose" aria-label="Close">×</div>
+      <iframe src="" id="pdfLightboxIframe" class="pdf-lightbox-iframe" title="PDF Preview"></iframe>
+    </div>
+  </div>
+
+  <footer class="footer">
+    © <span id="y"></span> Sewon Kim · Built on GitHub Pages
+  </footer>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    
+    // PDF Lightbox functionality
+    const pdfLightbox = document.getElementById('pdfLightbox');
+    const pdfLightboxIframe = document.getElementById('pdfLightboxIframe');
+    const pdfLightboxClose = document.getElementById('pdfLightboxClose');
+    const presentationThumbnail = document.getElementById('presentationThumbnail');
+    
+    function openPdfLightbox(pdfPath) {
+      pdfLightboxIframe.src = pdfPath;
+      pdfLightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closePdfLightbox() {
+      pdfLightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      pdfLightboxIframe.src = '';
+    }
+    
+    if (presentationThumbnail) {
+      presentationThumbnail.addEventListener('click', () => {
+        const pdfPath = presentationThumbnail.getAttribute('data-pdf');
+        openPdfLightbox(pdfPath);
+      });
+    }
+    
+    if (pdfLightboxClose) {
+      pdfLightboxClose.addEventListener('click', closePdfLightbox);
+    }
+    
+    pdfLightbox.addEventListener('click', (e) => {
+      if (e.target === pdfLightbox) {
+        closePdfLightbox();
+      }
+    });
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && pdfLightbox.classList.contains('active')) {
+        closePdfLightbox();
+      }
+    });
+    (function(){
+      const btn = document.getElementById('themeToggle');
+      if (!btn) return;
+      const setIcon = (t) => {
+        btn.textContent = t === 'dark' ? '☀️' : '🌙';
+        btn.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      };
+      let theme = document.documentElement.getAttribute('data-theme') || 'light';
+      setIcon(theme);
+      btn.addEventListener('click', () => {
+        theme = theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+        try { localStorage.setItem('theme', theme); } catch (e) {}
+        setIcon(theme);
+      });
+      if (window.matchMedia) {
+        try {
+          const mq = window.matchMedia('(prefers-color-scheme: dark)');
+          mq.addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+              theme = e.matches ? 'dark' : 'light';
+              document.documentElement.setAttribute('data-theme', theme);
+              setIcon(theme);
+            }
+          });
+        } catch (e) {}
+      }
+    })();
+  </script>
+</body>
+</html>
+

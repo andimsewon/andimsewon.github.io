@@ -348,7 +348,100 @@ a:focus-visible {
   opacity: 0.9;
 }
 
-/* Project card styles */
+/* Project card styles for listing page */
+.project-card {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 48px;
+  padding: 32px;
+  background: var(--paper);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card-visual {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg-pink);
+}
+
+.project-card-visual iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  pointer-events: none;
+}
+
+.project-card-content {
+  flex: 2;
+  min-width: 0;
+}
+
+.project-card-category {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.project-card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--section-title);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.project-card-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.project-card-date {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.project-card-read-more {
+  display: inline-block;
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.project-card:hover .project-card-read-more {
+  color: var(--accent);
+}
+
+/* Project detail page styles */
 .project-item {
   margin-bottom: 48px;
   padding-bottom: 32px;
@@ -731,6 +824,20 @@ b, strong {
   
   .project-presentation iframe {
     height: 500px;
+  }
+  
+  .project-card {
+    flex-direction: column;
+  }
+  
+  .project-card-visual {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .project-card-visual iframe {
+    height: 250px;
   }
   
   .contact-header {

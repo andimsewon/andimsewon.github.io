@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GAIA Project | Sewon Kim</title>
+  <meta name="description" content="AI-Based Urban Air Impact Analysis System for Factory and Power Plant Emissions - Sewon Kim's Academic Portfolio">
+  <meta name="author" content="Sewon Kim">
+  <meta name="theme-color" content="#9b5f6d">
+  <script>
+    (function() {
+      try {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="canonical" href="https://andimsewon.github.io/gaia-project.html">
+  <link rel="alternate" hreflang="en" href="https://andimsewon.github.io/gaia-project.html">
+  <link rel="alternate" hreflang="ko" href="https://andimsewon.github.io/ko/gaia-project.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "GAIA Project | Sewon Kim",
+    "url": "https://andimsewon.github.io/gaia-project.html"
+  }
+  </script>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sewon Kim">
+  <meta property="og:title" content="GAIA Project | Sewon Kim">
+  <meta property="og:description" content="AI-Based Urban Air Impact Analysis System for Factory and Power Plant Emissions">
+  <meta property="og:image" content="https://andimsewon.github.io/assets/profile.jpeg">
+  <meta property="og:url" content="https://andimsewon.github.io/gaia-project.html">
+  <meta property="og:locale" content="en_US">
+</head>
+<body>
+  <a class="skip-link" href="#project">Skip to content</a>
+  <nav class="top-nav" aria-label="Primary">
+    <div class="nav-container">
+      <div class="nav-name"><a href="index.html" style="color: #ffffff; text-decoration: none;">Sewon Kim</a></div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html" class="active" aria-current="page">Projects</a>
+        <a href="awards.html">Awards</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="activities.html">Activities</a>
+        <a href="ko/gaia-project.html" lang="ko" hreflang="ko">한국어</a>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Project Detail Section -->
+  <section id="project" class="page-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="page-title">AI-Based Urban Air Impact Analysis System for Factory and Power Plant Emissions (GAIA Project)</h2>
+      </div>
+      <div class="content-wrapper">
+        <div class="project-item">
+          <div class="project-content-wrapper">
+            <div class="project-main">
+              <div class="project-description">
+                <p>This project aims to analyze and predict the urban air quality impact of industrial and power plant emissions using artificial intelligence.</p>
+                <p>Based on seven years (2018–2024) of time-series data collected from the national Tele-Monitoring System (TMS), the team developed a hybrid prediction model combining the AERMOD physical diffusion model with a Transformer-based deep learning architecture.</p>
+                <p>A data pipeline automatically collects multi-source datasets from TMS, the Korea Meteorological Administration, and AirKorea APIs. It performs data cleaning, gap filling (Forward Fill, Interpolation, LSTM Imputation), and temporal feature engineering. The PyTorch-based Transformer model learns multivariate time-series relationships among wind, weather, and pollutant levels, while a Gaussian Diffusion algorithm probabilistically models diffusion uncertainty.</p>
+                <p>The prediction results are visualized in real time through a Streamlit web dashboard, enabling users to interactively explore emission scenarios, 3D plume diffusion maps, and real vs. predicted data comparisons. Visualization modules use Folium, GeoPandas, and Xarray for spatial heatmaps and time-lapse animations.</p>
+                <p>The GAIA system serves as a data-driven decision support platform for environmental policy planning, industrial strategy analysis, and disaster response simulation. Future work includes integrating IoT sensors and extending the platform to nationwide and climate-change scenarios.</p>
+              </div>
+              <div class="project-tech">Tech Stack: PyTorch, NumPy, Pandas, Scikit-learn, Folium, GeoPandas, Xarray, Streamlit</div>
+              <div class="project-links">
+                <a href="https://github.com/GAIAinCapstone" target="_blank" rel="noopener noreferrer">🔗 GitHub</a>
+                <a href="assets/2025_1_Capstone.pdf" target="_blank" rel="noopener noreferrer">📄 Poster (PDF)</a>
+                <a href="https://swuniv.jbnu.ac.kr/festival/jbnusw?gc=893BAOF&do=view&scenter=list&festival_id=gvyje9Tei6W679047c5&syear=2025&content_id=ei0T9CXQxsB68870b78" target="_blank" rel="noopener noreferrer">🎥 Presentation Video</a>
+              </div>
+            </div>
+            <div class="project-presentation" id="presentationThumbnail" data-pdf="assets/2025_1_Capstone_Presentation.pdf">
+              <iframe src="assets/2025_1_Capstone_Presentation.pdf#page=1&zoom=50" style="width: 100%; height: 600px; border: none; pointer-events: none;"></iframe>
+              <div class="project-presentation-label">Click to view presentation</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PDF Lightbox Modal -->
+  <div class="pdf-lightbox-backdrop" id="pdfLightbox" role="dialog" aria-modal="true" aria-label="PDF preview">
+    <div class="pdf-lightbox-content">
+      <div class="pdf-lightbox-close" id="pdfLightboxClose" aria-label="Close">×</div>
+      <iframe src="" id="pdfLightboxIframe" class="pdf-lightbox-iframe" title="PDF Preview"></iframe>
+    </div>
+  </div>
+
+  <footer class="footer">
+    © <span id="y"></span> Sewon Kim · Built on GitHub Pages
+  </footer>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    
+    // PDF Lightbox functionality
+    const pdfLightbox = document.getElementById('pdfLightbox');
+    const pdfLightboxIframe = document.getElementById('pdfLightboxIframe');
+    const pdfLightboxClose = document.getElementById('pdfLightboxClose');
+    const presentationThumbnail = document.getElementById('presentationThumbnail');
+    
+    function openPdfLightbox(pdfPath) {
+      pdfLightboxIframe.src = pdfPath;
+      pdfLightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closePdfLightbox() {
+      pdfLightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      pdfLightboxIframe.src = '';
+    }
+    
+    if (presentationThumbnail) {
+      presentationThumbnail.addEventListener('click', () => {
+        const pdfPath = presentationThumbnail.getAttribute('data-pdf');
+        openPdfLightbox(pdfPath);
+      });
+    }
+    
+    if (pdfLightboxClose) {
+      pdfLightboxClose.addEventListener('click', closePdfLightbox);
+    }
+    
+    pdfLightbox.addEventListener('click', (e) => {
+      if (e.target === pdfLightbox) {
+        closePdfLightbox();
+      }
+    });
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && pdfLightbox.classList.contains('active')) {
+        closePdfLightbox();
+      }
+    });
+    (function(){
+      const btn = document.getElementById('themeToggle');
+      if (!btn) return;
+      const setIcon = (t) => {
+        btn.textContent = t === 'dark' ? '☀️' : '🌙';
+        btn.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      };
+      let theme = document.documentElement.getAttribute('data-theme') || 'light';
+      setIcon(theme);
+      btn.addEventListener('click', () => {
+        theme = theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+        try { localStorage.setItem('theme', theme); } catch (e) {}
+        setIcon(theme);
+      });
+      if (window.matchMedia) {
+        try {
+          const mq = window.matchMedia('(prefers-color-scheme: dark)');
+          mq.addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+              theme = e.matches ? 'dark' : 'light';
+              document.documentElement.setAttribute('data-theme', theme);
+              setIcon(theme);
+            }
+          });
+        } catch (e) {}
+      }
+    })();
+  </script>
+</body>
+</html>
+

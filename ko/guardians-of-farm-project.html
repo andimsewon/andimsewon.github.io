@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guardians of Farm 프로젝트 | 김세원</title>
+  <meta name="description" content="작물 품질 상태 판별: 이미지 프로세싱 및 인공지능 기술 - 김세원 포트폴리오">
+  <meta name="author" content="Sewon Kim">
+  <meta name="theme-color" content="#9b5f6d">
+  <script>
+    (function() {
+      try {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="canonical" href="https://andimsewon.github.io/ko/guardians-of-farm-project.html">
+  <link rel="alternate" hreflang="ko" href="https://andimsewon.github.io/ko/guardians-of-farm-project.html">
+  <link rel="alternate" hreflang="en" href="https://andimsewon.github.io/guardians-of-farm-project.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../styles.css">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"Guardians of Farm 프로젝트 | 김세원","url":"https://andimsewon.github.io/ko/guardians-of-farm-project.html"}
+  </script>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sewon Kim">
+  <meta property="og:title" content="Guardians of Farm 프로젝트 | 김세원">
+  <meta property="og:description" content="작물 품질 상태 판별: 이미지 프로세싱 및 인공지능 기술">
+  <meta property="og:image" content="https://andimsewon.github.io/assets/profile.jpeg">
+  <meta property="og:url" content="https://andimsewon.github.io/ko/guardians-of-farm-project.html">
+  <meta property="og:locale" content="ko_KR">
+</head>
+<body>
+  <a class="skip-link" href="#project">본문으로 건너뛰기</a>
+  <nav class="top-nav" aria-label="Primary">
+    <div class="nav-container">
+      <div class="nav-name"><a href="index.html" style="color: #ffffff; text-decoration: none;">김세원</a></div>
+      <div class="nav-links">
+        <a href="index.html">홈</a>
+        <a href="research.html">연구</a>
+        <a href="projects.html" class="active" aria-current="page">프로젝트</a>
+        <a href="awards.html">수상</a>
+        <a href="gallery.html">갤러리</a>
+        <a href="activities.html">교내 활동</a>
+        <a href="../guardians-of-farm-project.html" lang="en" hreflang="en">EN</a>
+        <button id="themeToggle" class="theme-toggle" aria-label="다크 모드 전환" title="다크 모드 전환">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Project Detail Section -->
+  <section id="project" class="page-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="page-title">작물 품질 상태 판별: 이미지 프로세싱 및 인공지능 기술 (Guardians of Farm Project)</h2>
+      </div>
+      <div class="content-wrapper">
+        <div class="project-item">
+          <div class="project-content-wrapper">
+            <div class="project-main">
+              <div class="project-description">
+                <p>이 프로젝트는 스마트팜 환경에서 작물의 생육 상태와 질병 여부를 효율적으로 판별하기 위해 개발한 인공지능 기반 품질 분석 시스템이다.</p>
+                <p>초기에는 GroundingDINO와 SAM(Segment Anything) 모델을 결합해 비지도 방식으로 잎 영역을 탐지하고 RGB 평균값을 기반으로 정상·비정상 잎을 구분하였다. 그러나 데이터 불균형 상황에서 평균값 왜곡으로 오탐률이 높아지는 문제가 발생하였다.</p>
+                <p>이 문제를 해결하기 위해, Kaggle 오픈소스 데이터와 실생활 촬영 데이터를 포함한 대규모 라벨링 데이터셋을 구축하고, RoboFlow를 활용해 라벨링 및 증강(Augmentation)을 진행하였다. 이후 YOLOv8 모델을 이용해 객체 탐지 기반의 지도 학습 모델로 전환하여 학습 효율과 정확도를 크게 향상시켰다.</p>
+                <p>최종 시스템은 이미지 입력 시 정상·비정상 잎을 색상별 바운딩박스로 시각화하고, 각 잎의 비율을 계산하여 건강 상태를 Normal, Caution, Warning, Danger, Critical 5단계로 분류한다. 이 과정에서 YOLOv8 모델은 평균 mAP@0.5 0.81, Diseased 클래스 AP 0.846을 기록하며 안정적인 성능을 보였다.</p>
+                <p>본 연구는 GroundingDINO–SAM 비지도 탐지에서 YOLOv8 지도 모델로의 전환 과정을 통해 AI 식물 품질 판별의 실용성을 입증했으며, 나아가 IoT 스마트팜 시스템과 연동 가능한 경량 품질 진단 모듈로 확장 가능함을 제시하였다.</p>
+              </div>
+              <div class="project-tech">기술 스택: Python, PyTorch, YOLOv8, GroundingDINO, SAM, RoboFlow, OpenCV, NumPy</div>
+              <div class="project-links">
+                <a href="https://github.com/andimsewon/Capstone_GuardiansofFarm" target="_blank" rel="noopener noreferrer">🔗 GitHub</a>
+                <a href="../assets/2024_2_Capstone.pdf" target="_blank" rel="noopener noreferrer">📄 포스터 (PDF)</a>
+              </div>
+            </div>
+            <div class="project-presentation" id="presentationThumbnail" data-pdf="../assets/2024_2_Capstone_Presentation.pdf">
+              <iframe src="../assets/2024_2_Capstone_Presentation.pdf#page=1&zoom=50" style="width: 100%; height: 600px; border: none; pointer-events: none;"></iframe>
+              <div class="project-presentation-label">클릭하여 발표 자료 보기</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PDF Lightbox Modal -->
+  <div class="pdf-lightbox-backdrop" id="pdfLightbox" role="dialog" aria-modal="true" aria-label="PDF 미리보기">
+    <div class="pdf-lightbox-content">
+      <div class="pdf-lightbox-close" id="pdfLightboxClose" aria-label="닫기">×</div>
+      <iframe src="" id="pdfLightboxIframe" class="pdf-lightbox-iframe" title="PDF 미리보기"></iframe>
+    </div>
+  </div>
+
+  <footer class="footer">© <span id="y"></span> Sewon Kim · Built on GitHub Pages</footer>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    
+    // PDF Lightbox functionality
+    const pdfLightbox = document.getElementById('pdfLightbox');
+    const pdfLightboxIframe = document.getElementById('pdfLightboxIframe');
+    const pdfLightboxClose = document.getElementById('pdfLightboxClose');
+    const presentationThumbnail = document.getElementById('presentationThumbnail');
+    
+    function openPdfLightbox(pdfPath) {
+      pdfLightboxIframe.src = pdfPath;
+      pdfLightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closePdfLightbox() {
+      pdfLightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      pdfLightboxIframe.src = '';
+    }
+    
+    if (presentationThumbnail) {
+      presentationThumbnail.addEventListener('click', () => {
+        const pdfPath = presentationThumbnail.getAttribute('data-pdf');
+        openPdfLightbox(pdfPath);
+      });
+    }
+    
+    if (pdfLightboxClose) {
+      pdfLightboxClose.addEventListener('click', closePdfLightbox);
+    }
+    
+    pdfLightbox.addEventListener('click', (e) => {
+      if (e.target === pdfLightbox) {
+        closePdfLightbox();
+      }
+    });
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && pdfLightbox.classList.contains('active')) {
+        closePdfLightbox();
+      }
+    });
+    (function(){
+      const btn = document.getElementById('themeToggle');
+      if (!btn) return;
+      const setIcon = (t) => {
+        btn.textContent = t === 'dark' ? '☀️' : '🌙';
+        btn.setAttribute('aria-label', t === 'dark' ? '라이트 모드 전환' : '다크 모드 전환');
+      };
+      let theme = document.documentElement.getAttribute('data-theme') || 'light';
+      setIcon(theme);
+      btn.addEventListener('click', () => {
+        theme = theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+        try { localStorage.setItem('theme', theme); } catch (e) {}
+        setIcon(theme);
+      });
+      if (window.matchMedia) {
+        try {
+          const mq = window.matchMedia('(prefers-color-scheme: dark)');
+          mq.addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+              theme = e.matches ? 'dark' : 'light';
+              document.documentElement.setAttribute('data-theme', theme);
+              setIcon(theme);
+            }
+          });
+        } catch (e) {}
+      }
+    })();
+  </script>
+</body>
+</html>
+
