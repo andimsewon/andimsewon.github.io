@@ -71,8 +71,11 @@
       <div class="content-wrapper">
         <div class="project-item">
           <!-- Paper at the top -->
-          <div class="project-presentation-full" id="paperThumbnail" data-pdf="../assets/polvo-de-purdue-project/paper.pdf">
-            <iframe data-src="../assets/polvo-de-purdue-project/paper.pdf#page=1&zoom=fit" style="width: 100%; height: 700px; border: none; pointer-events: none;" loading="lazy"></iframe>
+          <div class="project-presentation-full" id="paperThumbnail" data-pdf="../assets/polvo-de-purdue-project/paper.optimized.pdf">
+            <picture>
+              <source type="image/webp" srcset="../assets/polvo-de-purdue-project/main.webp" />
+              <img src="../assets/polvo-de-purdue-project/main.jpeg" alt="WaggleNet 논문 미리보기" loading="lazy" decoding="async" style="width: 100%; height: 700px; object-fit: cover; display: block; pointer-events: none;" />
+            </picture>
             <div class="project-presentation-label">클릭하여 논문 보기</div>
           </div>
           
@@ -87,7 +90,7 @@
             <div class="project-tech">기술 스택: 하드웨어: ESP32-S3 (Heltec Wi-Fi LoRa 32 V3), DHT22, LDR, GPS (NEO-6M) | 소프트웨어: C++, Python, MQTT, SQLite, Flutter, Firebase | 통신 프로토콜: LoRa (433/868/915MHz), MQTT Publish/Subscribe</div>
             <div class="project-links">
               <a href="../assets/polvo-de-purdue-project/video.mp4" target="_blank" rel="noopener noreferrer">🎥 프로젝트 영상</a>
-              <a href="../assets/polvo-de-purdue-project/presentation.pdf" target="_blank" rel="noopener noreferrer">📄 발표 자료 (PDF)</a>
+              <a href="../assets/polvo-de-purdue-project/presentation.optimized.pdf" target="_blank" rel="noopener noreferrer">📄 발표 자료 (PDF)</a>
             </div>
           </div>
           
@@ -103,8 +106,11 @@
             
             <div class="project-presentation-wrapper">
               <h3 class="section-title">발표 자료</h3>
-              <div class="project-presentation" id="presentationThumbnail" data-pdf="../assets/polvo-de-purdue-project/presentation.pdf">
-                <iframe data-src="../assets/polvo-de-purdue-project/presentation.pdf#page=1&zoom=fit" style="width: 100%; height: 600px; border: none; pointer-events: none;" loading="lazy"></iframe>
+              <div class="project-presentation" id="presentationThumbnail" data-pdf="../assets/polvo-de-purdue-project/presentation.optimized.pdf">
+                <picture>
+                  <source type="image/webp" srcset="../assets/polvo-de-purdue-project/main.webp" />
+                  <img src="../assets/polvo-de-purdue-project/main.jpeg" alt="WaggleNet 발표자료 미리보기" loading="lazy" decoding="async" style="width: 100%; height: 600px; object-fit: cover; display: block; pointer-events: none;" />
+                </picture>
                 <div class="project-presentation-label">클릭하여 발표 자료 보기</div>
               </div>
             </div>
@@ -175,39 +181,7 @@
       }
     });
     
-    // Lazy load PDFs when they enter viewport
-    if ('IntersectionObserver' in window) {
-      const pdfObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const iframe = entry.target.querySelector('iframe[data-src]');
-            if (iframe && iframe.dataset.src) {
-              iframe.src = iframe.dataset.src;
-              iframe.removeAttribute('data-src');
-              pdfObserver.unobserve(entry.target);
-            }
-          }
-        });
-      }, { rootMargin: '50px' });
-      
-      const paperContainer = document.getElementById('paperThumbnail');
-      const presentationContainer = document.getElementById('presentationThumbnail');
-      if (paperContainer) pdfObserver.observe(paperContainer);
-      if (presentationContainer) pdfObserver.observe(presentationContainer);
-    } else {
-      // Fallback for browsers without IntersectionObserver
-      const paperContainer = document.getElementById('paperThumbnail');
-      const presentationContainer = document.getElementById('presentationThumbnail');
-      [paperContainer, presentationContainer].forEach(container => {
-        if (container) {
-          const iframe = container.querySelector('iframe[data-src]');
-          if (iframe && iframe.dataset.src) {
-            iframe.src = iframe.dataset.src;
-            iframe.removeAttribute('data-src');
-          }
-        }
-      });
-    }
+    // PDFs load only on click via lightbox (no iframe in page)
     (function(){
       const btn = document.getElementById('themeToggle');
       if (!btn) return;

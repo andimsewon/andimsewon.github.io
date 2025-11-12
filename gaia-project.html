@@ -75,8 +75,11 @@
       </div>
       <div class="content-wrapper">
         <div class="project-item">
-          <div class="project-presentation-full" id="presentationThumbnail" data-pdf="assets/gaia-project/presentation.pdf">
-            <iframe data-src="assets/gaia-project/presentation.pdf#page=1&zoom=fit" style="width: 100%; height: 700px; border: none; pointer-events: none;" loading="lazy"></iframe>
+          <div class="project-presentation-full" id="presentationThumbnail" data-pdf="assets/gaia-project/presentation.optimized.pdf">
+            <picture>
+              <source type="image/webp" srcset="assets/gaia-project/main.webp" />
+              <img src="assets/gaia-project/main.png" alt="GAIA presentation preview" loading="lazy" decoding="async" style="width: 100%; height: 700px; object-fit: cover; display: block; pointer-events: none;" />
+            </picture>
             <div class="project-presentation-label">Click to view presentation</div>
           </div>
           
@@ -168,36 +171,7 @@
       }
     });
     
-    // Lazy load PDF when it enters viewport
-    if ('IntersectionObserver' in window) {
-      const pdfObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const iframe = entry.target.querySelector('iframe[data-src]');
-            if (iframe && iframe.dataset.src) {
-              iframe.src = iframe.dataset.src;
-              iframe.removeAttribute('data-src');
-              pdfObserver.unobserve(entry.target);
-            }
-          }
-        });
-      }, { rootMargin: '50px' });
-      
-      const pdfContainer = document.getElementById('presentationThumbnail');
-      if (pdfContainer) {
-        pdfObserver.observe(pdfContainer);
-      }
-    } else {
-      // Fallback for browsers without IntersectionObserver
-      const pdfContainer = document.getElementById('presentationThumbnail');
-      if (pdfContainer) {
-        const iframe = pdfContainer.querySelector('iframe[data-src]');
-        if (iframe && iframe.dataset.src) {
-          iframe.src = iframe.dataset.src;
-          iframe.removeAttribute('data-src');
-        }
-      }
-    }
+    // PDFs load only on click via lightbox (no iframe in page)
   </script>
 </body>
 </html>
