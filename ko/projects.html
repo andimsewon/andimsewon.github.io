@@ -7,6 +7,7 @@
   <meta name="description" content="선정 프로젝트 - 김세원 포트폴리오">
   <meta name="author" content="Sewon Kim">
   <meta name="theme-color" content="#9b5f6d">
+  <meta name="color-scheme" content="light dark">
   <script>
     (function() {
       try {
@@ -25,7 +26,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/profile.jpeg">
+  <link rel="mask-icon" href="/assets/favicon.svg" color="#9b5f6d">
   <link rel="stylesheet" href="../styles.css">
+  <script src="../js/site.js" defer></script>
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebPage","name":"프로젝트 | 김세원","url":"https://andimsewon.github.io/ko/projects.html"}
@@ -42,7 +46,7 @@
   <a class="skip-link" href="#projects">본문으로 건너뛰기</a>
   <nav class="top-nav" aria-label="Primary">
     <div class="nav-container">
-      <div class="nav-name"><a href="index.html" style="color: #ffffff; text-decoration: none;">김세원</a></div>
+      <div class="nav-name"><a href="index.html">김세원</a></div>
       <div class="nav-links">
         <a href="index.html">홈</a>
         <a href="research.html">연구</a>
@@ -56,15 +60,15 @@
     </div>
   </nav>
 
-  <section id="projects" class="page-section">
+  <main id="projects" class="page-section">
     <div class="container">
       <div class="section-header">
-        <h2 class="page-title">선정 프로젝트</h2>
+        <h1 class="page-title">선정 프로젝트</h1>
       </div>
       <div class="content-wrapper">
         <a href="gaia-project.html" class="project-card">
           <div class="project-card-visual">
-            <img src="../assets/gaia-project/main.png" alt="GAIA 프로젝트" class="project-card-image">
+            <img src="../assets/gaia-project/main.png" alt="GAIA 프로젝트" class="project-card-image" loading="lazy">
           </div>
           <div class="project-card-content">
             <span class="project-card-category">AI & 데이터 분석</span>
@@ -77,7 +81,7 @@
         
         <a href="guardians-of-farm-project.html" class="project-card">
           <div class="project-card-visual">
-            <img src="../assets/guardians-of-farm-project/main.png" alt="Guardians of Farm 프로젝트" class="project-card-image">
+            <img src="../assets/guardians-of-farm-project/main.png" alt="Guardians of Farm 프로젝트" class="project-card-image" loading="lazy">
           </div>
           <div class="project-card-content">
             <span class="project-card-category">AI & 컴퓨터 비전</span>
@@ -89,39 +93,8 @@
         </a>
       </div>
     </div>
-  </section>
+  </main>
 
   <footer class="footer">© <span id="y"></span> Sewon Kim · Built on GitHub Pages</footer>
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    (function(){
-      const btn = document.getElementById('themeToggle');
-      if (!btn) return;
-      const setIcon = (t) => {
-        btn.textContent = t === 'dark' ? '☀️' : '🌙';
-        btn.setAttribute('aria-label', t === 'dark' ? '라이트 모드 전환' : '다크 모드 전환');
-      };
-      let theme = document.documentElement.getAttribute('data-theme') || 'light';
-      setIcon(theme);
-      btn.addEventListener('click', () => {
-        theme = theme === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', theme);
-        try { localStorage.setItem('theme', theme); } catch (e) {}
-        setIcon(theme);
-      });
-      if (window.matchMedia) {
-        try {
-          const mq = window.matchMedia('(prefers-color-scheme: dark)');
-          mq.addEventListener('change', (e) => {
-            if (!localStorage.getItem('theme')) {
-              theme = e.matches ? 'dark' : 'light';
-              document.documentElement.setAttribute('data-theme', theme);
-              setIcon(theme);
-            }
-          });
-        } catch (e) {}
-      }
-    })();
-  </script>
 </body>
 </html>

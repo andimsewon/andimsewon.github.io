@@ -110,6 +110,8 @@ a:active {
   font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Segoe UI', 'Helvetica Neue', Arial, system-ui, sans-serif;
 }
 
+.nav-name a { color: inherit; text-decoration: none; }
+
 .nav-links {
   display: flex;
   gap: 24px;

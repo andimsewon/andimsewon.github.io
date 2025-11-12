@@ -7,6 +7,7 @@
   <meta name="description" content="Honors & Awards - Sewon Kim's Academic Portfolio">
   <meta name="author" content="Sewon Kim">
   <meta name="theme-color" content="#9b5f6d">
+  <meta name="color-scheme" content="light dark">
   <script>
     (function() {
       try {
@@ -25,7 +26,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/profile.jpeg">
+  <link rel="mask-icon" href="/assets/favicon.svg" color="#9b5f6d">
   <link rel="stylesheet" href="styles.css">
+  <script src="js/site.js" defer></script>
 
   <script type="application/ld+json">
   {
@@ -47,7 +51,7 @@
   <a class="skip-link" href="#awards">Skip to content</a>
   <nav class="top-nav" aria-label="Primary">
     <div class="nav-container">
-      <div class="nav-name"><a href="index.html" style="color: #ffffff; text-decoration: none;">Sewon Kim</a></div>
+      <div class="nav-name"><a href="index.html">Sewon Kim</a></div>
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="research.html">Research</a>
@@ -62,10 +66,10 @@
   </nav>
 
   <!-- Awards Section -->
-  <section id="awards" class="page-section">
+  <main id="awards" class="page-section">
     <div class="container">
       <div class="section-header">
-        <h2 class="page-title">HONORS & AWARDS</h2>
+        <h1 class="page-title">HONORS & AWARDS</h1>
       </div>
       <div class="content-wrapper">
         <div class="section-title">HONORS & AWARDS</div>
@@ -92,41 +96,10 @@
         </ul>
       </div>
     </div>
-  </section>
+  </main>
 
   <footer class="footer">
     © <span id="y"></span> Sewon Kim · Built on GitHub Pages
   </footer>
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    (function(){
-      const btn = document.getElementById('themeToggle');
-      if (!btn) return;
-      const setIcon = (t) => {
-        btn.textContent = t === 'dark' ? '☀️' : '🌙';
-        btn.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-      };
-      let theme = document.documentElement.getAttribute('data-theme') || 'light';
-      setIcon(theme);
-      btn.addEventListener('click', () => {
-        theme = theme === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', theme);
-        try { localStorage.setItem('theme', theme); } catch (e) {}
-        setIcon(theme);
-      });
-      if (window.matchMedia) {
-        try {
-          const mq = window.matchMedia('(prefers-color-scheme: dark)');
-          mq.addEventListener('change', (e) => {
-            if (!localStorage.getItem('theme')) {
-              theme = e.matches ? 'dark' : 'light';
-              document.documentElement.setAttribute('data-theme', theme);
-              setIcon(theme);
-            }
-          });
-        } catch (e) {}
-      }
-    })();
-  </script>
 </body>
 </html>

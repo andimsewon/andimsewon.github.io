@@ -7,6 +7,7 @@
   <meta name="description" content="Sewon Kim's Academic Portfolio · Research · Projects · Awards">
   <meta name="author" content="Sewon Kim">
   <meta name="theme-color" content="#9b5f6d">
+  <meta name="color-scheme" content="light dark">
 
   <script>
     (function() {
@@ -56,7 +57,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/profile.jpeg">
+  <link rel="mask-icon" href="/assets/favicon.svg" color="#9b5f6d">
   <link rel="stylesheet" href="styles.css">
+  <script src="js/site.js" defer></script>
   <link rel="dns-prefetch" href="https://github.com">
   <link rel="dns-prefetch" href="https://www.linkedin.com">
 </head>
@@ -64,7 +68,7 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <nav class="top-nav" aria-label="Primary">
     <div class="nav-container">
-      <div class="nav-name"><a href="index.html" style="color: #ffffff; text-decoration: none;">Sewon Kim</a></div>
+      <div class="nav-name"><a href="index.html">Sewon Kim</a></div>
       <div class="nav-links">
         <a href="index.html" class="active" aria-current="page">Home</a>
         <a href="research.html">Research</a>
@@ -79,16 +83,15 @@
   </nav>
 
   <!-- Main Page Section -->
-  <section id="main" class="page-section">
+  <main id="main" class="page-section">
     <div class="container">
       <div class="main-layout">
         <div class="content-column">
-          <div class="name">Sewon Kim</div>
+          <h1 class="name">Sewon Kim</h1>
 
           <p style="margin: 0 0 16px 0; color: var(--text-secondary);">
-            Hello! I'm a CS undergraduate at JBNU focusing on NLP, LLMs, and Embodied AI systems. 
+            Hello! I'm a CS undergraduate at JBNU focusing on NLP, LLMs, and Embodied AI systems.
             You can find a brief overview here and explore my work through the links below.
-            Page Ranking Me! :)
           </p>
 
           <div class="contact-icons" style="margin-top: 16px;">
@@ -127,7 +130,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </main>
 
   <!-- Overview Section -->
   <section class="page-section">
@@ -173,36 +176,5 @@
   <footer class="footer">
     © <span id="y"></span> Sewon Kim · Built on GitHub Pages
   </footer>
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    (function(){
-      const btn = document.getElementById('themeToggle');
-      if (!btn) return;
-      const setIcon = (t) => {
-        btn.textContent = t === 'dark' ? '☀️' : '🌙';
-        btn.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-      };
-      let theme = document.documentElement.getAttribute('data-theme') || 'light';
-      setIcon(theme);
-      btn.addEventListener('click', () => {
-        theme = theme === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', theme);
-        try { localStorage.setItem('theme', theme); } catch (e) {}
-        setIcon(theme);
-      });
-      if (window.matchMedia) {
-        try {
-          const mq = window.matchMedia('(prefers-color-scheme: dark)');
-          mq.addEventListener('change', (e) => {
-            if (!localStorage.getItem('theme')) {
-              theme = e.matches ? 'dark' : 'light';
-              document.documentElement.setAttribute('data-theme', theme);
-              setIcon(theme);
-            }
-          });
-        } catch (e) {}
-      }
-    })();
-  </script>
 </body>
 </html>
