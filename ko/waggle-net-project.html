@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WaggleNet 프로젝트 | 김세원</title>
+  <meta name="description" content="WaggleNet – LoRa 및 MQTT 기반 내부·외부 벌통 환경 모니터링 시스템 - 김세원 포트폴리오">
+  <meta name="author" content="Sewon Kim">
+  <meta name="theme-color" content="#9b5f6d">
+  <script>
+    (function() {
+      try {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="canonical" href="https://andimsewon.github.io/ko/waggle-net-project.html">
+  <link rel="alternate" hreflang="ko" href="https://andimsewon.github.io/ko/waggle-net-project.html">
+  <link rel="alternate" hreflang="en" href="https://andimsewon.github.io/waggle-net-project.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="dns-prefetch" href="https://github.com">
+  <link rel="dns-prefetch" href="https://www.linkedin.com">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"WaggleNet 프로젝트 | 김세원","url":"https://andimsewon.github.io/ko/waggle-net-project.html"}
+  </script>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sewon Kim">
+  <meta property="og:title" content="WaggleNet 프로젝트 | 김세원">
+  <meta property="og:description" content="WaggleNet – LoRa 및 MQTT 기반 내부·외부 벌통 환경 모니터링 시스템">
+  <meta property="og:image" content="https://andimsewon.github.io/assets/profile.jpeg">
+  <meta property="og:url" content="https://andimsewon.github.io/ko/waggle-net-project.html">
+  <meta property="og:locale" content="ko_KR">
+</head>
+<body>
+  <a class="skip-link" href="#project">본문으로 건너뛰기</a>
+  <nav class="top-nav" aria-label="Primary">
+    <div class="nav-container">
+      <div class="nav-name"><a href="index.html" style="color: #ffffff; text-decoration: none;">김세원</a></div>
+      <div class="nav-links">
+        <a href="index.html">홈</a>
+        <a href="research.html">연구</a>
+        <a href="projects.html" class="active" aria-current="page">프로젝트</a>
+        <a href="awards.html">수상</a>
+        <a href="gallery.html">갤러리</a>
+        <a href="activities.html">교내 활동</a>
+        <a href="../waggle-net-project.html" lang="en" hreflang="en">EN</a>
+        <button id="themeToggle" class="theme-toggle" aria-label="다크 모드 전환" title="다크 모드 전환">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Project Detail Section -->
+  <section id="project" class="page-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="page-title">WaggleNet – LoRa 및 MQTT 기반 내부·외부 벌통 환경 모니터링 시스템</h2>
+      </div>
+      <div class="content-wrapper">
+        <div class="project-item">
+          <!-- Paper at the top -->
+          <div class="project-presentation-full" id="paperThumbnail" data-pdf="../assets/polvo-de-purdue-project/paper.pdf">
+            <iframe src="../assets/polvo-de-purdue-project/paper.pdf#page=1&zoom=fit" style="width: 100%; height: 700px; border: none; pointer-events: none;"></iframe>
+            <div class="project-presentation-label">클릭하여 논문 보기</div>
+          </div>
+          
+          <div class="project-main-full">
+            <div class="project-description">
+              <p>이 프로젝트는 양봉 환경에서 내부와 외부 조건을 동시에 모니터링하는 저비용·확장형 IoT 시스템을 구축하기 위해 진행되었다. Purdue University에서 2025년 여름, 국제 연구 장학생으로 참여하여 스마트 양봉(Smart Beekeeping) 분야의 IoT 기반 환경 감시 시스템을 설계하고 구현하였다.</p>
+              <p>기존의 스마트 벌통 시스템은 내부 온도와 습도만 감지하거나, 고가의 GSM/LTE 통신 장비에 의존해 확장성과 실시간성이 떨어지는 한계가 있었다. 이를 개선하기 위해, Wi-Fi LoRa 32 (V3) 모듈을 사용하여 내부·외부 양방향 환경 데이터를 수집하는 워커 노드(Worker Node)와 MQTT를 통해 클라우드 서버로 데이터를 전송하는 마스터 노드(Master Node)를 설계하였다. 각 노드는 온도·습도(DHT22), 조도(LDR), GPS 모듈을 통합하여 3분 간격으로 데이터를 수집하고, JSON 포맷으로 변환 후 LoRa 통신을 통해 송신한다.</p>
+              <p>수집된 데이터는 MQTT 서버와 SQLite 기반 클라우드 서버에 저장되어, Flutter로 개발된 모바일 앱을 통해 시각화된다. 사용자는 앱에서 실시간으로 벌통의 온도, 습도, 조도, GPS 위치를 확인할 수 있으며, 이상치 발생 시 Firebase Cloud Messaging 기반 긴급 알림 시스템이 자동으로 경고를 보낸다.</p>
+              <p>본 시스템은 Purdue University의 실험 농장과 건물 외부에서 실험되었으며, LoRa 통신은 개방 환경에서 최대 110m, 장애물 환경에서 95m까지 안정적으로 작동하였다. 내부 벌통에 설치된 센서 또한 정확히 데이터를 전송해, 목재 구조 내부에서도 LoRa의 신뢰성을 검증하였다.</p>
+              <p>결과적으로 WaggleNet은 저비용(모듈당 $10~15), 소형 설계, 모듈형 확장성, 모바일 접근성을 모두 만족하는 시스템으로, 스마트 양봉 및 스마트 농업 환경에서의 실시간 환경 감시에 활용 가능함을 입증하였다. 향후 계획으로는 AI 기반 이상 감지(Anomaly Detection), 하드웨어 소형화, 자율적 데이터 라우팅 기능을 통합하여 완전한 지능형 양봉 관리 플랫폼으로 발전시킬 예정이다.</p>
+            </div>
+            <div class="project-tech">기술 스택: 하드웨어: ESP32-S3 (Heltec Wi-Fi LoRa 32 V3), DHT22, LDR, GPS (NEO-6M) | 소프트웨어: C++, Python, MQTT, SQLite, Flutter, Firebase | 통신 프로토콜: LoRa (433/868/915MHz), MQTT Publish/Subscribe</div>
+            <div class="project-links">
+              <a href="../assets/polvo-de-purdue-project/video.mp4" target="_blank" rel="noopener noreferrer">🎥 프로젝트 영상</a>
+              <a href="../assets/polvo-de-purdue-project/presentation.pdf" target="_blank" rel="noopener noreferrer">📄 발표 자료 (PDF)</a>
+            </div>
+          </div>
+          
+          <!-- Video and Presentation at the bottom -->
+          <div class="project-media-section">
+            <div class="project-video-wrapper">
+              <h3 class="section-title">프로젝트 영상</h3>
+              <video controls>
+                <source src="../assets/polvo-de-purdue-project/video.mp4" type="video/mp4">
+                브라우저가 비디오 태그를 지원하지 않습니다.
+              </video>
+            </div>
+            
+            <div class="project-presentation-wrapper">
+              <h3 class="section-title">발표 자료</h3>
+              <div class="project-presentation" id="presentationThumbnail" data-pdf="../assets/polvo-de-purdue-project/presentation.pdf">
+                <iframe src="../assets/polvo-de-purdue-project/presentation.pdf#page=1&zoom=fit" style="width: 100%; height: 600px; border: none; pointer-events: none;"></iframe>
+                <div class="project-presentation-label">클릭하여 발표 자료 보기</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PDF Lightbox Modal -->
+  <div class="pdf-lightbox-backdrop" id="pdfLightbox" role="dialog" aria-modal="true" aria-label="PDF 미리보기">
+    <div class="pdf-lightbox-content">
+      <div class="pdf-lightbox-close" id="pdfLightboxClose" aria-label="닫기">×</div>
+      <iframe src="" id="pdfLightboxIframe" class="pdf-lightbox-iframe" title="PDF 미리보기"></iframe>
+    </div>
+  </div>
+
+  <footer class="footer">© <span id="y"></span> Sewon Kim · Built on GitHub Pages</footer>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    
+    // PDF Lightbox functionality
+    const pdfLightbox = document.getElementById('pdfLightbox');
+    const pdfLightboxIframe = document.getElementById('pdfLightboxIframe');
+    const pdfLightboxClose = document.getElementById('pdfLightboxClose');
+    const paperThumbnail = document.getElementById('paperThumbnail');
+    const presentationThumbnail = document.getElementById('presentationThumbnail');
+    
+    function openPdfLightbox(pdfPath) {
+      pdfLightboxIframe.src = pdfPath;
+      pdfLightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closePdfLightbox() {
+      pdfLightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      pdfLightboxIframe.src = '';
+    }
+    
+    if (paperThumbnail) {
+      paperThumbnail.addEventListener('click', () => {
+        const pdfPath = paperThumbnail.getAttribute('data-pdf');
+        openPdfLightbox(pdfPath);
+      });
+    }
+    
+    if (presentationThumbnail) {
+      presentationThumbnail.addEventListener('click', () => {
+        const pdfPath = presentationThumbnail.getAttribute('data-pdf');
+        openPdfLightbox(pdfPath);
+      });
+    }
+    
+    if (pdfLightboxClose) {
+      pdfLightboxClose.addEventListener('click', closePdfLightbox);
+    }
+    
+    pdfLightbox.addEventListener('click', (e) => {
+      if (e.target === pdfLightbox) {
+        closePdfLightbox();
+      }
+    });
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && pdfLightbox.classList.contains('active')) {
+        closePdfLightbox();
+      }
+    });
+    (function(){
+      const btn = document.getElementById('themeToggle');
+      if (!btn) return;
+      const setIcon = (t) => {
+        btn.textContent = t === 'dark' ? '☀️' : '🌙';
+        btn.setAttribute('aria-label', t === 'dark' ? '라이트 모드 전환' : '다크 모드 전환');
+      };
+      let theme = document.documentElement.getAttribute('data-theme') || 'light';
+      setIcon(theme);
+      btn.addEventListener('click', () => {
+        theme = theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+        try { localStorage.setItem('theme', theme); } catch (e) {}
+        setIcon(theme);
+      });
+      if (window.matchMedia) {
+        try {
+          const mq = window.matchMedia('(prefers-color-scheme: dark)');
+          mq.addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+              theme = e.matches ? 'dark' : 'light';
+              document.documentElement.setAttribute('data-theme', theme);
+              setIcon(theme);
+            }
+          });
+        } catch (e) {}
+      }
+    })();
+  </script>
+</body>
+</html>
+

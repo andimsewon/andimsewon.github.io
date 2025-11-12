@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WaggleNet Project | Sewon Kim</title>
+  <meta name="description" content="WaggleNet – A LoRa and MQTT-Based Monitoring System for Internal and External Beehive Conditions - Sewon Kim's Academic Portfolio">
+  <meta name="author" content="Sewon Kim">
+  <meta name="theme-color" content="#9b5f6d">
+  <script>
+    (function() {
+      try {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="canonical" href="https://andimsewon.github.io/waggle-net-project.html">
+  <link rel="alternate" hreflang="en" href="https://andimsewon.github.io/waggle-net-project.html">
+  <link rel="alternate" hreflang="ko" href="https://andimsewon.github.io/ko/waggle-net-project.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="dns-prefetch" href="https://github.com">
+  <link rel="dns-prefetch" href="https://www.linkedin.com">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "WaggleNet Project | Sewon Kim",
+    "url": "https://andimsewon.github.io/waggle-net-project.html"
+  }
+  </script>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sewon Kim">
+  <meta property="og:title" content="WaggleNet Project | Sewon Kim">
+  <meta property="og:description" content="WaggleNet – A LoRa and MQTT-Based Monitoring System for Internal and External Beehive Conditions">
+  <meta property="og:image" content="https://andimsewon.github.io/assets/profile.jpeg">
+  <meta property="og:url" content="https://andimsewon.github.io/waggle-net-project.html">
+  <meta property="og:locale" content="en_US">
+</head>
+<body>
+  <a class="skip-link" href="#project">Skip to content</a>
+  <nav class="top-nav" aria-label="Primary">
+    <div class="nav-container">
+      <div class="nav-name"><a href="index.html" style="color: #ffffff; text-decoration: none;">Sewon Kim</a></div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html" class="active" aria-current="page">Projects</a>
+        <a href="awards.html">Awards</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="activities.html">Activities</a>
+        <a href="ko/waggle-net-project.html" lang="ko" hreflang="ko">한국어</a>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Project Detail Section -->
+  <section id="project" class="page-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="page-title">WaggleNet – A LoRa and MQTT-Based Monitoring System for Internal and External Beehive Conditions</h2>
+      </div>
+      <div class="content-wrapper">
+        <div class="project-item">
+          <!-- Paper at the top -->
+          <div class="project-presentation-full" id="paperThumbnail" data-pdf="assets/polvo-de-purdue-project/paper.pdf">
+            <iframe src="assets/polvo-de-purdue-project/paper.pdf#page=1&zoom=fit" style="width: 100%; height: 700px; border: none; pointer-events: none;"></iframe>
+            <div class="project-presentation-label">Click to view paper</div>
+          </div>
+          
+          <div class="project-main-full">
+            <div class="project-description">
+              <p>This project was conducted under the Korean AI Square Summer Program at Purdue University, focusing on developing a cost-effective, scalable, and dual-scope IoT monitoring system for smart beekeeping.</p>
+              <p>Traditional smart hives mainly focus on internal temperature and humidity while relying on expensive GSM/LTE modules, which limit scalability and real-time monitoring. To address these constraints, WaggleNet integrates Wi-Fi LoRa 32 (V3) modules to collect and transmit both internal and external environmental data using a LoRa–MQTT hybrid architecture.</p>
+              <p>Each worker node—equipped with DHT22, LDR, and GPS sensors—collects environmental data every three minutes and transmits it to a master node via LoRa. The master node appends a UTC timestamp, then forwards the structured JSON packets to an MQTT server, which relays the data to a cloud database (SQLite). A Flutter-based mobile application visualizes the data in real time, displaying hive temperature, humidity, light intensity, and location. It also issues emergency alerts through Firebase Cloud Messaging when critical thresholds are exceeded.</p>
+              <p>Field tests were conducted at Purdue University's KSW building and a real bee yard near South 525 West, Indiana, confirming the system's robustness and scalability. LoRa communication remained stable up to 110 meters in open areas and 95 meters in obstructed environments, validating its reliability even inside wooden hive structures.</p>
+              <p>The system demonstrates modularity, low cost (≈$10–15 per module), compact hardware design, and real-time mobile accessibility, making it an efficient platform for precision apiculture and smart agriculture. Future work will include AI-based anomaly detection, hardware miniaturization, and adaptive routing protocols to enhance intelligence and autonomy in field operations.</p>
+            </div>
+            <div class="project-tech">Tech Stack: Hardware: ESP32-S3 (Heltec Wi-Fi LoRa 32 V3), DHT22, LDR, GPS (NEO-6M) | Software: C++, Python, MQTT, SQLite, Flutter, Firebase | Protocols: LoRa (433/868/915 MHz), MQTT Pub/Sub</div>
+            <div class="project-links">
+              <a href="assets/polvo-de-purdue-project/video.mp4" target="_blank" rel="noopener noreferrer">🎥 Project Video</a>
+              <a href="assets/polvo-de-purdue-project/presentation.pdf" target="_blank" rel="noopener noreferrer">📄 Presentation (PDF)</a>
+            </div>
+          </div>
+          
+          <!-- Video and Presentation at the bottom -->
+          <div class="project-media-section">
+            <div class="project-video-wrapper">
+              <h3 class="section-title">Project Video</h3>
+              <video controls>
+                <source src="assets/polvo-de-purdue-project/video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            
+            <div class="project-presentation-wrapper">
+              <h3 class="section-title">Presentation</h3>
+              <div class="project-presentation" id="presentationThumbnail" data-pdf="assets/polvo-de-purdue-project/presentation.pdf">
+                <iframe src="assets/polvo-de-purdue-project/presentation.pdf#page=1&zoom=fit" style="width: 100%; height: 600px; border: none; pointer-events: none;"></iframe>
+                <div class="project-presentation-label">Click to view presentation</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PDF Lightbox Modal -->
+  <div class="pdf-lightbox-backdrop" id="pdfLightbox" role="dialog" aria-modal="true" aria-label="PDF preview">
+    <div class="pdf-lightbox-content">
+      <div class="pdf-lightbox-close" id="pdfLightboxClose" aria-label="Close">×</div>
+      <iframe src="" id="pdfLightboxIframe" class="pdf-lightbox-iframe" title="PDF Preview"></iframe>
+    </div>
+  </div>
+
+  <footer class="footer">© <span id="y"></span> Sewon Kim · Built on GitHub Pages</footer>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    
+    // PDF Lightbox functionality
+    const pdfLightbox = document.getElementById('pdfLightbox');
+    const pdfLightboxIframe = document.getElementById('pdfLightboxIframe');
+    const pdfLightboxClose = document.getElementById('pdfLightboxClose');
+    const paperThumbnail = document.getElementById('paperThumbnail');
+    const presentationThumbnail = document.getElementById('presentationThumbnail');
+    
+    function openPdfLightbox(pdfPath) {
+      pdfLightboxIframe.src = pdfPath;
+      pdfLightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closePdfLightbox() {
+      pdfLightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      pdfLightboxIframe.src = '';
+    }
+    
+    if (paperThumbnail) {
+      paperThumbnail.addEventListener('click', () => {
+        const pdfPath = paperThumbnail.getAttribute('data-pdf');
+        openPdfLightbox(pdfPath);
+      });
+    }
+    
+    if (presentationThumbnail) {
+      presentationThumbnail.addEventListener('click', () => {
+        const pdfPath = presentationThumbnail.getAttribute('data-pdf');
+        openPdfLightbox(pdfPath);
+      });
+    }
+    
+    if (pdfLightboxClose) {
+      pdfLightboxClose.addEventListener('click', closePdfLightbox);
+    }
+    
+    pdfLightbox.addEventListener('click', (e) => {
+      if (e.target === pdfLightbox) {
+        closePdfLightbox();
+      }
+    });
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && pdfLightbox.classList.contains('active')) {
+        closePdfLightbox();
+      }
+    });
+    (function(){
+      const btn = document.getElementById('themeToggle');
+      if (!btn) return;
+      const setIcon = (t) => {
+        btn.textContent = t === 'dark' ? '☀️' : '🌙';
+        btn.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      };
+      let theme = document.documentElement.getAttribute('data-theme') || 'light';
+      setIcon(theme);
+      btn.addEventListener('click', () => {
+        theme = theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+        try { localStorage.setItem('theme', theme); } catch (e) {}
+        setIcon(theme);
+      });
+      if (window.matchMedia) {
+        try {
+          const mq = window.matchMedia('(prefers-color-scheme: dark)');
+          mq.addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+              theme = e.matches ? 'dark' : 'light';
+              document.documentElement.setAttribute('data-theme', theme);
+              setIcon(theme);
+            }
+          });
+        } catch (e) {}
+      }
+    })();
+  </script>
+</body>
+</html>
+
