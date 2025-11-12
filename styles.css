@@ -378,13 +378,14 @@ a:focus-visible {
   border-radius: 8px;
   overflow: hidden;
   background: var(--bg-pink);
+  aspect-ratio: 4 / 3;
 }
 
-.project-card-visual iframe {
+.project-card-image {
   width: 100%;
-  height: 300px;
-  border: none;
-  pointer-events: none;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .project-card-content {
@@ -836,8 +837,8 @@ b, strong {
     margin-bottom: 20px;
   }
   
-  .project-card-visual iframe {
-    height: 250px;
+  .project-card-visual {
+    aspect-ratio: 4 / 3;
   }
   
   .contact-header {
