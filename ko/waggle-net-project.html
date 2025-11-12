@@ -72,7 +72,7 @@
         <div class="project-item">
           <!-- Paper at the top -->
           <div class="project-presentation-full" id="paperThumbnail" data-pdf="../assets/polvo-de-purdue-project/paper.pdf">
-            <iframe src="../assets/polvo-de-purdue-project/paper.pdf#page=1&zoom=fit" style="width: 100%; height: 700px; border: none; pointer-events: none;"></iframe>
+            <iframe data-src="../assets/polvo-de-purdue-project/paper.pdf#page=1&zoom=fit" style="width: 100%; height: 700px; border: none; pointer-events: none;" loading="lazy"></iframe>
             <div class="project-presentation-label">클릭하여 논문 보기</div>
           </div>
           
@@ -104,7 +104,7 @@
             <div class="project-presentation-wrapper">
               <h3 class="section-title">발표 자료</h3>
               <div class="project-presentation" id="presentationThumbnail" data-pdf="../assets/polvo-de-purdue-project/presentation.pdf">
-                <iframe src="../assets/polvo-de-purdue-project/presentation.pdf#page=1&zoom=fit" style="width: 100%; height: 600px; border: none; pointer-events: none;"></iframe>
+                <iframe data-src="../assets/polvo-de-purdue-project/presentation.pdf#page=1&zoom=fit" style="width: 100%; height: 600px; border: none; pointer-events: none;" loading="lazy"></iframe>
                 <div class="project-presentation-label">클릭하여 발표 자료 보기</div>
               </div>
             </div>
@@ -174,6 +174,40 @@
         closePdfLightbox();
       }
     });
+    
+    // Lazy load PDFs when they enter viewport
+    if ('IntersectionObserver' in window) {
+      const pdfObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const iframe = entry.target.querySelector('iframe[data-src]');
+            if (iframe && iframe.dataset.src) {
+              iframe.src = iframe.dataset.src;
+              iframe.removeAttribute('data-src');
+              pdfObserver.unobserve(entry.target);
+            }
+          }
+        });
+      }, { rootMargin: '50px' });
+      
+      const paperContainer = document.getElementById('paperThumbnail');
+      const presentationContainer = document.getElementById('presentationThumbnail');
+      if (paperContainer) pdfObserver.observe(paperContainer);
+      if (presentationContainer) pdfObserver.observe(presentationContainer);
+    } else {
+      // Fallback for browsers without IntersectionObserver
+      const paperContainer = document.getElementById('paperThumbnail');
+      const presentationContainer = document.getElementById('presentationThumbnail');
+      [paperContainer, presentationContainer].forEach(container => {
+        if (container) {
+          const iframe = container.querySelector('iframe[data-src]');
+          if (iframe && iframe.dataset.src) {
+            iframe.src = iframe.dataset.src;
+            iframe.removeAttribute('data-src');
+          }
+        }
+      });
+    }
     (function(){
       const btn = document.getElementById('themeToggle');
       if (!btn) return;

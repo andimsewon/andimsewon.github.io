@@ -76,7 +76,7 @@
       <div class="content-wrapper">
         <div class="project-item">
           <div class="project-presentation-full" id="presentationThumbnail" data-pdf="assets/gaia-project/presentation.pdf">
-            <iframe src="assets/gaia-project/presentation.pdf#page=1&zoom=fit" style="width: 100%; height: 700px; border: none; pointer-events: none;"></iframe>
+            <iframe data-src="assets/gaia-project/presentation.pdf#page=1&zoom=fit" style="width: 100%; height: 700px; border: none; pointer-events: none;" loading="lazy"></iframe>
             <div class="project-presentation-label">Click to view presentation</div>
           </div>
           
@@ -167,6 +167,37 @@
         closePdfLightbox();
       }
     });
+    
+    // Lazy load PDF when it enters viewport
+    if ('IntersectionObserver' in window) {
+      const pdfObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const iframe = entry.target.querySelector('iframe[data-src]');
+            if (iframe && iframe.dataset.src) {
+              iframe.src = iframe.dataset.src;
+              iframe.removeAttribute('data-src');
+              pdfObserver.unobserve(entry.target);
+            }
+          }
+        });
+      }, { rootMargin: '50px' });
+      
+      const pdfContainer = document.getElementById('presentationThumbnail');
+      if (pdfContainer) {
+        pdfObserver.observe(pdfContainer);
+      }
+    } else {
+      // Fallback for browsers without IntersectionObserver
+      const pdfContainer = document.getElementById('presentationThumbnail');
+      if (pdfContainer) {
+        const iframe = pdfContainer.querySelector('iframe[data-src]');
+        if (iframe && iframe.dataset.src) {
+          iframe.src = iframe.dataset.src;
+          iframe.removeAttribute('data-src');
+        }
+      }
+    }
   </script>
 </body>
 </html>
