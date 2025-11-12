@@ -298,6 +298,37 @@ a:focus-visible {
   color: var(--text-muted);
 }
 
+/* Contact Icons */
+.contact-icons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--text-secondary);
+  transition: color 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.contact-icon:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.contact-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
 .affiliation-list,
 .contact-list,
 .info-list {
@@ -855,6 +886,20 @@ b, strong {
   .contact-separator {
     margin: 0 6px;
     display: inline-block;
+  }
+  
+  .contact-icons {
+    gap: 16px;
+  }
+  
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .contact-icon svg {
+    width: 22px;
+    height: 22px;
   }
   
   .affiliation-list li,
