@@ -69,25 +69,24 @@
       </div>
       <div class="content-wrapper">
         <div class="project-item">
-          <div class="project-content-wrapper">
-            <div class="project-main">
-              <div class="project-description">
-                <p>This project aims to analyze and predict the urban air quality impact of industrial and power plant emissions using artificial intelligence.</p>
-                <p>Based on seven years (2018–2024) of time-series data collected from the national Tele-Monitoring System (TMS), the team developed a hybrid prediction model combining the AERMOD physical diffusion model with a Transformer-based deep learning architecture.</p>
-                <p>A data pipeline automatically collects multi-source datasets from TMS, the Korea Meteorological Administration, and AirKorea APIs. It performs data cleaning, gap filling (Forward Fill, Interpolation, LSTM Imputation), and temporal feature engineering. The PyTorch-based Transformer model learns multivariate time-series relationships among wind, weather, and pollutant levels, while a Gaussian Diffusion algorithm probabilistically models diffusion uncertainty.</p>
-                <p>The prediction results are visualized in real time through a Streamlit web dashboard, enabling users to interactively explore emission scenarios, 3D plume diffusion maps, and real vs. predicted data comparisons. Visualization modules use Folium, GeoPandas, and Xarray for spatial heatmaps and time-lapse animations.</p>
-                <p>The GAIA system serves as a data-driven decision support platform for environmental policy planning, industrial strategy analysis, and disaster response simulation. Future work includes integrating IoT sensors and extending the platform to nationwide and climate-change scenarios.</p>
-              </div>
-              <div class="project-tech">Tech Stack: PyTorch, NumPy, Pandas, Scikit-learn, Folium, GeoPandas, Xarray, Streamlit</div>
-              <div class="project-links">
-                <a href="https://github.com/GAIAinCapstone" target="_blank" rel="noopener noreferrer">🔗 GitHub</a>
-                <a href="assets/gaia-project/poster.pdf" target="_blank" rel="noopener noreferrer">📄 Poster (PDF)</a>
-                <a href="https://swuniv.jbnu.ac.kr/festival/jbnusw?gc=893BAOF&do=view&scenter=list&festival_id=gvyje9Tei6W679047c5&syear=2025&content_id=ei0T9CXQxsB68870b78" target="_blank" rel="noopener noreferrer">🎥 Presentation Video</a>
-              </div>
+          <div class="project-presentation-full" id="presentationThumbnail" data-pdf="assets/gaia-project/presentation.pdf">
+            <iframe src="assets/gaia-project/presentation.pdf#page=1&zoom=fit" style="width: 100%; height: 700px; border: none; pointer-events: none;"></iframe>
+            <div class="project-presentation-label">Click to view presentation</div>
+          </div>
+          
+          <div class="project-main-full">
+            <div class="project-description">
+              <p>This project aims to analyze and predict the urban air quality impact of industrial and power plant emissions using artificial intelligence.</p>
+              <p>Based on seven years (2018–2024) of time-series data collected from the national Tele-Monitoring System (TMS), the team developed a hybrid prediction model combining the AERMOD physical diffusion model with a Transformer-based deep learning architecture.</p>
+              <p>A data pipeline automatically collects multi-source datasets from TMS, the Korea Meteorological Administration, and AirKorea APIs. It performs data cleaning, gap filling (Forward Fill, Interpolation, LSTM Imputation), and temporal feature engineering. The PyTorch-based Transformer model learns multivariate time-series relationships among wind, weather, and pollutant levels, while a Gaussian Diffusion algorithm probabilistically models diffusion uncertainty.</p>
+              <p>The prediction results are visualized in real time through a Streamlit web dashboard, enabling users to interactively explore emission scenarios, 3D plume diffusion maps, and real vs. predicted data comparisons. Visualization modules use Folium, GeoPandas, and Xarray for spatial heatmaps and time-lapse animations.</p>
+              <p>The GAIA system serves as a data-driven decision support platform for environmental policy planning, industrial strategy analysis, and disaster response simulation. Future work includes integrating IoT sensors and extending the platform to nationwide and climate-change scenarios.</p>
             </div>
-            <div class="project-presentation" id="presentationThumbnail" data-pdf="assets/gaia-project/presentation.pdf">
-              <iframe src="assets/gaia-project/presentation.pdf#page=1&zoom=50" style="width: 100%; height: 600px; border: none; pointer-events: none;"></iframe>
-              <div class="project-presentation-label">Click to view presentation</div>
+            <div class="project-tech">Tech Stack: PyTorch, NumPy, Pandas, Scikit-learn, Folium, GeoPandas, Xarray, Streamlit</div>
+            <div class="project-links">
+              <a href="https://github.com/GAIAinCapstone" target="_blank" rel="noopener noreferrer">🔗 GitHub</a>
+              <a href="assets/gaia-project/poster.pdf" target="_blank" rel="noopener noreferrer">📄 Poster (PDF)</a>
+              <a href="https://swuniv.jbnu.ac.kr/festival/jbnusw?gc=893BAOF&do=view&scenter=list&festival_id=gvyje9Tei6W679047c5&syear=2025&content_id=ei0T9CXQxsB68870b78" target="_blank" rel="noopener noreferrer">🎥 Presentation Video</a>
             </div>
           </div>
         </div>

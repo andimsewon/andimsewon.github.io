@@ -69,24 +69,23 @@
       </div>
       <div class="content-wrapper">
         <div class="project-item">
-          <div class="project-content-wrapper">
-            <div class="project-main">
-              <div class="project-description">
-                <p>This project developed an AI-based crop quality assessment system designed to detect plant diseases and evaluate leaf health efficiently in smart farming environments.</p>
-                <p>The initial approach utilized GroundingDINO and SAM (Segment Anything Model) for unsupervised leaf segmentation and RGB-based classification of normal and diseased leaves. However, the system showed limitations under data imbalance, where average RGB values were biased, leading to false classifications.</p>
-                <p>To overcome this, the team built a large-scale labeled dataset by combining open-source images from Kaggle with real-world collected photos and performed data labeling and augmentation using RoboFlow. The detection framework was then replaced with a YOLOv8-based supervised learning model, significantly improving both accuracy and inference speed.</p>
-                <p>The final system visualizes detected leaves with colored bounding boxes and quantifies crop health into five levels—Normal, Caution, Warning, Danger, and Critical—based on the ratio of healthy to diseased leaves. The trained YOLOv8 model achieved a mean mAP@0.5 of 0.81 and AP of 0.846 for diseased leaves, validating its robustness and applicability.</p>
-                <p>This project demonstrates a successful transition from unsupervised visual grounding models (GroundingDINO + SAM) to a high-performance YOLOv8-based supervised framework, and proposes its potential integration into IoT-driven smart farming systems for real-time crop quality monitoring.</p>
-              </div>
-              <div class="project-tech">Tech Stack: Python, PyTorch, YOLOv8, GroundingDINO, SAM, RoboFlow, OpenCV, NumPy</div>
-              <div class="project-links">
-                <a href="https://github.com/andimsewon/Capstone_GuardiansofFarm" target="_blank" rel="noopener noreferrer">🔗 GitHub</a>
-                <a href="assets/guardians-of-farm-project/poster.pdf" target="_blank" rel="noopener noreferrer">📄 Poster (PDF)</a>
-              </div>
+          <div class="project-presentation-full" id="presentationThumbnail" data-pdf="assets/guardians-of-farm-project/presentation.pdf">
+            <iframe src="assets/guardians-of-farm-project/presentation.pdf#page=1&zoom=fit" style="width: 100%; height: 700px; border: none; pointer-events: none;"></iframe>
+            <div class="project-presentation-label">Click to view presentation</div>
+          </div>
+          
+          <div class="project-main-full">
+            <div class="project-description">
+              <p>This project developed an AI-based crop quality assessment system designed to detect plant diseases and evaluate leaf health efficiently in smart farming environments.</p>
+              <p>The initial approach utilized GroundingDINO and SAM (Segment Anything Model) for unsupervised leaf segmentation and RGB-based classification of normal and diseased leaves. However, the system showed limitations under data imbalance, where average RGB values were biased, leading to false classifications.</p>
+              <p>To overcome this, the team built a large-scale labeled dataset by combining open-source images from Kaggle with real-world collected photos and performed data labeling and augmentation using RoboFlow. The detection framework was then replaced with a YOLOv8-based supervised learning model, significantly improving both accuracy and inference speed.</p>
+              <p>The final system visualizes detected leaves with colored bounding boxes and quantifies crop health into five levels—Normal, Caution, Warning, Danger, and Critical—based on the ratio of healthy to diseased leaves. The trained YOLOv8 model achieved a mean mAP@0.5 of 0.81 and AP of 0.846 for diseased leaves, validating its robustness and applicability.</p>
+              <p>This project demonstrates a successful transition from unsupervised visual grounding models (GroundingDINO + SAM) to a high-performance YOLOv8-based supervised framework, and proposes its potential integration into IoT-driven smart farming systems for real-time crop quality monitoring.</p>
             </div>
-            <div class="project-presentation" id="presentationThumbnail" data-pdf="assets/guardians-of-farm-project/presentation.pdf">
-              <iframe src="assets/guardians-of-farm-project/presentation.pdf#page=1&zoom=50" style="width: 100%; height: 600px; border: none; pointer-events: none;"></iframe>
-              <div class="project-presentation-label">Click to view presentation</div>
+            <div class="project-tech">Tech Stack: Python, PyTorch, YOLOv8, GroundingDINO, SAM, RoboFlow, OpenCV, NumPy</div>
+            <div class="project-links">
+              <a href="https://github.com/andimsewon/Capstone_GuardiansofFarm" target="_blank" rel="noopener noreferrer">🔗 GitHub</a>
+              <a href="assets/guardians-of-farm-project/poster.pdf" target="_blank" rel="noopener noreferrer">📄 Poster (PDF)</a>
             </div>
           </div>
         </div>

@@ -68,11 +68,16 @@ html, body {
 a {
   color: var(--accent-dark);
   text-decoration: none;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
 }
 
 a:hover {
   text-decoration: underline;
   color: var(--section-title);
+}
+
+a:active {
+  opacity: 0.8;
 }
 
 /* Top Navigation */
@@ -116,12 +121,19 @@ a:hover {
   color: #ffffff;
   font-size: 14px;
   text-decoration: none;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  position: relative;
 }
 
 .nav-links a:hover {
-  opacity: 0.8;
+  opacity: 0.85;
   text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.nav-links a:active {
+  transform: translateY(0);
+  opacity: 0.7;
 }
 
 /* Theme toggle button */
@@ -313,15 +325,21 @@ a:focus-visible {
   width: 40px;
   height: 40px;
   color: var(--text-secondary);
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
   text-decoration: none;
   border-radius: 8px;
+  background-color: transparent;
 }
 
 .contact-icon:hover {
   color: var(--accent);
   transform: translateY(-2px);
   text-decoration: none;
+  background-color: rgba(155, 95, 109, 0.08);
+}
+
+.contact-icon:active {
+  transform: translateY(0);
 }
 
 .contact-icon svg {
@@ -389,7 +407,7 @@ a:focus-visible {
   border: 1px solid var(--border-light);
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
   cursor: pointer;
   text-decoration: none;
   color: inherit;
@@ -397,9 +415,17 @@ a:focus-visible {
 
 .project-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  text-decoration: none;
-  color: inherit;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.project-card:active {
+  transform: translateY(-2px);
+}
+
+.project-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 12px;
 }
 
 .project-card-visual {
@@ -520,12 +546,22 @@ a:focus-visible {
   text-decoration: none;
   margin-right: 16px;
   font-size: 14px;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   margin-bottom: 8px;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .project-links a:hover {
   text-decoration: underline;
+  color: var(--section-title);
+  transform: translateX(2px);
+}
+
+.project-links a:active {
+  transform: translateX(0);
+  opacity: 0.8;
 }
 
 .project-tech {
@@ -570,6 +606,35 @@ a:focus-visible {
   border: none;
   pointer-events: none;
   display: block;
+}
+
+/* Full-width presentation at top */
+.project-presentation-full {
+  width: 100%;
+  margin-bottom: 40px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: var(--paper);
+}
+
+.project-presentation-full:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.project-presentation-full iframe {
+  width: 100%;
+  height: 700px;
+  border: none;
+  pointer-events: none;
+  display: block;
+}
+
+.project-main-full {
+  width: 100%;
 }
 
 .project-presentation-label {
@@ -660,8 +725,21 @@ a:focus-visible {
   border-radius: 6px;
   border: 1px solid var(--border-light);
   box-shadow: 0 4px 12px rgba(155, 95, 109, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-[data-theme="dark"] .profile-photo { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); }
+
+.profile-photo:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(155, 95, 109, 0.2);
+}
+
+[data-theme="dark"] .profile-photo { 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); 
+}
+
+[data-theme="dark"] .profile-photo:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+}
 
 /* Footer */
 .footer {
@@ -858,6 +936,14 @@ b, strong {
     height: 500px;
   }
   
+  .project-presentation-full {
+    margin-bottom: 24px;
+  }
+  
+  .project-presentation-full iframe {
+    height: 500px;
+  }
+  
   .project-card {
     flex-direction: column;
   }
@@ -987,12 +1073,17 @@ b, strong {
   border-radius: 4px;
   border: 1px solid var(--border-light);
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .gallery-image:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(155, 95, 109, 0.25);
+  border-color: var(--accent);
+}
+
+.gallery-image:active {
+  transform: translateY(0);
 }
 
 .gallery-placeholder {
@@ -1122,4 +1213,14 @@ b, strong {
 
 .lightbox-close:hover {
   background: rgba(0, 0, 0, 0.7);
+  transform: scale(1.1);
+}
+
+.lightbox-close:active {
+  transform: scale(0.95);
+}
+
+.lightbox-close:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
 }
