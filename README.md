@@ -27,9 +27,10 @@ andimsewon.github.io/
 ├── assets/                 # 이미지 및 미디어 파일
 │   ├── profile.jpeg        # 프로필 사진
 │   ├── favicon.svg         # 파비콘 (SVG)
-│   └── gallery/            # 갤러리 사진 폴더
-│       ├── 2025Purdue_KSW.jpeg
-│       └── 2025Purdue_KSW1.jpeg
+│   ├── gallery/            # 갤러리 사진 폴더
+│   ├── gaia-project/       # GAIA 프로젝트 관련 파일
+│   ├── guardians-of-farm-project/  # Guardians of Farm 프로젝트 관련 파일
+│   └── polvo-de-purdue-project/   # WaggleNet 프로젝트 관련 파일
 │
 ├── ko/                     # 한국어 버전 페이지
 │   ├── index.html
@@ -37,10 +38,17 @@ andimsewon.github.io/
 │   ├── projects.html
 │   ├── awards.html
 │   ├── gallery.html
-│   └── activities.html
+│   ├── activities.html
+│   ├── gaia-project.html
+│   ├── guardians-of-farm-project.html
+│   └── waggle-net-project.html
+│
+├── gaia-project.html       # GAIA 프로젝트 상세 페이지
+├── guardians-of-farm-project.html  # Guardians of Farm 프로젝트 상세 페이지
+├── waggle-net-project.html  # WaggleNet 프로젝트 상세 페이지
 │
 └── js/                     # JavaScript 파일
-    └── loader.js           # (현재 미사용 - 단일 페이지 구조)
+    └── site.js             # 공통 스크립트 (테마 토글, PDF lazy loading 등)
 ```
 
 ---
@@ -66,6 +74,17 @@ andimsewon.github.io/
   - 닫기 방법: 닫기 버튼(×), 배경 클릭, ESC 키
   - 이미지 캡션 표시
 - **Lazy Loading**: 이미지 지연 로딩으로 성능 최적화
+
+### 📄 프로젝트 상세 페이지
+
+- **프로젝트별 독립 페이지**: 각 프로젝트마다 상세 정보 페이지 제공
+  - GAIA Project (`gaia-project.html`)
+  - Guardians of Farm Project (`guardians-of-farm-project.html`)
+  - WaggleNet Project (`waggle-net-project.html`)
+- **PDF 미리보기**: 발표 자료/논문 PDF를 iframe으로 미리보기 제공
+- **PDF Lazy Loading**: Intersection Observer를 사용한 지연 로딩으로 성능 최적화
+- **PDF Lightbox**: 클릭 시 전체 화면에서 PDF 확인 가능
+- **YouTube 영상 임베드**: 발표 영상을 직접 페이지에 임베드
 
 ### 🌐 다국어 지원
 
@@ -370,10 +389,10 @@ html, body {
   - Media Queries (반응형)
   - CSS Transitions
 - **JavaScript (Vanilla)**:
-  - 다크 모드 토글
-  - 라이트박스 기능
-  - localStorage API
-  - Intersection Observer API (스크롤 스파이)
+  - 다크 모드 토글 (`js/site.js`)
+  - 라이트박스 기능 (갤러리, PDF)
+  - localStorage API (테마 저장)
+  - Intersection Observer API (PDF lazy loading)
 - **GitHub Pages**: 정적 호스팅
 
 ---

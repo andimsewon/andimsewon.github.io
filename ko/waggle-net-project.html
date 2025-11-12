@@ -180,36 +180,7 @@
         closePdfLightbox();
       }
     });
-    
-    // PDFs load only on click via lightbox (no iframe in page)
-    (function(){
-      const btn = document.getElementById('themeToggle');
-      if (!btn) return;
-      const setIcon = (t) => {
-        btn.textContent = t === 'dark' ? '☀️' : '🌙';
-        btn.setAttribute('aria-label', t === 'dark' ? '라이트 모드 전환' : '다크 모드 전환');
-      };
-      let theme = document.documentElement.getAttribute('data-theme') || 'light';
-      setIcon(theme);
-      btn.addEventListener('click', () => {
-        theme = theme === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', theme);
-        try { localStorage.setItem('theme', theme); } catch (e) {}
-        setIcon(theme);
-      });
-      if (window.matchMedia) {
-        try {
-          const mq = window.matchMedia('(prefers-color-scheme: dark)');
-          mq.addEventListener('change', (e) => {
-            if (!localStorage.getItem('theme')) {
-              theme = e.matches ? 'dark' : 'light';
-              document.documentElement.setAttribute('data-theme', theme);
-              setIcon(theme);
-            }
-          });
-        } catch (e) {}
-      }
-    })();
+    // PDF lazy loading and theme toggle are handled by ../js/site.js
   </script>
 </body>
 </html>

@@ -76,10 +76,7 @@
       <div class="content-wrapper">
         <div class="project-item">
           <div class="project-presentation-full" id="presentationThumbnail" data-pdf="assets/guardians-of-farm-project/presentation.optimized.pdf">
-            <picture>
-              <source type="image/webp" srcset="assets/guardians-of-farm-project/main.webp" />
-              <img src="assets/guardians-of-farm-project/main.png" alt="Guardians of Farm presentation preview" loading="lazy" decoding="async" style="width: 100%; height: 700px; object-fit: cover; display: block; pointer-events: none;" />
-            </picture>
+            <iframe data-src="assets/guardians-of-farm-project/presentation.optimized.pdf#page=1&zoom=fit" style="width: 100%; height: 700px; border: none; pointer-events: none;" loading="lazy"></iframe>
             <div class="project-presentation-label">Click to view presentation</div>
           </div>
           
@@ -170,8 +167,7 @@
         closePdfLightbox();
       }
     });
-    
-    // PDFs load only on click via lightbox (no iframe in page)
+    // PDF lazy loading is handled by js/site.js
   </script>
 </body>
 </html>

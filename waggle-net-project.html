@@ -7,6 +7,7 @@
   <meta name="description" content="WaggleNet – A LoRa and MQTT-Based Monitoring System for Internal and External Beehive Conditions - Sewon Kim's Academic Portfolio">
   <meta name="author" content="Sewon Kim">
   <meta name="theme-color" content="#9b5f6d">
+  <meta name="color-scheme" content="light dark">
   <script>
     (function() {
       try {
@@ -185,36 +186,7 @@
         closePdfLightbox();
       }
     });
-    
-    // PDFs load only on click via lightbox (no iframe in page)
-    (function(){
-      const btn = document.getElementById('themeToggle');
-      if (!btn) return;
-      const setIcon = (t) => {
-        btn.textContent = t === 'dark' ? '☀️' : '🌙';
-        btn.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-      };
-      let theme = document.documentElement.getAttribute('data-theme') || 'light';
-      setIcon(theme);
-      btn.addEventListener('click', () => {
-        theme = theme === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', theme);
-        try { localStorage.setItem('theme', theme); } catch (e) {}
-        setIcon(theme);
-      });
-      if (window.matchMedia) {
-        try {
-          const mq = window.matchMedia('(prefers-color-scheme: dark)');
-          mq.addEventListener('change', (e) => {
-            if (!localStorage.getItem('theme')) {
-              theme = e.matches ? 'dark' : 'light';
-              document.documentElement.setAttribute('data-theme', theme);
-              setIcon(theme);
-            }
-          });
-        } catch (e) {}
-      }
-    })();
+    // PDF lazy loading and theme toggle are handled by js/site.js
   </script>
 </body>
 </html>

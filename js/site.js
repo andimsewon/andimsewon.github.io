@@ -65,3 +65,58 @@
     });
   } catch (err) {}
 })();
+
+// PDF lazy loading utility
+(function() {
+  'use strict';
+  
+  function initPdfLazyLoading(containerId) {
+    if (!('IntersectionObserver' in window)) {
+      // Fallback: load immediately
+      const container = document.getElementById(containerId);
+      if (container) {
+        const iframe = container.querySelector('iframe[data-src]');
+        if (iframe && iframe.dataset.src) {
+          iframe.src = iframe.dataset.src;
+          iframe.removeAttribute('data-src');
+        }
+      }
+      return;
+    }
+    
+    const pdfObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          const iframe = entry.target.querySelector('iframe[data-src]');
+          if (iframe && iframe.dataset.src) {
+            iframe.src = iframe.dataset.src;
+            iframe.removeAttribute('data-src');
+            pdfObserver.unobserve(entry.target);
+          }
+        }
+      });
+    }, { rootMargin: '50px' });
+    
+    const container = document.getElementById(containerId);
+    if (container) {
+      pdfObserver.observe(container);
+    }
+  }
+  
+  // Initialize lazy loading for common PDF container IDs
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      ['presentationThumbnail', 'paperThumbnail'].forEach(function(id) {
+        if (document.getElementById(id)) {
+          initPdfLazyLoading(id);
+        }
+      });
+    });
+  } else {
+    ['presentationThumbnail', 'paperThumbnail'].forEach(function(id) {
+      if (document.getElementById(id)) {
+        initPdfLazyLoading(id);
+      }
+    });
+  }
+})();
