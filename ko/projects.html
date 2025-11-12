@@ -62,29 +62,22 @@
         <h2 class="page-title">선정 프로젝트</h2>
       </div>
       <div class="content-wrapper">
-        <ul class="info-list">
-          <li>멀티모달 센서 융합 기반 스마트 양봉 모니터링 IoT 시스템 (2025)
-            <ul class="sub-list">
-              <li>WiFi LoRa 32 (V3), MQTT, Raspberry Pi로 실시간 벌통 환경 모니터링 E2E 시스템 설계</li>
-              <li>온도·습도·음향 데이터를 융합한 예측 분석 알고리즘 구현</li>
-              <li>퍼듀대 실증 현장 배치로 견고성과 확장성 검증</li>
-            </ul>
-          </li>
-          <li>비전 트랜스포머 기반 문화재 훼손 탐지 (2024–2025)
-            <ul class="sub-list">
-              <li>Flutter 프론트엔드 + FastAPI 백엔드로 AI 기반 훼손 진단 앱 개발</li>
-              <li>커스텀 데이터셋으로 DETR 파인튜닝(다중 클래스 구조적 훼손 탐지)</li>
-              <li>Firebase 연동 클라우드 추론 파이프라인 배포, 실시간 탐지(mAP 89%)</li>
-            </ul>
-          </li>
-          <li>도시 대기질 예측을 위한 하이브리드 딥러닝 (2025)
-            <ul class="sub-list">
-              <li>가우시안 확산 + LSTM-CNN 하이브리드 아키텍처로 시공간 배출량 예측</li>
-              <li>AWS 스트리밍 기반 실시간 환경 데이터 파이프라인 구축</li>
-              <li>AERMOD 물리 시뮬레이션과 비교 검증, 복잡 분산 시나리오에서 정확도 향상</li>
-            </ul>
-          </li>
-        </ul>
+        <div class="project-item">
+          <h3 class="project-title">AI 기반 공장 및 발전소 배출가스의 도시 대기 영향 분석 시스템 (GAIA Project)</h3>
+          <div class="project-description">
+            <p>이 프로젝트는 발전소와 공장에서 배출되는 대기오염 물질이 도시 대기질에 미치는 영향을 인공지능으로 분석하기 위해 수행한 캡스톤디자인 연구이다.</p>
+            <p>국가 대기오염 관측망(TMS)에서 수집된 7년간(2018–2024)의 시계열 데이터를 기반으로, AERMOD 물리 확산 모델과 Transformer 기반 딥러닝 모델을 융합한 하이브리드 예측 시스템을 구축하였다.</p>
+            <p>데이터 파이프라인 단계에서는 TMS, 기상청, 에어코리아 데이터를 자동 수집하고, 결측치 보정(Fill, Interpolation, LSTM 기반 Imputation) 및 시간·계절 요인 엔지니어링을 수행하였다. 이후 PyTorch 기반 Transformer 모델을 이용해 풍향, 풍속, 오염물질 농도 등 다변량 시계열 데이터를 학습하였으며, 가우시안 확산(Gaussian Diffusion) 알고리즘을 통해 오염물질의 확산 불확실성을 확률적으로 모델링하였다.</p>
+            <p>예측 결과는 Streamlit 웹 대시보드에서 실시간으로 시각화된다. 사용자는 발전소별 배출량, 예측 대기질 변화, 오염 확산 경로(3D 플룸 모델)를 직관적으로 확인할 수 있으며, 사용자 입력값에 따라 다양한 시나리오를 시뮬레이션할 수 있다. 지도 기반 시각화에는 Folium, GeoPandas, Xarray 등을 활용하였다.</p>
+            <p>본 시스템은 단순 분석을 넘어 정책 수립과 환경 규제 검토를 지원하는 데이터 기반 의사결정 도구로 활용 가능하며, 향후 드론·IoT 센서 연동 및 기후변화 시나리오 반영을 통해 전국 단위 예측 플랫폼으로 확장할 계획이다.</p>
+          </div>
+          <div class="project-tech">기술 스택: PyTorch, NumPy, Pandas, Scikit-learn, Folium, GeoPandas, Xarray, Streamlit</div>
+          <div class="project-links">
+            <a href="https://github.com/GAIAinCapstone" target="_blank" rel="noopener noreferrer">🔗 GitHub</a>
+            <a href="../assets/2025_1_Capstone.pdf" target="_blank" rel="noopener noreferrer">📄 포스터 (PDF)</a>
+            <a href="https://swuniv.jbnu.ac.kr/festival/jbnusw?gc=893BAOF&do=view&scenter=list&festival_id=gvyje9Tei6W679047c5&syear=2025&content_id=ei0T9CXQxsB68870b78" target="_blank" rel="noopener noreferrer">🎥 발표 영상</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
