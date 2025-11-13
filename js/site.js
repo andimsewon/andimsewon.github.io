@@ -109,13 +109,19 @@
 
     // Back to top button
     var back = document.getElementById('backToTop');
-    if (back) {
-      function onScroll() {
+    var topNav = document.querySelector('.top-nav');
+    function onScroll() {
+      if (back) {
         var show = window.scrollY > 300;
         back.classList.toggle('visible', show);
       }
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
+      if (topNav) {
+        topNav.classList.toggle('scrolled', window.scrollY > 8);
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    if (back) {
       back.addEventListener('click', function () {
         try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (_) { window.scrollTo(0, 0); }
       });
