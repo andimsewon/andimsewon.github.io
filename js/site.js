@@ -66,6 +66,63 @@
   } catch (err) {}
 })();
 
+// Mobile nav toggle and Back-to-top
+(function () {
+  try {
+    // Mobile nav toggle
+    var toggle = document.getElementById('navToggle');
+    if (toggle) {
+      var navContainer = toggle.closest('.nav-container');
+      var isKO = (document.documentElement.lang || '').toLowerCase().startsWith('ko');
+      function setToggleState(expanded) {
+        toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        toggle.textContent = expanded ? '✕' : '☰';
+        toggle.title = expanded ? (isKO ? '메뉴 닫기' : 'Close menu') : (isKO ? '메뉴 열기' : 'Open menu');
+        toggle.setAttribute('aria-label', toggle.title);
+      }
+      setToggleState(false);
+      toggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var open = navContainer.classList.toggle('is-open');
+        setToggleState(open);
+      });
+      // Close when clicking a link (better UX)
+      var navLinks = navContainer.querySelectorAll('.nav-links a');
+      navLinks.forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (navContainer.classList.contains('is-open')) {
+            navContainer.classList.remove('is-open');
+            setToggleState(false);
+          }
+        });
+      });
+      // Close on outside click
+      document.addEventListener('click', function (e) {
+        if (!navContainer.contains(e.target)) {
+          if (navContainer.classList.contains('is-open')) {
+            navContainer.classList.remove('is-open');
+            setToggleState(false);
+          }
+        }
+      });
+    }
+
+    // Back to top button
+    var back = document.getElementById('backToTop');
+    if (back) {
+      function onScroll() {
+        var show = window.scrollY > 300;
+        back.classList.toggle('visible', show);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      back.addEventListener('click', function () {
+        try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (_) { window.scrollTo(0, 0); }
+      });
+    }
+  } catch (err) {}
+})();
+
 // PDF lazy loading utility
 (function() {
   'use strict';

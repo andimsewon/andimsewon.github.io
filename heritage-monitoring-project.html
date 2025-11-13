@@ -56,7 +56,8 @@
   <nav class="top-nav" aria-label="Primary">
     <div class="nav-container">
       <div class="nav-name"><a href="index.html" style="color: #ffffff; text-decoration: none;">Sewon Kim</a></div>
-      <div class="nav-links">
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="primaryLinks" aria-label="Open menu">☰</button>
+      <div class="nav-links" id="primaryLinks">
         <a href="index.html">Home</a>
         <a href="research.html">Research</a>
         <a href="projects.html" class="active" aria-current="page">Projects</a>
@@ -107,12 +108,11 @@
                   <iframe 
                     id="webAppIframe"
                     data-src="http://210.117.181.115:3001/" 
-                    style="width: 100%; height: 800px; border: 1px solid var(--border); border-radius: 8px; display: none;" 
+                    style="width: 100%; height: 800px; border: 2px solid var(--border-light); border-radius: 12px; display: none;" 
                     title="Heritage Monitoring System"
-                    allow="fullscreen"
-                    sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox">
+                    allow="fullscreen">
                   </iframe>
-                  <div id="webPreviewFallback" class="project-web-fallback">
+                  <div id="webPreviewFallback" class="project-web-fallback" style="display: flex;">
                     <div class="project-web-fallback-content">
                       <div class="project-web-fallback-icon">🌐</div>
                       <h4>Web Application Preview</h4>
@@ -143,45 +143,60 @@
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
     
-    // Try to load iframe, show fallback if it fails
+    // Try to load iframe, show fallback by default
     (function() {
       const iframe = document.getElementById('webAppIframe');
       const fallback = document.getElementById('webPreviewFallback');
       
       if (iframe && fallback) {
+        // Fallback is shown by default (inline style)
         // Try to load iframe
         const src = iframe.getAttribute('data-src');
         if (src) {
+          // Set iframe src
           iframe.src = src;
+          
+          let iframeLoaded = false;
           
           // Check if iframe loads successfully
           iframe.onload = function() {
-            // Iframe loaded, hide fallback
-            iframe.style.display = 'block';
-            fallback.style.display = 'none';
-          };
-          
-          iframe.onerror = function() {
-            // Iframe failed to load, show fallback
-            iframe.style.display = 'none';
-            fallback.style.display = 'block';
-          };
-          
-          // Timeout fallback: if iframe doesn't load within 5 seconds, show fallback
-          setTimeout(function() {
-            if (iframe.style.display === 'none' || !iframe.contentWindow) {
-              iframe.style.display = 'none';
-              fallback.style.display = 'block';
+            try {
+              // Try to access iframe content to verify it loaded
+              if (iframe.contentWindow && iframe.contentWindow.document) {
+                iframeLoaded = true;
+                iframe.style.display = 'block';
+                fallback.style.display = 'none';
+              }
+            } catch (e) {
+              // Cross-origin error means iframe loaded but we can't access it
+              // This is actually a good sign - the iframe loaded
+              iframeLoaded = true;
+              iframe.style.display = 'block';
+              fallback.style.display = 'none';
             }
-          }, 5000);
+          };
+          
+          // Check for iframe load errors
+          iframe.onerror = function() {
+            iframe.style.display = 'none';
+            fallback.style.display = 'flex';
+          };
+          
+          // Timeout: if iframe doesn't load within 3 seconds, keep fallback visible
+          setTimeout(function() {
+            if (!iframeLoaded) {
+              iframe.style.display = 'none';
+              fallback.style.display = 'flex';
+            }
+          }, 3000);
         } else {
-          // No src, show fallback immediately
-          fallback.style.display = 'block';
+          // No src, keep fallback visible
+          fallback.style.display = 'flex';
         }
       }
     })();
     // Theme toggle is handled by js/site.js
   </script>
-</body>
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+  </body>
 </html>
-
