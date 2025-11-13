@@ -1337,10 +1337,19 @@ b, strong { font-weight: 600; font-family: var(--font-display); }
     padding-top: 15px;
   }
   
-  .gallery-intro {
+.gallery-intro {
     font-size: 14px;
     padding: 0 5px;
   }
+}
+
+/* Utility: full-bleed image for content */
+.full-bleed-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  display: block;
 }
 
 /* Back to top button */
