@@ -97,7 +97,24 @@
             <div class="project-web-wrapper">
               <h3 class="section-title">실제 웹 애플리케이션</h3>
               <div class="project-web-embed">
-                <iframe src="http://210.117.181.115:3001/" style="width: 100%; height: 800px; border: 1px solid var(--border); border-radius: 8px;" title="국가유산 모니터링 시스템"></iframe>
+                <div class="project-web-preview" id="webPreview">
+                  <iframe 
+                    id="webAppIframe"
+                    data-src="http://210.117.181.115:3001/" 
+                    style="width: 100%; height: 800px; border: 1px solid var(--border); border-radius: 8px; display: none;" 
+                    title="국가유산 모니터링 시스템"
+                    allow="fullscreen"
+                    sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox">
+                  </iframe>
+                  <div id="webPreviewFallback" class="project-web-fallback">
+                    <div class="project-web-fallback-content">
+                      <div class="project-web-fallback-icon">🌐</div>
+                      <h4>웹 애플리케이션 미리보기</h4>
+                      <p>보안 정책으로 인해 웹 애플리케이션을 임베드된 프레임에 표시할 수 없습니다. 아래 버튼을 클릭하여 새 탭에서 열어주세요.</p>
+                      <a href="http://210.117.181.115:3001/" target="_blank" rel="noopener noreferrer" class="external-link-button">웹 애플리케이션 열기 →</a>
+                    </div>
+                  </div>
+                </div>
                 <div class="project-web-link">
                   <a href="http://210.117.181.115:3001/" target="_blank" rel="noopener noreferrer" class="external-link">새 탭에서 열기 →</a>
                 </div>
@@ -119,6 +136,44 @@
   <footer class="footer">© <span id="y"></span> Sewon Kim · Built on GitHub Pages</footer>
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+    
+    // Try to load iframe, show fallback if it fails
+    (function() {
+      const iframe = document.getElementById('webAppIframe');
+      const fallback = document.getElementById('webPreviewFallback');
+      
+      if (iframe && fallback) {
+        // Try to load iframe
+        const src = iframe.getAttribute('data-src');
+        if (src) {
+          iframe.src = src;
+          
+          // Check if iframe loads successfully
+          iframe.onload = function() {
+            // Iframe loaded, hide fallback
+            iframe.style.display = 'block';
+            fallback.style.display = 'none';
+          };
+          
+          iframe.onerror = function() {
+            // Iframe failed to load, show fallback
+            iframe.style.display = 'none';
+            fallback.style.display = 'block';
+          };
+          
+          // Timeout fallback: if iframe doesn't load within 5 seconds, show fallback
+          setTimeout(function() {
+            if (iframe.style.display === 'none' || !iframe.contentWindow) {
+              iframe.style.display = 'none';
+              fallback.style.display = 'block';
+            }
+          }, 5000);
+        } else {
+          // No src, show fallback immediately
+          fallback.style.display = 'block';
+        }
+      }
+    })();
     // Theme toggle is handled by ../js/site.js
   </script>
 </body>
