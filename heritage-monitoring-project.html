@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Heritage Monitoring and Registration System | Sewon Kim</title>
+  <meta name="description" content="Heritage Monitoring and Registration System - A cross-platform field-survey system integrating national heritage data, AI-based damage detection, and real-time cloud synchronization - Sewon Kim's Academic Portfolio">
+  <meta name="author" content="Sewon Kim">
+  <meta name="theme-color" content="#9b5f6d">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    (function() {
+      try {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="canonical" href="https://andimsewon.github.io/heritage-monitoring-project.html">
+  <link rel="alternate" hreflang="en" href="https://andimsewon.github.io/heritage-monitoring-project.html">
+  <link rel="alternate" hreflang="ko" href="https://andimsewon.github.io/ko/heritage-monitoring-project.html">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/profile.jpeg">
+  <link rel="mask-icon" href="/assets/favicon.svg" color="#9b5f6d">
+  <link rel="stylesheet" href="styles.css">
+  <script src="js/site.js" defer></script>
+  <link rel="dns-prefetch" href="https://github.com">
+  <link rel="dns-prefetch" href="https://www.linkedin.com">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Heritage Monitoring and Registration System | Sewon Kim",
+    "url": "https://andimsewon.github.io/heritage-monitoring-project.html"
+  }
+  </script>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sewon Kim">
+  <meta property="og:title" content="Heritage Monitoring and Registration System | Sewon Kim">
+  <meta property="og:description" content="A cross-platform field-survey system integrating national heritage data, AI-based damage detection, and real-time cloud synchronization">
+  <meta property="og:image" content="https://andimsewon.github.io/assets/profile.jpeg">
+  <meta property="og:url" content="https://andimsewon.github.io/heritage-monitoring-project.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ko_KR">
+</head>
+<body>
+  <a class="skip-link" href="#project">Skip to content</a>
+  <nav class="top-nav" aria-label="Primary">
+    <div class="nav-container">
+      <div class="nav-name"><a href="index.html" style="color: #ffffff; text-decoration: none;">Sewon Kim</a></div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html" class="active" aria-current="page">Projects</a>
+        <a href="awards.html">Awards</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="activities.html">Activities</a>
+        <a href="ko/heritage-monitoring-project.html" lang="ko" hreflang="ko">한국어</a>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Project Detail Section -->
+  <section id="project" class="page-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="page-title">Heritage Monitoring and Registration System</h2>
+      </div>
+      <div class="content-wrapper">
+        <div class="project-item">
+          <div class="project-main-full">
+            <div class="project-description">
+              <p>A cross-platform field-survey system integrating national heritage data, AI-based damage detection, and real-time cloud synchronization.</p>
+              <p>This project focuses on modernizing Korea's cultural heritage field-survey workflows by transitioning paper-based inspection records into a fully digital, AI-assisted monitoring platform. Built with Flutter (Web/Android/iOS) and a FastAPI backend, the system integrates the National Heritage Service Open API, PyTorch-based damage detection, and Firebase real-time databases to support complete end-to-end survey and registration tasks.</p>
+              <p>The system retrieves official heritage records through a FastAPI proxy that converts XML data from the National Heritage Service into structured JSON, enabling multi-criteria search (heritage type, region, keyword) with infinite pagination. Each heritage asset provides detailed information including designation category, ownership, management agency, official address, and geographic coordinates.</p>
+              <p>A key feature is the AI-powered damage survey module, which leverages a custom DETR-based PyTorch model to detect four types of structural deterioration—cracks, splits, biological decay, and crushing/burst damage. Images captured on-site are uploaded through the Flutter app, processed by the backend AI pipeline, and returned with bounding boxes, class labels, confidence scores, and an automatically assigned severity grade (A–D). These results are stored in Firebase along with survey metadata such as component name, location, inspector notes, and timestamps.</p>
+              <p>The platform includes a structured three-tab workflow for field inspectors:</p>
+              <ul>
+                <li><strong>Field Survey:</strong> basic info, metadata, site photos, and damage detection</li>
+                <li><strong>Inspector Notes:</strong> preservation history, survey results, and management actions</li>
+                <li><strong>Comprehensive Assessment:</strong> aggregated damage analysis, severity classification, and AI-assisted insights</li>
+              </ul>
+              <p>All updates are synchronized in real time using Firestore streams, ensuring consistent multi-device collaboration during field inspections. Photos and damage records are stored in Firebase Storage, and edit histories are automatically logged for auditability.</p>
+              <p>The system demonstrates practical integration of cross-platform UI, REST API pipelines, real-time cloud data synchronization, and custom deep-learning inference inside a production-ready workflow. It showcases the feasibility of scalable digital transformation for cultural-heritage management and lays the foundation for future extensions such as GIS-based damage maps, offline-first mobile modes, and multi-language interfaces.</p>
+            </div>
+            <div class="project-tech">Tech Stack: Flutter, Dart, Firebase (Firestore/Storage), FastAPI, Python, PyTorch, DETR, Docker, Nginx, XML→JSON proxy, Responsive Web Architecture</div>
+            <div class="project-links">
+              <a href="http://210.117.181.115:3001/" target="_blank" rel="noopener noreferrer">🌐 Live Web Application</a>
+            </div>
+          </div>
+          
+          <!-- Web Application and Copyright Certificate -->
+          <div class="project-media-section">
+            <div class="project-web-wrapper">
+              <h3 class="section-title">Live Web Application</h3>
+              <div class="project-web-embed">
+                <iframe src="http://210.117.181.115:3001/" style="width: 100%; height: 800px; border: 1px solid var(--border); border-radius: 8px;" title="Heritage Monitoring System"></iframe>
+                <div class="project-web-link">
+                  <a href="http://210.117.181.115:3001/" target="_blank" rel="noopener noreferrer" class="external-link">Open in new tab →</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="project-certificate-wrapper">
+              <h3 class="section-title">Copyright Registration Certificate</h3>
+              <div class="project-certificate">
+                <img src="assets/heritage-monitoring-project/copyright-certificate.jpeg" alt="Copyright Registration Certificate" loading="lazy" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">© <span id="y"></span> Sewon Kim · Built on GitHub Pages</footer>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // Theme toggle is handled by js/site.js
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>국가유산 모니터링·조사·등록 시스템 | 김세원</title>
+  <meta name="description" content="국가유산 모니터링·조사·등록 시스템 - 국가유산청 Open API, AI 손상 탐지, Firebase 실시간 동기화를 통합한 크로스플랫폼 현장 조사 시스템 - 김세원 포트폴리오">
+  <meta name="author" content="Sewon Kim">
+  <meta name="theme-color" content="#9b5f6d">
+  <script>
+    (function() {
+      try {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="canonical" href="https://andimsewon.github.io/ko/heritage-monitoring-project.html">
+  <link rel="alternate" hreflang="ko" href="https://andimsewon.github.io/ko/heritage-monitoring-project.html">
+  <link rel="alternate" hreflang="en" href="https://andimsewon.github.io/heritage-monitoring-project.html">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/profile.jpeg">
+  <link rel="mask-icon" href="/assets/favicon.svg" color="#9b5f6d">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../js/site.js" defer></script>
+  <link rel="dns-prefetch" href="https://github.com">
+  <link rel="dns-prefetch" href="https://www.linkedin.com">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"국가유산 모니터링·조사·등록 시스템 | 김세원","url":"https://andimsewon.github.io/ko/heritage-monitoring-project.html"}
+  </script>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sewon Kim">
+  <meta property="og:title" content="국가유산 모니터링·조사·등록 시스템 | 김세원">
+  <meta property="og:description" content="국가유산청 Open API, AI 손상 탐지, Firebase 실시간 동기화를 통합한 크로스플랫폼 현장 조사 시스템">
+  <meta property="og:image" content="https://andimsewon.github.io/assets/profile.jpeg">
+  <meta property="og:url" content="https://andimsewon.github.io/ko/heritage-monitoring-project.html">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:locale:alternate" content="en_US">
+</head>
+<body>
+  <a class="skip-link" href="#project">본문으로 건너뛰기</a>
+  <nav class="top-nav" aria-label="Primary">
+    <div class="nav-container">
+      <div class="nav-name"><a href="index.html" style="color: #ffffff; text-decoration: none;">김세원</a></div>
+      <div class="nav-links">
+        <a href="index.html">홈</a>
+        <a href="research.html">연구</a>
+        <a href="projects.html" class="active" aria-current="page">프로젝트</a>
+        <a href="awards.html">수상</a>
+        <a href="gallery.html">갤러리</a>
+        <a href="activities.html">교내 활동</a>
+        <a href="../heritage-monitoring-project.html" lang="en" hreflang="en">EN</a>
+        <button id="themeToggle" class="theme-toggle" aria-label="다크 모드 전환" title="다크 모드 전환">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Project Detail Section -->
+  <section id="project" class="page-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="page-title">국가유산 모니터링·조사·등록 시스템</h2>
+      </div>
+      <div class="content-wrapper">
+        <div class="project-item">
+          <div class="project-main-full">
+            <div class="project-description">
+              <p>국가유산청 Open API, AI 손상 탐지, Firebase 실시간 동기화를 통합한 크로스플랫폼 현장 조사 시스템.</p>
+              <p>이 프로젝트는 문화재 현장 조사 과정의 디지털 전환(Digital Transformation)을 목표로, 기존 종이 기반 조사 방식을 AI 기반 자동 분석·클라우드 연동 중심의 통합 조사 시스템으로 재설계한 프로젝트이다. Flutter(Web/Android/iOS) 기반 프론트엔드와 FastAPI 백엔드, PyTorch 손상 탐지 모델, Firebase 실시간 데이터베이스를 하나의 워크플로우로 통합하여 구축하였다.</p>
+              <p>FastAPI 서버는 국가유산청 Open API의 XML 데이터를 JSON 구조로 변환하여, 유산명·종목·지역 기반의 다중 조건 검색과 페이지네이션 기능을 제공한다. 각각의 문화유산 상세 화면에서는 지정 현황, 소유자/관리자 정보, 소재지, 좌표 등 필수 정보를 확인할 수 있으며, 사용자가 직접 국가유산을 수동 등록할 수도 있다.</p>
+              <p>핵심 기능은 AI 기반 손상부 조사 모듈이다. 현장에서 촬영한 이미지를 앱에서 업로드하면, 백엔드의 PyTorch DETR 모델이 이를 분석하여 네 종류의 손상 유형(갈램, 균열, 부후, 압괴/터짐)을 바운딩 박스와 신뢰도 점수와 함께 반환한다. 또한 탐지 결과를 기반으로 A~D 등급의 자동 심각도(Severity Grade)를 산정하여 조사 효율성을 크게 높였다. 분석 결과와 조사자의 상세 의견, 손상 위치·현상 등은 모두 Firestore에 실시간으로 저장된다.</p>
+              <p>시스템은 현장 조사 프로세스를 3단계 탭 구조로 구성했다:</p>
+              <ul>
+                <li><strong>현장 조사:</strong> 기본 정보, 메타 정보, 현황 사진, AI 기반 손상 조사</li>
+                <li><strong>조사자 의견:</strong> 보존관리 이력, 조사 의견, 관리 사항, 수정 이력</li>
+                <li><strong>종합 진단:</strong> 손상 종합 분석, 등급 분류, AI 예측 결과</li>
+              </ul>
+              <p>Firebase Firestore 스트림을 기반으로 모든 수정 사항이 즉시 UI에 반영되며, Storage에 업로드된 이미지 역시 실시간 갱신된다. 또한 모든 편집 기록은 수정 이력 로그로 자동 저장되어 향후 감사(audit)나 이력 추적이 가능하다.</p>
+              <p>본 시스템은 AI 모델·실시간 데이터베이스·크로스플랫폼 UI·REST API 파이프라인을 하나의 현장 업무 시스템으로 통합한 사례로, 문화유산 보존 관리 업무의 디지털 전환을 위한 실제 운영 수준의 기반을 구축하였다. 향후에는 손상 지도(Spatial Damage Map), 오프라인 모드, 다국어 UI 등으로 확장할 수 있는 구조를 갖추고 있다.</p>
+            </div>
+            <div class="project-tech">기술 스택: Flutter, Dart, Firebase(Firestore/Storage), FastAPI, Python, PyTorch(DETR), Docker, Nginx, XML→JSON Proxy</div>
+            <div class="project-links">
+              <a href="http://210.117.181.115:3001/" target="_blank" rel="noopener noreferrer">🌐 실제 웹 애플리케이션</a>
+            </div>
+          </div>
+          
+          <!-- Web Application and Copyright Certificate -->
+          <div class="project-media-section">
+            <div class="project-web-wrapper">
+              <h3 class="section-title">실제 웹 애플리케이션</h3>
+              <div class="project-web-embed">
+                <iframe src="http://210.117.181.115:3001/" style="width: 100%; height: 800px; border: 1px solid var(--border); border-radius: 8px;" title="국가유산 모니터링 시스템"></iframe>
+                <div class="project-web-link">
+                  <a href="http://210.117.181.115:3001/" target="_blank" rel="noopener noreferrer" class="external-link">새 탭에서 열기 →</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="project-certificate-wrapper">
+              <h3 class="section-title">저작권 등록증</h3>
+              <div class="project-certificate">
+                <img src="../assets/heritage-monitoring-project/copyright-certificate.jpeg" alt="저작권 등록증" loading="lazy" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">© <span id="y"></span> Sewon Kim · Built on GitHub Pages</footer>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // Theme toggle is handled by ../js/site.js
+  </script>
+</body>
+</html>
+
