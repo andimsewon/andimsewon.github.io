@@ -284,6 +284,9 @@ a:focus-visible {
 .photo-column {
   position: sticky;
   top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Header Section */
@@ -347,43 +350,50 @@ a:focus-visible {
 /* Contact Icons */
 .contact-icons {
   display: flex;
-  gap: 16px;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 20px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+  margin-top: 24px;
+  width: 100%;
 }
 
 .contact-icon {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
+  gap: 12px;
+  padding: 12px 16px;
   color: var(--text-secondary);
-  transition: color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
   text-decoration: none;
   border-radius: 10px;
   background-color: rgba(212, 165, 184, 0.06);
   border: 1px solid var(--border);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .contact-icon:hover {
   color: var(--accent);
-  transform: translateY(-2px);
+  transform: translateX(4px);
   text-decoration: none;
   background-color: rgba(212, 165, 184, 0.12);
   border-color: var(--accent);
 }
 
 .contact-icon:active {
-  transform: translateY(0);
+  transform: translateX(2px);
 }
 
 .contact-icon svg {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.contact-icon-label {
+  font-size: 15px;
+  font-weight: 500;
+  color: inherit;
 }
 
 .affiliation-list,
@@ -605,6 +615,7 @@ a:focus-visible {
   aspect-ratio: 4 / 3;
   box-shadow: var(--shadow-elev-0);
   transition: transform var(--t-med), box-shadow var(--t-med);
+  position: relative;
 }
 
 .project-card:hover .project-card-visual {
@@ -1235,6 +1246,12 @@ a:focus-visible {
   .profile-photo {
     max-width: 240px;
     margin: 0 auto;
+  }
+
+  .contact-icons {
+    width: 100%;
+    max-width: 280px;
+    margin: 24px auto 0;
   }
 
   .quick-links-grid {
