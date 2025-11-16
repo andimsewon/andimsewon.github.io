@@ -122,7 +122,7 @@ a:active { opacity: 0.75; }
   padding: 12px 0;
   /* Respect iOS safe areas */
   padding-top: calc(12px + env(safe-area-inset-top));
-  background: rgba(184, 122, 143, 0.85);
+  background: rgba(184, 122, 143, 0.95) !important;
   -webkit-backdrop-filter: saturate(180%) blur(var(--blur));
   backdrop-filter: saturate(180%) blur(var(--blur));
   border-bottom: 1px solid rgba(212, 165, 184, 0.3);
@@ -131,18 +131,18 @@ a:active { opacity: 0.75; }
 }
 .top-nav.scrolled { 
   box-shadow: var(--shadow-elev-0); 
-  background: rgba(184, 122, 143, 0.95);
+  background: rgba(184, 122, 143, 1) !important;
 }
 
 /* Mobile: More opaque background for better text visibility */
 @media (max-width: 768px) {
   .top-nav {
-    background: rgba(184, 122, 143, 0.98);
+    background: rgba(184, 122, 143, 1) !important;
     -webkit-backdrop-filter: saturate(200%) blur(20px);
     backdrop-filter: saturate(200%) blur(20px);
   }
   .top-nav.scrolled {
-    background: rgba(184, 122, 143, 1);
+    background: rgba(184, 122, 143, 1) !important;
   }
 }
 
@@ -1941,9 +1941,10 @@ b, strong { font-weight: 600; font-family: var(--font-display); }
 
 /* Reduce heavy effects on mobile for performance */
 @media (max-width: 768px) {
-  .top-nav,
   .container,
   .project-card { -webkit-backdrop-filter: none; backdrop-filter: none; background: var(--paper); }
+  /* Keep top-nav with pink background - never change to paper color */
+  .top-nav { -webkit-backdrop-filter: saturate(200%) blur(20px); backdrop-filter: saturate(200%) blur(20px); }
 }
 
 .gallery-grid {
