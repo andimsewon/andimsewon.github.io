@@ -99,15 +99,19 @@
     <div class="container">
       <div class="main-layout">
         <div class="content-column">
-          <h1 class="name">Sewon Kim</h1>
+          <div class="name-header">
+            <h1 class="name">Sewon Kim</h1>
+            <p class="name-subtitle">Undergraduate Researcher | Computer Engineering</p>
+            <p class="name-affiliation">Jeonbuk National University</p>
+          </div>
 
-          <p style="margin: 0 0 16px 0; color: var(--text-secondary);">
-            Hello! I'm Sewon Kim, an undergraduate student in Computer Engineering at Jeonbuk National University.<br><br>
-            I'm passionate about AI, particularly NLP and LLMs, and work as an undergraduate researcher at the Natural Language Learning Lab. My research focuses on reasoning and agent-related topics in LLMs, and I'm also exploring Embodied AI as computer vision continues to advance rapidly.<br><br>
-            Currently preparing for graduate school, I'm interested in structuring research problems and connecting them to real-world solutions. Feel free to reach out via email or GitHub if you'd like to connect or discuss!<br><br>
+          <p style="margin: 32px 0 32px 0; color: var(--text-secondary); line-height: 1.8; font-size: 17px;">
+            I am an undergraduate student in Computer Engineering at Jeonbuk National University, specializing in Natural Language Processing, Large Language Models, and Embodied AI systems. Currently, I serve as an undergraduate researcher at the <a href="https://sites.google.com/view/nlllab/main" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: none;">Natural Language Learning Lab</a> under the supervision of Prof. Hyun-je Song, where I investigate knowledge graph–enhanced retrieval-augmented generation (RAG) architectures for improving factual accuracy and reasoning capabilities in LLMs.<br><br>
+            My research interests center on developing graph-based retrieval pipelines that integrate structured knowledge with neural embedding spaces, implementing multi-hop reasoning mechanisms over knowledge graphs, and conducting ablation studies on embedding integration techniques. I am also exploring Embodied AI applications, particularly in IoT sensing systems and edge computing architectures.<br><br>
+            I am actively preparing for graduate studies and am particularly interested in structuring research problems that bridge theoretical advances with practical, real-world applications. I welcome opportunities to discuss research collaborations, potential graduate programs, or technical discussions in AI and NLP.
           </p>
 
-          <div class="contact-icons" style="margin-top: 16px;">
+          <div class="contact-icons" style="margin-top: 32px;">
             <a href="mailto:sewonkim1018@gmail.com" class="contact-icon" aria-label="Email" title="sewonkim1018@gmail.com">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -150,20 +154,63 @@
     <div class="container">
       <div class="content-wrapper">
         <div class="section-title">AT A GLANCE</div>
-        <ul class="info-list">
-          <li>Interests: NLP, LLMs, Embodied AI, IoT sensing systems</li>
-          <li>Focus: Knowledge graph–enhanced RAG, multi-modal learning, edge AI</li>
-          <li>Currently: Undergraduate researcher at Natural Language Learning Lab (JBNU)</li>
-        </ul>
+        <div class="info-grid">
+          <div class="info-item">
+            <span class="info-label">Research Interests</span>
+            <span class="info-value">NLP, LLMs, Embodied AI, IoT sensing systems</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Research Focus</span>
+            <span class="info-value">Knowledge graph–enhanced RAG, multi-modal learning, edge AI</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Current Position</span>
+            <span class="info-value">Undergraduate researcher at Natural Language Learning Lab (JBNU)</span>
+          </div>
+        </div>
 
         <div class="section-title">SKILLS & TOOLS</div>
-        <ul class="info-list">
-          <li>AI/ML: PyTorch, Transformers, LangChain, DETR</li>
-          <li>Backend & Data: FastAPI, REST, MQTT</li>
-          <li>Mobile & Web: Flutter, JavaScript</li>
-          <li>IoT & Edge: LoRa, Raspberry Pi</li>
-          <li>Cloud & DevOps: AWS, Firebase, Git</li>
-        </ul>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <span class="skill-category-title">AI/ML</span>
+            <div class="skill-tags">
+              <span class="skill-tag">PyTorch</span>
+              <span class="skill-tag">Transformers</span>
+              <span class="skill-tag">LangChain</span>
+              <span class="skill-tag">DETR</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <span class="skill-category-title">Backend & Data</span>
+            <div class="skill-tags">
+              <span class="skill-tag">FastAPI</span>
+              <span class="skill-tag">REST</span>
+              <span class="skill-tag">MQTT</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <span class="skill-category-title">Mobile & Web</span>
+            <div class="skill-tags">
+              <span class="skill-tag">Flutter</span>
+              <span class="skill-tag">JavaScript</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <span class="skill-category-title">IoT & Edge</span>
+            <div class="skill-tags">
+              <span class="skill-tag">LoRa</span>
+              <span class="skill-tag">Raspberry Pi</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <span class="skill-category-title">Cloud & DevOps</span>
+            <div class="skill-tags">
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">Firebase</span>
+              <span class="skill-tag">Git</span>
+            </div>
+          </div>
+        </div>
 
         <div class="section-title">EDUCATION</div>
         <ul class="info-list">
@@ -175,13 +222,43 @@
         </ul>
 
         <div class="section-title">QUICK LINKS</div>
-        <ul class="info-list">
-          <li><a href="research.html">Research experience</a> — knowledge-graph RAG, IoT sensing</li>
-          <li><a href="projects.html">Selected projects</a> — vision transformers, diffusion forecasting</li>
-          <li><a href="awards.html">Honors & awards</a> — scholarships and excellence recognitions</li>
-          <li><a href="activities.html">Campus activities</a> — leadership, service, organizations</li>
-          <li><a href="gallery.html">Photo gallery</a> — snapshots from projects and research</li>
-        </ul>
+        <div class="quick-links-grid">
+          <a href="research.html" class="quick-link-card">
+            <span class="quick-link-icon">🔬</span>
+            <div class="quick-link-content">
+              <span class="quick-link-title">Research Experience</span>
+              <span class="quick-link-desc">Knowledge-graph RAG, IoT sensing</span>
+            </div>
+          </a>
+          <a href="projects.html" class="quick-link-card">
+            <span class="quick-link-icon">💻</span>
+            <div class="quick-link-content">
+              <span class="quick-link-title">Selected Projects</span>
+              <span class="quick-link-desc">Vision transformers, diffusion forecasting</span>
+            </div>
+          </a>
+          <a href="awards.html" class="quick-link-card">
+            <span class="quick-link-icon">🏆</span>
+            <div class="quick-link-content">
+              <span class="quick-link-title">Honors & Awards</span>
+              <span class="quick-link-desc">Scholarships and excellence recognitions</span>
+            </div>
+          </a>
+          <a href="activities.html" class="quick-link-card">
+            <span class="quick-link-icon">👥</span>
+            <div class="quick-link-content">
+              <span class="quick-link-title">Campus Activities</span>
+              <span class="quick-link-desc">Leadership, service, organizations</span>
+            </div>
+          </a>
+          <a href="gallery.html" class="quick-link-card">
+            <span class="quick-link-icon">📸</span>
+            <div class="quick-link-content">
+              <span class="quick-link-title">Photo Gallery</span>
+              <span class="quick-link-desc">Snapshots from projects and research</span>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </section>

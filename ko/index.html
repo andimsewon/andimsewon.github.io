@@ -96,13 +96,19 @@
     <div class="container">
       <div class="main-layout">
         <div class="content-column">
-          <h1 class="name">김세원</h1>
+          <div class="name-header">
+            <h1 class="name">김세원</h1>
+            <p class="name-subtitle">학부연구생 | 컴퓨터공학부</p>
+            <p class="name-affiliation">전북대학교</p>
+          </div>
 
-          <p style="margin: 0 0 16px 0; color: var(--text-secondary);">
-            안녕하세요! 전북대학교 컴퓨터공학부 학부생 김세원입니다.<br><br>
-            AI와 자연어처리(NLP)에 관심이 있어 Natural Language Learning Lab에서 학부연구생으로 활동하고 있습니다. LLM의 reasoning과 agent 관련 연구를 중심으로 공부하고 있으며, 컴퓨터비전의 급속한 발전에 따라 Embodied AI 분야에도 관심을 확장하고 있습니다.<br><br>
-            현재 대학원 진학을 준비하며, 관심 있는 문제를 구조화하고 실제 해결로 이어가는 방법을 고민하고 있습니다. 궁금한 점이 있거나 함께 이야기 나누고 싶은 주제가 있다면 이메일이나 GitHub로 편하게 연락 주세요!<br><br>
-          <div class="contact-icons" style="margin-top: 16px;">
+          <p style="margin: 32px 0 32px 0; color: var(--text-secondary); line-height: 1.8; font-size: 17px;">
+            전북대학교 컴퓨터공학부 학부생으로, 자연어처리(NLP), 대규모 언어 모델(LLM), 그리고 Embodied AI 시스템을 전공하고 있습니다. 현재 송현제 교수님 지도 하에 <a href="https://sites.google.com/view/nlllab/main" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: none;">Natural Language Learning Lab</a>에서 학부연구생으로 활동하며, 지식그래프 기반 검색 증강 생성(RAG) 아키텍처를 통해 LLM의 사실 정확도와 추론 능력을 향상시키는 연구를 수행하고 있습니다.<br><br>
+            연구 관심사는 구조화된 지식을 신경망 임베딩 공간과 통합하는 그래프 기반 검색 파이프라인 개발, 지식그래프를 통한 다중 홉 추론 메커니즘 구현, 그리고 임베딩 통합 기법에 대한 ablation study 수행에 중점을 두고 있습니다. 또한 IoT 센싱 시스템과 엣지 컴퓨팅 아키텍처를 중심으로 한 Embodied AI 응용 분야도 탐구하고 있습니다.<br><br>
+            현재 대학원 진학을 준비하며, 이론적 발전과 실용적인 실제 응용을 연결하는 연구 문제 구조화에 특히 관심이 있습니다. 연구 협업, 대학원 프로그램, AI 및 NLP에 관한 기술적 논의 기회를 환영합니다.
+          </p>
+
+          <div class="contact-icons" style="margin-top: 32px;">
             <a href="mailto:sewonkim1018@gmail.com" class="contact-icon" aria-label="이메일" title="sewonkim1018@gmail.com">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -144,20 +150,63 @@
     <div class="container">
       <div class="content-wrapper">
         <div class="section-title">한눈에 보기</div>
-        <ul class="info-list">
-          <li>관심 분야: NLP, LLM, Embodied AI, IoT 센싱</li>
-          <li>연구 주제: 지식그래프 기반 RAG, 멀티모달 학습, 엣지 AI</li>
-          <li>현재: 전북대 Natural Language Learning Lab 학부연구생</li>
-        </ul>
+        <div class="info-grid">
+          <div class="info-item">
+            <span class="info-label">연구 관심 분야</span>
+            <span class="info-value">NLP, LLM, Embodied AI, IoT 센싱 시스템</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">연구 주제</span>
+            <span class="info-value">지식그래프 기반 RAG, 멀티모달 학습, 엣지 AI</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">현재 직책</span>
+            <span class="info-value">전북대 Natural Language Learning Lab 학부연구생</span>
+          </div>
+        </div>
 
         <div class="section-title">역량 & 도구</div>
-        <ul class="info-list">
-          <li>AI/ML: PyTorch, Transformers, LangChain, DETR</li>
-          <li>백엔드·데이터: FastAPI, REST, MQTT</li>
-          <li>모바일·웹: Flutter, JavaScript</li>
-          <li>IoT·엣지: LoRa, Raspberry Pi</li>
-          <li>클라우드·DevOps: AWS, Firebase, Git</li>
-        </ul>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <span class="skill-category-title">AI/ML</span>
+            <div class="skill-tags">
+              <span class="skill-tag">PyTorch</span>
+              <span class="skill-tag">Transformers</span>
+              <span class="skill-tag">LangChain</span>
+              <span class="skill-tag">DETR</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <span class="skill-category-title">백엔드 & 데이터</span>
+            <div class="skill-tags">
+              <span class="skill-tag">FastAPI</span>
+              <span class="skill-tag">REST</span>
+              <span class="skill-tag">MQTT</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <span class="skill-category-title">모바일 & 웹</span>
+            <div class="skill-tags">
+              <span class="skill-tag">Flutter</span>
+              <span class="skill-tag">JavaScript</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <span class="skill-category-title">IoT & 엣지</span>
+            <div class="skill-tags">
+              <span class="skill-tag">LoRa</span>
+              <span class="skill-tag">Raspberry Pi</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <span class="skill-category-title">클라우드 & DevOps</span>
+            <div class="skill-tags">
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">Firebase</span>
+              <span class="skill-tag">Git</span>
+            </div>
+          </div>
+        </div>
 
         <div class="section-title">학력</div>
         <ul class="info-list">
@@ -169,13 +218,43 @@
         </ul>
 
         <div class="section-title">바로가기</div>
-        <ul class="info-list">
-          <li><a href="research.html">연구</a> — 지식그래프 RAG, IoT 센싱</li>
-          <li><a href="projects.html">프로젝트</a> — 비전 트랜스포머, 확산 기반 예측</li>
-          <li><a href="awards.html">수상</a> — 장학·우수상 등</li>
-          <li><a href="activities.html">교내 활동</a> — 리더십, 봉사, 동아리</li>
-          <li><a href="gallery.html">갤러리</a> — 프로젝트·연구 사진</li>
-        </ul>
+        <div class="quick-links-grid">
+          <a href="research.html" class="quick-link-card">
+            <span class="quick-link-icon">🔬</span>
+            <div class="quick-link-content">
+              <span class="quick-link-title">연구 경험</span>
+              <span class="quick-link-desc">지식그래프 RAG, IoT 센싱</span>
+            </div>
+          </a>
+          <a href="projects.html" class="quick-link-card">
+            <span class="quick-link-icon">💻</span>
+            <div class="quick-link-content">
+              <span class="quick-link-title">프로젝트</span>
+              <span class="quick-link-desc">비전 트랜스포머, 확산 기반 예측</span>
+            </div>
+          </a>
+          <a href="awards.html" class="quick-link-card">
+            <span class="quick-link-icon">🏆</span>
+            <div class="quick-link-content">
+              <span class="quick-link-title">수상 내역</span>
+              <span class="quick-link-desc">장학금 및 우수상</span>
+            </div>
+          </a>
+          <a href="activities.html" class="quick-link-card">
+            <span class="quick-link-icon">👥</span>
+            <div class="quick-link-content">
+              <span class="quick-link-title">교내 활동</span>
+              <span class="quick-link-desc">리더십, 봉사, 동아리</span>
+            </div>
+          </a>
+          <a href="gallery.html" class="quick-link-card">
+            <span class="quick-link-icon">📸</span>
+            <div class="quick-link-content">
+              <span class="quick-link-title">사진 갤러리</span>
+              <span class="quick-link-desc">프로젝트 및 연구 사진</span>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </section>
