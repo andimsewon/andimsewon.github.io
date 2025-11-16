@@ -72,6 +72,7 @@
   <!-- Project Detail Section -->
   <main id="project" class="page-section">
     <div class="container">
+      <p class="back-link"><a href="projects.html" aria-label="Back to all projects">← Back to Projects</a></p>
       <div class="section-header">
         <h2 class="page-title">Heritage Monitoring and Registration System</h2>
       </div>
@@ -144,8 +145,8 @@
     
     // Try to load iframe, show fallback by default
     (function() {
-      const iframe = document.getElementById('webAppIframe');
-      const fallback = document.getElementById('webPreviewFallback');
+      var iframe = document.getElementById('webAppIframe');
+      var fallback = document.getElementById('webPreviewFallback');
       
       if (iframe && fallback) {
         // Fallback is shown by default (inline style)
@@ -155,7 +156,7 @@
           // Set iframe src
           iframe.src = src;
           
-          let iframeLoaded = false;
+          var iframeLoaded = false;
           
           // Check if iframe loads successfully
           iframe.onload = function() {

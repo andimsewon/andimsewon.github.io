@@ -66,6 +66,7 @@
   <!-- Project Detail Section -->
   <main id="project" class="page-section">
     <div class="container">
+      <p class="back-link"><a href="projects.html" aria-label="프로젝트 목록으로">← 프로젝트 목록으로</a></p>
       <div class="section-header">
         <h2 class="page-title">국가유산 모니터링·조사·등록 시스템</h2>
       </div>
@@ -139,18 +140,18 @@
     
     // Try to load iframe, show fallback by default
     (function() {
-      const iframe = document.getElementById('webAppIframe');
-      const fallback = document.getElementById('webPreviewFallback');
+      var iframe = document.getElementById('webAppIframe');
+      var fallback = document.getElementById('webPreviewFallback');
       
       if (iframe && fallback) {
         // Fallback is shown by default (inline style)
         // Try to load iframe
-        const src = iframe.getAttribute('data-src');
+        var src = iframe.getAttribute('data-src');
         if (src) {
           // Set iframe src
           iframe.src = src;
           
-          let iframeLoaded = false;
+          var iframeLoaded = false;
           
           // Check if iframe loads successfully
           iframe.onload = function() {

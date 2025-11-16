@@ -72,13 +72,14 @@
   <!-- Project Detail Section -->
   <main id="project" class="page-section">
     <div class="container">
+      <p class="back-link"><a href="projects.html" aria-label="Back to all projects">← Back to Projects</a></p>
       <div class="section-header">
-        <h2 class="page-title">WaggleNet – A LoRa and MQTT-Based Monitoring System for Internal and External Beehive Conditions</h2>
+        <h1 class="page-title">WaggleNet – A LoRa and MQTT-Based Monitoring System for Internal and External Beehive Conditions</h1>
       </div>
       <div class="content-wrapper">
         <div class="project-item">
           <!-- Paper at the top -->
-          <div class="project-presentation-full" id="paperThumbnail" data-pdf="assets/polvo-de-purdue-project/paper.optimized.pdf">
+          <div class="project-presentation-full" id="paperThumbnail" data-pdf="assets/polvo-de-purdue-project/paper.optimized.pdf" role="button" tabindex="0" aria-controls="pdfLightbox" aria-label="Open paper PDF in a dialog">
             <iframe data-src="assets/polvo-de-purdue-project/paper.optimized.pdf#page=1&zoom=fit" style="width: 100%; height: 700px; border: none; pointer-events: none;" loading="lazy"></iframe>
             <div class="project-presentation-label">Click to view paper</div>
           </div>
@@ -132,57 +133,74 @@
   <footer class="footer">© <span id="y"></span> Sewon Kim · Built on GitHub Pages</footer>
   <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    
-    // PDF Lightbox functionality
-    const pdfLightbox = document.getElementById('pdfLightbox');
-    const pdfLightboxIframe = document.getElementById('pdfLightboxIframe');
-    const pdfLightboxClose = document.getElementById('pdfLightboxClose');
-    const paperThumbnail = document.getElementById('paperThumbnail');
-    const presentationThumbnail = document.getElementById('presentationThumbnail');
-    
-    function openPdfLightbox(pdfPath) {
-      pdfLightboxIframe.src = pdfPath;
-      pdfLightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-    
-    function closePdfLightbox() {
-      pdfLightbox.classList.remove('active');
-      document.body.style.overflow = '';
-      pdfLightboxIframe.src = '';
-    }
-    
-    if (paperThumbnail) {
-      paperThumbnail.addEventListener('click', () => {
-        const pdfPath = paperThumbnail.getAttribute('data-pdf');
-        openPdfLightbox(pdfPath);
-      });
-    }
-    
-    if (presentationThumbnail) {
-      presentationThumbnail.addEventListener('click', () => {
-        const pdfPath = presentationThumbnail.getAttribute('data-pdf');
-        openPdfLightbox(pdfPath);
-      });
-    }
-    
-    if (pdfLightboxClose) {
-      pdfLightboxClose.addEventListener('click', closePdfLightbox);
-    }
-    
-    pdfLightbox.addEventListener('click', (e) => {
-      if (e.target === pdfLightbox) {
-        closePdfLightbox();
+    (function () {
+      var y = document.getElementById('y');
+      if (y) { try { y.textContent = new Date().getFullYear(); } catch (_) {} }
+
+      // PDF Lightbox functionality (mobile-safe, legacy-friendly)
+      var pdfLightbox = document.getElementById('pdfLightbox');
+      var pdfLightboxIframe = document.getElementById('pdfLightboxIframe');
+      var pdfLightboxClose = document.getElementById('pdfLightboxClose');
+      var paperThumbnail = document.getElementById('paperThumbnail');
+      var presentationThumbnail = document.getElementById('presentationThumbnail');
+
+      function openPdfLightbox(pdfPath) {
+        if (!pdfLightbox || !pdfLightboxIframe) return;
+        pdfLightboxIframe.src = pdfPath;
+        pdfLightbox.classList.add('active');
+        try { document.body.style.overflow = 'hidden'; } catch (_) {}
+        if (pdfLightboxClose && typeof pdfLightboxClose.focus === 'function') {
+          try { pdfLightboxClose.focus(); } catch (_) {}
+        }
       }
-    });
-    
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && pdfLightbox.classList.contains('active')) {
-        closePdfLightbox();
+
+      function closePdfLightbox() {
+        if (!pdfLightbox || !pdfLightboxIframe) return;
+        pdfLightbox.classList.remove('active');
+        try { document.body.style.overflow = ''; } catch (_) {}
+        pdfLightboxIframe.src = '';
       }
-    });
-    // PDF lazy loading and theme toggle are handled by js/site.js
+
+      if (paperThumbnail) {
+        paperThumbnail.addEventListener('click', function () {
+          var pdfPath = paperThumbnail.getAttribute('data-pdf');
+          openPdfLightbox(pdfPath);
+        });
+        paperThumbnail.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            var pdfPath = paperThumbnail.getAttribute('data-pdf');
+            openPdfLightbox(pdfPath);
+          }
+        });
+      }
+
+      if (presentationThumbnail) {
+        presentationThumbnail.addEventListener('click', function () {
+          var pdfPath = presentationThumbnail.getAttribute('data-pdf');
+          openPdfLightbox(pdfPath);
+        });
+      }
+
+      if (pdfLightboxClose) {
+        pdfLightboxClose.addEventListener('click', closePdfLightbox);
+      }
+
+      if (pdfLightbox) {
+        pdfLightbox.addEventListener('click', function (e) {
+          if (e.target === pdfLightbox) {
+            closePdfLightbox();
+          }
+        });
+      }
+
+      document.addEventListener('keydown', function (e) {
+        if ((e.key === 'Escape' || e.key === 'Esc') && pdfLightbox && pdfLightbox.classList.contains('active')) {
+          closePdfLightbox();
+        }
+      });
+      // PDF lazy loading and theme toggle are handled by js/site.js
+    })();
   </script>
 </body>
 </html>

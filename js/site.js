@@ -6,10 +6,10 @@
 
   // Theme toggle behavior (assumes data-theme already set in <head>)
   var btn = document.getElementById('themeToggle');
-  if (!btn) return;
-
   var isKO = (document.documentElement.lang || '').toLowerCase().startsWith('ko');
+
   function setIcon(t) {
+    if (!btn) return;
     btn.textContent = t === 'dark' ? '☀️' : '🌙';
     var label = isKO
       ? (t === 'dark' ? '라이트 모드 전환' : '다크 모드 전환')
@@ -21,17 +21,19 @@
   var theme = document.documentElement.getAttribute('data-theme') || 'light';
   setIcon(theme);
 
-  btn.addEventListener('click', function () {
-    theme = theme === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', theme);
-    try { localStorage.setItem('theme', theme); } catch (e) {}
-    setIcon(theme);
-  });
+  if (btn) {
+    btn.addEventListener('click', function () {
+      theme = theme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+      try { localStorage.setItem('theme', theme); } catch (e) {}
+      setIcon(theme);
+    });
+  }
 
   if (window.matchMedia) {
     try {
       var mq = window.matchMedia('(prefers-color-scheme: dark)');
-      mq.addEventListener('change', function (e) {
+      var onChange = function (e) {
         // Only auto-switch if user hasn't explicitly chosen a theme
         try {
           if (!localStorage.getItem('theme')) {
@@ -40,10 +42,15 @@
             setIcon(theme);
           }
         } catch (err) {}
-      });
+      };
+      if (typeof mq.addEventListener === 'function') {
+        mq.addEventListener('change', onChange);
+      } else if (typeof mq.addListener === 'function') {
+        mq.addListener(onChange);
+      }
     } catch (err) {}
   }
-  
+
   // Auto-highlight current nav link
   try {
     var links = document.querySelectorAll('.nav-links a');
@@ -54,15 +61,15 @@
       return seg === '' ? 'index.html' : seg;
     }
     var current = baseName(path);
-    links.forEach(function (a) {
+    for (var i = 0; i < links.length; i++) {
+      var a = links[i];
       var href = a.getAttribute('href') || '';
-      // Skip language switch links containing '/ko/' or pointing to parent root when not matching
       var target = baseName(href.replace(/^\.\//, ''));
       if (target === current) {
         a.classList.add('active');
         if (!a.getAttribute('aria-current')) a.setAttribute('aria-current', 'page');
       }
-    });
+    }
   } catch (err) {}
 })();
 
@@ -72,7 +79,17 @@
     // Mobile nav toggle
     var toggle = document.getElementById('navToggle');
     if (toggle) {
-      var navContainer = toggle.closest('.nav-container');
+      var navContainer = (function(el){
+        if (!el) return null;
+        if (typeof el.closest === 'function') return el.closest('.nav-container');
+        // Fallback for older browsers
+        var p = el.parentElement;
+        while (p) {
+          if (p.classList && p.classList.contains('nav-container')) return p;
+          p = p.parentElement;
+        }
+        return null;
+      })(toggle);
       var isKO = (document.documentElement.lang || '').toLowerCase().startsWith('ko');
       function setToggleState(expanded) {
         toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
@@ -86,19 +103,37 @@
         var open = navContainer.classList.toggle('is-open');
         setToggleState(open);
       });
+      // Close on Escape for accessibility
+      document.addEventListener('keydown', function (e) {
+        if ((e.key === 'Escape' || e.key === 'Esc') && navContainer && navContainer.classList.contains('is-open')) {
+          navContainer.classList.remove('is-open');
+          setToggleState(false);
+        }
+      });
+      // Close on resize/orientation change when leaving mobile layout
+      var closeOnResize = function () {
+        try {
+          if (window.innerWidth >= 769 && navContainer && navContainer.classList.contains('is-open')) {
+            navContainer.classList.remove('is-open');
+            setToggleState(false);
+          }
+        } catch (_) {}
+      };
+      window.addEventListener('resize', closeOnResize);
+      window.addEventListener('orientationchange', closeOnResize);
       // Close when clicking a link (better UX)
-      var navLinks = navContainer.querySelectorAll('.nav-links a');
-      navLinks.forEach(function (a) {
-        a.addEventListener('click', function () {
-          if (navContainer.classList.contains('is-open')) {
+      var navLinks = navContainer ? navContainer.querySelectorAll('.nav-links a') : [];
+      for (var i = 0; i < navLinks.length; i++) {
+        navLinks[i].addEventListener('click', function () {
+          if (navContainer && navContainer.classList.contains('is-open')) {
             navContainer.classList.remove('is-open');
             setToggleState(false);
           }
         });
-      });
+      }
       // Close on outside click
       document.addEventListener('click', function (e) {
-        if (!navContainer.contains(e.target)) {
+        if (navContainer && !navContainer.contains(e.target)) {
           if (navContainer.classList.contains('is-open')) {
             navContainer.classList.remove('is-open');
             setToggleState(false);

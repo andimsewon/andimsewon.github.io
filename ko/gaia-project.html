@@ -67,12 +67,13 @@
   <!-- Project Detail Section -->
   <main id="project" class="page-section">
     <div class="container">
+      <p class="back-link"><a href="projects.html" aria-label="프로젝트 목록으로">← 프로젝트 목록으로</a></p>
       <div class="section-header">
         <h1 class="page-title">AI 기반 공장 및 발전소 배출가스의 도시 대기 영향 분석 시스템 (GAIA Project)</h1>
       </div>
       <div class="content-wrapper">
         <div class="project-item">
-          <div class="project-presentation-full" id="presentationThumbnail" data-pdf="../assets/gaia-project/presentation.optimized.pdf">
+          <div class="project-presentation-full" id="presentationThumbnail" data-pdf="../assets/gaia-project/presentation.optimized.pdf" role="button" tabindex="0" aria-controls="pdfLightbox" aria-label="발표 자료(PDF) 열기">
             <iframe data-src="../assets/gaia-project/presentation.optimized.pdf#page=1&zoom=fit" style="width: 100%; height: 700px; border: none; pointer-events: none;" loading="lazy"></iframe>
             <div class="project-presentation-label">클릭하여 발표 자료 보기</div>
           </div>
@@ -123,47 +124,42 @@
   <footer class="footer">© <span id="y"></span> Sewon Kim · Built on GitHub Pages</footer>
   <button class="back-to-top" id="backToTop" aria-label="맨 위로" title="맨 위로">↑</button>
   <script>
-    // PDF Lightbox functionality
-    const pdfLightbox = document.getElementById('pdfLightbox');
-    const pdfLightboxIframe = document.getElementById('pdfLightboxIframe');
-    const pdfLightboxClose = document.getElementById('pdfLightboxClose');
-    const presentationThumbnail = document.getElementById('presentationThumbnail');
-    
-    function openPdfLightbox(pdfPath) {
-      pdfLightboxIframe.src = pdfPath;
-      pdfLightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-    
-    function closePdfLightbox() {
-      pdfLightbox.classList.remove('active');
-      document.body.style.overflow = '';
-      pdfLightboxIframe.src = '';
-    }
-    
-    if (presentationThumbnail) {
-      presentationThumbnail.addEventListener('click', () => {
-        const pdfPath = presentationThumbnail.getAttribute('data-pdf');
-        openPdfLightbox(pdfPath);
-      });
-    }
-    
-    if (pdfLightboxClose) {
-      pdfLightboxClose.addEventListener('click', closePdfLightbox);
-    }
-    
-    pdfLightbox.addEventListener('click', (e) => {
-      if (e.target === pdfLightbox) {
-        closePdfLightbox();
+    // PDF Lightbox functionality (mobile-safe, legacy-friendly)
+    (function () {
+      var pdfLightbox = document.getElementById('pdfLightbox');
+      var pdfLightboxIframe = document.getElementById('pdfLightboxIframe');
+      var pdfLightboxClose = document.getElementById('pdfLightboxClose');
+      var presentationThumbnail = document.getElementById('presentationThumbnail');
+      function openPdfLightbox(pdfPath) {
+        if (!pdfLightbox || !pdfLightboxIframe) return;
+        pdfLightboxIframe.src = pdfPath;
+        pdfLightbox.classList.add('active');
+        try { document.body.style.overflow = 'hidden'; } catch (_) {}
+        if (pdfLightboxClose && typeof pdfLightboxClose.focus === 'function') {
+          try { pdfLightboxClose.focus(); } catch (_) {}
+        }
       }
-    });
-    
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && pdfLightbox.classList.contains('active')) {
-        closePdfLightbox();
+      function closePdfLightbox() {
+        if (!pdfLightbox || !pdfLightboxIframe) return;
+        pdfLightbox.classList.remove('active');
+        try { document.body.style.overflow = ''; } catch (_) {}
+        pdfLightboxIframe.src = '';
       }
-    });
-    // PDF lazy loading is handled by ../js/site.js
+      if (presentationThumbnail) {
+        presentationThumbnail.addEventListener('click', function () { var pdfPath = presentationThumbnail.getAttribute('data-pdf'); openPdfLightbox(pdfPath); });
+        presentationThumbnail.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            var pdfPath = presentationThumbnail.getAttribute('data-pdf');
+            openPdfLightbox(pdfPath);
+          }
+        });
+      }
+      if (pdfLightboxClose) { pdfLightboxClose.addEventListener('click', closePdfLightbox); }
+      if (pdfLightbox) { pdfLightbox.addEventListener('click', function (e) { if (e.target === pdfLightbox) { closePdfLightbox(); } }); }
+      document.addEventListener('keydown', function (e) { if ((e.key === 'Escape' || e.key === 'Esc') && pdfLightbox && pdfLightbox.classList.contains('active')) { closePdfLightbox(); } });
+      // PDF lazy loading is handled by ../js/site.js
+    })();
   </script>
 </body>
 </html>
