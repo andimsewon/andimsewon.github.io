@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>Sewon Kim Portfolio PPT (20p)</title>
+  <style>
+    body { font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif; margin: 0; background: #f8f9fb; color: #111; }
+    .deck { max-width: 1200px; margin: 0 auto; padding: 32px; }
+    .slide { background: #fff; border-radius: 16px; padding: 32px; margin: 18px 0; box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+    .title { font-size: 32px; margin: 0 0 16px; }
+    .subtitle { color: #555; margin: 0 0 8px; }
+    .pill { display: inline-block; padding: 6px 12px; margin: 4px 4px 4px 0; background: #e9f2ff; color: #0b63ce; border-radius: 999px; font-size: 14px; }
+    ul { margin: 10px 0 0 18px; }
+    a { color: #0b63ce; text-decoration: none; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+    .card { background: #f4f6fa; border-radius: 12px; padding: 14px 16px; }
+    strong { color: #0b63ce; }
+  </style>
+</head>
+<body>
+<div class="deck">
+
+  <section class="slide">
+    <h1 class="title">Sewon Kim | 김세원</h1>
+    <p class="subtitle">학부연구생 · 전북대학교 컴퓨터공학부 · NLP·LLM·멀티에이전트·IoT</p>
+    <p>이메일: sewonkim1018@gmail.com · GitHub: andimsewon · LinkedIn: /in/sewon-kim-742a492a6/</p>
+  </section>
+
+  <section class="slide">
+    <h2 class="title">연구 관심사</h2>
+    <div>
+      <span class="pill">Multimodal AI for Autonomous Systems</span>
+      <span class="pill">Large Language Models</span>
+      <span class="pill">Knowledge Graph RAG</span>
+      <span class="pill">Multi-Agent Reasoning</span>
+      <span class="pill">Embodied / Edge Intelligence</span>
+      <span class="pill">Explainable AI</span>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2 class="title">학력</h2>
+    <ul>
+      <li><strong>전북대학교</strong>, 컴퓨터공학부 공학사 (GPA 4.09/4.5), 2022.03–2026.02(예정)
+        <ul>
+          <li>스마트모빌리티 소프트웨어 마이크로디그리 (JST 컨소시엄), 2026.02 예정</li>
+          <li>HRC 학생대표, SW중심대학 사업 참여</li>
+        </ul>
+      </li>
+      <li><strong>말라야대학교</strong>, 교환학생, 2023.02–2023.08</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2 class="title">연구 경력</h2>
+    <ul>
+      <li><strong>학부연구생</strong>, Natural Language Learning Lab (송현제 교수), 2025.02–현재
+        <ul>
+          <li>지식그래프 기반 RAG로 LLM 멀티홉 추론 강화 (PyTorch, LangChain)</li>
+          <li>그래프 메모리·임베딩 통합, 멀티홉 QA Latency/정확도 트레이드오프 분석</li>
+        </ul>
+      </li>
+      <li><strong>International Research Scholar</strong> (IITP, Purdue Univ.), 2025.06–2025.08
+        <ul>
+          <li>LoRa-MQTT 농업 센서 네트워크 8노드 설계·필드 실험 (110m, &lt;1s 지연, $10–15/노드)</li>
+          <li>WaggleNet 논문 공동저자, arXiv 업로드</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2 class="title">대표 프로젝트 개요</h2>
+    <div class="grid">
+      <div class="card"><strong>WaggleNet</strong><br>LoRa+MQTT 벌통 이중 모니터링</div>
+      <div class="card"><strong>Heritage Monitoring</strong><br>문화유산 실측·손상 진단 AI/모바일</div>
+      <div class="card"><strong>GAIA</strong><br>산단 배출·도시 대기 예측 (물리+Transformer)</div>
+      <div class="card"><strong>Guardians of Farm</strong><br>YOLOv8 작물 질병 탐지·등급화</div>
+      <div class="card"><strong>Sangsang StoryPlay</strong><br>아동 음성-생성형 스토리텔링</div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2 class="title">WaggleNet: A LoRa and MQTT-Based Monitoring System for Internal and External Beehive Conditions</h2>
+    <ul>
+      <li>내·외부 동시 환경 모니터링 LoRa–MQTT 듀얼 스코프, ESP32-S3 기반 워커/마스터 구조</li>
+      <li>센서: DHT22, LDR, GPS; 3분 주기 JSON → LoRa → MQTT → SQLite/클라우드</li>
+      <li>전송거리 110m(LOS)/95m(차폐), 지연 &lt;5s, 모듈당 $10–15, 2개월 필드 운용</li>
+      <li>Flutter 모바일 실시간 대시보드 + Firebase FCM 알림</li>
+      <li>논문: arXiv: <a href="https://arxiv.org/abs/2512.07408" target="_blank">https://arxiv.org/abs/2512.07408</a></li>
+    </ul>
+    <div>스택: C++, Python, MQTT, SQLite, Flutter, Firebase · 프로토콜: LoRa, MQTT Pub/Sub</div>
+  </section>
+
+  <section class="slide">
+    <h2 class="title">Heritage Monitoring and Registration System</h2>
+    <ul>
+      <li>Flutter(웹/모바일) + FastAPI 백엔드, 문화유산 Open API XML→JSON 프록시</li>
+      <li>DETR 기반 손상 4종(크랙/분리/생물/파손) 탐지, 등급 A–D 자동 부여</li>
+      <li>Firestore 실시간 동기화, Storage 사진 보관, 실측·노트·종합평가 3탭 워크플로우</li>
+      <li>저작권 등록(C-2025-044615), 특허 출원 진행</li>
+    </ul>
+    <div>스택: Flutter/Dart, FastAPI, PyTorch(DETR), Firebase, Docker, Nginx</div>
+  </section>
+
+  <section class="slide">
+    <h2 class="title">GAIA: AI-Based Urban Air Impact Analysis</h2>
+    <ul>
+      <li>7년 TMS 시계열 + 기상·AirKorea 다중 소스 파이프라인</li>
+      <li>AERMOD 물리 확산 + Transformer 하이브리드, Gaussian Diffusion 불확실성 모델링</li>
+      <li>Streamlit 대시보드: 3D 플룸, 시나리오 비교, 시계열 예측</li>
+    </ul>
+    <div>스택: PyTorch, Pandas, Scikit-learn, Folium, GeoPandas, Xarray, Streamlit</div>
+  </section>
+
+  <section class="slide">
+    <h2 class="title">Guardians of Farm: 작물 질병 탐지</h2>
+    <ul>
+      <li>GroundingDINO+SAM 비지도 → YOLOv8 지도학습 전환, mAP@0.5=0.81</li>
+      <li>5단계 건강도 등급(정상~Critical) 산출, RoboFlow로 대규모 라벨링/증강</li>
+    </ul>
+    <div>스택: PyTorch, YOLOv8, OpenCV, NumPy, RoboFlow</div>
+  </section>
+
+  <section class="slide">
+    <h2 class="title">Sangsang StoryPlay: 아동 음성-생성형 스토리텔링</h2>
+    <ul>
+      <li>아동 ASR → GPT 기반 실시간 씬 생성, TTS 피드백</li>
+      <li>어휘 다양도/문장 복잡도/감정 표현 분석 → 부모 대시보드 성장 리포트</li>
+      <li>TBM 창업캠프 대상(제주대, 2025)</li>
+    </ul>
+    <div>스택: ASR/TTS 파이프라인, GPT 생성엔진, Flutter/React Native 프로토, FastAPI, Firebase</div>
+  </section>
+
+  <section class="slide">
+    <h2 class="title">Research Positions 요약</h2>
+    <ul>
+      <li>LLM RAG·지식그래프 통합, 멀티홉 추론 실험 설계/아블레이션</li>
+      <li>분산 IoT·에지 센싱 아키텍처 설계, 에너지-신뢰성 트레이드오프 분석</li>
+      <li>다중 에이전트 조정 프로토콜, 임베딩/링크 예측·엔티티 정렬 연구</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2 class="title">기술 역량</h2>
+    <div class="grid">
+      <div class="card"><strong>AI/ML</strong><br>PyTorch, Transformers, LangChain, YOLOv8, DETR</div>
+      <div class="card"><strong>Backend</strong><br>FastAPI, Flask, REST, MQTT</div>
+      <div class="card"><strong>Mobile/Web</strong><br>Flutter, JavaScript, React Native(Proto)</div>
+      <div class="card"><strong>IoT & Edge</strong><br>LoRa, ESP32-S3, Raspberry Pi</div>
+      <div class="card"><strong>Cloud/DevOps</strong><br>AWS, Firebase, Docker, Git</div>
+      <div class="card"><strong>Data/DB</strong><br>SQL, Pandas, Streamlit, GeoPandas</div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2 class="title">교육 · 멘토링</h2>
+    <ul>
+      <li>조교: 알고리즘, 리눅스 프로그래밍 (2025–현재, 80+ 학생, 자동 채점 스크립트)</li>
+      <li>멘토링: 데이터 리터러시·알고리즘 문제해결·Unix 환경 지원</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2 class="title">수상</h2>
+    <ul>
+      <li>대통령상 (핵심역량 최우수), 전북대</li>
+      <li>근사람 블랙벨트 장학 ($3,400)</li>
+      <li>캡스톤 디자인 경진대회 우수상 (2회)</li>
+      <li>Big Data Supporters 우수상(과기정통부), HRC 최우수상</li>
+      <li>TBM 창업캠프 대상 (2025)</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2 class="title">인증 · 프로그램</h2>
+    <ul>
+      <li>DAsP (Data Architecture Semi-Professional), K-DATA, 2025.10</li>
+      <li>Data Science & AI Summer School, Bucharest Univ. (42h), 2024.07</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2 class="title">리더십 & 활동</h2>
+    <ul>
+      <li>HRC 학생대표 (2022–), 대학장 표창</li>
+      <li>Big Data Supporters 대표 (2024–2025)</li>
+      <li>SHARK 수영동아리 회장 (2024)</li>
+      <li>SW중심대학 경진대회/멘토링 프로그램 우수 멘토</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2 class="title">코스워크 (핵심)</h2>
+    <div>
+      <span class="pill">ML/DL</span><span class="pill">Data Mining</span><span class="pill">IR</span>
+      <span class="pill">NLP</span><span class="pill">Algorithms</span><span class="pill">DB Systems</span>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2 class="title">향후 연구 계획</h2>
+    <ul>
+      <li>지식그래프-LLM 결합형 멀티에이전트 협력 추론</li>
+      <li>에지/임베디드 경량 LLM·멀티모달 모델 최적화</li>
+      <li>IoT 센서 네트워크의 자가 회복·에너지 적응 라우팅 + 이상탐지</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2 class="title">연구 성과 링크</h2>
+    <ul>
+      <li>WaggleNet arXiv: <a href="https://arxiv.org/abs/2512.07408" target="_blank">https://arxiv.org/abs/2512.07408</a></li>
+      <li>GitHub: <a href="https://github.com/andimsewon" target="_blank">https://github.com/andimsewon</a></li>
+      <li>CV (최신): Sewon_Kim_CV.pdf</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2 class="title">Contact</h2>
+    <p>이메일: sewonkim1018@gmail.com</p>
+    <p>GitHub: andimsewon · LinkedIn: /in/sewon-kim-742a492a6/</p>
+    <p>협업/대학원/연구 논의 환영합니다.</p>
+  </section>
+
+</div>
+</body>
+</html>
+
