@@ -25,7 +25,8 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="apple-touch-icon" href="/assets/profile.jpeg">
-  <link rel="mask-icon" href="/assets/favicon.svg" color="#0071E3">
+  <link rel="mask-icon" href="/assets/favicon.svg" color="#E0528D">
+  <link rel="preload" href="styles.css" as="style">
   <link rel="stylesheet" href="styles.css">
   <script src="js/site.js" defer></script>
   <link rel="preconnect" href="https://www.youtube-nocookie.com" crossorigin>
@@ -75,6 +76,11 @@
       <p class="back-link"><a href="projects.html" aria-label="Back to all projects">← Back to Projects</a></p>
       <div class="section-header">
         <h1 class="page-title">Crop Quality Assessment Using Image Processing and Artificial Intelligence (Guardians of Farm Project)</h1>
+        <div class="project-card-metrics" aria-label="Technologies">
+          <span class="metric-badge">YOLOv8</span>
+          <span class="metric-badge">Vision</span>
+          <span class="metric-badge">Dataset</span>
+        </div>
       </div>
       <div class="content-wrapper">
         <div class="project-item">
@@ -96,6 +102,12 @@
               <a href="https://github.com/andimsewon/Capstone_GuardiansofFarm" target="_blank" rel="noopener noreferrer">🔗 GitHub</a>
               <a href="assets/guardians-of-farm-project/poster.pdf" target="_blank" rel="noopener noreferrer">📄 Poster (PDF)</a>
             </div>
+
+            <h3 class="section-title">Key Metrics</h3>
+            <ul class="sub-list">
+              <li>mAP@0.5: 0.81</li>
+              <li>AP (diseased leaves): 0.846</li>
+            </ul>
           </div>
           
           <!-- Presentation Video Section -->

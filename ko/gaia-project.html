@@ -25,7 +25,8 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="apple-touch-icon" href="/assets/profile.jpeg">
-  <link rel="mask-icon" href="/assets/favicon.svg" color="#0071E3">
+  <link rel="mask-icon" href="/assets/favicon.svg" color="#E0528D">
+  <link rel="preload" href="../styles.css" as="style">
   <link rel="stylesheet" href="../styles.css">
   <script src="../js/site.js" defer></script>
   <link rel="preconnect" href="https://www.youtube-nocookie.com" crossorigin>
@@ -70,6 +71,12 @@
       <p class="back-link"><a href="projects.html" aria-label="프로젝트 목록으로">← 프로젝트 목록으로</a></p>
       <div class="section-header">
         <h1 class="page-title">AI 기반 공장 및 발전소 배출가스의 도시 대기 영향 분석 시스템 (GAIA Project)</h1>
+        <div class="project-card-metrics" aria-label="기술 스택">
+          <span class="metric-badge">Transformer</span>
+          <span class="metric-badge">AERMOD</span>
+          <span class="metric-badge">시계열</span>
+          <span class="metric-badge">Streamlit</span>
+        </div>
       </div>
       <div class="content-wrapper">
         <div class="project-item">
@@ -86,11 +93,19 @@
               <p>예측 결과는 Streamlit 웹 대시보드에서 실시간으로 시각화된다. 사용자는 발전소별 배출량, 예측 대기질 변화, 오염 확산 경로(3D 플룸 모델)를 직관적으로 확인할 수 있으며, 사용자 입력값에 따라 다양한 시나리오를 시뮬레이션할 수 있다. 지도 기반 시각화에는 Folium, GeoPandas, Xarray 등을 활용하였다.</p>
               <p>본 시스템은 단순 분석을 넘어 정책 수립과 환경 규제 검토를 지원하는 데이터 기반 의사결정 도구로 활용 가능하며, 향후 드론·IoT 센서 연동 및 기후변화 시나리오 반영을 통해 전국 단위 예측 플랫폼으로 확장할 계획이다.</p>
             </div>
-            <div class="project-tech">기술 스택: PyTorch, NumPy, Pandas, Scikit-learn, Folium, GeoPandas, Xarray, Streamlit</div>
+            <div class="project-tech">기술 스택: PyTorch, NumPy, Pandas, Scikit‑learn, Folium, GeoPandas, Xarray, Streamlit</div>
             <div class="project-links">
               <a href="https://github.com/GAIAinCapstone" target="_blank" rel="noopener noreferrer">🔗 GitHub</a>
               <a href="../assets/gaia-project/poster.pdf" target="_blank" rel="noopener noreferrer">📄 포스터 (PDF)</a>
             </div>
+
+            <h3 class="section-title">핵심 구성</h3>
+            <ul class="sub-list">
+              <li>하이브리드 모델: AERMOD 물리 확산 + Transformer 딥러닝</li>
+              <li>데이터 파이프라인: TMS/기상청/AirKorea API → 정제, 결측 보정, 특성 엔지니어링</li>
+              <li>불확실성 모델링: Gaussian Diffusion 기반 확산 동역학 표현</li>
+              <li>시각화: Streamlit 대시보드, Folium/GeoPandas/Xarray 공간 뷰</li>
+            </ul>
           </div>
           
           <!-- Presentation Video Section -->

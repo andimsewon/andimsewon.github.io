@@ -25,7 +25,8 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="apple-touch-icon" href="/assets/profile.jpeg">
-  <link rel="mask-icon" href="/assets/favicon.svg" color="#0071E3">
+  <link rel="mask-icon" href="/assets/favicon.svg" color="#E0528D">
+  <link rel="preload" href="../styles.css" as="style">
   <link rel="stylesheet" href="../styles.css">
   <script src="../js/site.js" defer></script>
   <link rel="preconnect" href="https://www.youtube-nocookie.com" crossorigin>
@@ -70,6 +71,11 @@
       <p class="back-link"><a href="projects.html" aria-label="프로젝트 목록으로">← 프로젝트 목록으로</a></p>
       <div class="section-header">
         <h1 class="page-title">작물 품질 상태 판별: 이미지 프로세싱 및 인공지능 기술 (Guardians of Farm Project)</h1>
+        <div class="project-card-metrics" aria-label="기술 스택">
+          <span class="metric-badge">YOLOv8</span>
+          <span class="metric-badge">Vision</span>
+          <span class="metric-badge">데이터셋</span>
+        </div>
       </div>
       <div class="content-wrapper">
         <div class="project-item">
@@ -91,6 +97,12 @@
               <a href="https://github.com/andimsewon/Capstone_GuardiansofFarm" target="_blank" rel="noopener noreferrer">🔗 GitHub</a>
               <a href="../assets/guardians-of-farm-project/poster.pdf" target="_blank" rel="noopener noreferrer">📄 포스터 (PDF)</a>
             </div>
+
+            <h3 class="section-title">핵심 지표</h3>
+            <ul class="sub-list">
+              <li>mAP@0.5: 0.81</li>
+              <li>AP(질병 잎): 0.846</li>
+            </ul>
           </div>
           
           <!-- Presentation Video Section -->

@@ -25,7 +25,8 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="apple-touch-icon" href="/assets/profile.jpeg">
-  <link rel="mask-icon" href="/assets/favicon.svg" color="#0071E3">
+  <link rel="mask-icon" href="/assets/favicon.svg" color="#E0528D">
+  <link rel="preload" href="styles.css" as="style">
   <link rel="stylesheet" href="styles.css">
   <script src="js/site.js" defer></script>
   <link rel="dns-prefetch" href="https://github.com">
@@ -75,6 +76,13 @@
       <p class="back-link"><a href="projects.html" aria-label="Back to all projects">← Back to Projects</a></p>
       <div class="section-header">
         <h2 class="page-title">Heritage Monitoring and Registration System</h2>
+        <div class="project-card-metrics" aria-label="Technologies">
+          <span class="metric-badge">Flutter</span>
+          <span class="metric-badge">FastAPI</span>
+          <span class="metric-badge">PyTorch</span>
+          <span class="metric-badge">Firebase</span>
+          <span class="metric-badge">DETR</span>
+        </div>
       </div>
       <div class="content-wrapper">
         <div class="project-item">
@@ -93,10 +101,30 @@
               <p>All updates are synchronized in real time using Firestore streams, ensuring consistent multi-device collaboration during field inspections. Photos and damage records are stored in Firebase Storage, and edit histories are automatically logged for auditability.</p>
               <p>The system demonstrates practical integration of cross-platform UI, REST API pipelines, real-time cloud data synchronization, and custom deep-learning inference inside a production-ready workflow. It showcases the feasibility of scalable digital transformation for cultural-heritage management and lays the foundation for future extensions such as GIS-based damage maps, offline-first mobile modes, and multi-language interfaces.</p>
             </div>
-            <div class="project-tech">Tech Stack: Flutter, Dart, Firebase (Firestore/Storage), FastAPI, Python, PyTorch, DETR, Docker, Nginx, XML→JSON proxy, Responsive Web Architecture</div>
+            <div class="project-tech">Tech Stack: Flutter 3.35.1, Dart 3.9.0, Firebase (Firestore/Storage), FastAPI, Python 3.10+, PyTorch, DETR (ResNet‑50), Docker, Docker Compose, Nginx, XML→JSON proxy</div>
             <div class="project-links">
               <a href="http://210.117.181.115:3001/" target="_blank" rel="noopener noreferrer">🌐 Live Web Application</a>
+              <a href="https://github.com/andimsewon/heritage_services_app" target="_blank" rel="noopener noreferrer">📦 GitHub Repo</a>
+              <a href="http://210.117.181.115:8080/docs" target="_blank" rel="noopener noreferrer">📄 API Docs</a>
             </div>
+
+            <h3 class="section-title">Role & Contributions</h3>
+            <ul class="sub-list">
+              <li>Architected end‑to‑end system with Flutter (Web/Android/iOS), FastAPI backend, and Firebase real‑time database</li>
+              <li>Implemented DETR‑based damage detection (ResNet‑50) with class‑specific thresholds and NMS for 4 damage types</li>
+              <li>Designed interactive survey UI: bounding box overlays, thumbnail grid, real‑time stats dashboard</li>
+              <li>Built image pipeline with Firebase Storage and caching/resizing proxy</li>
+              <li>Developed edit‑history tracking (field‑level logs) with StreamBuilder‑based real‑time sync</li>
+            </ul>
+
+            <h3 class="section-title">Key Metrics</h3>
+            <ul class="sub-list">
+              <li><strong>Inference latency</strong>: ~800–1200ms (CPU), ~200–400ms (GPU) per image</li>
+              <li><strong>API response</strong>: &lt;150ms (heritage search), &lt;2s (AI detection)</li>
+              <li><strong>Sync delay</strong>: &lt;500ms (Firestore real‑time updates)</li>
+              <li><strong>Model</strong>: DETR (ResNet‑50), 4 classes, class‑specific conf 0.15–0.30, NMS IoU 0.1, ~552MB</li>
+              <li><strong>Coverage</strong>: Single codebase → Web, Android, iOS; tested 10+ concurrent users</li>
+            </ul>
           </div>
           
           <!-- Web Application and Copyright Certificate -->
