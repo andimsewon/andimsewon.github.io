@@ -2,57 +2,209 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-  <title>Sewon Kim Portfolio PPT (20p)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Portfolio PPT | 김세원 (Sewon Kim)</title>
+  <meta name="description" content="김세원 포트폴리오 PPT – 한국 개발자 선호 스타일. 프로젝트/연구/수상/기술 역량을 정량 지표 중심으로 요약.">
   <style>
-    body { font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif; margin: 0; background: #f8f9fb; color: #111; }
-    .deck { max-width: 1200px; margin: 0 auto; padding: 32px; }
-    .slide { background: #fff; border-radius: 16px; padding: 32px; margin: 18px 0; box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
-    .title { font-size: 32px; margin: 0 0 16px; }
-    .subtitle { color: #555; margin: 0 0 8px; }
-    .pill { display: inline-block; padding: 6px 12px; margin: 4px 4px 4px 0; background: #e9f2ff; color: #0b63ce; border-radius: 999px; font-size: 14px; }
+    :root {
+      --bg: #f7f9fc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --sub: #475569;
+      --muted: #94a3b8;
+      --accent: #0b63ce;
+      --accent-bg: #e9f2ff;
+      --ring: rgba(11, 99, 206, 0.15);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .deck {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px;
+    }
+    .toolbar {
+      position: sticky;
+      top: 0; z-index: 20;
+      display: flex; align-items: center; gap: 8px;
+      margin: 0 auto 16px;
+      background: rgba(247,249,252,0.75);
+      backdrop-filter: saturate(140%) blur(6px);
+      padding: 10px 14px; border-radius: 10px; width: fit-content;
+      border: 1px solid rgba(148,163,184,0.25);
+      box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+    }
+    .tool { font-size: 14px; color: var(--sub); }
+    .tool b { color: var(--text); }
+    .tool a { color: var(--accent); text-decoration: none; }
+    .slides {
+      display: flex; flex-direction: column; gap: 18px;
+    }
+    .slide {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 28px 28px;
+      box-shadow: 0 10px 28px rgba(15,23,42,0.08);
+      border: 1px solid rgba(148,163,184,0.2);
+    }
+    .slide-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+    .slide-title { font-size: 30px; line-height: 1.25; margin: 0; letter-spacing: -0.01em; }
+    .slide-sub { color: var(--sub); margin: 4px 0 0; font-size: 16px; }
+    .meta { color: var(--muted); font-size: 13px; }
+    .pill { display: inline-block; padding: 6px 12px; margin: 5px 6px 0 0; background: var(--accent-bg); color: var(--accent); border-radius: 999px; font-size: 13px; font-weight: 600; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+    .card { background: #f3f6fb; border-radius: 12px; padding: 14px 16px; }
+    .kv { display: grid; grid-template-columns: 1fr 2fr; gap: 10px; }
+    .kv .k { color: var(--sub); font-size: 14px; }
+    .kv .v { font-weight: 600; }
+    .lead { font-size: 18px; color: var(--sub); margin: 4px 0 16px; }
+    .hr { height: 1px; background: rgba(148,163,184,0.35); margin: 14px 0 10px; border: 0; }
+    .toc { columns: 2; gap: 18px; }
+    .toc a { display: block; padding: 8px 10px; border-radius: 8px; text-decoration: none; color: var(--text); border: 1px solid transparent; }
+    .toc a:hover { background: #f1f5fb; border-color: rgba(148,163,184,0.4); }
     ul { margin: 10px 0 0 18px; }
-    a { color: #0b63ce; text-decoration: none; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
-    .card { background: #f4f6fa; border-radius: 12px; padding: 14px 16px; }
-    strong { color: #0b63ce; }
+    li { margin: 6px 0; }
+    a { color: var(--accent); text-decoration: none; }
+    strong { color: var(--accent); }
+    .img-wrap { border-radius: 12px; overflow: hidden; border: 1px solid rgba(148,163,184,0.3); }
+    .img { width: 100%; height: auto; display: block; }
+    .metrics { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+    .metric { background: #0b63ce10; border: 1px solid #0b63ce30; color: var(--accent); padding: 4px 8px; border-radius: 8px; font-size: 12px; }
+    .two-col { display: grid; grid-template-columns: 1.2fr 1fr; gap: 16px; }
+    .foot { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; color: var(--muted); font-size: 12px; }
+    .foot .links a { margin-right: 10px; }
+    .num { color: var(--muted); font-weight: 700; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
+    .qr { width: 120px; height: 120px; background: #f1f5fb; border: 1px dashed rgba(148,163,184,0.6); border-radius: 10px; display: grid; place-items: center; color: var(--muted); }
+
+    /* Print to PDF (page-per-slide) */
+    @media print {
+      body { background: #fff; }
+      .toolbar { display: none; }
+      .deck { padding: 0; max-width: 100%; }
+      .slides { gap: 0; }
+      .slide { box-shadow: none; border-radius: 0; page-break-after: always; border: none; padding: 26mm; }
+      .slide:last-child { page-break-after: auto; }
+    }
   </style>
 </head>
 <body>
-<div class="deck">
+  <div class="deck">
+    <div class="toolbar" aria-label="도구 막대">
+      <span class="tool">← → 키로 슬라이드 이동</span>
+      <span class="tool">·</span>
+      <span class="tool">인쇄/내보내기: <b>Cmd/Ctrl + P</b> (A4/한장당 1슬라이드)</span>
+      <span class="tool">·</span>
+      <span class="tool"><a href="#toc">목차</a></span>
+    </div>
+    <div class="slides" id="slides">
 
-  <section class="slide">
-    <h1 class="title">Sewon Kim | 김세원</h1>
-    <p class="subtitle">학부연구생 · 전북대학교 컴퓨터공학부 · NLP·LLM·멀티에이전트·IoT</p>
-    <p>이메일: sewonkim1018@gmail.com · GitHub: andimsewon · LinkedIn: /in/sewon-kim-742a492a6/</p>
+  <section class="slide" data-title="Cover">
+    <div class="slide-header">
+      <div>
+        <h1 class="slide-title">김세원 (Sewon Kim)</h1>
+        <p class="slide-sub">학부연구생 · 전북대학교 컴퓨터공학부 · NLP · LLM · 멀티에이전트 · IoT</p>
+      </div>
+      <div class="meta">포트폴리오 PPT</div>
+    </div>
+    <div class="two-col">
+      <div>
+        <div class="lead">실문제(환경·문화·농업)에 AI·IoT를 접목해 재현 가능한 시스템을 설계·구현하고, 정량 지표로 성과를 검증합니다.</div>
+        <div class="kv" style="margin-top:10px">
+          <div class="k">이메일</div><div class="v">sewonkim1018@gmail.com</div>
+          <div class="k">GitHub</div><div class="v"><a href="https://github.com/andimsewon" target="_blank">andimsewon</a></div>
+          <div class="k">LinkedIn</div><div class="v"><a href="https://www.linkedin.com/in/sewon-kim-742a492a6/" target="_blank">/in/sewon-kim-742a492a6</a></div>
+          <div class="k">CV</div><div class="v"><a href="./Sewon_Kim_CV.pdf" target="_blank">Sewon_Kim_CV.pdf</a></div>
+        </div>
+        <div class="metrics">
+          <span class="metric">IITP 국제 연구 장학생 (2025)</span>
+          <span class="metric">학부 GPA 4.09/4.5</span>
+          <span class="metric">대통령상(핵심역량 최우수)</span>
+        </div>
+      </div>
+      <div>
+        <div class="img-wrap"><img src="assets/profile.jpeg" alt="Profile" class="img"></div>
+      </div>
+    </div>
+    <div class="foot"><div class="num">01 / Cover</div><div class="links"></div></div>
   </section>
 
-  <section class="slide">
-    <h2 class="title">연구 관심사</h2>
+  <section class="slide" id="toc" data-title="목차">
+    <div class="slide-header">
+      <h2 class="slide-title">목차</h2>
+      <div class="meta">정량 지표 중심 구성</div>
+    </div>
+    <div class="toc">
+      <a href="#interests">연구 관심사</a>
+      <a href="#education">학력</a>
+      <a href="#research">연구 경력</a>
+      <a href="#skills">기술 역량</a>
+      <a href="#projects">대표 프로젝트 개요</a>
+      <a href="#waggle">WaggleNet</a>
+      <a href="#waggle-arch">— 아키텍처</a>
+      <a href="#waggle-results">— 실험·결과</a>
+      <a href="#heritage">Heritage Monitoring</a>
+      <a href="#heritage-arch">— 아키텍처</a>
+      <a href="#heritage-results">— 실험·결과</a>
+      <a href="#gaia">GAIA</a>
+      <a href="#gaia-arch">— 파이프라인</a>
+      <a href="#gaia-results">— 결과</a>
+      <a href="#gof">Guardians of Farm</a>
+      <a href="#gof-arch">— 데이터·모델</a>
+      <a href="#gof-results">— 결과</a>
+      <a href="#story">Sangsang StoryPlay</a>
+      <a href="#story-arch">— 구조</a>
+      <a href="#story-results">— 성과</a>
+      <a href="#awards">수상</a>
+      <a href="#certs">인증·프로그램</a>
+      <a href="#lead">리더십·활동</a>
+      <a href="#activities-detail">— 활동 상세</a>
+      <a href="#teach">교육·멘토링</a>
+      <a href="#plan">향후 계획</a>
+      <a href="#gallery">갤러리</a>
+      <a href="#appendix">부록</a>
+      <a href="#links">성과 링크</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="foot"><div class="num">02 / TOC</div><div></div></div>
+  </section>
+
+  <section class="slide" id="interests" data-title="연구 관심사">
+    <div class="slide-header"><h2 class="slide-title">연구 관심사</h2></div>
     <div>
-      <span class="pill">Multimodal AI for Autonomous Systems</span>
       <span class="pill">Large Language Models</span>
       <span class="pill">Knowledge Graph RAG</span>
       <span class="pill">Multi-Agent Reasoning</span>
+      <span class="pill">Multimodal AI for Autonomous Systems</span>
       <span class="pill">Embodied / Edge Intelligence</span>
       <span class="pill">Explainable AI</span>
     </div>
+    <div class="foot"><div class="num">03 / Interests</div><div></div></div>
   </section>
 
-  <section class="slide">
-    <h2 class="title">학력</h2>
+  <section class="slide" id="education" data-title="학력">
+    <div class="slide-header"><h2 class="slide-title">학력</h2></div>
     <ul>
-      <li><strong>전북대학교</strong>, 컴퓨터공학부 공학사 (GPA 4.09/4.5), 2022.03–2026.02(예정)
+      <li><strong>전북대학교</strong>, 컴퓨터공학부 공학사 (GPA 4.09/4.5), 2022.03 – 2026.02(예정)
         <ul>
-          <li>스마트모빌리티 소프트웨어 마이크로디그리 (JST 컨소시엄), 2026.02 예정</li>
+          <li>스마트모빌리티 소프트웨어 마이크로 디그리(JST 컨소시엄), 2026.02 예정</li>
           <li>HRC 학생대표, SW중심대학 사업 참여</li>
         </ul>
       </li>
-      <li><strong>말라야대학교</strong>, 교환학생, 2023.02–2023.08</li>
+      <li><strong>말라야대학교</strong>, 교환학생, 2023.02 – 2023.08</li>
     </ul>
+    <div class="foot"><div class="num">04 / Education</div><div></div></div>
   </section>
 
-  <section class="slide">
-    <h2 class="title">연구 경력</h2>
+  <section class="slide" id="research" data-title="연구 경력">
+    <div class="slide-header"><h2 class="slide-title">연구 경력</h2></div>
     <ul>
       <li><strong>학부연구생</strong>, Natural Language Learning Lab (송현제 교수), 2025.02–현재
         <ul>
@@ -67,10 +219,11 @@
         </ul>
       </li>
     </ul>
+    <div class="foot"><div class="num">05 / Research</div><div></div></div>
   </section>
 
-  <section class="slide">
-    <h2 class="title">대표 프로젝트 개요</h2>
+  <section class="slide" id="projects" data-title="대표 프로젝트">
+    <div class="slide-header"><h2 class="slide-title">대표 프로젝트 개요</h2></div>
     <div class="grid">
       <div class="card"><strong>WaggleNet</strong><br>LoRa+MQTT 벌통 이중 모니터링</div>
       <div class="card"><strong>Heritage Monitoring</strong><br>문화유산 실측·손상 진단 AI/모바일</div>
@@ -78,22 +231,74 @@
       <div class="card"><strong>Guardians of Farm</strong><br>YOLOv8 작물 질병 탐지·등급화</div>
       <div class="card"><strong>Sangsang StoryPlay</strong><br>아동 음성-생성형 스토리텔링</div>
     </div>
+    <div class="foot"><div class="num">06 / Projects</div><div></div></div>
   </section>
 
-  <section class="slide">
-    <h2 class="title">WaggleNet: A LoRa and MQTT-Based Monitoring System for Internal and External Beehive Conditions</h2>
+  <section class="slide" id="waggle" data-title="WaggleNet">
+    <div class="slide-header">
+      <h2 class="slide-title">WaggleNet — LoRa & MQTT 기반 벌통 내부·외부 동시 모니터링</h2>
+      <div class="meta"><a href="ko/waggle-net-project.html" target="_blank">프로젝트 상세</a></div>
+    </div>
+    <div class="two-col">
+      <div>
     <ul>
       <li>내·외부 동시 환경 모니터링 LoRa–MQTT 듀얼 스코프, ESP32-S3 기반 워커/마스터 구조</li>
       <li>센서: DHT22, LDR, GPS; 3분 주기 JSON → LoRa → MQTT → SQLite/클라우드</li>
-      <li>전송거리 110m(LOS)/95m(차폐), 지연 &lt;5s, 모듈당 $10–15, 2개월 필드 운용</li>
+       <li>전송거리 110m(LOS)/95m(차폐), LoRa 전파 &lt;1s, 모듈당 $10–15, 2개월 필드 운용</li>
       <li>Flutter 모바일 실시간 대시보드 + Firebase FCM 알림</li>
       <li>논문: arXiv: <a href="https://arxiv.org/abs/2512.07408" target="_blank">https://arxiv.org/abs/2512.07408</a></li>
     </ul>
     <div>스택: C++, Python, MQTT, SQLite, Flutter, Firebase · 프로토콜: LoRa, MQTT Pub/Sub</div>
+      </div>
+      <div>
+        <div class="img-wrap"><img src="assets/polvo-de-purdue-project/main.webp" alt="WaggleNet" class="img"></div>
+      </div>
+    </div>
+    <div class="foot"><div class="num">07 / WaggleNet</div><div class="links"><a href="ko/waggle-net-project.html" target="_blank">상세</a></div></div>
   </section>
 
-  <section class="slide">
-    <h2 class="title">Heritage Monitoring and Registration System</h2>
+  <!-- WaggleNet Deep Dives -->
+  <section class="slide" id="waggle-arch" data-title="WaggleNet 아키텍처">
+    <div class="slide-header"><h2 class="slide-title">WaggleNet — 시스템 아키텍처</h2></div>
+    <div class="two-col">
+      <div>
+        <ul>
+          <li>토폴로지: ESP32-S3 워커(센싱) ↔ LoRa 게이트웨이 ↔ MQTT 브로커 ↔ 모바일/DB</li>
+          <li>프로토콜: LoRa(저전력~장거리) + MQTT(Pub/Sub, QoS1)</li>
+          <li>데이터 경로: 센싱(3분 주기 JSON) → LoRa → 게이트웨이 파싱 → MQTT 토픽 발행 → SQLite/클라우드 적재</li>
+          <li>모바일: Flutter 실시간 스트림 + Firebase FCM 임계치 알림</li>
+          <li>센서: DHT22(온습도), LDR(조도), GPS(위치)</li>
+        </ul>
+        <div class="metrics">
+          <span class="metric">8 노드(필드)</span>
+          <span class="metric">LOS 110m / 차폐 95m</span>
+          <span class="metric">LoRa 전파 &lt;1s</span>
+          <span class="metric">$10–15 / 노드</span>
+        </div>
+      </div>
+      <div>
+        <div class="img-wrap"><img src="assets/polvo-de-purdue-project/main.jpeg" alt="WaggleNet Architecture" class="img"></div>
+      </div>
+    </div>
+    <div class="foot"><div class="num"></div><div class="links"><a href="waggle-net-project.html" target="_blank">EN 상세</a> · <a href="ko/waggle-net-project.html" target="_blank">KO 상세</a></div></div>
+  </section>
+
+  <section class="slide" id="waggle-results" data-title="WaggleNet 실험·결과">
+    <div class="slide-header"><h2 class="slide-title">WaggleNet — 실험 결과 & 개선점</h2></div>
+    <ul>
+      <li>거리·지연: 개활지 110m/도심 차폐 95m까지 패킷 안정 수신, LoRa 홉 지연 &lt;1s</li>
+      <li>신뢰성: MQTT QoS1 + 재전송 로직으로 누락률 저감</li>
+      <li>운영: 2개월 필드 테스트(꿀벌 군집 환경), 온습도/조도 이벤트 기반 알림 정상 동작</li>
+      <li>개선점: 저전력 최적화(딥슬립/샘플링 주기 적응), LoRa 채널 혼잡 시 주파수 호핑</li>
+    </ul>
+    <div class="metrics"><span class="metric">Flutter 대시보드</span><span class="metric">Firebase FCM</span><span class="metric">SQLite/클라우드</span></div>
+    <div class="foot"><div class="num"></div><div class="links"><a href="https://arxiv.org/abs/2512.07408" target="_blank">arXiv</a></div></div>
+  </section>
+
+  <section class="slide" id="heritage" data-title="Heritage Monitoring">
+    <div class="slide-header"><h2 class="slide-title">Heritage Monitoring and Registration System</h2><div class="meta"><a href="ko/heritage-monitoring-project.html" target="_blank">프로젝트 상세</a></div></div>
+    <div class="two-col">
+      <div>
     <ul>
       <li>Flutter(웹/모바일) + FastAPI 백엔드, 문화유산 Open API XML→JSON 프록시</li>
       <li>DETR 기반 손상 4종(크랙/분리/생물/파손) 탐지, 등급 A–D 자동 부여</li>
@@ -101,48 +306,176 @@
       <li>저작권 등록(C-2025-044615), 특허 출원 진행</li>
     </ul>
     <div>스택: Flutter/Dart, FastAPI, PyTorch(DETR), Firebase, Docker, Nginx</div>
+      </div>
+      <div>
+        <div class="img-wrap"><img src="assets/heritage-monitoring-project/main.jpeg" alt="Heritage Monitoring" class="img"></div>
+      </div>
+    </div>
+    <div class="foot"><div class="num">08 / Heritage</div><div class="links"><a href="ko/heritage-monitoring-project.html" target="_blank">상세</a></div></div>
   </section>
 
-  <section class="slide">
-    <h2 class="title">GAIA: AI-Based Urban Air Impact Analysis</h2>
+  <!-- Heritage Deep Dives -->
+  <section class="slide" id="heritage-arch" data-title="Heritage 아키텍처">
+    <div class="slide-header"><h2 class="slide-title">Heritage Monitoring — 워크플로우 & 아키텍처</h2></div>
+    <div class="two-col">
+      <div>
+        <ul>
+          <li>클라이언트: Flutter(웹/모바일) — 실측, 노트, 종합평가 3-탭 UX</li>
+          <li>백엔드: FastAPI — 문화유산 Open API XML→JSON 프록시, 인증/권한</li>
+          <li>탐지: PyTorch DETR — 손상 4종(크랙/분리/생물/파손) 탐지 및 등급 A–D 산출</li>
+          <li>데이터: Firebase Firestore 실시간 동기화, Storage 이미지 보관</li>
+          <li>배포: Docker + Nginx</li>
+        </ul>
+      </div>
+      <div>
+        <div class="img-wrap"><img src="assets/heritage-monitoring-project/copyright-certificate.jpeg" alt="Heritage Certificate" class="img"></div>
+      </div>
+    </div>
+    <div class="foot"><div class="num"></div><div class="links"><a href="ko/heritage-monitoring-project.html" target="_blank">상세</a></div></div>
+  </section>
+
+  <section class="slide" id="heritage-results" data-title="Heritage 실험·결과">
+    <div class="slide-header"><h2 class="slide-title">Heritage Monitoring — 성과 & 지식재산</h2></div>
+    <ul>
+      <li>현장 점검 시간 단축: 자동 탐지 + 실측 기록 일원화로 보고서 작성 효율 향상</li>
+      <li>운영 안정성: Firestore 오프라인 캐시로 현장 네트워크 변동 대응</li>
+      <li>저작권 등록 완료: C-2025-044615</li>
+      <li>특허 출원 진행</li>
+    </ul>
+    <div class="foot"><div class="num"></div><div class="links"></div></div>
+  </section>
+
+  <section class="slide" id="gaia" data-title="GAIA">
+    <div class="slide-header"><h2 class="slide-title">GAIA — AI-Based Urban Air Impact Analysis</h2><div class="meta"><a href="ko/gaia-project.html" target="_blank">프로젝트 상세</a></div></div>
+    <div class="two-col">
+      <div>
     <ul>
       <li>7년 TMS 시계열 + 기상·AirKorea 다중 소스 파이프라인</li>
       <li>AERMOD 물리 확산 + Transformer 하이브리드, Gaussian Diffusion 불확실성 모델링</li>
       <li>Streamlit 대시보드: 3D 플룸, 시나리오 비교, 시계열 예측</li>
     </ul>
     <div>스택: PyTorch, Pandas, Scikit-learn, Folium, GeoPandas, Xarray, Streamlit</div>
+      </div>
+      <div>
+        <div class="img-wrap"><img src="assets/gaia-project/main.png" alt="GAIA" class="img"></div>
+      </div>
+    </div>
+    <div class="foot"><div class="num">09 / GAIA</div><div class="links"><a href="ko/gaia-project.html" target="_blank">상세</a></div></div>
   </section>
 
-  <section class="slide">
-    <h2 class="title">Guardians of Farm: 작물 질병 탐지</h2>
+  <!-- GAIA Deep Dives -->
+  <section class="slide" id="gaia-arch" data-title="GAIA 파이프라인">
+    <div class="slide-header"><h2 class="slide-title">GAIA — 데이터·모델 파이프라인</h2></div>
+    <ul>
+      <li>데이터: 7년 TMS 시계열 + 기상 + AirKorea 통합 ETL</li>
+      <li>모델: AERMOD(물리 확산) + Transformer 하이브리드</li>
+      <li>불확실성: Gaussian Diffusion 기반 분포 추정</li>
+      <li>대시보드: Streamlit — 3D 플룸, 시나리오 비교, 시계열 예측</li>
+    </ul>
+    <div class="metrics"><span class="metric">GeoPandas</span><span class="metric">Xarray</span><span class="metric">Folium</span></div>
+    <div class="foot"><div class="num"></div><div class="links"><a href="ko/gaia-project.html" target="_blank">상세</a></div></div>
+  </section>
+
+  <section class="slide" id="gaia-results" data-title="GAIA 결과">
+    <div class="slide-header"><h2 class="slide-title">GAIA — 인사이트 & 활용</h2></div>
+    <ul>
+      <li>시설별 배출 시나리오 비교를 통한 영향권 가시화</li>
+      <li>물리·딥러닝 결합으로 해석력과 예측력 균형 확보</li>
+      <li>도시계획/환경정책 시뮬레이션 지원 도구로 확장 가능</li>
+    </ul>
+    <div class="foot"><div class="num"></div><div class="links"></div></div>
+  </section>
+
+  <section class="slide" id="gof" data-title="Guardians of Farm">
+    <div class="slide-header"><h2 class="slide-title">Guardians of Farm — 작물 질병 탐지</h2><div class="meta"><a href="ko/guardians-of-farm-project.html" target="_blank">프로젝트 상세</a></div></div>
+    <div class="two-col">
+      <div>
     <ul>
       <li>GroundingDINO+SAM 비지도 → YOLOv8 지도학습 전환, mAP@0.5=0.81</li>
       <li>5단계 건강도 등급(정상~Critical) 산출, RoboFlow로 대규모 라벨링/증강</li>
     </ul>
     <div>스택: PyTorch, YOLOv8, OpenCV, NumPy, RoboFlow</div>
+      </div>
+      <div>
+        <div class="img-wrap"><img src="assets/guardians-of-farm-project/main.png" alt="Guardians of Farm" class="img"></div>
+      </div>
+    </div>
+    <div class="foot"><div class="num">10 / Guardians</div><div class="links"><a href="ko/guardians-of-farm-project.html" target="_blank">상세</a></div></div>
   </section>
 
-  <section class="slide">
-    <h2 class="title">Sangsang StoryPlay: 아동 음성-생성형 스토리텔링</h2>
+  <!-- Guardians Deep Dives -->
+  <section class="slide" id="gof-arch" data-title="Guardians 아키텍처">
+    <div class="slide-header"><h2 class="slide-title">Guardians of Farm — 데이터셋·모델</h2></div>
+    <ul>
+      <li>비지도 → 지도 전환: GroundingDINO + SAM → YOLOv8</li>
+      <li>라벨링: RoboFlow 대규모 수작업 + 증강 파이프라인</li>
+      <li>평가: mAP@0.5 = 0.81 (작물 질병 탐지)</li>
+      <li>출력: 건강도 5단계(정상~Critical) 등급화</li>
+    </ul>
+    <div class="metrics"><span class="metric">PyTorch</span><span class="metric">OpenCV</span><span class="metric">NumPy</span></div>
+    <div class="foot"><div class="num"></div><div class="links"><a href="ko/guardians-of-farm-project.html" target="_blank">상세</a></div></div>
+  </section>
+
+  <section class="slide" id="gof-results" data-title="Guardians 결과">
+    <div class="slide-header"><h2 class="slide-title">Guardians of Farm — 적용 & 개선</h2></div>
+    <ul>
+      <li>현장 적용: 질병 조기 탐지로 방제 의사결정 보조</li>
+      <li>개선 방향: 도메인 적응/경량화(엣지 추론), 클래스 확장</li>
+    </ul>
+    <div class="foot"><div class="num"></div><div class="links"></div></div>
+  </section>
+
+  <section class="slide" id="story" data-title="Sangsang StoryPlay">
+    <div class="slide-header"><h2 class="slide-title">Sangsang StoryPlay — 아동 음성-생성형 스토리텔링</h2></div>
+    <div class="two-col">
+      <div>
     <ul>
       <li>아동 ASR → GPT 기반 실시간 씬 생성, TTS 피드백</li>
       <li>어휘 다양도/문장 복잡도/감정 표현 분석 → 부모 대시보드 성장 리포트</li>
       <li>TBM 창업캠프 대상(제주대, 2025)</li>
     </ul>
     <div>스택: ASR/TTS 파이프라인, GPT 생성엔진, Flutter/React Native 프로토, FastAPI, Firebase</div>
+      </div>
+      <div>
+        <div class="img-wrap"><img src="assets/sangsang-storyplay-project/main.png" alt="Sangsang StoryPlay" class="img"></div>
+      </div>
+    </div>
+    <div class="foot"><div class="num">11 / StoryPlay</div><div></div></div>
   </section>
 
-  <section class="slide">
-    <h2 class="title">Research Positions 요약</h2>
+  <!-- StoryPlay Deep Dives -->
+  <section class="slide" id="story-arch" data-title="StoryPlay 구조">
+    <div class="slide-header"><h2 class="slide-title">Sangsang StoryPlay — 음성·생성 파이프라인</h2></div>
+    <ul>
+      <li>입력: 아동 음성 ASR → 문장 정제</li>
+      <li>생성: GPT 기반 씬/대사 생성, 맥락 상태 유지</li>
+      <li>출력: TTS 합성 피드백 + 부모 대시보드</li>
+      <li>분석: 어휘 다양도·문장 복잡도·감정 표현 메트릭 수집</li>
+    </ul>
+    <div class="foot"><div class="num"></div><div class="links"></div></div>
+  </section>
+
+  <section class="slide" id="story-results" data-title="StoryPlay 결과">
+    <div class="slide-header"><h2 class="slide-title">Sangsang StoryPlay — 성과 & 확장</h2></div>
+    <ul>
+      <li>성과: 제주대 TBM 창업캠프 대상(2025)</li>
+      <li>확장: 읽기 유창성·감정 코칭·부모 리포트 고도화</li>
+    </ul>
+    <div class="foot"><div class="num"></div><div class="links"></div></div>
+  </section>
+
+  <section class="slide" data-title="Research Summary">
+    <div class="slide-header"><h2 class="slide-title">Research Positions 요약</h2></div>
     <ul>
       <li>LLM RAG·지식그래프 통합, 멀티홉 추론 실험 설계/아블레이션</li>
       <li>분산 IoT·에지 센싱 아키텍처 설계, 에너지-신뢰성 트레이드오프 분석</li>
       <li>다중 에이전트 조정 프로토콜, 임베딩/링크 예측·엔티티 정렬 연구</li>
     </ul>
+    <div class="foot"><div class="num">12 / Summary</div><div></div></div>
   </section>
 
-  <section class="slide">
-    <h2 class="title">기술 역량</h2>
+  <section class="slide" id="skills" data-title="기술 역량">
+    <div class="slide-header"><h2 class="slide-title">기술 역량</h2></div>
     <div class="grid">
       <div class="card"><strong>AI/ML</strong><br>PyTorch, Transformers, LangChain, YOLOv8, DETR</div>
       <div class="card"><strong>Backend</strong><br>FastAPI, Flask, REST, MQTT</div>
@@ -151,80 +484,190 @@
       <div class="card"><strong>Cloud/DevOps</strong><br>AWS, Firebase, Docker, Git</div>
       <div class="card"><strong>Data/DB</strong><br>SQL, Pandas, Streamlit, GeoPandas</div>
     </div>
+    <div class="foot"><div class="num">13 / Skills</div><div></div></div>
   </section>
 
-  <section class="slide">
-    <h2 class="title">교육 · 멘토링</h2>
+  <section class="slide" id="teach" data-title="교육·멘토링">
+    <div class="slide-header"><h2 class="slide-title">교육 · 멘토링</h2></div>
     <ul>
       <li>조교: 알고리즘, 리눅스 프로그래밍 (2025–현재, 80+ 학생, 자동 채점 스크립트)</li>
       <li>멘토링: 데이터 리터러시·알고리즘 문제해결·Unix 환경 지원</li>
     </ul>
+    <div class="foot"><div class="num">14 / Teaching</div><div></div></div>
   </section>
 
-  <section class="slide">
-    <h2 class="title">수상</h2>
+  <section class="slide" id="awards" data-title="수상">
+    <div class="slide-header"><h2 class="slide-title">수상</h2></div>
     <ul>
-      <li>대통령상 (핵심역량 최우수), 전북대</li>
-      <li>근사람 블랙벨트 장학 ($3,400)</li>
-      <li>캡스톤 디자인 경진대회 우수상 (2회)</li>
-      <li>Big Data Supporters 우수상(과기정통부), HRC 최우수상</li>
-      <li>TBM 창업캠프 대상 (2025)</li>
+      <li>2025 — 전북대학교, 6대 핵심역량인재상 총장상(최우수, 문화인재) — 장학금 1,500,000원 (<a href="https://www.news1.kr/local/jeonbuk/5939128" target="_blank">기사 링크</a>)</li>
+      <li>2025 — 전북대학교, 큰사람 블랙벨트 장학 프로그램 총장상 — 장학금 5,000,000원</li>
+      <li>2025 — SW중심대학, 1학기 캡스톤 디자인 경진대회 우수상</li>
+      <li>2024 — SW중심대학, 2학기 캡스톤 디자인 경진대회 우수상</li>
+      <li>2024 — HRC 우수학생 총장상 — 장학금 300,000원</li>
+      <li>2025 — 과학기술정보통신부, 빅데이터 서포터즈 우수상</li>
+      <li>2025 — 제주대학교, TBM 창업캠프 대상</li>
     </ul>
+    <div class="foot"><div class="num">15 / Awards</div><div></div></div>
   </section>
 
-  <section class="slide">
-    <h2 class="title">인증 · 프로그램</h2>
+  <section class="slide" id="certs" data-title="인증·프로그램">
+    <div class="slide-header"><h2 class="slide-title">인증 · 프로그램</h2></div>
     <ul>
-      <li>DAsP (Data Architecture Semi-Professional), K-DATA, 2025.10</li>
-      <li>Data Science & AI Summer School, Bucharest Univ. (42h), 2024.07</li>
+      <li>2025 — 한국데이터산업진흥원, 데이터아키텍처 준전문가(DAsP)</li>
+      <li>2025 — IITP Korean AI Square Summer 2025 (Purdue Univ.) 수료</li>
+      <li>2024 — Data Science & AI Summer School, Bucharest Univ. (42h)</li>
+      <li>2024 — 전북대 빅데이터 캠프(동계) 이수</li>
     </ul>
+    <div class="foot"><div class="num">16 / Certificates</div><div></div></div>
   </section>
 
-  <section class="slide">
-    <h2 class="title">리더십 & 활동</h2>
+  <section class="slide" id="lead" data-title="리더십·활동">
+    <div class="slide-header"><h2 class="slide-title">리더십 & 활동</h2></div>
     <ul>
       <li>HRC 학생대표 (2022–), 대학장 표창</li>
       <li>Big Data Supporters 대표 (2024–2025)</li>
       <li>SHARK 수영동아리 회장 (2024)</li>
       <li>SW중심대학 경진대회/멘토링 프로그램 우수 멘토</li>
     </ul>
+    <div class="foot"><div class="num">17 / Leadership</div><div></div></div>
   </section>
 
-  <section class="slide">
-    <h2 class="title">코스워크 (핵심)</h2>
-    <div>
-      <span class="pill">ML/DL</span><span class="pill">Data Mining</span><span class="pill">IR</span>
-      <span class="pill">NLP</span><span class="pill">Algorithms</span><span class="pill">DB Systems</span>
+  <section class="slide" id="activities-detail" data-title="활동 상세">
+    <div class="slide-header"><h2 class="slide-title">활동 상세 — 프로그램 & 커뮤니티</h2></div>
+    <ul>
+      <li>Data Science & AI Summer School (Bucharest Univ., 42h)
+        <ul>
+          <li>LLM 추론·보정, 지식그래프 구축(Neo4j), 에이전틱 프레임워크</li>
+          <li>XAI 기반 시계열 예측, 프로덕션 데이터/AI 파이프라인</li>
+          <li>스택: Python(NumPy, SciPy, Pandas, Scikit-learn, Transformers), Neo4j, Docker</li>
+          <li>프로그램: https://datascience.ase.ro/schedule/</li>
+        </ul>
+      </li>
+      <li>SW중심대학 경진대회: 프로젝트 품질/임팩트 인정(우수상)</li>
+      <li>HRC 큰사람 블랙벨트: 리더십·봉사 마일스톤 완수</li>
+    </ul>
+    <div class="foot"><div class="num"></div><div class="links"><a href="activities.html" target="_blank">EN 페이지</a> · <a href="ko/activities.html" target="_blank">KO 페이지</a></div></div>
+  </section>
+
+  <section class="slide" id="gallery" data-title="갤러리">
+    <div class="slide-header"><h2 class="slide-title">Gallery — 현장 스냅샷</h2></div>
+    <div class="grid">
+      <div class="img-wrap"><img src="assets/gallery/2025Purdue_KSW.jpeg" alt="Purdue Summer" class="img"></div>
+      <div class="img-wrap"><img src="assets/gallery/2025Purdue_KSW1.jpeg" alt="Purdue Lab" class="img"></div>
     </div>
+    <div class="foot"><div class="num"></div><div class="links"><a href="gallery.html" target="_blank">전체 보기</a></div></div>
   </section>
 
-  <section class="slide">
-    <h2 class="title">향후 연구 계획</h2>
+  <section class="slide" id="appendix" data-title="부록: 문서/발표">
+    <div class="slide-header"><h2 class="slide-title">Appendix — 문서 & 발표 자료</h2></div>
+    <ul>
+      <li>WaggleNet Paper: assets/polvo-de-purdue-project/paper.pdf</li>
+      <li>WaggleNet Presentation: assets/polvo-de-purdue-project/presentation.pdf</li>
+      <li>GAIA Presentation: assets/gaia-project/presentation.pdf</li>
+      <li>GAIA Poster: assets/gaia-project/poster.pdf</li>
+      <li>Guardians Presentation: assets/guardians-of-farm-project/presentation.pdf</li>
+      <li>Sangsang StoryPlay Presentation: assets/sangsang-storyplay-project/presentation.optimized.pdf</li>
+      <li>CV: Sewon_Kim_CV.pdf</li>
+    </ul>
+    <div class="foot"><div class="num"></div><div class="links"></div></div>
+  </section>
+
+  <section class="slide" data-title="코스워크">
+    <div class="slide-header"><h2 class="slide-title">코스워크 (핵심)</h2></div>
+    <div>
+      <span class="pill">ML/DL</span>
+      <span class="pill">Data Mining</span>
+      <span class="pill">IR</span>
+      <span class="pill">NLP</span>
+      <span class="pill">Algorithms</span>
+      <span class="pill">DB Systems</span>
+    </div>
+    <div class="foot"><div class="num">18 / Coursework</div><div></div></div>
+  </section>
+
+  <section class="slide" id="plan" data-title="향후 계획">
+    <div class="slide-header"><h2 class="slide-title">향후 연구 계획</h2></div>
     <ul>
       <li>지식그래프-LLM 결합형 멀티에이전트 협력 추론</li>
       <li>에지/임베디드 경량 LLM·멀티모달 모델 최적화</li>
       <li>IoT 센서 네트워크의 자가 회복·에너지 적응 라우팅 + 이상탐지</li>
     </ul>
+    <div class="foot"><div class="num">19 / Plan</div><div></div></div>
   </section>
 
-  <section class="slide">
-    <h2 class="title">연구 성과 링크</h2>
+  <section class="slide" id="links" data-title="성과 링크">
+    <div class="slide-header"><h2 class="slide-title">연구 성과 링크</h2></div>
     <ul>
       <li>WaggleNet arXiv: <a href="https://arxiv.org/abs/2512.07408" target="_blank">https://arxiv.org/abs/2512.07408</a></li>
       <li>GitHub: <a href="https://github.com/andimsewon" target="_blank">https://github.com/andimsewon</a></li>
       <li>CV (최신): Sewon_Kim_CV.pdf</li>
     </ul>
+    <div class="foot"><div class="num">20 / Links</div><div></div></div>
   </section>
 
-  <section class="slide">
-    <h2 class="title">Contact</h2>
-    <p>이메일: sewonkim1018@gmail.com</p>
-    <p>GitHub: andimsewon · LinkedIn: /in/sewon-kim-742a492a6/</p>
-    <p>협업/대학원/연구 논의 환영합니다.</p>
+  <section class="slide" id="contact" data-title="Contact">
+    <div class="slide-header"><h2 class="slide-title">Contact</h2></div>
+    <div class="two-col">
+      <div>
+        <p>이메일: <a href="mailto:sewonkim1018@gmail.com">sewonkim1018@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/andimsewon" target="_blank">andimsewon</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/sewon-kim-742a492a6/" target="_blank">/in/sewon-kim-742a492a6</a></p>
+        <p>협업/대학원/연구 논의 환영합니다.</p>
+      </div>
+      <div>
+        <div class="qr">QR 자리 (필요 시 삽입)</div>
+      </div>
+    </div>
+    <div class="foot"><div class="num">21 / Contact</div><div></div></div>
   </section>
 
-</div>
+    </div>
+  </div>
+  <script>
+    // 간단한 슬라이드 탐색 (↑/↓/←/→ 및 클릭 스크롤)
+    (function() {
+      var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+      if (!slides.length) return;
+      // 자동 넘버링 + 제목 반영
+      for (var i=0;i<slides.length;i++){
+        var n = (i+1).toString().padStart(2,'0');
+        var t = slides[i].getAttribute('data-title') || '';
+        var foot = slides[i].querySelector('.foot .num');
+        if (foot) { foot.textContent = n + ' / ' + (t || 'Slide'); }
+      }
+      function currentIndex() {
+        var y = window.scrollY + 1; // top edge
+        for (var i = 0; i < slides.length; i++) {
+          var r = slides[i].getBoundingClientRect();
+          var top = r.top + window.scrollY;
+          var bottom = top + r.height;
+          if (y >= top && y < bottom) return i;
+        }
+        return 0;
+      }
+      function go(i) {
+        if (i < 0) i = 0;
+        if (i >= slides.length) i = slides.length - 1;
+        try { slides[i].scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (_) { slides[i].scrollIntoView(true); }
+      }
+      document.addEventListener('keydown', function(e) {
+        var i = currentIndex();
+        if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); go(i + 1); }
+        if (e.key === 'ArrowLeft'  || e.key === 'PageUp')   { e.preventDefault(); go(i - 1); }
+        if (e.key === 'ArrowDown') { e.preventDefault(); go(i + 1); }
+        if (e.key === 'ArrowUp')   { e.preventDefault(); go(i - 1); }
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'g') { e.preventDefault(); try { document.getElementById('toc').scrollIntoView({behavior:'smooth'});} catch(_){} }
+      });
+      // 앵커 클릭 시 스무스 스크롤
+      var anchors = document.querySelectorAll('a[href^="#"]');
+      for (var j=0;j<anchors.length;j++) {
+        anchors[j].addEventListener('click', function(ev){
+          var id = this.getAttribute('href').slice(1);
+          var el = document.getElementById(id);
+          if (el) { ev.preventDefault(); try { el.scrollIntoView({behavior:'smooth'});} catch(_) { el.scrollIntoView(true);} }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
-
-
