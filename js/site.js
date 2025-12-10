@@ -11,7 +11,7 @@
           // cleanup class after animation
           setTimeout(function () {
             document.body.classList.remove('page-enter');
-          }, 450);
+          }, 750);
         });
       } catch (_) {
         document.body.classList.add('page-enter-active');
@@ -291,7 +291,7 @@
     function assignDelays(group) {
       for (var i = 0; i < group.length; i++) {
         var el = group[i];
-        try { el.style.setProperty('--reveal-delay', (i * 60) + 'ms'); } catch (_) {}
+        try { el.style.setProperty('--reveal-delay', (i * 90) + 'ms'); } catch (_) {}
       }
     }
 
@@ -319,7 +319,7 @@
             try { io.unobserve(e.target); } catch (_) {}
           }
         });
-      }, { rootMargin: '40px 0px' });
+      }, { rootMargin: '60px 0px' });
     }
 
     // Initialize: only mark offscreen elements as .reveal to avoid flicker
