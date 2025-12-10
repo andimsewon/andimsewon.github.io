@@ -114,6 +114,14 @@ a { color: var(--accent); text-decoration: none; transition: color var(--t-fast)
 a:hover { opacity: 0.9; }
 a:active { opacity: 0.75; }
 
+/* Glass utility - subtle translucent surface */
+.glass {
+  background: var(--surface);
+  -webkit-backdrop-filter: saturate(180%) blur(var(--blur));
+  backdrop-filter: saturate(180%) blur(var(--blur));
+  border: 1px solid var(--border);
+}
+
 /* Top Navigation - soft pink translucent */
 .top-nav {
   position: sticky;
@@ -349,6 +357,19 @@ a:focus-visible {
 }
 [data-theme="dark"] .container { 
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Page enter - gentle fade/slide on load */
+body.page-enter {
+  opacity: 0;
+  transform: translateY(4px);
+  filter: saturate(0.98);
+}
+body.page-enter-active {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  transition: opacity 360ms var(--ease), transform 360ms var(--ease), filter 360ms var(--ease);
 }
 
 /* Main Layout - Two Column */
@@ -637,6 +658,29 @@ a:focus-visible {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   border-color: var(--accent);
   background: rgba(212, 165, 184, 0.06);
+}
+
+/* Scroll reveal - modern soft motion */
+.reveal {
+  opacity: 0;
+  transform: translateY(10px) scale(0.99);
+  filter: blur(0.5px);
+  transition: opacity 520ms var(--ease) var(--reveal-delay, 0ms),
+              transform 520ms var(--ease) var(--reveal-delay, 0ms),
+              filter 520ms var(--ease) var(--reveal-delay, 0ms);
+  will-change: opacity, transform, filter;
+}
+.is-visible {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  body.page-enter { opacity: 1; transform: none; filter: none; }
+  body.page-enter-active { transition: none; }
+  .reveal { opacity: 1; transform: none; filter: none; transition: none; }
 }
 
 .quick-link-icon {

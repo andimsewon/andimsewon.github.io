@@ -1,4 +1,32 @@
 // Minimal shared site script: footer year + theme toggle
+// Page enter transition: soft fade/slide
+(function () {
+  try {
+    document.body.classList.add('page-enter');
+    var onReady = function () {
+      // next frame to ensure transition applies
+      try {
+        requestAnimationFrame(function () {
+          document.body.classList.add('page-enter-active');
+          // cleanup class after animation
+          setTimeout(function () {
+            document.body.classList.remove('page-enter');
+          }, 450);
+        });
+      } catch (_) {
+        document.body.classList.add('page-enter-active');
+        document.body.classList.remove('page-enter');
+      }
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', onReady);
+    } else {
+      onReady();
+    }
+  } catch (_) {}
+})();
+
+// Minimal shared site script: footer year + theme toggle
 (function () {
   // Footer year
   var y = document.getElementById('y');
@@ -217,4 +245,116 @@
       }
     });
   }
+})();
+
+// Scroll reveal: reveal elements smoothly when entering viewport
+(function () {
+  try {
+    var prefersReduced = false;
+    try {
+      if (window.matchMedia) {
+        var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+        prefersReduced = mq && mq.matches;
+      }
+    } catch (_) {}
+
+    if (prefersReduced) return; // Respect user preference
+
+    var selectors = [
+      '.section-title',
+      '.container',
+      '.info-item',
+      '.skill-category',
+      '.quick-link-card',
+      '.project-card',
+      '.project-item',
+      '.contact-icon',
+      '.project-certificate',
+      '.project-web-embed',
+      '.project-web-fallback'
+    ].join(',');
+
+    var candidates = [];
+    try { candidates = Array.prototype.slice.call(document.querySelectorAll(selectors)); } catch (_) {}
+    if (!candidates.length) return;
+
+    // Helper: in viewport
+    function isInViewport(el) {
+      try {
+        var r = el.getBoundingClientRect();
+        var h = window.innerHeight || document.documentElement.clientHeight;
+        return r.top <= h * 0.9; // consider near-fold as visible
+      } catch (_) { return true; }
+    }
+
+    // Stagger within containers for natural flow
+    function assignDelays(group) {
+      for (var i = 0; i < group.length; i++) {
+        var el = group[i];
+        try { el.style.setProperty('--reveal-delay', (i * 60) + 'ms'); } catch (_) {}
+      }
+    }
+
+    // Group by nearest .container for nicer cascading
+    var groupsByContainer = new Map();
+    candidates.forEach(function (el) {
+      var container = null;
+      try {
+        if (typeof el.closest === 'function') container = el.closest('.container');
+      } catch (_) {}
+      var key = container || document.body;
+      if (!groupsByContainer.has(key)) groupsByContainer.set(key, []);
+      groupsByContainer.get(key).push(el);
+    });
+    groupsByContainer.forEach(assignDelays);
+
+    // Observer to reveal when intersecting
+    var io = null;
+    if ('IntersectionObserver' in window) {
+      io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            e.target.classList.remove('reveal');
+            try { io.unobserve(e.target); } catch (_) {}
+          }
+        });
+      }, { rootMargin: '40px 0px' });
+    }
+
+    // Initialize: only mark offscreen elements as .reveal to avoid flicker
+    candidates.forEach(function (el) {
+      if (isInViewport(el)) {
+        el.classList.add('is-visible');
+      } else {
+        el.classList.add('reveal');
+        if (io) io.observe(el);
+      }
+    });
+
+    // Handle dynamically loaded content (basic)
+    try {
+      var mo = new MutationObserver(function (mutations) {
+        mutations.forEach(function (m) {
+          if (!m.addedNodes) return;
+          for (var i = 0; i < m.addedNodes.length; i++) {
+            var n = m.addedNodes[i];
+            if (!(n instanceof Element)) continue;
+            var newly = [];
+            try { newly = Array.prototype.slice.call(n.querySelectorAll(selectors)); } catch (_) {}
+            if (!newly.length) continue;
+            newly.forEach(function (el) {
+              if (isInViewport(el)) {
+                el.classList.add('is-visible');
+              } else {
+                el.classList.add('reveal');
+                if (io) io.observe(el);
+              }
+            });
+          }
+        });
+      });
+      mo.observe(document.body, { childList: true, subtree: true });
+    } catch (_) {}
+  } catch (_) {}
 })();
