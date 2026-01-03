@@ -130,6 +130,41 @@ a { color: var(--accent); text-decoration: none; transition: color var(--t-fast)
 a:hover { opacity: 0.9; }
 a:active { opacity: 0.75; }
 
+/* --- Utilities --------------------------------------------------------- */
+/* Spacing */
+.mt-8 { margin-top: 8px; }
+.mt-12 { margin-top: 12px; }
+.mt-16 { margin-top: 16px; }
+.mt-20 { margin-top: 20px; }
+.mt-24 { margin-top: 24px; }
+.mb-8 { margin-bottom: 8px; }
+.mb-12 { margin-bottom: 12px; }
+.mb-16 { margin-bottom: 16px; }
+.mb-20 { margin-bottom: 20px; }
+.mb-24 { margin-bottom: 24px; }
+.mb-28 { margin-bottom: 28px; }
+.mb-32 { margin-bottom: 32px; }
+.mb-36 { margin-bottom: 36px; }
+.mb-40 { margin-bottom: 40px; }
+.mb-48 { margin-bottom: 48px; }
+
+/* Padding */
+.p-16 { padding: 16px; }
+.p-20 { padding: 20px; }
+.p-24 { padding: 24px; }
+
+/* Indent */
+.pl-16 { padding-left: 16px; }
+.pl-20 { padding-left: 20px; }
+
+/* Text */
+.muted { color: var(--text-secondary); }
+.caption { color: var(--text-secondary); font-size: 14px; }
+.lead { color: var(--text-secondary); font-size: 18px; line-height: 1.8; max-width: 900px; }
+
+/* Inline links row */
+.inline-links { display: inline-flex; align-items: center; gap: 12px; }
+
 /* Glass utility - subtle translucent surface */
 .glass {
   background: var(--surface);
@@ -348,7 +383,7 @@ a:focus-visible {
   font-size: var(--h2); 
   font-weight: 600; 
   color: var(--text-primary); 
-  margin: 0 0 28px 0; 
+  margin: 0 0 16px 0; 
   text-align: left; 
   letter-spacing: -0.02em;
   line-height: var(--line-height-heading);
@@ -570,7 +605,7 @@ body.page-enter-active {
   font-size: 16px;
   line-height: 1.75;
   color: var(--text-primary);
-  padding-left: 24px;
+  padding-left: 28px;
   position: relative;
 }
 
@@ -580,9 +615,7 @@ body.page-enter-active {
   display: inline-block;
   width: 8px;
   height: 8px;
-  margin-right: 12px;
-  margin-left: 0;
-  left: 0;
+  left: 12px;
   top: 0.6em;
   background: var(--accent);
   border-radius: 50%;
@@ -786,20 +819,19 @@ body.page-enter-active {
   margin-bottom: 8px;
   line-height: 1.7;
   position: relative;
-  padding-left: 20px;
+  padding-left: 24px;
 }
 
 .sub-list li::before {
   content: "•";
   position: absolute;
-  left: 0;
+  left: 8px;
   color: var(--accent);
   font-weight: 600;
   font-size: 16px;
 }
 
-/* Leaf bullets for lists */
-.info-list li { position: relative; padding-left: 0; }
+/* Leaf bullets for lists - position relative is already set above */
 
 /* Project cards */
 .project-card {
@@ -1809,7 +1841,6 @@ b, strong { font-weight: 600; font-family: var(--font-display); }
     width: calc(100% - 32px);
     overflow-x: hidden;
   }
-  .info-list li::before { margin-left: -16px; }
   
   /* Additional mobile fixes for text and media */
   p, span, a, div, li, h1, h2, h3, h4, h5, h6 {
@@ -2002,12 +2033,20 @@ b, strong { font-weight: 600; font-family: var(--font-display); }
   }
   
   .info-list li {
-    padding-left: 24px;
+    padding-left: 28px;
   }
   
   .info-list li::before {
-    left: 0;
+    left: 12px;
     top: 0.6em;
+  }
+  
+  .sub-list li {
+    padding-left: 24px;
+  }
+  
+  .sub-list li::before {
+    left: 8px;
   }
   
   .profile-photo {
@@ -2072,7 +2111,7 @@ b, strong { font-weight: 600; font-family: var(--font-display); }
   }
   
   .sub-list {
-    padding-left: 14px;
+    padding-left: 0;
     margin-top: 6px;
   }
   
@@ -2080,6 +2119,11 @@ b, strong { font-weight: 600; font-family: var(--font-display); }
     font-size: 13px;
     line-height: 1.6;
     margin-bottom: 6px;
+    padding-left: 20px;
+  }
+  
+  .sub-list li::before {
+    left: 6px;
   }
   
   .content-wrapper {

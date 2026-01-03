@@ -1,75 +1,20 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Guardians of Farm Project | Sewon Kim</title>
-  <meta name="description" content="Crop Quality Assessment Using Image Processing and Artificial Intelligence - Sewon Kim's Academic Portfolio">
-  <meta name="author" content="Sewon Kim">
-  <meta name="theme-color" content="#FFFFFF">
-  <meta name="color-scheme" content="light dark">
-  <script>
-    (function() {
-      try {
-        const stored = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const theme = stored || (prefersDark ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', theme);
-      } catch (e) {}
-    })();
-  </script>
-
-  <link rel="canonical" href="https://andimsewon.github.io/guardians-of-farm-project.html">
-  <link rel="alternate" hreflang="en" href="https://andimsewon.github.io/guardians-of-farm-project.html">
-  <link rel="alternate" hreflang="ko" href="https://andimsewon.github.io/ko/guardians-of-farm-project.html">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="apple-touch-icon" href="/assets/profile.jpeg">
-  <link rel="mask-icon" href="/assets/favicon.svg" color="#D36B8C">
-  <link rel="preload" href="styles.css" as="style">
-  <link rel="stylesheet" href="styles.css">
-  <script src="js/site.js" defer></script>
-  <link rel="preconnect" href="https://www.youtube-nocookie.com" crossorigin>
-  <link rel="dns-prefetch" href="https://www.youtube-nocookie.com">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Guardians of Farm Project | Sewon Kim",
-    "url": "https://andimsewon.github.io/guardians-of-farm-project.html"
-  }
-  </script>
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Sewon Kim">
-  <meta property="og:title" content="Guardians of Farm Project | Sewon Kim">
-  <meta property="og:description" content="Crop Quality Assessment Using Image Processing and Artificial Intelligence">
-  <meta property="og:image" content="https://andimsewon.github.io/assets/guardians-of-farm-project/main.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://andimsewon.github.io/assets/guardians-of-farm-project/main.png">
-  <meta property="og:url" content="https://andimsewon.github.io/guardians-of-farm-project.html">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:locale:alternate" content="ko_KR">
-</head>
-<body>
-  <a class="skip-link" href="#project">Skip to content</a>
-  <nav class="top-nav" aria-label="Primary">
-    <div class="nav-container">
-      <div class="nav-name"><a href="index.html">Sewon Kim</a></div>
-      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="primaryLinks" aria-label="Open menu">☰</button>
-      <div class="nav-links" id="primaryLinks">
-        <a href="index.html">Home</a>
-        <a href="research.html">Research</a>
-        <a href="publications.html">Publications</a>
-        <a href="projects.html" class="active" aria-current="page">Projects</a>
-        <a href="awards.html">Awards</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="activities.html">Activities</a>
-        <a href="ko/guardians-of-farm-project.html" lang="ko" hreflang="ko" aria-label="View this page in Korean" title="View this page in Korean">한국어</a>
-        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
-      </div>
-    </div>
-  </nav>
+---
+layout: default
+lang: en
+title: "Guardians of Farm Project | Sewon Kim"
+description: "Crop Quality Assessment Using Image Processing and Artificial Intelligence - Sewon Kim's Academic Portfolio"
+canonical: https://andimsewon.github.io/guardians-of-farm-project.html
+alternate_en: https://andimsewon.github.io/guardians-of-farm-project.html
+alternate_ko: https://andimsewon.github.io/ko/guardians-of-farm-project.html
+og_title: "Guardians of Farm Project | Sewon Kim"
+og_description: "Crop Quality Assessment Using Image Processing and Artificial Intelligence"
+og_image: https://andimsewon.github.io/assets/guardians-of-farm-project/main.png
+og_url: https://andimsewon.github.io/guardians-of-farm-project.html
+skip_id: project
+permalink: /guardians-of-farm-project.html
+json_ld: |
+  {"@context":"https://schema.org","@type":"WebPage","name":"Guardians of Farm Project | Sewon Kim","url":"https://andimsewon.github.io/guardians-of-farm-project.html"}
+---
 
   <!-- Project Detail Section -->
   <main id="project" class="page-section">
@@ -130,6 +75,7 @@
       </div>
     </div>
   </main>
+  <!-- moved -->
 
   <!-- PDF Lightbox Modal -->
   <div class="pdf-lightbox-backdrop" id="pdfLightbox" role="dialog" aria-modal="true" aria-label="PDF preview">
@@ -139,10 +85,7 @@
     </div>
   </div>
 
-  <footer class="footer">
-    © <span id="y"></span> Sewon Kim · Built on GitHub Pages
-  </footer>
-  <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+  {% include footer.html lang='en' %}
   <script>
     // PDF Lightbox functionality (mobile-safe, legacy-friendly)
     (function () {
@@ -184,5 +127,3 @@
       // PDF lazy loading is handled by js/site.js
     })();
   </script>
-</body>
-</html>

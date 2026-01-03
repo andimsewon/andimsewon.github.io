@@ -1,70 +1,20 @@
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>GAIA 프로젝트 | 김세원</title>
-  <meta name="description" content="AI 기반 공장 및 발전소 배출가스의 도시 대기 영향 분석 시스템 - 김세원 포트폴리오">
-  <meta name="author" content="Sewon Kim">
-  <meta name="theme-color" content="#FFFFFF">
-  <meta name="color-scheme" content="light dark">
-  <script>
-    (function() {
-      try {
-        const stored = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const theme = stored || (prefersDark ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', theme);
-      } catch (e) {}
-    })();
-  </script>
-
-  <link rel="canonical" href="https://andimsewon.github.io/ko/gaia-project.html">
-  <link rel="alternate" hreflang="ko" href="https://andimsewon.github.io/ko/gaia-project.html">
-  <link rel="alternate" hreflang="en" href="https://andimsewon.github.io/gaia-project.html">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
-  <link rel="apple-touch-icon" href="/assets/profile.jpeg">
-  <link rel="mask-icon" href="/assets/favicon.svg" color="#D36B8C">
-  <link rel="preload" href="../styles.css" as="style">
-  <link rel="stylesheet" href="../styles.css">
-  <script src="../js/site.js" defer></script>
-  <link rel="preconnect" href="https://www.youtube-nocookie.com" crossorigin>
-  <link rel="dns-prefetch" href="https://www.youtube-nocookie.com">
-
-  <script type="application/ld+json">
+---
+layout: default
+lang: ko
+title: "GAIA 프로젝트 | 김세원"
+description: "AI 기반 공장 및 발전소 배출가스의 도시 대기 영향 분석 시스템 - 김세원 포트폴리오"
+canonical: https://andimsewon.github.io/ko/gaia-project.html
+alternate_ko: https://andimsewon.github.io/ko/gaia-project.html
+alternate_en: https://andimsewon.github.io/gaia-project.html
+og_title: "GAIA 프로젝트 | 김세원"
+og_description: "AI 기반 공장 및 발전소 배출가스의 도시 대기 영향 분석 시스템"
+og_image: https://andimsewon.github.io/assets/gaia-project/main.png
+og_url: https://andimsewon.github.io/ko/gaia-project.html
+skip_id: project
+permalink: /ko/gaia-project.html
+json_ld: |
   {"@context":"https://schema.org","@type":"WebPage","name":"GAIA 프로젝트 | 김세원","url":"https://andimsewon.github.io/ko/gaia-project.html"}
-  </script>
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Sewon Kim">
-  <meta property="og:title" content="GAIA 프로젝트 | 김세원">
-  <meta property="og:description" content="AI 기반 공장 및 발전소 배출가스의 도시 대기 영향 분석 시스템">
-  <meta property="og:image" content="https://andimsewon.github.io/assets/gaia-project/main.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://andimsewon.github.io/assets/gaia-project/main.png">
-  <meta property="og:url" content="https://andimsewon.github.io/ko/gaia-project.html">
-  <meta property="og:locale" content="ko_KR">
-  <meta property="og:locale:alternate" content="en_US">
-</head>
-<body>
-  <a class="skip-link" href="#project">본문으로 건너뛰기</a>
-  <nav class="top-nav" aria-label="Primary">
-    <div class="nav-container">
-      <div class="nav-name"><a href="index.html">김세원</a></div>
-      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="primaryLinks" aria-label="메뉴 열기">☰</button>
-      <div class="nav-links" id="primaryLinks">
-        <a href="index.html">홈</a>
-        <a href="research.html">연구</a>
-        <a href="publications.html">논문</a>
-        <a href="projects.html" class="active" aria-current="page">프로젝트</a>
-        <a href="awards.html">수상</a>
-        <a href="gallery.html">갤러리</a>
-        <a href="activities.html">교내 활동</a>
-        <a href="../gaia-project.html" lang="en" hreflang="en" aria-label="영문 페이지로 보기" title="영문 페이지로 보기">EN</a>
-        <button id="themeToggle" class="theme-toggle" aria-label="다크 모드 전환" title="다크 모드 전환">🌙</button>
-      </div>
-    </div>
-  </nav>
+---
 
   <!-- Project Detail Section -->
   <main id="project" class="page-section">
@@ -128,6 +78,7 @@
       </div>
     </div>
   </main>
+  <!-- moved -->
 
   <!-- PDF Lightbox Modal -->
   <div class="pdf-lightbox-backdrop" id="pdfLightbox" role="dialog" aria-modal="true" aria-label="PDF 미리보기">
@@ -137,8 +88,7 @@
     </div>
   </div>
 
-  <footer class="footer">© <span id="y"></span> Sewon Kim · Built on GitHub Pages</footer>
-  <button class="back-to-top" id="backToTop" aria-label="맨 위로" title="맨 위로">↑</button>
+  {% include footer.html lang='ko' %}
   <script>
     // PDF Lightbox functionality (mobile-safe, legacy-friendly)
     (function () {
@@ -177,5 +127,3 @@
       // PDF lazy loading is handled by ../js/site.js
     })();
   </script>
-</body>
-</html>

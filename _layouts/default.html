@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="{{ page.lang | default: 'en' }}">
+<head>
+  {% include head.html %}
+</head>
+<body>
+  {% assign skip_id = page.skip_id | default: 'main' %}
+  {% if page.lang == 'ko' %}
+  <a class="skip-link" href="#{{ skip_id }}">본문으로 건너뛰기</a>
+  {% else %}
+  <a class="skip-link" href="#{{ skip_id }}">Skip to content</a>
+  {% endif %}
+
+  {% include nav.html lang=page.lang %}
+
+  {{ content }}
+
+  {% include footer.html lang=page.lang %}
+  {% if page.scripts %}
+  {% for s in page.scripts %}
+  <script src="{{ s }}" defer></script>
+  {% endfor %}
+  {% endif %}
+</body>
+</html>

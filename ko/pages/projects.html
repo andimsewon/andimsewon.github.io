@@ -1,67 +1,21 @@
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>프로젝트 | 김세원</title>
-  <meta name="description" content="선정 프로젝트 - 김세원 포트폴리오">
-  <meta name="author" content="Sewon Kim">
-  <meta name="theme-color" content="#FFFFFF">
-  <meta name="color-scheme" content="light dark">
-  <script>
-    (function() {
-      try {
-        const stored = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const theme = stored || (prefersDark ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', theme);
-      } catch (e) {}
-    })();
-  </script>
-
-  <link rel="canonical" href="https://andimsewon.github.io/ko/projects.html">
-  <link rel="alternate" hreflang="ko" href="https://andimsewon.github.io/ko/projects.html">
-  <link rel="alternate" hreflang="en" href="https://andimsewon.github.io/projects.html">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
-  <link rel="apple-touch-icon" href="/assets/profile.jpeg">
-  <link rel="mask-icon" href="/assets/favicon.svg" color="#D36B8C">
-  <link rel="preload" href="../styles.css" as="style">
-  <link rel="stylesheet" href="../styles.css">
-  <script src="../js/site.js" defer></script>
-
-  <script type="application/ld+json">
+---
+layout: default
+lang: ko
+title: "프로젝트 | 김세원"
+description: "선정 프로젝트 - 김세원 포트폴리오"
+canonical: https://andimsewon.github.io/ko/projects.html
+alternate_ko: https://andimsewon.github.io/ko/projects.html
+alternate_en: https://andimsewon.github.io/projects.html
+og_title: "프로젝트 | 김세원"
+og_description: "선정 프로젝트 - 김세원 포트폴리오"
+og_image: https://andimsewon.github.io/assets/profile.jpeg
+og_url: https://andimsewon.github.io/ko/projects.html
+skip_id: projects
+permalink: /ko/projects.html
+json_ld: |
   {"@context":"https://schema.org","@type":"WebPage","name":"프로젝트 | 김세원","url":"https://andimsewon.github.io/ko/projects.html"}
-  </script>
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Sewon Kim">
-  <meta property="og:title" content="프로젝트 | 김세원">
-  <meta property="og:description" content="선정 프로젝트 - 김세원 포트폴리오">
-  <meta property="og:image" content="https://andimsewon.github.io/assets/profile.jpeg">
-  <meta property="og:url" content="https://andimsewon.github.io/ko/projects.html">
-  <meta property="og:locale" content="ko_KR">
-  <meta property="og:locale:alternate" content="en_US">
-</head>
-<body>
-  <a class="skip-link" href="#projects">본문으로 건너뛰기</a>
-  <nav class="top-nav" aria-label="Primary">
-    <div class="nav-container">
-      <div class="nav-name"><a href="index.html">김세원</a></div>
-      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="primaryLinks" aria-label="메뉴 열기">☰</button>
-      <div class="nav-links" id="primaryLinks">
-        <a href="index.html">홈</a>
-        <a href="research.html">연구</a>
-        <a href="publications.html">논문</a>
-        <a href="projects.html" class="active" aria-current="page">프로젝트</a>
-        <a href="awards.html">수상</a>
-        <a href="gallery.html">갤러리</a>
-        <a href="activities.html">교내 활동</a>
-        <a href="../projects.html" lang="en" hreflang="en" aria-label="영문 페이지로 보기" title="영문 페이지로 보기">EN</a>
-        <button id="themeToggle" class="theme-toggle" aria-label="다크 모드 전환" title="다크 모드 전환">🌙</button>
-      </div>
-    </div>
-  </nav>
-
+---
+  
   <main id="projects" class="page-section">
     <div class="container">
       <div class="section-header">
@@ -169,8 +123,6 @@
       </div>
     </div>
   </main>
+  <!-- moved -->
 
-  <footer class="footer">© <span id="y"></span> Sewon Kim · Built on GitHub Pages</footer>
-  <button class="back-to-top" id="backToTop" aria-label="맨 위로" title="맨 위로">↑</button>
-</body>
-</html>
+  {% include footer.html lang='ko' %}

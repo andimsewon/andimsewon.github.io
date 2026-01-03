@@ -1,0 +1,72 @@
+---
+layout: default
+lang: en
+title: "Sangsang StoryPlay Project | Sewon Kim"
+description: "AI-Driven Interactive Storytelling Platform for Children - Sewon Kim's Academic Portfolio"
+canonical: https://andimsewon.github.io/sangsang-storyplay-project.html
+alternate_en: https://andimsewon.github.io/sangsang-storyplay-project.html
+alternate_ko: https://andimsewon.github.io/ko/sangsang-storyplay-project.html
+og_title: "Sangsang StoryPlay Project | Sewon Kim"
+og_description: "AI-Driven Interactive Storytelling Platform for Children"
+og_image: https://andimsewon.github.io/assets/sangsang-storyplay-project/main.png
+og_url: https://andimsewon.github.io/sangsang-storyplay-project.html
+skip_id: project
+scripts:
+  - /js/pdf-lightbox.js
+permalink: /sangsang-storyplay-project.html
+json_ld: |
+  {"@context":"https://schema.org","@type":"WebPage","name":"Sangsang StoryPlay Project | Sewon Kim","url":"https://andimsewon.github.io/sangsang-storyplay-project.html"}
+---
+
+  <!-- Project Detail Section -->
+  <main id="project" class="page-section">
+    <div class="container">
+      <p class="back-link"><a href="projects.html" aria-label="Back to all projects">← Back to Projects</a></p>
+      <div class="section-header">
+        <h1 class="page-title">Sangsang StoryPlay – AI-Driven Interactive Storytelling Platform for Children</h1>
+        <div class="project-card-metrics" aria-label="Technologies">
+          <span class="metric-badge">ASR</span>
+          <span class="metric-badge">LLM</span>
+          <span class="metric-badge">EdTech</span>
+        </div>
+      </div>
+      <div class="content-wrapper">
+        <div class="project-item">
+          <div class="project-presentation-full" id="presentationThumbnail" data-pdf="assets/sangsang-storyplay-project/presentation.optimized.pdf" role="button" tabindex="0" aria-controls="pdfLightbox" aria-label="Open presentation PDF in a dialog">
+            <iframe data-src="assets/sangsang-storyplay-project/presentation.optimized.pdf#page=1&zoom=fit" style="width: 100%; height: 700px; border: none; pointer-events: none;" loading="lazy"></iframe>
+            <div class="project-presentation-label">Click to view presentation</div>
+          </div>
+          
+          <div class="project-main-full">
+            <div class="project-description">
+              <p>An interactive AI storytelling platform integrating child ASR, a generative story engine, and developmental analytics.</p>
+              <p>The system reframes passive reading as a child‑led narrative experience: the child becomes the main character, speaks ideas, and drives how the story unfolds. A unified workflow connects a generative engine, a speech recognizer optimized for young voices, and analytics that track linguistic and emotional development.</p>
+              <p>The AI engine processes spoken input, generates new scenes in real time, and branches the plot based on the child’s choices and responses. Unlike fixed storybooks, each session yields a unique narrative, sustaining imagination and expressive growth.</p>
+              <p>Core to the design is tight integration of ASR and TTS with the generative model. A speech model tailored to ages 4–7 converts utterances to text, the story engine composes the next scene, and characters reply with synthesized voices. The platform analyzes lexical diversity, sentence complexity, affect cues, and creative responses to produce parent‑facing developmental reports.</p>
+              <p>The user journey comprises three stages:</p>
+              <ul>
+                <li><strong>Story Creation:</strong> Role selection → child speech input → real-time scene generation → next prompts</li>
+                <li><strong>Interaction Logging & Analysis:</strong> Tracking lexical diversity, new word usage, emotional expressions, and creative branching</li>
+                <li><strong>Parent Dashboard:</strong> Visualized growth reports covering language development, emotional tendencies, and preferred story themes</li>
+              </ul>
+              <p>Interaction data syncs to the cloud for immediate updates to growth charts and story history. The story‑generation and voice‑interaction modules are designed as extensible components, enabling multilingual narratives, smart‑speaker support, and institutional (B2B) deployments.</p>
+              <p>The platform illustrates a scalable model for AI‑mediated, active learning—combining generative AI, speech interaction, and developmental analytics to support imagination, language growth, emotional expression, and parent‑child engagement.</p>
+              <p><strong>Award:</strong> Grand Prize (대상) — 2025 Jeju National University, Tech Business Mode (TBM) Startup Camp</p>
+              <p><a href="https://www.jigeumjeju.com/news/articleView.html?idxno=82609" target="_blank" rel="noopener noreferrer">📰 Related News Article</a></p>
+            </div>
+            <div class="project-tech">Tech Stack: GPT-based generative engine, ASR/TTS pipeline, Flutter or React Native prototype app, Python, FastAPI, Firebase/Firestore, Docker, cloud infrastructure</div>
+            <div class="project-links">
+              <a href="https://www.jigeumjeju.com/news/articleView.html?idxno=82609" target="_blank" rel="noopener noreferrer">📰 News Article</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- moved -->
+
+  <!-- PDF Lightbox Modal -->
+  {% include pdf_lightbox.html lang='en' %}
+
+  {% include footer.html lang='en' %}
+  

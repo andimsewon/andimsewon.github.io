@@ -1,75 +1,20 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>WaggleNet Project | Sewon Kim</title>
-  <meta name="description" content="WaggleNet: A LoRa and MQTT-Based Monitoring System for Internal and External Beehive Conditions - Sewon Kim's Academic Portfolio">
-  <meta name="author" content="Sewon Kim">
-  <meta name="theme-color" content="#FFFFFF">
-  <meta name="color-scheme" content="light dark">
-  <script>
-    (function() {
-      try {
-        const stored = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const theme = stored || (prefersDark ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', theme);
-      } catch (e) {}
-    })();
-  </script>
-
-  <link rel="canonical" href="https://andimsewon.github.io/waggle-net-project.html">
-  <link rel="alternate" hreflang="en" href="https://andimsewon.github.io/waggle-net-project.html">
-  <link rel="alternate" hreflang="ko" href="https://andimsewon.github.io/ko/waggle-net-project.html">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="apple-touch-icon" href="/assets/profile.jpeg">
-  <link rel="mask-icon" href="/assets/favicon.svg" color="#D36B8C">
-  <link rel="preload" href="styles.css" as="style">
-  <link rel="stylesheet" href="styles.css">
-  <script src="js/site.js" defer></script>
-  <link rel="dns-prefetch" href="https://github.com">
-  <link rel="dns-prefetch" href="https://www.linkedin.com">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "WaggleNet Project | Sewon Kim",
-    "url": "https://andimsewon.github.io/waggle-net-project.html"
-  }
-  </script>
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Sewon Kim">
-  <meta property="og:title" content="WaggleNet Project | Sewon Kim">
-  <meta property="og:description" content="WaggleNet: A LoRa and MQTT-Based Monitoring System for Internal and External Beehive Conditions">
-  <meta property="og:image" content="https://andimsewon.github.io/assets/polvo-de-purdue-project/main.jpeg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://andimsewon.github.io/assets/polvo-de-purdue-project/main.jpeg">
-  <meta property="og:url" content="https://andimsewon.github.io/waggle-net-project.html">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:locale:alternate" content="ko_KR">
-</head>
-<body>
-  <a class="skip-link" href="#project">Skip to content</a>
-  <nav class="top-nav" aria-label="Primary">
-    <div class="nav-container">
-      <div class="nav-name"><a href="index.html">Sewon Kim</a></div>
-      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="primaryLinks" aria-label="Open menu">☰</button>
-      <div class="nav-links" id="primaryLinks">
-        <a href="index.html">Home</a>
-        <a href="research.html">Research</a>
-        <a href="publications.html">Publications</a>
-        <a href="projects.html" class="active" aria-current="page">Projects</a>
-        <a href="awards.html">Awards</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="activities.html">Activities</a>
-        <a href="ko/waggle-net-project.html" lang="ko" hreflang="ko" aria-label="View this page in Korean" title="View this page in Korean">한국어</a>
-        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
-      </div>
-    </div>
-  </nav>
+---
+layout: default
+lang: en
+title: "WaggleNet Project | Sewon Kim"
+description: "WaggleNet: A LoRa and MQTT-Based Monitoring System for Internal and External Beehive Conditions - Sewon Kim's Academic Portfolio"
+canonical: https://andimsewon.github.io/waggle-net-project.html
+alternate_en: https://andimsewon.github.io/waggle-net-project.html
+alternate_ko: https://andimsewon.github.io/ko/waggle-net-project.html
+og_title: "WaggleNet Project | Sewon Kim"
+og_description: "WaggleNet: A LoRa and MQTT-Based Monitoring System for Internal and External Beehive Conditions"
+og_image: https://andimsewon.github.io/assets/polvo-de-purdue-project/main.jpeg
+og_url: https://andimsewon.github.io/waggle-net-project.html
+skip_id: project
+permalink: /waggle-net-project.html
+json_ld: |
+  {"@context":"https://schema.org","@type":"WebPage","name":"WaggleNet Project | Sewon Kim","url":"https://andimsewon.github.io/waggle-net-project.html"}
+---
 
   <!-- Project Detail Section -->
   <main id="project" class="page-section">
@@ -129,6 +74,7 @@
       </div>
     </div>
   </main>
+  <!-- moved -->
 
   <!-- PDF Lightbox Modal -->
   <div class="pdf-lightbox-backdrop" id="pdfLightbox" role="dialog" aria-modal="true" aria-label="PDF preview">
@@ -138,8 +84,7 @@
     </div>
   </div>
 
-  <footer class="footer">© <span id="y"></span> Sewon Kim · Built on GitHub Pages</footer>
-  <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+  {% include footer.html lang='en' %}
   <script>
     (function () {
       var y = document.getElementById('y');
@@ -210,5 +155,3 @@
       // PDF lazy loading and theme toggle are handled by js/site.js
     })();
   </script>
-</body>
-</html>

@@ -1,0 +1,49 @@
+---
+layout: default
+lang: en
+title: "Gallery | Sewon Kim"
+description: "Photo Gallery - Sewon Kim's Academic Portfolio"
+canonical: https://andimsewon.github.io/gallery.html
+alternate_en: https://andimsewon.github.io/gallery.html
+alternate_ko: https://andimsewon.github.io/ko/gallery.html
+og_title: "Gallery | Sewon Kim"
+og_description: "Photo Gallery - Sewon Kim's Academic Portfolio"
+og_image: https://andimsewon.github.io/assets/profile.jpeg
+og_url: https://andimsewon.github.io/gallery.html
+skip_id: gallery
+scripts:
+  - /js/gallery.js
+permalink: /gallery.html
+json_ld: |
+  {"@context":"https://schema.org","@type":"WebPage","name":"Gallery | Sewon Kim","url":"https://andimsewon.github.io/gallery.html"}
+---
+
+  <!-- Gallery Section -->
+  <main id="gallery" class="page-section">
+    <div class="container">
+      <div class="section-header">
+        <h1 class="page-title">PHOTO GALLERY</h1>
+      </div>
+      <div class="content-wrapper">
+        <p class="gallery-intro">Projects, activities, and research-related photos.</p>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="./assets/gallery/2025Purdue_KSW1.jpeg" alt="Professor Tony's farm" class="gallery-image" data-caption="Professor Tony's farm" loading="lazy" decoding="async" fetchpriority="low">
+            <div class="gallery-caption">Professor Tony's farm</div>
+          </div>
+          <div class="gallery-item">
+            <img src="./assets/gallery/2025Purdue_KSW.jpeg" alt="2025_Purdue_KSW" class="gallery-image" data-caption="2025_Purdue_KSW" loading="lazy" decoding="async" fetchpriority="low">
+            <div class="gallery-caption">2025_Purdue_KSW</div>
+          </div>
+        </div>
+        <p class="gallery-note">
+          <em>To add photos, place images in <code>assets/gallery/</code> folder and update the HTML.</em>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Lightbox Modal -->
+  {% include lightbox.html lang='en' %}
+
+  <!-- moved -->

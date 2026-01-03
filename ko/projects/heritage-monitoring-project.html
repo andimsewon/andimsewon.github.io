@@ -1,30 +1,21 @@
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>국가유산 모니터링·조사·등록 시스템 | 김세원</title>
-  <meta name="description" content="국가유산 모니터링·조사·등록 시스템 - 국가유산청 Open API, AI 손상 탐지, Firebase 실시간 동기화를 통합한 크로스플랫폼 현장 조사 시스템 - 김세원 포트폴리오">
-  <meta name="author" content="Sewon Kim">
-  <meta name="theme-color" content="#FFFFFF">
-  <script>
-    (function() {
-      try {
-        const stored = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const theme = stored || (prefersDark ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', theme);
-      } catch (e) {}
-    })();
-  </script>
-
-  <link rel="canonical" href="https://andimsewon.github.io/ko/heritage-monitoring-project.html">
-  <link rel="alternate" hreflang="ko" href="https://andimsewon.github.io/ko/heritage-monitoring-project.html">
-  <link rel="alternate" hreflang="en" href="https://andimsewon.github.io/heritage-monitoring-project.html">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
-  <link rel="apple-touch-icon" href="/assets/profile.jpeg">
-  <link rel="mask-icon" href="/assets/favicon.svg" color="#D36B8C">
+---
+layout: default
+lang: ko
+title: "국가유산 모니터링·조사·등록 시스템 | 김세원"
+description: "국가유산 모니터링·조사·등록 시스템 - 국가유산청 Open API, AI 손상 탐지, Firebase 실시간 동기화를 통합한 크로스플랫폼 현장 조사 시스템"
+canonical: https://andimsewon.github.io/ko/heritage-monitoring-project.html
+alternate_ko: https://andimsewon.github.io/ko/heritage-monitoring-project.html
+alternate_en: https://andimsewon.github.io/heritage-monitoring-project.html
+og_title: "국가유산 모니터링·조사·등록 시스템 | 김세원"
+og_description: "국가유산청 Open API, AI 손상 탐지, Firebase 실시간 동기화를 통합한 크로스플랫폼 현장 조사 시스템"
+og_image: https://andimsewon.github.io/assets/heritage-monitoring-project/main.jpeg
+og_url: https://andimsewon.github.io/ko/heritage-monitoring-project.html
+skip_id: project
+permalink: /ko/heritage-monitoring-project.html
+json_ld: |
+  {"@context":"https://schema.org","@type":"WebPage","name":"국가유산 모니터링·조사·등록 시스템 | 김세원","url":"https://andimsewon.github.io/ko/heritage-monitoring-project.html"}
+---
+  
   <link rel="preload" href="../styles.css" as="style">
   <link rel="stylesheet" href="../styles.css">
   <script src="../js/site.js" defer></script>
@@ -161,9 +152,9 @@
       </div>
     </div>
   </main>
+  <!-- moved -->
 
-  <footer class="footer">© <span id="y"></span> Sewon Kim · Built on GitHub Pages</footer>
-  <button class="back-to-top" id="backToTop" aria-label="맨 위로" title="맨 위로">↑</button>
+  {% include footer.html lang='ko' %}
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
     
@@ -221,5 +212,3 @@
     })();
     // Theme toggle is handled by ../js/site.js
   </script>
-</body>
-</html>

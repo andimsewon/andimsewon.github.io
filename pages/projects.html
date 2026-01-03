@@ -1,78 +1,27 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Projects | Sewon Kim</title>
-  <meta name="description" content="Selected Projects - Sewon Kim's Academic Portfolio">
-  <meta name="author" content="Sewon Kim">
-  <meta name="theme-color" content="#FFFFFF">
-  <meta name="color-scheme" content="light dark">
-  <script>
-    (function() {
-      try {
-        const stored = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const theme = stored || (prefersDark ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', theme);
-      } catch (e) {}
-    })();
-  </script>
-
-  <link rel="canonical" href="https://andimsewon.github.io/projects.html">
-  <link rel="alternate" hreflang="en" href="https://andimsewon.github.io/projects.html">
-  <link rel="alternate" hreflang="ko" href="https://andimsewon.github.io/ko/projects.html">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="apple-touch-icon" href="/assets/profile.jpeg">
-  <link rel="mask-icon" href="/assets/favicon.svg" color="#D36B8C">
-  <link rel="preload" href="styles.css" as="style">
-  <link rel="stylesheet" href="styles.css">
-  <script src="js/site.js" defer></script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Projects | Sewon Kim",
-    "url": "https://andimsewon.github.io/projects.html"
-  }
-  </script>
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Sewon Kim">
-  <meta property="og:title" content="Projects | Sewon Kim">
-  <meta property="og:description" content="Selected Projects - Sewon Kim's Academic Portfolio">
-  <meta property="og:image" content="https://andimsewon.github.io/assets/profile.jpeg">
-  <meta property="og:url" content="https://andimsewon.github.io/projects.html">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:locale:alternate" content="ko_KR">
-</head>
-<body>
-  <a class="skip-link" href="#projects">Skip to content</a>
-  <nav class="top-nav" aria-label="Primary">
-    <div class="nav-container">
-      <div class="nav-name"><a href="index.html">Sewon Kim</a></div>
-      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="primaryLinks" aria-label="Open menu">☰</button>
-      <div class="nav-links" id="primaryLinks">
-        <a href="index.html">Home</a>
-        <a href="research.html">Research</a>
-        <a href="publications.html">Publications</a>
-        <a href="projects.html" class="active" aria-current="page">Projects</a>
-        <a href="awards.html">Awards</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="activities.html">Activities</a>
-        <a href="ko/projects.html" lang="ko" hreflang="ko" aria-label="View this page in Korean" title="View this page in Korean">한국어</a>
-        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
-      </div>
-    </div>
-  </nav>
+---
+layout: default
+lang: en
+title: "Projects | Sewon Kim"
+description: "Selected Projects - Sewon Kim's Academic Portfolio"
+canonical: https://andimsewon.github.io/projects.html
+alternate_en: https://andimsewon.github.io/projects.html
+alternate_ko: https://andimsewon.github.io/ko/projects.html
+og_title: "Projects | Sewon Kim"
+og_description: "Selected Projects - Sewon Kim's Academic Portfolio"
+og_image: https://andimsewon.github.io/assets/profile.jpeg
+og_url: https://andimsewon.github.io/projects.html
+skip_id: projects
+permalink: /projects.html
+json_ld: |
+  {"@context":"https://schema.org","@type":"WebPage","name":"Projects | Sewon Kim","url":"https://andimsewon.github.io/projects.html"}
+---
 
   <!-- Projects Section -->
   <main id="projects" class="page-section">
     <div class="container">
       <div class="section-header">
         <h1 class="page-title">Selected Projects</h1>
-        <p style="color: var(--text-secondary); font-size: 18px; line-height: 1.8; margin-top: -20px; margin-bottom: 56px; max-width: 900px;">A selection of projects spanning AI, natural language processing, computer vision, IoT systems, and full‑stack development. Each project demonstrates careful problem formulation, empirical evaluation, and practical deployment considerations with emphasis on real-world applicability.</p>
+        <p class="lead mb-48">A selection of projects spanning AI, natural language processing, computer vision, IoT systems, and full‑stack development. Each project demonstrates careful problem formulation, empirical evaluation, and practical deployment considerations with emphasis on real-world applicability.</p>
       </div>
       <div class="content-wrapper">
         <a href="waggle-net-project.html" class="project-card">
@@ -91,7 +40,7 @@
               <span class="metric-badge">MQTT</span>
               <span class="metric-badge">Edge IoT</span>
             </div>
-            <div class="project-card-date" style="font-size: 14px; color: var(--text-secondary); margin-bottom: 8px;">Summer 2025 | IITP Korean AI Square, Purdue University</div>
+            <div class="project-card-date caption mb-8">Summer 2025 | IITP Korean AI Square, Purdue University</div>
             <div class="project-card-read-more">KEEP READING ></div>
           </div>
         </a>
@@ -109,7 +58,7 @@
               <span class="metric-badge">FastAPI</span>
               <span class="metric-badge">Firebase</span>
             </div>
-            <div class="project-card-date" style="font-size: 14px; color: var(--text-secondary); margin-bottom: 8px;">2024–2025 | Cultural Heritage Digital Transformation Project</div>
+            <div class="project-card-date caption mb-8">2024–2025 | Cultural Heritage Digital Transformation Project</div>
             <div class="project-card-read-more">KEEP READING ></div>
           </div>
         </a>
@@ -130,7 +79,7 @@
               <span class="metric-badge">AERMOD</span>
               <span class="metric-badge">Time-Series</span>
             </div>
-            <div class="project-card-date" style="font-size: 14px; color: var(--text-secondary); margin-bottom: 8px;">Spring 2025 | Capstone Design Competition, Jeonbuk National University</div>
+            <div class="project-card-date caption mb-8">Spring 2025 | Capstone Design Competition, Jeonbuk National University</div>
             <div class="project-card-read-more">KEEP READING ></div>
           </div>
         </a>
@@ -151,7 +100,7 @@
               <span class="metric-badge">Vision</span>
               <span class="metric-badge">Inference</span>
             </div>
-            <div class="project-card-date" style="font-size: 14px; color: var(--text-secondary); margin-bottom: 8px;">Fall 2024 | Capstone Design Competition, Jeonbuk National University</div>
+            <div class="project-card-date caption mb-8">Fall 2024 | Capstone Design Competition, Jeonbuk National University</div>
             <div class="project-card-read-more">KEEP READING ></div>
           </div>
         </a>
@@ -169,17 +118,13 @@
               <span class="metric-badge">LLM</span>
               <span class="metric-badge">EdTech</span>
             </div>
-            <div class="project-card-date" style="font-size: 14px; color: var(--text-secondary); margin-bottom: 8px;">2025 | Jeju National University Tech Business Mode (TBM) Startup Camp — Grand Prize</div>
+            <div class="project-card-date caption mb-8">2025 | Jeju National University Tech Business Mode (TBM) Startup Camp — Grand Prize</div>
             <div class="project-card-read-more">KEEP READING ></div>
           </div>
         </a>
       </div>
     </div>
   </main>
+  <!-- moved -->
 
-  <footer class="footer">
-    © <span id="y"></span> Sewon Kim · Built on GitHub Pages
-  </footer>
-  <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
-</body>
-</html>
+  

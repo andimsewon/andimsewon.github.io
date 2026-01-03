@@ -1,0 +1,78 @@
+---
+layout: default
+lang: ko
+title: "Guardians of Farm 프로젝트 | 김세원"
+description: "작물 품질 상태 판별: 이미지 프로세싱 및 인공지능 기술 - 김세원 포트폴리오"
+canonical: https://andimsewon.github.io/ko/guardians-of-farm-project.html
+alternate_ko: https://andimsewon.github.io/ko/guardians-of-farm-project.html
+alternate_en: https://andimsewon.github.io/guardians-of-farm-project.html
+og_title: "Guardians of Farm 프로젝트 | 김세원"
+og_description: "작물 품질 상태 판별: 이미지 프로세싱 및 인공지능 기술"
+og_image: https://andimsewon.github.io/assets/guardians-of-farm-project/main.png
+og_url: https://andimsewon.github.io/ko/guardians-of-farm-project.html
+skip_id: project
+permalink: /ko/guardians-of-farm-project.html
+json_ld: |
+  {"@context":"https://schema.org","@type":"WebPage","name":"Guardians of Farm 프로젝트 | 김세원","url":"https://andimsewon.github.io/ko/guardians-of-farm-project.html"}
+---
+
+  <main id="project" class="page-section">
+    <div class="container">
+      <p class="back-link"><a href="projects.html" aria-label="프로젝트 목록으로">← 프로젝트 목록으로</a></p>
+      <div class="section-header">
+        <h1 class="page-title">작물 품질 상태 판별: 이미지 프로세싱 및 인공지능 기술 (Guardians of Farm Project)</h1>
+        <div class="project-card-metrics" aria-label="기술 스택">
+          <span class="metric-badge">YOLOv8</span>
+          <span class="metric-badge">Vision</span>
+          <span class="metric-badge">데이터셋</span>
+        </div>
+      </div>
+      <div class="content-wrapper">
+        <div class="project-item">
+          <div class="project-presentation-full" id="presentationThumbnail" data-pdf="../assets/guardians-of-farm-project/presentation.optimized.pdf" role="button" tabindex="0" aria-controls="pdfLightbox" aria-label="발표 자료(PDF) 열기">
+            <iframe data-src="../assets/guardians-of-farm-project/presentation.optimized.pdf#page=1&zoom=fit" style="width: 100%; height: 700px; border: none; pointer-events: none;" loading="lazy"></iframe>
+            <div class="project-presentation-label">클릭하여 발표 자료 보기</div>
+          </div>
+          
+          <div class="project-main-full">
+            <div class="project-description">
+              <p>스마트팜 환경에서 작물 질병 탐지와 잎 건강 평가의 신뢰성을 높이기 위한 AI 기반 품질 판별 시스템을 구축했습니다.</p>
+              <p>초기에는 GroundingDINO와 SAM을 활용한 비지도 시각 그라운딩으로 잎 분할과 RGB 기반 분류를 시도했으나, 클래스 불균형 상황에서 평균 RGB 특성의 편향으로 오분류가 발생했습니다.</p>
+              <p>이에 Kaggle 공개 데이터와 현장 촬영 이미지를 결합해 대규모 라벨 데이터셋을 구축하고, Roboflow로 라벨링·증강을 진행했습니다. 파이프라인을 YOLOv8 기반 지도 탐지 모델로 전환해 정확도와 추론 속도를 크게 개선했습니다.</p>
+              <p>최종 시스템은 탐지 결과를 오버레이하고, 정상/질병 잎 비율에 따라 Normal, Caution, Warning, Danger, Critical의 5단계 건강 지표를 산출합니다. 학습된 YOLOv8 모델은 mAP@0.5=0.81, 질병 잎 AP=0.846을 기록해 실용성을 입증했습니다.</p>
+              <p>비지도에서 고성능 지도 프레임워크로의 전환을 실증했으며, IoT 기반 실시간 모니터링 파이프라인과의 연동 가능성을 제시합니다.</p>
+            </div>
+            <div class="project-tech">기술 스택: Python, PyTorch, YOLOv8, GroundingDINO, SAM, RoboFlow, OpenCV, NumPy</div>
+            <div class="project-links">
+              <a href="https://github.com/andimsewon/Capstone_GuardiansofFarm" target="_blank" rel="noopener noreferrer">🔗 GitHub</a>
+              <a href="../assets/guardians-of-farm-project/poster.pdf" target="_blank" rel="noopener noreferrer">📄 포스터 (PDF)</a>
+            </div>
+
+            <h3 class="section-title">핵심 지표</h3>
+            <ul class="sub-list">
+              <li>mAP@0.5: 0.81</li>
+              <li>AP(질병 잎): 0.846</li>
+            </ul>
+          </div>
+          
+          <!-- Presentation Video Section -->
+          <div class="project-media-section">
+            <h3 class="section-title">발표 영상</h3>
+            <div class="project-video-wrapper">
+              <div class="youtube-embed-wrapper">
+                <iframe 
+                  src="https://www.youtube-nocookie.com/embed/9YzqQUvIw_4" 
+                  title="Guardians of Farm 프로젝트 발표 영상"
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- moved -->

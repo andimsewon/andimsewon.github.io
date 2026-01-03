@@ -1,0 +1,7 @@
+<div class="pdf-lightbox-backdrop" id="pdfLightbox" role="dialog" aria-modal="true" aria-label="{% if include.lang == 'ko' %}PDF 미리보기{% else %}PDF preview{% endif %}">
+  <div class="pdf-lightbox-content">
+    <div class="pdf-lightbox-close" id="pdfLightboxClose" aria-label="{% if include.lang == 'ko' %}닫기{% else %}Close{% endif %}">×</div>
+    <iframe src="" id="pdfLightboxIframe" class="pdf-lightbox-iframe" title="{% if include.lang == 'ko' %}PDF 미리보기{% else %}PDF Preview{% endif %}"></iframe>
+  </div>
+</div>
+

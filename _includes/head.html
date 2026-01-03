@@ -1,0 +1,65 @@
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{{ page.title }}</title>
+  {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+  <meta name="author" content="Sewon Kim">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta name="color-scheme" content="light dark">
+
+  <script>
+    (function() {
+      try {
+        var stored = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+
+  {% if page.canonical %}<link rel="canonical" href="{{ page.canonical }}">{% endif %}
+  {% if page.alternate_en %}<link rel="alternate" hreflang="en" href="{{ page.alternate_en }}">{% endif %}
+  {% if page.alternate_ko %}<link rel="alternate" hreflang="ko" href="{{ page.alternate_ko }}">{% endif %}
+  {% if page.alternate_default %}<link rel="alternate" hreflang="x-default" href="{{ page.alternate_default }}">{% endif %}
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/profile.jpeg">
+  <link rel="mask-icon" href="/assets/favicon.svg" color="#D36B8C">
+  <link rel="preload" href="/styles.css" as="style">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/js/site.js" defer></script>
+  <link rel="dns-prefetch" href="https://github.com">
+  <link rel="dns-prefetch" href="https://www.linkedin.com">
+
+  {% if page.preload_image %}
+  <link rel="preload" as="image" href="{{ page.preload_image }}" fetchpriority="high">
+  {% endif %}
+
+  <meta property="og:type" content="{{ page.og_type | default: 'website' }}">
+  <meta property="og:site_name" content="Sewon Kim">
+  <meta property="og:title" content="{{ page.og_title | default: page.title }}">
+  {% if page.og_description or page.description %}
+  <meta property="og:description" content="{{ page.og_description | default: page.description }}">
+  {% endif %}
+  {% if page.og_image %}
+  <meta property="og:image" content="{{ page.og_image }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ page.og_image }}">
+  {% endif %}
+  {% if page.og_url or page.canonical %}
+  <meta property="og:url" content="{{ page.og_url | default: page.canonical }}">
+  {% endif %}
+  {% if page.lang == 'ko' %}
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:locale:alternate" content="en_US">
+  {% else %}
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ko_KR">
+  {% endif %}
+
+  {% if page.json_ld %}
+  <script type="application/ld+json">
+  {{ page.json_ld }}
+  </script>
+  {% endif %}
