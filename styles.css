@@ -546,6 +546,20 @@ body.page-enter-active {
   font-size: 16px;
   line-height: 1.75;
   color: var(--text-primary);
+  padding-left: 18px;
+}
+
+.info-list li::before {
+  content: '';
+  position: relative;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 10px;
+  margin-left: -18px;
+  background: var(--accent);
+  border-radius: 50%;
+  top: -2px;
 }
 
 /* Info Grid for AT A GLANCE */
@@ -1443,6 +1457,15 @@ body.page-enter-active {
   font-size: 13px;
   position: relative;
 }
+.section-title::after {
+  content: '';
+  display: block;
+  width: 64px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  border-radius: 2px;
+  margin-top: 10px;
+}
 .section-title:first-of-type { margin-top: 0; }
 
 /* Profile Photo */
@@ -1469,6 +1492,38 @@ body.page-enter-active {
   text-align: center;
   font-size: 12px;
   color: var(--text-secondary);
+}
+
+/* Interest chips (hero emphasis) */
+.interest-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 0 0;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-dark);
+  background: rgba(224, 82, 141, 0.10);
+  border: 1px solid var(--border);
+  transition: transform var(--t-fast), background var(--t-fast), border-color var(--t-fast);
+  white-space: nowrap;
+}
+
+.chip:hover {
+  background: rgba(224, 82, 141, 0.16);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 480px) {
+  .chip { font-size: 12px; padding: 6px 10px; }
 }
 
 /* Responsive Design */
@@ -1717,6 +1772,7 @@ b, strong { font-weight: 600; font-family: var(--font-display); }
     width: calc(100% - 32px);
     overflow-x: hidden;
   }
+  .info-list li::before { margin-left: -16px; }
   
   /* Additional mobile fixes for text and media */
   p, span, a, div, li, h1, h2, h3, h4, h5, h6 {
