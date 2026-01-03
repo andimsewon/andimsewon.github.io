@@ -2,7 +2,5 @@ title: "Sewon Kim"
 permalink: "/:basename:output_ext"
 exclude:
   - start-server.sh
-  - Sewon_Kim_CV.pdf
-  - Sewon_Kim_CV.optimized.pdf
 markdown: kramdown
 highlighter: rouge

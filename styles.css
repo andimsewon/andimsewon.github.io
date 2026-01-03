@@ -873,6 +873,7 @@ body.page-enter-active {
   flex: 1;
   min-width: 300px;
   max-width: 400px;
+  width: 100%;
   border-radius: 20px;
   overflow: hidden;
   background: var(--surface);
@@ -880,6 +881,9 @@ body.page-enter-active {
   box-shadow: var(--shadow-elev-0);
   transition: transform var(--t-med), box-shadow var(--t-med);
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Fallback for browsers without aspect-ratio support */
@@ -899,6 +903,7 @@ body.page-enter-active {
     height: 100%;
     object-fit: cover;
     display: block;
+    aspect-ratio: 4 / 3;
   }
 }
 
@@ -911,6 +916,7 @@ body.page-enter-active {
   display: block;
   transition: transform 360ms var(--ease);
   will-change: transform;
+  aspect-ratio: 4 / 3;
 }
 
 .project-card:hover .project-card-image {
@@ -1639,7 +1645,11 @@ body.page-enter-active {
 /* Avoid mid-size squeeze: earlier column layout and smaller gaps */
 @media (max-width: 1024px) {
   .project-card { gap: 24px; padding: 28px; }
-  .project-card-visual { min-width: 260px; max-width: 360px; }
+  .project-card-visual { 
+    min-width: 260px; 
+    max-width: 360px;
+    aspect-ratio: 4 / 3;
+  }
 }
 
 @media (max-width: 860px) {
@@ -1978,10 +1988,8 @@ b, strong { font-weight: 600; font-family: var(--font-display); }
     width: 100%;
     max-width: 100%;
     margin-bottom: 20px;
-  }
-  
-  .project-card-visual {
     aspect-ratio: 4 / 3;
+    min-width: 0;
   }
   
   .contact-header {
