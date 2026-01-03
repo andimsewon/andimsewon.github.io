@@ -605,21 +605,27 @@ body.page-enter-active {
   font-size: 16px;
   line-height: 1.75;
   color: var(--text-primary);
-  padding-left: 28px;
   position: relative;
 }
 
-.info-list > li::before {
-  content: '';
-  position: absolute;
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  left: 12px;
-  top: 0.6em;
-  background: var(--accent);
-  border-radius: 50%;
+/* Top-level CV bullets: bold, minimal indent, square marker */
+.info-list > li {
+  padding-left: 18px; /* minimal indent */
+  font-weight: 600;   /* emphasize role/position */
 }
+
+.info-list > li::before {
+  content: "▪"; /* square marker distinct from second-level */
+  position: absolute;
+  left: 0;
+  top: 0.45em;
+  color: var(--accent);
+  font-size: 12px;
+  line-height: 1;
+}
+
+/* Ensure descriptions under roles are normal weight */
+.info-list > li .sub-list li { font-weight: 400; color: var(--text-secondary); }
 
 /* Info Grid for AT A GLANCE */
 .info-grid {
@@ -808,7 +814,7 @@ body.page-enter-active {
 
 .sub-list {
   list-style: none;
-  padding-left: 0;
+  padding-left: 16px; /* indent sub-bullets */
   margin-top: 12px;
   margin-bottom: 0;
 }
@@ -819,15 +825,17 @@ body.page-enter-active {
   margin-bottom: 8px;
   line-height: 1.7;
   position: relative;
-  padding-left: 24px;
+  padding-left: 18px;
 }
 
+/* Second-level bullets: en dash, normal weight, distinct from top-level */
 .sub-list li::before {
-  content: "•";
+  content: "–";
   position: absolute;
-  left: 8px;
-  color: var(--accent);
-  font-weight: 600;
+  left: 0;
+  top: 0.1em;
+  color: var(--text-secondary);
+  font-weight: 500;
   font-size: 16px;
 }
 
@@ -2044,20 +2052,20 @@ b, strong { font-weight: 600; font-family: var(--font-display); }
   }
   
   .info-list > li {
-    padding-left: 28px;
+    padding-left: 18px; /* keep minimal indent on mobile */
   }
   
   .info-list > li::before {
-    left: 12px;
-    top: 0.6em;
+    left: 0;
+    top: 0.45em;
   }
   
   .sub-list li {
-    padding-left: 24px;
+    padding-left: 18px;
   }
   
   .sub-list li::before {
-    left: 8px;
+    left: 0;
   }
   
   .profile-photo {
@@ -2122,7 +2130,7 @@ b, strong { font-weight: 600; font-family: var(--font-display); }
   }
   
   .sub-list {
-    padding-left: 0;
+    padding-left: 14px; /* slight indent retained on very small screens */
     margin-top: 6px;
   }
   
@@ -2130,11 +2138,11 @@ b, strong { font-weight: 600; font-family: var(--font-display); }
     font-size: 13px;
     line-height: 1.6;
     margin-bottom: 6px;
-    padding-left: 20px;
+    padding-left: 16px;
   }
   
   .sub-list li::before {
-    left: 6px;
+    left: 0;
   }
   
   .content-wrapper {
