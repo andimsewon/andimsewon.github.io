@@ -4,6 +4,5 @@ exclude:
   - start-server.sh
   - Sewon_Kim_CV.pdf
   - Sewon_Kim_CV.optimized.pdf
-  - assets/**/*.pdf
 markdown: kramdown
 highlighter: rouge
