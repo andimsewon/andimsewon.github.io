@@ -609,7 +609,7 @@ body.page-enter-active {
   position: relative;
 }
 
-.info-list li::before {
+.info-list > li::before {
   content: '';
   position: absolute;
   display: inline-block;
@@ -1380,6 +1380,9 @@ body.page-enter-active {
   border-radius: 12px;
   background: var(--surface);
   transition: transform 0.3s ease;
+  aspect-ratio: 4 / 3;
+  height: auto;
+  object-fit: cover;
 }
 
 .project-certificate:hover img {
@@ -2040,11 +2043,11 @@ b, strong { font-weight: 600; font-family: var(--font-display); }
     word-wrap: break-word;
   }
   
-  .info-list li {
+  .info-list > li {
     padding-left: 28px;
   }
   
-  .info-list li::before {
+  .info-list > li::before {
     left: 12px;
     top: 0.6em;
   }
@@ -2172,6 +2175,8 @@ b, strong { font-weight: 600; font-family: var(--font-display); }
   border-radius: 8px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   display: block;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
 }
 
 /* Back to top button */
