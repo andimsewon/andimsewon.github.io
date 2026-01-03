@@ -24,7 +24,7 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="apple-touch-icon" href="/assets/profile.jpeg">
-  <link rel="mask-icon" href="/assets/favicon.svg" color="#E0528D">
+  <link rel="mask-icon" href="/assets/favicon.svg" color="#D36B8C">
   <link rel="preload" href="../styles.css" as="style">
   <link rel="stylesheet" href="../styles.css">
   <script src="../js/site.js" defer></script>
@@ -87,11 +87,11 @@
           
           <div class="project-main-full">
             <div class="project-description">
-              <p>이 프로젝트는 양봉 환경에서 내부와 외부 조건을 동시에 모니터링하는 저비용·확장형 IoT 시스템을 구축하기 위해 진행되었다. Purdue University에서 2025년 여름, 국제 연구 장학생으로 참여하여 스마트 양봉(Smart Beekeeping) 분야의 IoT 기반 환경 감시 시스템을 설계하고 구현하였다.</p>
-              <p>기존의 스마트 벌통 시스템은 내부 온도와 습도만 감지하거나, 고가의 GSM/LTE 통신 장비에 의존해 확장성과 실시간성이 떨어지는 한계가 있었다. 이를 개선하기 위해, Wi-Fi LoRa 32 (V3) 모듈을 사용하여 내부·외부 양방향 환경 데이터를 수집하는 워커 노드(Worker Node)와 MQTT를 통해 클라우드 서버로 데이터를 전송하는 마스터 노드(Master Node)를 설계하였다. 각 노드는 온도·습도(DHT22), 조도(LDR), GPS 모듈을 통합하여 3분 간격으로 데이터를 수집하고, JSON 포맷으로 변환 후 LoRa 통신을 통해 송신한다.</p>
-              <p>수집된 데이터는 MQTT 서버와 SQLite 기반 클라우드 서버에 저장되어, Flutter로 개발된 모바일 앱을 통해 시각화된다. 사용자는 앱에서 실시간으로 벌통의 온도, 습도, 조도, GPS 위치를 확인할 수 있으며, 이상치 발생 시 Firebase Cloud Messaging 기반 긴급 알림 시스템이 자동으로 경고를 보낸다.</p>
-              <p>본 시스템은 Purdue University의 실험 농장과 건물 외부에서 실험되었으며, LoRa 통신은 개방 환경에서 최대 110m, 장애물 환경에서 95m까지 안정적으로 작동하였다. 내부 벌통에 설치된 센서 또한 정확히 데이터를 전송해, 목재 구조 내부에서도 LoRa의 신뢰성을 검증하였다.</p>
-              <p>결과적으로 WaggleNet은 저비용(모듈당 $10~15), 소형 설계, 모듈형 확장성, 모바일 접근성을 모두 만족하는 시스템으로, 스마트 양봉 및 스마트 농업 환경에서의 실시간 환경 감시에 활용 가능함을 입증하였다. 향후 계획으로는 AI 기반 이상 감지(Anomaly Detection), 하드웨어 소형화, 자율적 데이터 라우팅 기능을 통합하여 완전한 지능형 양봉 관리 플랫폼으로 발전시킬 예정이다.</p>
+              <p>Purdue University Korean AI Square Summer Program 참여 프로젝트로, 벌통 내·외부를 동시에 모니터링하는 저비용·확장형 스마트 양봉 IoT 시스템을 구축했습니다.</p>
+              <p>기존 스마트 벌통은 내부 온습도에 편중되거나 고가의 GSM/LTE 통신에 의존해 규모 확장이 어렵고 지연이 컸습니다. WaggleNet은 Heltec Wi‑Fi LoRa 32 (V3) 노드와 LoRa–MQTT 하이브리드 아키텍처를 사용해 벌통 내부·외부 환경을 실시간 수집·전송합니다.</p>
+              <p>워커 노드(DHT22, LDR, GPS)는 3분 간격으로 샘플링하여 LoRa로 마스터 노드에 전송하고, 마스터는 UTC 타임스탬프를 추가해 JSON을 MQTT 서버로 전달, SQLite 기반 클라우드 DB에 저장합니다. Flutter 앱에서 온도·습도·조도·위치를 실시간 시각화하며, 임계치 초과 시 Firebase Cloud Messaging으로 경보를 발송합니다.</p>
+              <p>Purdue 실험 장소(KSW 빌딩)와 인근 양봉장(South 525 West)에서 필드 테스트를 수행했으며, LoRa 링크는 개방 환경 ~110m, 장애물 환경 ~95m까지 안정적으로 유지되었습니다. 목재 벌통 내부에서도 통신 신뢰성을 확인했습니다.</p>
+              <p>모듈형 설계, 낮은 B.O.M(노드당 약 $10–15), 소형 하드웨어, 모바일 접근성을 결합해 정밀 양봉·스마트 농업에 적합한 플랫폼임을 입증했습니다. 향후 온디바이스 이상 감지, 하드웨어 소형화, 적응형 라우팅을 통해 자율성을 강화할 계획입니다.</p>
             </div>
             <div class="project-tech">기술 스택: 하드웨어: ESP32-S3 (Heltec Wi-Fi LoRa 32 V3), DHT22, LDR, GPS (NEO-6M) | 소프트웨어: C++, Python, MQTT, SQLite, Flutter, Firebase | 통신 프로토콜: LoRa (433/868/915MHz), MQTT Publish/Subscribe</div>
             <div class="project-links">

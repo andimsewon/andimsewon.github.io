@@ -25,7 +25,7 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="apple-touch-icon" href="/assets/profile.jpeg">
-  <link rel="mask-icon" href="/assets/favicon.svg" color="#E0528D">
+  <link rel="mask-icon" href="/assets/favicon.svg" color="#D36B8C">
   <link rel="preload" href="styles.css" as="style">
   <link rel="stylesheet" href="styles.css">
   <script src="js/site.js" defer></script>
@@ -89,11 +89,11 @@
         <div class="project-item">
           <div class="project-main-full">
             <div class="project-description">
-              <p>A cross-platform field-survey system integrating national heritage data, AI-based damage detection, and real-time cloud synchronization.</p>
-              <p>This project focuses on modernizing Korea's cultural heritage field-survey workflows by transitioning paper-based inspection records into a fully digital, AI-assisted monitoring platform. Built with Flutter (Web/Android/iOS) and a FastAPI backend, the system integrates the National Heritage Service Open API, PyTorch-based damage detection, and Firebase real-time databases to support complete end-to-end survey and registration tasks.</p>
-              <p>The system retrieves official heritage records through a FastAPI proxy that converts XML data from the National Heritage Service into structured JSON, enabling multi-criteria search (heritage type, region, keyword) with infinite pagination. Each heritage asset provides detailed information including designation category, ownership, management agency, official address, and geographic coordinates.</p>
-              <p>A key feature is the AI-powered damage survey module, which leverages a custom DETR-based PyTorch model to detect four types of structural deterioration—cracks, splits, biological decay, and crushing/burst damage. Images captured on-site are uploaded through the Flutter app, processed by the backend AI pipeline, and returned with bounding boxes, class labels, confidence scores, and an automatically assigned severity grade (A–D). These results are stored in Firebase along with survey metadata such as component name, location, inspector notes, and timestamps.</p>
-              <p>The platform includes a structured three-tab workflow for field inspectors:</p>
+              <p>A cross‑platform field‑survey system that integrates national heritage data, AI‑based damage detection, and real‑time cloud synchronization.</p>
+              <p>The project modernizes Korea’s cultural‑heritage survey workflow by converting paper inspections into a fully digital, AI‑assisted platform. Built with Flutter (Web/Android/iOS) and a FastAPI backend, it integrates the National Heritage Service Open API, a PyTorch‑based detector, and Firebase real‑time databases to support end‑to‑end survey and registration.</p>
+              <p>Official records are retrieved through a FastAPI proxy that converts National Heritage Service XML into structured JSON, enabling multi‑criteria search (heritage type, region, keyword) with infinite pagination. Each asset exposes designation category, ownership, managing agency, official address, and geographic coordinates.</p>
+              <p>A core feature is the AI‑powered damage module using a custom DETR‑based PyTorch model to detect four structural deterioration types—cracks, splits, biological decay, and crushing/burst damage. On‑site images uploaded from the Flutter app are processed by the backend and returned with boxes, labels, confidence scores, and an automatically assigned severity grade (A–D). Results are stored in Firebase with component name, location, inspector notes, and timestamps.</p>
+              <p>The inspector workflow comprises three structured tabs:</p>
               <ul>
                 <li><strong>Field Survey:</strong> basic info, metadata, site photos, and damage detection</li>
                 <li><strong>Inspector Notes:</strong> preservation history, survey results, and management actions</li>

@@ -25,7 +25,7 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="apple-touch-icon" href="/assets/profile.jpeg">
-  <link rel="mask-icon" href="/assets/favicon.svg" color="#E0528D">
+  <link rel="mask-icon" href="/assets/favicon.svg" color="#D36B8C">
   <link rel="preload" href="styles.css" as="style">
   <link rel="stylesheet" href="styles.css">
   <script src="js/site.js" defer></script>
@@ -93,11 +93,11 @@
           
           <div class="project-main-full">
             <div class="project-description">
-              <p>This project was conducted under the Korean AI Square Summer Program at Purdue University, focusing on developing a cost-effective, scalable, and dual-scope IoT monitoring system for smart beekeeping.</p>
-              <p>Traditional smart hives mainly focus on internal temperature and humidity while relying on expensive GSM/LTE modules, which limit scalability and real-time monitoring. To address these constraints, WaggleNet integrates Wi-Fi LoRa 32 (V3) modules to collect and transmit both internal and external environmental data using a LoRa–MQTT hybrid architecture.</p>
-              <p>Each worker node—equipped with DHT22, LDR, and GPS sensors—collects environmental data every three minutes and transmits it to a master node via LoRa. The master node appends a UTC timestamp, then forwards the structured JSON packets to an MQTT server, which relays the data to a cloud database (SQLite). A Flutter-based mobile application visualizes the data in real time, displaying hive temperature, humidity, light intensity, and location. It also issues emergency alerts through Firebase Cloud Messaging when critical thresholds are exceeded.</p>
-              <p>Field tests were conducted at Purdue University's KSW building and a real bee yard near South 525 West, Indiana, confirming the system's robustness and scalability. LoRa communication remained stable up to 110 meters in open areas and 95 meters in obstructed environments, validating its reliability even inside wooden hive structures.</p>
-              <p>The system demonstrates modularity, low cost (≈$10–15 per module), compact hardware design, and real-time mobile accessibility, making it an efficient platform for precision apiculture and smart agriculture. Future work will include AI-based anomaly detection, hardware miniaturization, and adaptive routing protocols to enhance intelligence and autonomy in field operations.</p>
+              <p>Developed under the Korean AI Square Summer Program at Purdue University, WaggleNet is a cost‑efficient, scalable IoT system for smart apiculture that monitors both internal and external hive conditions.</p>
+              <p>Most smart‑hive systems track only internal temperature and humidity and often depend on costly GSM/LTE links, which constrain scale and latency. WaggleNet uses Heltec Wi‑Fi LoRa 32 (V3) nodes and a LoRa–MQTT hybrid architecture to capture and transmit ambient and in‑hive conditions in real time.</p>
+              <p>Each worker node (DHT22, LDR, GPS) samples every three minutes and transmits via LoRa to a master node. The master appends a UTC timestamp and forwards structured JSON to an MQTT server, which writes to a cloud database (SQLite). A Flutter app provides real‑time visualization of temperature, humidity, light intensity, and geolocation, and dispatches threshold‑based alerts via Firebase Cloud Messaging.</p>
+              <p>Field tests at Purdue University (KSW building) and a bee yard near South 525 West, Indiana, confirmed robustness. LoRa links remained stable up to ~110 m in open areas and ~95 m in obstructed environments, including through wooden hive structures.</p>
+              <p>The system combines modular design, low bill‑of‑materials (≈$10–15 per node), compact hardware, and mobile accessibility—an effective platform for precision apiculture and smart agriculture. Planned extensions include on‑device anomaly detection, hardware miniaturization, and adaptive routing for greater autonomy.</p>
             </div>
             <div class="project-tech">Tech Stack: Hardware: ESP32-S3 (Heltec Wi-Fi LoRa 32 V3), DHT22, LDR, GPS (NEO-6M) | Software: C++, Python, MQTT, SQLite, Flutter, Firebase | Protocols: LoRa (433/868/915 MHz), MQTT Pub/Sub</div>
             <div class="project-links">

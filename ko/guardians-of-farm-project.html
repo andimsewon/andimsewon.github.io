@@ -25,7 +25,7 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="apple-touch-icon" href="/assets/profile.jpeg">
-  <link rel="mask-icon" href="/assets/favicon.svg" color="#E0528D">
+  <link rel="mask-icon" href="/assets/favicon.svg" color="#D36B8C">
   <link rel="preload" href="../styles.css" as="style">
   <link rel="stylesheet" href="../styles.css">
   <script src="../js/site.js" defer></script>
@@ -87,11 +87,11 @@
           
           <div class="project-main-full">
             <div class="project-description">
-              <p>이 프로젝트는 스마트팜 환경에서 작물의 생육 상태와 질병 여부를 효율적으로 판별하기 위해 개발한 인공지능 기반 품질 분석 시스템이다.</p>
-              <p>초기에는 GroundingDINO와 SAM(Segment Anything) 모델을 결합해 비지도 방식으로 잎 영역을 탐지하고 RGB 평균값을 기반으로 정상·비정상 잎을 구분하였다. 그러나 데이터 불균형 상황에서 평균값 왜곡으로 오탐률이 높아지는 문제가 발생하였다.</p>
-              <p>이 문제를 해결하기 위해, Kaggle 오픈소스 데이터와 실생활 촬영 데이터를 포함한 대규모 라벨링 데이터셋을 구축하고, RoboFlow를 활용해 라벨링 및 증강(Augmentation)을 진행하였다. 이후 YOLOv8 모델을 이용해 객체 탐지 기반의 지도 학습 모델로 전환하여 학습 효율과 정확도를 크게 향상시켰다.</p>
-              <p>최종 시스템은 이미지 입력 시 정상·비정상 잎을 색상별 바운딩박스로 시각화하고, 각 잎의 비율을 계산하여 건강 상태를 Normal, Caution, Warning, Danger, Critical 5단계로 분류한다. 이 과정에서 YOLOv8 모델은 평균 mAP@0.5 0.81, Diseased 클래스 AP 0.846을 기록하며 안정적인 성능을 보였다.</p>
-              <p>본 연구는 GroundingDINO–SAM 비지도 탐지에서 YOLOv8 지도 모델로의 전환 과정을 통해 AI 식물 품질 판별의 실용성을 입증했으며, 나아가 IoT 스마트팜 시스템과 연동 가능한 경량 품질 진단 모듈로 확장 가능함을 제시하였다.</p>
+              <p>스마트팜 환경에서 작물 질병 탐지와 잎 건강 평가의 신뢰성을 높이기 위한 AI 기반 품질 판별 시스템을 구축했습니다.</p>
+              <p>초기에는 GroundingDINO와 SAM을 활용한 비지도 시각 그라운딩으로 잎 분할과 RGB 기반 분류를 시도했으나, 클래스 불균형 상황에서 평균 RGB 특성의 편향으로 오분류가 발생했습니다.</p>
+              <p>이에 Kaggle 공개 데이터와 현장 촬영 이미지를 결합해 대규모 라벨 데이터셋을 구축하고, Roboflow로 라벨링·증강을 진행했습니다. 파이프라인을 YOLOv8 기반 지도 탐지 모델로 전환해 정확도와 추론 속도를 크게 개선했습니다.</p>
+              <p>최종 시스템은 탐지 결과를 오버레이하고, 정상/질병 잎 비율에 따라 Normal, Caution, Warning, Danger, Critical의 5단계 건강 지표를 산출합니다. 학습된 YOLOv8 모델은 mAP@0.5=0.81, 질병 잎 AP=0.846을 기록해 실용성을 입증했습니다.</p>
+              <p>비지도에서 고성능 지도 프레임워크로의 전환을 실증했으며, IoT 기반 실시간 모니터링 파이프라인과의 연동 가능성을 제시합니다.</p>
             </div>
             <div class="project-tech">기술 스택: Python, PyTorch, YOLOv8, GroundingDINO, SAM, RoboFlow, OpenCV, NumPy</div>
             <div class="project-links">
