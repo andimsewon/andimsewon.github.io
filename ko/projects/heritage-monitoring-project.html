@@ -16,50 +16,10 @@ json_ld: |
   {"@context":"https://schema.org","@type":"WebPage","name":"국가유산 모니터링·조사·등록 시스템 | 김세원","url":"https://andimsewon.github.io/ko/heritage-monitoring-project.html"}
 ---
   
-  <link rel="preload" href="../styles.css" as="style">
-  <link rel="stylesheet" href="../styles.css">
-  <script src="../js/site.js" defer></script>
-  <link rel="dns-prefetch" href="https://github.com">
-  <link rel="dns-prefetch" href="https://www.linkedin.com">
-
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebPage","name":"국가유산 모니터링·조사·등록 시스템 | 김세원","url":"https://andimsewon.github.io/ko/heritage-monitoring-project.html"}
-  </script>
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Sewon Kim">
-  <meta property="og:title" content="국가유산 모니터링·조사·등록 시스템 | 김세원">
-  <meta property="og:description" content="국가유산청 Open API, AI 손상 탐지, Firebase 실시간 동기화를 통합한 크로스플랫폼 현장 조사 시스템">
-  <meta property="og:image" content="https://andimsewon.github.io/assets/heritage-monitoring-project/main.jpeg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://andimsewon.github.io/assets/heritage-monitoring-project/main.jpeg">
-  <meta property="og:url" content="https://andimsewon.github.io/ko/heritage-monitoring-project.html">
-  <meta property="og:locale" content="ko_KR">
-  <meta property="og:locale:alternate" content="en_US">
-</head>
-<body>
-  <a class="skip-link" href="#project">본문으로 건너뛰기</a>
-  <nav class="top-nav" aria-label="Primary">
-    <div class="nav-container">
-      <div class="nav-name"><a href="index.html">김세원</a></div>
-      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="primaryLinks" aria-label="메뉴 열기">☰</button>
-      <div class="nav-links" id="primaryLinks">
-        <a href="index.html">홈</a>
-        <a href="research.html">연구</a>
-        <a href="publications.html">논문</a>
-        <a href="projects.html" class="active" aria-current="page">프로젝트</a>
-        <a href="awards.html">수상</a>
-        <a href="gallery.html">갤러리</a>
-        <a href="activities.html">교내 활동</a>
-        <a href="../heritage-monitoring-project.html" lang="en" hreflang="en" aria-label="영문 페이지로 보기" title="영문 페이지로 보기">EN</a>
-        <button id="themeToggle" class="theme-toggle" aria-label="다크 모드 전환" title="다크 모드 전환">🌙</button>
-      </div>
-    </div>
-  </nav>
-
   <!-- Project Detail Section -->
   <main id="project" class="page-section">
     <div class="container">
-      <p class="back-link"><a href="projects.html" aria-label="프로젝트 목록으로">← 프로젝트 목록으로</a></p>
+      <p class="back-link"><a href="/ko/projects.html" aria-label="프로젝트 목록으로">← 프로젝트 목록으로</a></p>
       <div class="section-header">
         <h2 class="page-title">국가유산 모니터링·조사·등록 시스템</h2>
         <div class="project-card-metrics" aria-label="기술 스택">
@@ -152,12 +112,7 @@ json_ld: |
       </div>
     </div>
   </main>
-  <!-- moved -->
-
-  {% include footer.html lang='ko' %}
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    
     // Try to load iframe, show fallback by default
     (function() {
       var iframe = document.getElementById('webAppIframe');
@@ -210,5 +165,5 @@ json_ld: |
         }
       }
     })();
-    // Theme toggle is handled by ../js/site.js
+    // Theme toggle is handled by /js/site.js
   </script>
