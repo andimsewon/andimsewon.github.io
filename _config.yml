@@ -4,3 +4,8 @@ exclude:
   - start-server.sh
 markdown: kramdown
 highlighter: rouge
+url: "https://andimsewon.github.io"
+
+# Centralized profile image settings
+profile_image_path: "/assets/profile_0310.JPG"
+profile_image_version: "20260310"

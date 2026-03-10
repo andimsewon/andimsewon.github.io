@@ -9,7 +9,7 @@ alternate_en: https://andimsewon.github.io/
 alternate_default: https://andimsewon.github.io/
 og_image: https://andimsewon.github.io/assets/og.png?v=6
 og_url: https://andimsewon.github.io/ko/
-preload_image: /assets/profile.jpeg?v=20260306
+preload_image: "{{ site.profile_image_path }}?v={{ site.profile_image_version }}"
 skip_id: main
 json_ld: |
   {
@@ -58,7 +58,7 @@ json_ld: |
         </div>
 
         <div class="photo-column">
-          <img src="../assets/profile.jpeg?v=20260306" alt="김세원 - 전북대학교 컴퓨터공학부 학부생" class="profile-photo" width="280" height="280" fetchpriority="high" decoding="async">
+          <img src="{{ site.profile_image_path }}?v={{ site.profile_image_version }}" alt="김세원 - 전북대학교 컴퓨터공학부 학부생" class="profile-photo" width="280" height="280" fetchpriority="high" decoding="async">
           
           <div class="contact-icons">
             <a href="mailto:sewonkim1018@gmail.com" class="contact-icon" aria-label="이메일" title="sewonkim1018@gmail.com">

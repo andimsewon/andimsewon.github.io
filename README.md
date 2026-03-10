@@ -25,7 +25,7 @@ andimsewon.github.io/
 ├── SewonKim_CV.pdf         # CV PDF 파일
 │
 ├── assets/                 # 이미지 및 미디어 파일
-│   ├── profile.jpeg        # 프로필 사진
+│   ├── profile_0310.JPG    # 프로필 사진 (정사각형 권장)
 │   ├── favicon.svg         # 파비콘 (SVG)
 │   ├── gallery/            # 갤러리 사진 폴더
 │   ├── gaia-project/       # GAIA 프로젝트 관련 파일
@@ -178,8 +178,13 @@ npx serve
 
 ### 프로필 사진 변경
 
-- `assets/profile.jpeg` 파일을 원하는 사진으로 교체 (동일한 파일명 유지)
-- 권장 크기: 280x350px 정도 (비율 4:5)
+- `assets/profile_0310.JPG` 파일을 원하는 사진으로 교체
+- 권장 크기: 512×512 이상 정사각형 (1:1)
+- 메인/한국어 메인에서 정사각형으로 자동 크롭됨 (`.profile-photo`의 `object-fit: cover` 적용)
+- 버전/경로는 `_config.yml`에서 일괄 관리:
+  - `profile_image_path: "/assets/profile_0310.JPG"`
+  - `profile_image_version: "YYYYMMDD"`
+  이 두 항목만 바꾸면 메인, 한국어 메인, OG 이미지, 애플 터치 아이콘, PWA manifest, 포트폴리오 슬라이드까지 모두 자동 반영됩니다.
 
 ### 각 페이지 내용 수정
 

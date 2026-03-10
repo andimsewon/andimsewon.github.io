@@ -1,3 +1,5 @@
+---
+---
 {
   "name": "Sewon Kim — Portfolio",
   "short_name": "Sewon Kim",
@@ -14,7 +16,7 @@
       "purpose": "any maskable"
     },
     {
-      "src": "/assets/profile.jpeg?v=20260306",
+      "src": "{{ site.profile_image_path }}?v={{ site.profile_image_version }}",
       "sizes": "512x512",
       "type": "image/jpeg",
       "purpose": "any"

@@ -1560,13 +1560,17 @@ body.page-enter-active {
 
 /* Profile Photo */
 .profile-photo { 
-  width: 100%; 
-  max-width: 280px; 
-  height: auto; 
-  border-radius: 18px; 
-  border: 2px solid var(--border); 
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08); 
-  transition: transform var(--t-med), box-shadow var(--t-med), border-color var(--t-med); 
+  width: 100%;
+  max-width: 280px;
+  /* Enforce square crop */
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+  height: auto;
+  border-radius: 18px;
+  border: 2px solid var(--border);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: transform var(--t-med), box-shadow var(--t-med), border-color var(--t-med);
 }
 .profile-photo:hover { 
   transform: scale(1.02); 
