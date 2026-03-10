@@ -1562,10 +1562,7 @@ body.page-enter-active {
 .profile-photo { 
   width: 100%;
   max-width: 280px;
-  /* Enforce square crop */
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  object-position: center;
+  /* Show original aspect ratio without cropping */
   height: auto;
   border-radius: 18px;
   border: 2px solid var(--border);
