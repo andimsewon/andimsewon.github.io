@@ -38,11 +38,11 @@ json_ld: |
           
           <div class="project-main-full">
             <div class="project-description">
-              <p>Analyzes and predicts the urban air‑quality impact of factory and power‑plant emissions using a hybrid AI approach.</p>
-              <p>Using seven years (2018–2024) of Tele‑Monitoring System (TMS) time‑series data, we combine the AERMOD physical diffusion model with a Transformer‑based deep‑learning architecture.</p>
-              <p>A data pipeline ingests multi‑source datasets from TMS, the Korea Meteorological Administration, and AirKorea APIs; performs cleaning, gap filling (forward fill, interpolation, LSTM imputation), and temporal feature engineering. The PyTorch Transformer learns multivariate relationships among wind, weather, and pollutants, while a Gaussian Diffusion component models plume‑diffusion uncertainty.</p>
-              <p>Results are visualized in real time on a Streamlit dashboard, enabling interactive exploration of emission scenarios, 3D plume maps, and observed‑versus‑predicted comparisons. Visualization uses Folium, GeoPandas, and Xarray for spatial heatmaps and time‑lapse animations.</p>
-              <p>GAIA functions as a data‑driven decision‑support platform for policy planning, industrial strategy, and disaster‑response simulations. Extensions include IoT sensor integration and scaling to nationwide and climate‑change scenarios.</p>
+              <p>GAIA is a university capstone prototype for analysing the potential urban air-quality effects of factory and power-plant emissions through a hybrid physical and machine-learning approach.</p>
+              <p>The team used seven years (2018–2024) of Tele-Monitoring System (TMS) time-series data and combined the AERMOD physical-diffusion model with a Transformer-based architecture.</p>
+              <p>The prototype pipeline combines TMS, Korea Meteorological Administration, and AirKorea data; applies cleaning, gap-filling, and temporal feature engineering; and uses PyTorch-based modelling to examine relationships among weather and pollutant variables.</p>
+              <p>A Streamlit dashboard presents scenario inputs, spatial plume views, and observed-versus-predicted comparisons using Folium, GeoPandas, and Xarray.</p>
+              <p>The prototype was designed to explore decision-support use cases. IoT integration and nationwide or climate-scenario coverage remain proposed extensions rather than completed features.</p>
             </div>
             <div class="project-tech">Tech Stack: PyTorch, NumPy, Pandas, Scikit-learn, Folium, GeoPandas, Xarray, Streamlit</div>
             <div class="project-links">

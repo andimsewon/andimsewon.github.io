@@ -51,12 +51,12 @@ json_ld: |
             <h2 class="section-title">Context and Constraints</h2>
             <div class="project-description">
               <p>This work was conducted during the government-funded IITP Korean AI Square Summer 2025 Program, hosted by Korean Software Square at Purdue University, while I remained affiliated with Jeonbuk National University. The research received guidance from Prof. Eric T. Matson and Prof. Anthony H. Smith, as acknowledged in the paper. WaggleNet uses a three-tier architecture — LoRa worker nodes → a LoRa–MQTT gateway → a cloud database and Flutter app — to capture internal hive and external ambient conditions simultaneously.</p>
-              <p>The field deployment used 2 Langstroth hives fitted with 4 worker nodes (2 internal, 2 external) over a two-month field trial at the host program's Korean Software Square facilities and a nearby bee yard in West Lafayette.</p>
+              <p>The field trial used 2 Langstroth hives fitted with 4 worker nodes (2 internal, 2 external) over two months at the host program's Korean Software Square facilities and a nearby bee yard in West Lafayette.</p>
             </div>
 
             <h2 class="section-title">My Role</h2>
             <div class="project-description">
-              <p>I contributed to the collaborative research and resulting paper as the third author of six. The work was conducted through the IITP Korean AI Square Summer 2025 Program hosted by Korean Software Square at Purdue University, with guidance from Prof. Eric T. Matson and Prof. Anthony H. Smith.</p>
+              <p>I contributed to field-test execution and data collection during the two-month trial, supported evaluation of the team-developed system, and worked with the international research team to document the methods and results. I co-authored the resulting six-author arXiv preprint as third author. The work was conducted through the IITP Korean AI Square Summer 2025 Program hosted by Korean Software Square at Purdue University, with guidance from Prof. Eric T. Matson and Prof. Anthony H. Smith.</p>
             </div>
 
             <h2 class="section-title">System Architecture</h2>
@@ -69,16 +69,16 @@ json_ld: |
             <div class="project-description"><p>Each worker node sampled temperature, humidity, light, and location every three minutes, then transmitted the readings over LoRa. The gateway appended a UTC timestamp and forwarded structured JSON via MQTT to SQLite. The Flutter application displayed readings and geolocation in real time.</p></div>
 
             <h2 class="section-title">Evaluation and Validation</h2>
-            <div class="project-description"><p>Four worker nodes were deployed across two Langstroth hives for two months. The field trial measured packet delivery, transmission range, end-to-end latency, uptime, and per-node hardware cost in urban and rural line-of-sight settings.</p></div>
+            <div class="project-description"><p>Four worker nodes were installed across two Langstroth hives for a two-month field trial. The team measured packet delivery, transmission range, end-to-end latency, uptime, and per-node hardware cost in urban and rural line-of-sight settings.</p></div>
 
-            <h2 class="section-title">Results</h2>
-            <div class="project-description"><ul><li><strong>Packet delivery:</strong> 100% at 110 m urban and 150 m rural line of sight</li><li><strong>Latency:</strong> under 5 seconds end to end; 3.8 seconds mean</li><li><strong>Uptime:</strong> over 95% across the two-month deployment</li><li><strong>Hardware cost:</strong> $25–30 per node, 70–85% below the $200–500 commercial systems used for comparison</li></ul></div>
+            <h2 class="section-title">Team Evaluation Results</h2>
+            <div class="project-description"><ul><li><strong>Packet delivery:</strong> 100% at 110 m urban and 150 m rural line of sight</li><li><strong>Latency:</strong> under 5 seconds end to end; 3.8 seconds mean</li><li><strong>Uptime:</strong> over 95% across the two-month field trial</li><li><strong>Hardware cost:</strong> $25–30 per node, 70–85% below the $200–500 commercial systems used for comparison</li></ul></div>
 
             <h2 class="section-title">Limitations and Lessons</h2>
             <div class="project-description"><p>The evaluation scope was two hives and four nodes over two months. Separating low-power field transport from cloud messaging kept the field hardware inexpensive while preserving a conventional application interface.</p></div>
 
             <h2 class="section-title">Related Links</h2>
-            <div class="project-links"><a href="/assets/polvo-de-purdue-project/video.mp4" target="_blank" rel="noopener noreferrer">Project video</a><a href="/assets/polvo-de-purdue-project/presentation.optimized.pdf" target="_blank" rel="noopener noreferrer">Presentation (PDF)</a><a href="https://arxiv.org/abs/2512.07408" target="_blank" rel="noopener noreferrer">arXiv paper <span aria-hidden="true">↗</span></a></div>
+            <div class="project-links"><a href="/assets/polvo-de-purdue-project/video.mp4" target="_blank" rel="noopener noreferrer">Project video</a><a href="/assets/polvo-de-purdue-project/presentation.optimized.pdf" target="_blank" rel="noopener noreferrer">Presentation (PDF)</a><a href="https://arxiv.org/abs/2512.07408" target="_blank" rel="noopener noreferrer">arXiv preprint <span aria-hidden="true">↗</span></a></div>
           </div>
 
           <!-- Video and Presentation at the bottom -->

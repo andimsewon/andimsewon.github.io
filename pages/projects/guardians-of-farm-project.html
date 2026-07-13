@@ -37,11 +37,11 @@ json_ld: |
           
           <div class="project-main-full">
             <div class="project-description">
-              <p>Built an AI system for crop quality assessment in smart‑farm settings, focused on reliable disease detection and efficient leaf‑health evaluation.</p>
+              <p>This university capstone team developed an experimental crop-quality assessment pipeline for disease detection and leaf-health evaluation in smart-farm settings.</p>
               <p>We first explored unsupervised visual grounding with GroundingDINO and SAM (Segment Anything Model) for leaf segmentation and RGB‑based classification. Under class imbalance, average‑RGB features proved biased and produced false classifications.</p>
-              <p>We then constructed a large labeled dataset by combining Kaggle sources with field photos and performed labeling/augmentation in Roboflow. Replacing the pipeline with a YOLOv8‑based supervised detector substantially improved accuracy and inference speed.</p>
-              <p>The system overlays detections and quantifies crop health into five levels—Normal, Caution, Warning, Danger, Critical—based on the ratio of healthy to diseased leaves. The trained YOLOv8 model achieved mAP@0.5 of 0.81 and AP of 0.846 for diseased leaves, supporting robustness and practical use.</p>
-              <p>Overall, the project demonstrates a successful transition from unsupervised visual grounding to a high‑performance supervised framework, and it can integrate with IoT pipelines for real‑time monitoring in smart farming.</p>
+              <p>The team then combined Kaggle sources with field photographs, labelled and augmented the data in Roboflow, and replaced the initial pipeline with a supervised YOLOv8 detector.</p>
+              <p>The experimental system overlays detections and maps the ratio of healthy to diseased leaves to five project-defined health levels. In the project evaluation, the trained model achieved mAP@0.5 of 0.81 and AP of 0.846 for diseased leaves.</p>
+              <p>IoT-based monitoring remains a potential extension; it was not presented as an implemented operational integration.</p>
             </div>
             <div class="project-tech">Tech Stack: Python, PyTorch, YOLOv8, GroundingDINO, SAM, RoboFlow, OpenCV, NumPy</div>
             <div class="project-links">

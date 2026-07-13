@@ -2571,6 +2571,7 @@ b, strong { font-weight: 600; }
 .career-meta p + p { text-transform: none; letter-spacing: 0; }
 .career-body h3 { margin: 0 0 3px; font-family: var(--font-sans); font-size: clamp(1.45rem, 2.5vw, 2rem); font-weight: 600; color: var(--color-navy); }
 .career-org { margin: 0 0 16px; color: var(--muted); font-size: 0.9rem; }
+.role-summary { margin: 0 0 16px; max-width: 68ch; color: var(--color-caption); font-size: 0.96rem; line-height: 1.65; }
 .career-body ul { margin: 0; padding-left: 1.1rem; max-width: 68ch; }
 .career-body li { margin: 7px 0; padding-left: 5px; line-height: 1.65; }
 .current-marker { display: inline-block; margin: 0 0 9px; padding: 3px 7px; border: 1px solid var(--accent); color: var(--accent); }

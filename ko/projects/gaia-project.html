@@ -38,11 +38,11 @@ json_ld: |
           
           <div class="project-main-full">
             <div class="project-description">
-              <p>공장·발전소 배출이 도시 대기에 미치는 영향을 하이브리드 AI 접근으로 분석·예측하는 캡스톤디자인 연구입니다.</p>
-              <p>국가 대기오염 관측망(TMS) 7년(2018–2024) 시계열 데이터를 바탕으로 AERMOD 물리 확산 모델과 Transformer 기반 딥러닝을 결합했습니다.</p>
-              <p>데이터 파이프라인 단계에서는 TMS, 기상청, 에어코리아 데이터를 자동 수집하고, 결측치 보정(Fill, Interpolation, LSTM 기반 Imputation) 및 시간·계절 요인 엔지니어링을 수행하였다. 이후 PyTorch 기반 Transformer 모델을 이용해 풍향, 풍속, 오염물질 농도 등 다변량 시계열 데이터를 학습하였으며, 가우시안 확산(Gaussian Diffusion) 알고리즘을 통해 오염물질의 확산 불확실성을 확률적으로 모델링하였다.</p>
-              <p>예측 결과는 Streamlit 웹 대시보드에서 실시간으로 시각화된다. 사용자는 발전소별 배출량, 예측 대기질 변화, 오염 확산 경로(3D 플룸 모델)를 직관적으로 확인할 수 있으며, 사용자 입력값에 따라 다양한 시나리오를 시뮬레이션할 수 있다. 지도 기반 시각화에는 Folium, GeoPandas, Xarray 등을 활용하였다.</p>
-              <p>본 시스템은 정책 수립, 산업 전략 분석, 재난 대응 시뮬레이션을 지원하는 데이터 기반 의사결정 도구로 활용됩니다. 드론·IoT 센서 연동, 전국·기후 시나리오 확장을 계획하고 있습니다.</p>
+              <p>GAIA는 공장·발전소 배출이 도시 대기에 미칠 수 있는 영향을 물리 모델과 머신러닝으로 분석하기 위한 대학 캡스톤 시제품입니다.</p>
+              <p>팀은 국가 대기오염 관측망(TMS)의 7년(2018–2024) 시계열 데이터를 사용하고, AERMOD 물리 확산 모델과 Transformer 기반 구조를 결합했습니다.</p>
+              <p>시제품 파이프라인은 TMS·기상청·에어코리아 데이터를 결합해 정제, 결측 보정, 시간 특성 엔지니어링을 수행하고, PyTorch 기반 모델로 기상·오염물질 변수 간 관계를 분석합니다.</p>
+              <p>Streamlit 대시보드는 시나리오 입력, 공간 확산 뷰, 관측값과 예측값 비교를 제공하며 Folium, GeoPandas, Xarray를 사용합니다.</p>
+              <p>이 시제품은 의사결정 지원 가능성을 탐색하도록 설계했습니다. IoT 연동과 전국·기후 시나리오 확장은 완료 기능이 아닌 제안 단계입니다.</p>
             </div>
             <div class="project-tech">기술 스택: PyTorch, NumPy, Pandas, Scikit‑learn, Folium, GeoPandas, Xarray, Streamlit</div>
             <div class="project-links">
