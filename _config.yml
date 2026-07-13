@@ -16,3 +16,8 @@ profile_image_version: "20260713"
 # Centralized default social-share card (used when a page sets og_image_default: true)
 og_card_path: "/assets/og-image.png"
 og_card_version: "20260713"
+
+# Centralized CV file — bump cv_version whenever Sewon_Kim_CV.pdf is replaced so
+# cached copies of the PDF never get served stale.
+cv_path: "/assets/cv/Sewon_Kim_CV.optimized.pdf"
+cv_version: "20260713"

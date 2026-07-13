@@ -11,7 +11,7 @@
           <p class="hero-tagline">{% if is_ko %}지식그래프 RAG, 현장에 배포된 손상 탐지, IoT 데이터 파이프라인을 아우르는 검색·컴퓨터 비전 시스템을 만듭니다.{% else %}I build retrieval and computer-vision systems — knowledge-graph RAG, damage detection deployed in the field, and IoT data pipelines.{% endif %}</p>
           <div class="hero-actions" aria-label="{% if is_ko %}주요 링크{% else %}Primary actions{% endif %}">
             <a class="action-primary" href="#selected-work">{% if is_ko %}주요 프로젝트 보기{% else %}View Selected Work{% endif %}</a>
-            <a class="action-secondary" href="/Sewon_Kim_CV.pdf" target="_blank" rel="noopener noreferrer">{% if is_ko %}이력서 다운로드 <span class="sr-only">(PDF, 새 창)</span>{% else %}Download CV <span class="sr-only">(PDF, opens in a new tab)</span>{% endif %}</a>
+            <a class="action-secondary" href="{{ site.cv_path }}?v={{ site.cv_version }}" target="_blank" rel="noopener noreferrer">{% if is_ko %}이력서 다운로드 <span class="sr-only">(PDF, 새 창)</span>{% else %}Download CV <span class="sr-only">(PDF, opens in a new tab)</span>{% endif %}</a>
           </div>
           <nav class="hero-social" aria-label="{% if is_ko %}연락처 및 소셜 링크{% else %}Contact and social links{% endif %}">
             <a href="mailto:sewonkim1018@gmail.com">{% if is_ko %}이메일{% else %}Email{% endif %}</a>
