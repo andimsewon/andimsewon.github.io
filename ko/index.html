@@ -29,71 +29,53 @@ json_ld: |
 ---
 
   <main id="main" class="page-section">
-    <div class="container">
-      <div class="main-layout">
-        <div class="content-column">
-          <div class="name-header">
-            <h1 class="name">김세원</h1>
-            <p class="name-subtitle">데이터 분석가 (NLP · 시계열 · 비전)</p>
-            <p class="name-affiliation">Natural Language Learning Lab<br>전북대학교 컴퓨터공학부</p>
-            <div class="interest-chips" aria-label="관심 직무/분야">
-              <span class="chip">NLP/LLM</span>
-              <span class="chip">시계열</span>
-              <span class="chip">비전</span>
-              <span class="chip">데이터 파이프라인/ETL</span>
-            </div>
-          </div>
+    <div class="hero">
+      <div class="hero-text">
+        <p class="hero-eyebrow">FAO · UN Office of Innovation — Rome</p>
+        <h1 class="hero-name">김세원</h1>
+        <p class="hero-tagline">저는 검색(retrieval)과 멀티모달 시스템을 만듭니다 — 지식그래프 기반 RAG, 비전-언어 모델, IoT 데이터 파이프라인.</p>
+        <p class="hero-bio">FAO(UN) Office of Innovation, Innovation Accelerator 인턴. 이전: 전북대학교 Natural Language Learning Lab(지도교수: 송현제), Purdue University.</p>
 
-          <div class="intro-text">
-            <p style="margin: 0 0 24px 0; color: var(--text-primary); line-height: 1.85; font-size: 18px; font-weight: 400; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; max-width: 100%;">
-              데이터 분석/시각화, 혁신 포트폴리오 문서화, 농식품 기술 연구 경험을 갖춘 컴퓨터공학 전공자입니다. 신뢰 가능한 분석과 해석 가능한 리포트, 현장 적용 가능한 엔드투엔드 데이터 파이프라인을 설계·구현합니다.
-            </p>
-            <p style="margin: 0 0 24px 0; color: var(--text-secondary); line-height: 1.85; font-size: 17px; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; max-width: 100%;">
-              현재 <a href="https://sites.google.com/view/nlllab/main" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: none; font-weight: 500;">Natural Language Learning Lab</a>(지도교수: 송현제)에서 지식그래프 기반 RAG와 멀티‑홉 추론을 연구하며, 사실성과 리포팅 품질을 높이는 방법에 집중하고 있습니다. 또한 국제/다문화 협업 환경에서 IoT·엣지 시스템 및 농식품 분야 응용 연구에 참여해 왔습니다.
-            </p>
+        <div class="credential-strip">
+          <div class="credential-item">
+            <div class="credential-label">Preprint</div>
+            <div class="credential-value">arXiv:2512.07408</div>
+          </div>
+          <div class="credential-item">
+            <div class="credential-label">Patent</div>
+            <!-- TODO: 저장소 전체를 검색해도 특허 출원 관련 내용이 전혀 없습니다.
+                 게시 전 실제 출원 상태/기관을 확인한 뒤 아래 줄을 채워주세요. -->
+            <div class="credential-value">—</div>
+          </div>
+          <div class="credential-item">
+            <div class="credential-label">Deployed</div>
+            <!-- TODO: heritage-monitoring-project.html에는 "production-ready"라는 표현만 있고
+                 실제 배포 확인이나 "LLaVA" 언급은 없습니다. 게시 전 정확한 문구를 확인한 뒤
+                 아래 줄을 채워주세요. -->
+            <div class="credential-value">—</div>
           </div>
         </div>
 
-        <div class="photo-column">
-          <img src="{{ site.profile_image_path }}?v={{ site.profile_image_version }}" alt="김세원 - 전북대학교 컴퓨터공학부 학부생" class="profile-photo" fetchpriority="high" decoding="async">
-          
-          <div class="contact-icons">
-            <a href="mailto:sewonkim1018@gmail.com" class="contact-icon" aria-label="이메일" title="sewonkim1018@gmail.com">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                <polyline points="22,6 12,13 2,6"></polyline>
-              </svg>
-              <span class="contact-icon-label">sewonkim1018@gmail.com</span>
-            </a>
-            <a href="https://github.com/andimsewon" target="_blank" rel="me noopener noreferrer" class="contact-icon" aria-label="GitHub" title="GitHub">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-              </svg>
-              <span class="contact-icon-label">GitHub</span>
-            </a>
-            <a href="/Sewon_Kim_CV.pdf" target="_blank" rel="noopener noreferrer" class="contact-icon" aria-label="이력서" title="이력서 다운로드 (PDF)">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="16" y1="13" x2="8" y2="13"></line>
-                <line x1="16" y1="17" x2="8" y2="17"></line>
-                <polyline points="10 9 9 9 8 9"></polyline>
-              </svg>
-              <span class="contact-icon-label">이력서</span>
-            </a>
-            <a href="https://www.linkedin.com/in/sewon-kim-742a492a6/" target="_blank" rel="me noopener noreferrer" class="contact-icon" aria-label="LinkedIn" title="LinkedIn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect x="2" y="9" width="4" height="12"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-              <span class="contact-icon-label">LinkedIn</span>
-            </a>
-          </div>
-        </div>
+        <p class="hero-links">
+          <a href="mailto:sewonkim1018@gmail.com">이메일</a>
+          <span class="hero-links-sep">·</span>
+          <a href="https://github.com/andimsewon" target="_blank" rel="me noopener noreferrer">GitHub</a>
+          <span class="hero-links-sep">·</span>
+          <a href="https://www.linkedin.com/in/sewon-kim-742a492a6/" target="_blank" rel="me noopener noreferrer">LinkedIn</a>
+          <span class="hero-links-sep">·</span>
+          <a href="/Sewon_Kim_CV.pdf" target="_blank" rel="noopener noreferrer">이력서 (PDF)</a>
+          <span class="hero-links-sep">·</span>
+          <!-- TODO: 이 저장소 어디에도 Google Scholar 프로필 URL이 없습니다. 실제 URL을 추가한 뒤
+               아래 span을 <a href="...">로 바꿔주세요. -->
+          <span class="hero-links-placeholder">Google Scholar</span>
+        </p>
+      </div>
+
+      <div class="hero-photo-wrap">
+        <img src="{{ site.profile_image_path }}?v={{ site.profile_image_version }}" alt="김세원" class="hero-photo" fetchpriority="high" decoding="async">
       </div>
     </div>
-  </section>
+  </main>
 
   <section class="page-section">
     <div class="container">
