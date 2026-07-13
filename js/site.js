@@ -64,10 +64,40 @@
     for (var i = 0; i < links.length; i++) {
       var a = links[i];
       var href = a.getAttribute('href') || '';
+      if (href.charAt(0) === '#' || a.hasAttribute('hreflang')) continue;
       var target = baseName(href.replace(/^\.\//, ''));
       if (target === current) {
         a.classList.add('active');
         if (!a.getAttribute('aria-current')) a.setAttribute('aria-current', 'page');
+      }
+    }
+
+    // On long home pages, keep the navigation aligned with the section in view.
+    var sectionLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    if (sectionLinks.length && 'IntersectionObserver' in window) {
+      var sectionLinkMap = {};
+      var sectionObserver = new IntersectionObserver(function (entries) {
+        for (var j = 0; j < entries.length; j++) {
+          if (!entries[j].isIntersecting) continue;
+          for (var k = 0; k < sectionLinks.length; k++) {
+            sectionLinks[k].classList.remove('active');
+            sectionLinks[k].removeAttribute('aria-current');
+          }
+          var activeLink = sectionLinkMap[entries[j].target.id];
+          if (activeLink) {
+            activeLink.classList.add('active');
+            activeLink.setAttribute('aria-current', 'location');
+          }
+        }
+      }, { rootMargin: '-22% 0px -66% 0px', threshold: 0 });
+
+      for (var j = 0; j < sectionLinks.length; j++) {
+        var sectionId = (sectionLinks[j].getAttribute('href') || '').slice(1);
+        var section = document.getElementById(sectionId);
+        if (section) {
+          sectionLinkMap[sectionId] = sectionLinks[j];
+          sectionObserver.observe(section);
+        }
       }
     }
   } catch (err) {}

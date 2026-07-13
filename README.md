@@ -23,7 +23,7 @@ andimsewon.github.io/
 ├── sitemap.xml             # 사이트맵 (SEO)
 ├── Gemfile                 # github-pages gem 고정 (로컬 Jekyll 빌드용)
 ├── .ruby-version           # rbenv용 고정 Ruby 버전
-├── SewonKim_CV.pdf         # CV PDF 파일
+├── Sewon_Kim_CV.pdf        # 최신 CV PDF 파일
 │
 ├── assets/                 # 이미지 및 미디어 파일
 │   ├── profile_0310.JPG    # 프로필 사진 (정사각형 권장)
