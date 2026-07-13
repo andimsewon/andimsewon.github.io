@@ -1,10 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <defs>
-    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#d4a5b8"/>
-      <stop offset="100%" stop-color="#b87a95"/>
-    </linearGradient>
-  </defs>
-  <rect width="64" height="64" rx="12" fill="url(#g)"/>
-  <path d="M32 48c-8-6-16-12-16-20 0-5 4-9 9-9 3 0 6 2 7 4 1-2 4-4 7-4 5 0 9 4 9 9 0 8-8 14-16 20z" fill="#ffffff"/>
+  <title>Sewon Kim monogram</title>
+  <rect width="64" height="64" rx="10" fill="#0B2447"/>
+  <path d="M0 4h64" stroke="#009EDB" stroke-width="4"/>
+  <path d="M29 18H19c-4 0-7 2.7-7 6s3 6 7 6h3c4 0 7 2.7 7 6s-3 6-7 6H12" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="square" stroke-linejoin="round"/>
+  <path d="M38 18v24M52 18 38 31l15 11" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="square" stroke-linejoin="round"/>
 </svg>

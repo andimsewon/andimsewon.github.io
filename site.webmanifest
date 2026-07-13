@@ -6,8 +6,8 @@
   "start_url": "/",
   "scope": "/",
   "display": "minimal-ui",
-  "theme_color": "#9b5f6d",
-  "background_color": "#faf5f7",
+  "theme_color": "#0B2447",
+  "background_color": "#F6FAFD",
   "icons": [
     {
       "src": "/assets/favicon.svg",
@@ -16,10 +16,10 @@
       "purpose": "any maskable"
     },
     {
-      "src": "{{ site.profile_image_path }}?v={{ site.profile_image_version }}",
+      "src": "/assets/icon-512.png",
       "sizes": "512x512",
-      "type": "image/jpeg",
-      "purpose": "any"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
