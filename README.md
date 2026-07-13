@@ -1,6 +1,6 @@
 # Sewon Kim's Academic Portfolio
 
-전북대학교 컴퓨터공학부 김세원의 개인 학술 포트폴리오 웹사이트입니다. 각 카테고리별로 독립적인 HTML 페이지로 구성되어 있으며, 다크 모드, 반응형 디자인, SEO 최적화 등이 적용되어 있습니다.
+전북대학교 Computer Science and Engineering 학사과정 김세원의 개인 학술 포트폴리오 웹사이트입니다. 각 카테고리별로 독립적인 HTML 페이지로 구성되어 있으며, 다크 모드, 반응형 디자인, SEO 최적화 등이 적용되어 있습니다.
 
 **🌐 Live Site**: [https://andimsewon.github.io](https://andimsewon.github.io)
 

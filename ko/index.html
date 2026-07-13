@@ -2,7 +2,7 @@
 layout: default
 lang: ko
 title: "김세원 — ML 엔지니어 (검색 · 멀티모달)"
-description: "김세원은 검색과 지식그래프 기반 멀티모달 AI 시스템을 만드는 머신러닝 엔지니어입니다. 현재 FAO(UN) Innovation Accelerator 인턴이며, 이전에는 전북대학교에서 연구했습니다."
+description: "김세원은 현재 FAO(UN) Innovation Accelerator 인턴이며 전북대학교 Computer Science and Engineering 최종학년 학부생입니다."
 canonical: https://andimsewon.github.io/ko/
 alternate_ko: https://andimsewon.github.io/ko/
 alternate_en: https://andimsewon.github.io/
@@ -20,8 +20,10 @@ json_ld: |
     "url": "https://andimsewon.github.io/ko/",
     "jobTitle": "머신러닝 엔지니어 (검색, 멀티모달)",
     "worksFor": {"@type": "Organization", "name": "Food and Agriculture Organization of the United Nations", "alternateName": "FAO"},
-    "affiliation": {"@type": "Organization", "name": "Food and Agriculture Organization of the United Nations", "alternateName": "FAO"},
-    "alumniOf": {"@type": "CollegeOrUniversity", "name": "Jeonbuk National University", "alternateName": "전북대학교"},
+    "affiliation": [
+      {"@type": "Organization", "name": "Food and Agriculture Organization of the United Nations", "alternateName": "FAO"},
+      {"@type": "CollegeOrUniversity", "name": "Jeonbuk National University", "alternateName": "전북대학교"}
+    ],
     "knowsAbout": ["Multimodal AI", "Retrieval-Augmented Generation", "Knowledge Graphs", "Large Language Models", "Edge Intelligence", "멀티모달 인공지능", "지식그래프", "대규모 언어 모델"],
     "sameAs": ["https://github.com/andimsewon", "https://www.linkedin.com/in/sewon-kim-742a492a6/"],
     "email": "mailto:sewonkim1018@gmail.com",
@@ -35,7 +37,7 @@ json_ld: |
         <p class="hero-eyebrow">FAO · UN Office of Innovation — Rome</p>
         <h1 class="hero-name">김세원</h1>
         <p class="hero-tagline">저는 검색(retrieval)과 멀티모달 시스템을 만듭니다 — 지식그래프 기반 RAG, 비전-언어 모델, IoT 데이터 파이프라인.</p>
-        <p class="hero-bio">FAO(UN) Office of Innovation, Innovation Accelerator 인턴. 이전: 전북대학교 Natural Language Learning Lab(지도교수: 송현제), Purdue University.</p>
+        <p class="hero-bio">FAO(UN) Office of Innovation, Innovation Accelerator 인턴(2026년 6월–현재, 로마). 이전: 전북대학교 Natural Language Learning Lab 학부연구생(2025년 2월–2026년 2월, 지도교수: 송현제), 그리고 Purdue University의 Korean Software Square가 주관한 IITP Korean AI Square Summer 2025 Program 선발 국제 장학생.</p>
 
         <div class="credential-strip">
           <div class="credential-item">
@@ -95,12 +97,12 @@ json_ld: |
           <a href="/ko/kg-rag-project.html" class="work-item">
             <div class="ledger">
               <div class="ledger-meta">
-                <span class="work-year">2025</span>
+                <span class="work-year">2025–2026</span>
                 <span class="work-type">연구</span>
               </div>
               <div class="ledger-content">
                 <h3 class="work-title">KG-RAG</h3>
-                <p class="work-description">전북대학교 Natural Language Learning Lab(지도교수: 송현제)에서 진행한, 다중 홉 질의응답을 위한 지식그래프 기반 검색 증강 생성(RAG) 연구입니다.</p>
+                <p class="work-description">전북대학교 Natural Language Learning Lab에서 2025년 2월부터 2026년 2월까지 수행한 다중 홉 질의응답용 지식그래프 기반 RAG 연구입니다(지도교수: 송현제).</p>
                 <p class="work-result">→ 지식그래프를 활용한 멀티홉 추론으로 LLM 출력의 사실적 근거를 강화</p>
                 <!-- TODO: add benchmark result once available -->
                 <p class="work-stack">스택: PyTorch · LangChain</p>
@@ -116,10 +118,10 @@ json_ld: |
               </div>
               <div class="ledger-content">
                 <h3 class="work-title">ATIO Knowledge Base — FAO (UN)</h3>
-                <p class="work-description">FAO의 농식품 혁신 지식베이스에 대한 시맨틱 검색과 LLM 기반 검색 지원 시스템입니다.</p>
-                <p class="work-result">→ 혁신 사례 5,744건 색인 완료 · 진행 중</p>
+                <p class="work-description">FAO 농식품 혁신 지식베이스의 사용자 행동 분석, UX·데이터 시각화, AI enrichment prompt 평가를 수행합니다.</p>
+                <p class="work-result">→ 혁신 사례 5,744건 수록</p>
                 <!-- TODO: confirm with supervisor what is safe to publish -->
-                <p class="work-stack">스택: Drupal 10 · Solr · Milvus · Gemini (Vertex AI) · Python / GCP</p>
+                <p class="work-stack">시스템 맥락: Drupal 10 · Solr · Milvus · Gemini (Vertex AI)</p>
               </div>
             </div>
           </a>
@@ -132,7 +134,7 @@ json_ld: |
               </div>
               <div class="ledger-content">
                 <h3 class="work-title">WaggleNet</h3>
-                <p class="work-description">듀얼 스코프 LoRa–MQTT 벌통 모니터링 시스템 — 벌통 내부 환경과 외부 환경을 동시에 측정합니다 (Purdue University).</p>
+                <p class="work-description">Purdue University의 Korean Software Square가 주관한 IITP Korean AI Square Summer 2025 Program에서 수행한 듀얼 스코프 LoRa–MQTT 벌통 모니터링 연구입니다.</p>
                 <p class="work-result">→ 110m 거리에서 패킷 전송률 100% · 노드당 $25–30 (상용 제품 대비 70–85% 절감) · arXiv:2512.07408</p>
                 <p class="work-stack">스택: ESP32 · LoRa (SX1276) · MQTT · Flask · SQLite · Flutter</p>
               </div>
@@ -150,8 +152,8 @@ json_ld: |
         <div class="section-title">최근 소식</div>
         <ul class="info-list mb-36">
           <li>2025-12 — WaggleNet 시스템 및 현장 실험 결과 arXiv preprint 업로드</li>
-          <li>2025-08 — Purdue University IITP 스마트 센서 & IoT 연구 프로그램 수료</li>
-          <li>2025-02 — 전북대 Natural Language Learning Lab 학부연구생 합류 (지도교수: 송현제)</li>
+          <li>2025-08 — 정부 지원 IITP Korean AI Square Summer 2025 Program 선발 국제 장학생 과정 수료(Purdue University Korean Software Square 주관)</li>
+          <li>2026-02 — 전북대학교 Natural Language Learning Lab 학부연구생 활동 종료(2025년 2월–2026년 2월, 지도교수: 송현제); 지식그래프 기반 RAG 연구 수행</li>
         </ul>
         
 
@@ -211,16 +213,16 @@ json_ld: |
 
         <div class="section-title">학력</div>
         <ul class="info-list">
-          <li><strong>컴퓨터공학부 학사과정(B.S.)</strong><br>
-            전북대학교, 전주, 대한민국<br>
-            <span style="color: var(--text-secondary); font-size: 15px;">졸업 예정: 2026년 8월</span>
+          <li><strong>B.S. in Computer Science and Engineering</strong><br>
+            Jeonbuk National University(전북대학교), 전주, 대한민국<br>
+            <span style="color: var(--text-secondary); font-size: 15px;">2026년 8월 졸업 예정 · 최종학년 학부생</span>
             <ul class="sub-list">
               <li>Honors Residential College(HRC) 학생대표</li>
               <li>SW중심대학사업 참여</li>
               <li>JST공유대학 스마트모빌리티SW 마이크로디그리 이수</li>
               <li>평점: 4.09/4.5 (미국 환산 3.64/4.0)</li>
               <li>주요 과목: 머신러닝, 데이터마이닝, 정보검색, 자연어처리, 데이터베이스</li>
-              <li>교환학생 — 말라야 대학교(Universiti Malaya), 2023년 1학기 (2월–8월)</li>
+              <li>교환학생 — University of Malaya, 2023년 2–8월</li>
             </ul>
           </li>
           

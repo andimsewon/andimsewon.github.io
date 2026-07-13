@@ -45,9 +45,9 @@ json_ld: |
 
             <h3 class="section-title">Approach</h3>
             <div class="project-description">
-              <p>Purdue University Korean AI Square Summer Program에서 개발한 WaggleNet은 LoRa 워커 노드 → LoRa–MQTT 게이트웨이 → 클라우드 DB 및 Flutter 앱으로 이어지는 3단 아키텍처로, 벌통 내부와 외부 환경을 동시에 측정합니다.</p>
+              <p>이 연구는 전북대학교 소속을 유지한 채, Purdue University의 Korean Software Square가 주관한 정부 지원 IITP Korean AI Square Summer 2025 Program에서 수행했습니다. 논문 사사에 명시된 Prof. Eric T. Matson과 Prof. Anthony H. Smith의 지도를 받았습니다. WaggleNet은 LoRa 워커 노드 → LoRa–MQTT 게이트웨이 → 클라우드 DB 및 Flutter 앱으로 이어지는 3단 아키텍처로 벌통 내부와 외부 환경을 동시에 측정합니다.</p>
               <p>각 워커 노드(DHT22, LDR, GPS)는 3분 간격으로 샘플링하여 LoRa로 게이트웨이에 전송하고, 게이트웨이는 UTC 타임스탬프를 추가해 JSON을 MQTT로 클라우드 DB(SQLite)에 전달합니다. Flutter 앱은 온도·습도·조도·위치를 실시간 시각화하며, 설정된 임계치를 벗어나면 Firebase Cloud Messaging으로 경보를 발송합니다.</p>
-              <p>현장 실험은 Langstroth 벌통 2개에 워커 노드 4개(내부 2개, 외부 2개)를 설치하여 Purdue University(KSW 빌딩)와 인근 양봉장에서 두 달간 진행했습니다.</p>
+              <p>현장 실험은 Langstroth 벌통 2개에 워커 노드 4개(내부 2개, 외부 2개)를 설치하여 West Lafayette의 주관 기관 Korean Software Square 시설과 인근 양봉장에서 두 달간 진행했습니다.</p>
             </div>
 
             <h3 class="section-title">Result</h3>
@@ -57,7 +57,7 @@ json_ld: |
 
             <h3 class="section-title">My Role</h3>
             <div class="project-description">
-              <p>Purdue University Korean AI Square Summer Program에서 진행한 이 6인 저자 논문에서 3저자로 참여했습니다.</p>
+              <p>공동 연구와 그 결과물인 6인 저자 논문에 3저자로 기여했습니다. 이 연구는 Purdue University의 Korean Software Square가 주관한 IITP Korean AI Square Summer 2025 Program에서 Prof. Eric T. Matson과 Prof. Anthony H. Smith의 지도 아래 수행했습니다.</p>
             </div>
 
             <div class="project-tech">기술 스택: 하드웨어: ESP32 (Heltec Wi-Fi LoRa 32 V3), DHT22, LDR, GPS (NEO-6M) | 소프트웨어: C++, Python, MQTT, SQLite, Flutter, Firebase | 통신 프로토콜: LoRa (SX1276), MQTT Publish/Subscribe</div>
