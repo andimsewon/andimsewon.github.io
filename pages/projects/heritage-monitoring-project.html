@@ -1,19 +1,19 @@
 ---
 layout: default
 lang: en
-title: "Heritage Monitoring and Registration System | Sewon Kim"
-description: "Heritage Monitoring and Registration System - A cross-platform field-survey system integrating national heritage data, AI-based damage detection, and real-time cloud synchronization - Sewon Kim's Academic Portfolio"
+title: "Heritage-LLaVA: Multimodal Damage Detection for Cultural Heritage | Sewon Kim"
+description: "Heritage-LLaVA - Multimodal damage detection for cultural heritage, built with the Korea Heritage Service - Sewon Kim's Academic Portfolio"
 canonical: https://andimsewon.github.io/heritage-monitoring-project.html
 alternate_en: https://andimsewon.github.io/heritage-monitoring-project.html
 alternate_ko: https://andimsewon.github.io/ko/heritage-monitoring-project.html
-og_title: "Heritage Monitoring and Registration System | Sewon Kim"
-og_description: "A cross-platform field-survey system integrating national heritage data, AI-based damage detection, and real-time cloud synchronization"
+og_title: "Heritage-LLaVA: Multimodal Damage Detection for Cultural Heritage | Sewon Kim"
+og_description: "Multimodal damage detection for cultural heritage, built with the Korea Heritage Service"
 og_image: https://andimsewon.github.io/assets/heritage-monitoring-project/main.jpeg
 og_url: https://andimsewon.github.io/heritage-monitoring-project.html
 skip_id: project
 permalink: /heritage-monitoring-project.html
 json_ld: |
-  {"@context":"https://schema.org","@type":"WebPage","name":"Heritage Monitoring and Registration System | Sewon Kim","url":"https://andimsewon.github.io/heritage-monitoring-project.html"}
+  {"@context":"https://schema.org","@type":"WebPage","name":"Heritage-LLaVA: Multimodal Damage Detection for Cultural Heritage | Sewon Kim","url":"https://andimsewon.github.io/heritage-monitoring-project.html"}
 ---
 
   <!-- Project Detail Section -->
@@ -21,7 +21,7 @@ json_ld: |
     <div class="container">
       <p class="back-link"><a href="projects.html" aria-label="Back to all projects">← Back to Projects</a></p>
       <div class="section-header">
-        <h2 class="page-title">Heritage Monitoring and Registration System</h2>
+        <h2 class="page-title">Heritage-LLaVA: Multimodal Damage Detection for Cultural Heritage</h2>
         <div class="project-card-metrics" aria-label="Technologies">
           <span class="metric-badge">Flutter</span>
           <span class="metric-badge">FastAPI</span>
@@ -33,74 +33,44 @@ json_ld: |
       <div class="content-wrapper">
         <div class="project-item">
           <div class="project-main-full">
+
+            <h3 class="section-title">Problem</h3>
             <div class="project-description">
-              <p>A cross‑platform field‑survey system that integrates national heritage data, AI‑based damage detection, and real‑time cloud synchronization.</p>
-              <p>The project modernizes Korea’s cultural‑heritage survey workflow by converting paper inspections into a fully digital, AI‑assisted platform. Built with Flutter (Web/Android/iOS) and a FastAPI backend, it integrates the National Heritage Service Open API, a PyTorch‑based detector, and Firebase real‑time databases to support end‑to‑end survey and registration.</p>
-              <p>Official records are retrieved through a FastAPI proxy that converts National Heritage Service XML into structured JSON, enabling multi‑criteria search (heritage type, region, keyword) with infinite pagination. Each asset exposes designation category, ownership, managing agency, official address, and geographic coordinates.</p>
-              <p>A core feature is the AI‑powered damage module using a custom DETR‑based PyTorch model to detect four structural deterioration types—cracks, splits, biological decay, and crushing/burst damage. On‑site images uploaded from the Flutter app are processed by the backend and returned with boxes, labels, confidence scores, and an automatically assigned severity grade (A–D). Results are stored in Firebase with component name, location, inspector notes, and timestamps.</p>
-              <p>The inspector workflow comprises three structured tabs:</p>
-              <ul>
-                <li><strong>Field Survey:</strong> basic info, metadata, site photos, and damage detection</li>
-                <li><strong>Inspector Notes:</strong> preservation history, survey results, and management actions</li>
-                <li><strong>Comprehensive Assessment:</strong> aggregated damage analysis, severity classification, and AI-assisted insights</li>
-              </ul>
-              <p>All updates are synchronized in real time using Firestore streams, ensuring consistent multi-device collaboration during field inspections. Photos and damage records are stored in Firebase Storage, and edit histories are automatically logged for auditability.</p>
-              <p>The system demonstrates practical integration of cross-platform UI, REST API pipelines, real-time cloud data synchronization, and custom deep-learning inference inside a production-ready workflow. It showcases the feasibility of scalable digital transformation for cultural-heritage management and lays the foundation for future extensions such as GIS-based damage maps, offline-first mobile modes, and multi-language interfaces.</p>
+              <p>Korea's cultural-heritage survey workflow was paper-based: inspectors recorded site condition and damage by hand, with no structured way to track designation status, ownership, or damage severity over time, and no shared real-time view across inspectors in the field.</p>
             </div>
+
+            <h3 class="section-title">Approach</h3>
+            <div class="project-description">
+              <p>Built a cross-platform field-survey system that converts paper inspections into a fully digital, AI-assisted platform. Flutter (Web/Android/iOS) provides the field UI; a FastAPI backend integrates the National Heritage Service Open API (via an XML→JSON proxy for multi-criteria search) and a custom DETR-based PyTorch model for damage detection; Firebase provides real-time storage and sync.</p>
+              <p>The damage-detection model classifies four structural deterioration types — cracks, splits, biological decay, and crushing/burst damage — from on-site photos, returning bounding boxes, labels, confidence scores, and an automatically assigned severity grade (A–D). The inspector workflow is organized into three tabs: Field Survey (basic info, metadata, site photos, damage detection), Inspector Notes (preservation history, survey results, management actions), and Comprehensive Assessment (aggregated damage analysis and severity classification). All updates sync in real time via Firestore streams, with edit histories logged automatically for auditability.</p>
+            </div>
+
+            <h3 class="section-title">Result</h3>
+            <div class="project-description">
+              <p>The damage-detection model reaches <strong>F1 0.89</strong> across the four deterioration types. A patent covering the damage-detection method has been filed jointly by the Natural Language Learning Lab (Jeonbuk National University) and the Korea Heritage Service, and the software is registered for copyright. The system is in operational use at the Korea Heritage Service.</p>
+              <ul class="sub-list">
+                <li><strong>Inference latency</strong>: ~800–1200ms (CPU), ~200–400ms (GPU) per image</li>
+                <li><strong>API response</strong>: &lt;150ms (heritage search), &lt;2s (AI detection)</li>
+                <li><strong>Sync delay</strong>: &lt;500ms (Firestore real‑time updates)</li>
+                <li><strong>Model</strong>: DETR (ResNet‑50), 4 classes, class‑specific conf 0.15–0.30, NMS IoU 0.1, ~552MB</li>
+                <li><strong>Coverage</strong>: Single codebase → Web, Android, iOS; tested 10+ concurrent users</li>
+              </ul>
+              <!-- TODO: confirm training set size before publishing -->
+            </div>
+
+            <h3 class="section-title">My Role</h3>
+            <div class="project-description">
+              <p>I architected the end-to-end system — the Flutter frontend, the FastAPI backend, and the DETR-based damage-detection pipeline — including the interactive survey UI, the image pipeline, and real-time edit-history tracking.</p>
+            </div>
+
             <div class="project-tech">Tech Stack: Flutter 3.35.1, Dart 3.9.0, Firebase (Firestore/Storage), FastAPI, Python 3.10+, PyTorch, DETR (ResNet‑50), Docker, Docker Compose, Nginx, XML→JSON proxy</div>
             <div class="project-links">
-              <a href="http://210.117.181.115:3001/" target="_blank" rel="noopener noreferrer">🌐 Live Web Application</a>
               <a href="https://github.com/andimsewon/heritage_services_app" target="_blank" rel="noopener noreferrer">📦 GitHub Repo</a>
-              <a href="http://210.117.181.115:8080/docs" target="_blank" rel="noopener noreferrer">📄 API Docs</a>
             </div>
-
-            <h3 class="section-title">Role & Contributions</h3>
-            <ul class="sub-list">
-              <li>Architected end‑to‑end system with Flutter (Web/Android/iOS), FastAPI backend, and Firebase real‑time database</li>
-              <li>Implemented DETR‑based damage detection (ResNet‑50) with class‑specific thresholds and NMS for 4 damage types</li>
-              <li>Designed interactive survey UI: bounding box overlays, thumbnail grid, real‑time stats dashboard</li>
-              <li>Built image pipeline with Firebase Storage and caching/resizing proxy</li>
-              <li>Developed edit‑history tracking (field‑level logs) with StreamBuilder‑based real‑time sync</li>
-            </ul>
-
-            <h3 class="section-title">Key Metrics</h3>
-            <ul class="sub-list">
-              <li><strong>Inference latency</strong>: ~800–1200ms (CPU), ~200–400ms (GPU) per image</li>
-              <li><strong>API response</strong>: &lt;150ms (heritage search), &lt;2s (AI detection)</li>
-              <li><strong>Sync delay</strong>: &lt;500ms (Firestore real‑time updates)</li>
-              <li><strong>Model</strong>: DETR (ResNet‑50), 4 classes, class‑specific conf 0.15–0.30, NMS IoU 0.1, ~552MB</li>
-              <li><strong>Coverage</strong>: Single codebase → Web, Android, iOS; tested 10+ concurrent users</li>
-            </ul>
           </div>
-          
-          <!-- Web Application and Copyright Certificate -->
+
+          <!-- Copyright Certificate -->
           <div class="project-media-section">
-            <div class="project-web-wrapper">
-              <h3 class="section-title">Live Web Application</h3>
-              <div class="project-web-embed">
-                <div class="project-web-preview" id="webPreview">
-                  <iframe 
-                    id="webAppIframe"
-                    data-src="http://210.117.181.115:3001/" 
-                    style="width: 100%; height: 800px; border: 2px solid var(--border-light); border-radius: 12px; display: none;" 
-                    title="Heritage Monitoring System"
-                    allow="fullscreen">
-                  </iframe>
-                  <div id="webPreviewFallback" class="project-web-fallback" style="display: flex;">
-                    <div class="project-web-fallback-content">
-                      <div class="project-web-fallback-icon">🌐</div>
-                      <h4>Web Application Preview</h4>
-                      <p>The web application cannot be displayed in an embedded frame due to security restrictions. Please click the button below to open it in a new tab.</p>
-                      <a href="http://210.117.181.115:3001/" target="_blank" rel="noopener noreferrer" class="external-link-button">Open Web Application →</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="project-web-link">
-                  <a href="http://210.117.181.115:3001/" target="_blank" rel="noopener noreferrer" class="external-link">Open in new tab →</a>
-                </div>
-              </div>
-            </div>
-            
             <div class="project-certificate-wrapper">
               <h3 class="section-title">Copyright Registration Certificate</h3>
               <div class="project-certificate">
@@ -116,59 +86,6 @@ json_ld: |
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
-    
-    // Try to load iframe, show fallback by default
-    (function() {
-      var iframe = document.getElementById('webAppIframe');
-      var fallback = document.getElementById('webPreviewFallback');
-      
-      if (iframe && fallback) {
-        // Fallback is shown by default (inline style)
-        // Try to load iframe
-        const src = iframe.getAttribute('data-src');
-        if (src) {
-          // Set iframe src
-          iframe.src = src;
-          
-          var iframeLoaded = false;
-          
-          // Check if iframe loads successfully
-          iframe.onload = function() {
-            try {
-              // Try to access iframe content to verify it loaded
-              if (iframe.contentWindow && iframe.contentWindow.document) {
-                iframeLoaded = true;
-                iframe.style.display = 'block';
-                fallback.style.display = 'none';
-              }
-            } catch (e) {
-              // Cross-origin error means iframe loaded but we can't access it
-              // This is actually a good sign - the iframe loaded
-              iframeLoaded = true;
-              iframe.style.display = 'block';
-              fallback.style.display = 'none';
-            }
-          };
-          
-          // Check for iframe load errors
-          iframe.onerror = function() {
-            iframe.style.display = 'none';
-            fallback.style.display = 'flex';
-          };
-          
-          // Timeout: if iframe doesn't load within 3 seconds, keep fallback visible
-          setTimeout(function() {
-            if (!iframeLoaded) {
-              iframe.style.display = 'none';
-              fallback.style.display = 'flex';
-            }
-          }, 3000);
-        } else {
-          // No src, keep fallback visible
-          fallback.style.display = 'flex';
-        }
-      }
-    })();
     // Theme toggle is handled by js/site.js
   </script>
   <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>

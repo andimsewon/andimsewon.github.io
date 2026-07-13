@@ -1,27 +1,27 @@
 ---
 layout: default
 lang: ko
-title: "국가유산 모니터링·조사·등록 시스템 | 김세원"
-description: "국가유산 모니터링·조사·등록 시스템 - 국가유산청 Open API, AI 손상 탐지, Firebase 실시간 동기화를 통합한 크로스플랫폼 현장 조사 시스템"
+title: "Heritage-LLaVA: 문화유산 손상 탐지 멀티모달 시스템 | 김세원"
+description: "Heritage-LLaVA - 국가유산청과 함께 구축한 문화유산 손상 탐지 멀티모달 시스템 - 김세원 포트폴리오"
 canonical: https://andimsewon.github.io/ko/heritage-monitoring-project.html
 alternate_ko: https://andimsewon.github.io/ko/heritage-monitoring-project.html
 alternate_en: https://andimsewon.github.io/heritage-monitoring-project.html
-og_title: "국가유산 모니터링·조사·등록 시스템 | 김세원"
-og_description: "국가유산청 Open API, AI 손상 탐지, Firebase 실시간 동기화를 통합한 크로스플랫폼 현장 조사 시스템"
+og_title: "Heritage-LLaVA: 문화유산 손상 탐지 멀티모달 시스템 | 김세원"
+og_description: "국가유산청과 함께 구축한 문화유산 손상 탐지 멀티모달 시스템"
 og_image: https://andimsewon.github.io/assets/heritage-monitoring-project/main.jpeg
 og_url: https://andimsewon.github.io/ko/heritage-monitoring-project.html
 skip_id: project
 permalink: /ko/heritage-monitoring-project.html
 json_ld: |
-  {"@context":"https://schema.org","@type":"WebPage","name":"국가유산 모니터링·조사·등록 시스템 | 김세원","url":"https://andimsewon.github.io/ko/heritage-monitoring-project.html"}
+  {"@context":"https://schema.org","@type":"WebPage","name":"Heritage-LLaVA: 문화유산 손상 탐지 멀티모달 시스템 | 김세원","url":"https://andimsewon.github.io/ko/heritage-monitoring-project.html"}
 ---
-  
+
   <!-- Project Detail Section -->
   <main id="project" class="page-section">
     <div class="container">
       <p class="back-link"><a href="/ko/projects.html" aria-label="프로젝트 목록으로">← 프로젝트 목록으로</a></p>
       <div class="section-header">
-        <h2 class="page-title">국가유산 모니터링·조사·등록 시스템</h2>
+        <h2 class="page-title">Heritage-LLaVA: 문화유산 손상 탐지 멀티모달 시스템</h2>
         <div class="project-card-metrics" aria-label="기술 스택">
           <span class="metric-badge">Flutter</span>
           <span class="metric-badge">FastAPI</span>
@@ -33,74 +33,44 @@ json_ld: |
       <div class="content-wrapper">
         <div class="project-item">
           <div class="project-main-full">
+
+            <h3 class="section-title">Problem</h3>
             <div class="project-description">
-              <p>국가유산청 Open API, AI 손상 탐지, Firebase 실시간 동기화를 통합한 크로스플랫폼 현장 조사 시스템입니다.</p>
-              <p>종이 기반 조사에서 벗어나 AI 보조와 클라우드 연동을 갖춘 통합 플랫폼으로 문화재 조사 워크플로를 현대화했습니다. Flutter(Web/Android/iOS) 프론트엔드, FastAPI 백엔드, PyTorch 손상 탐지, Firebase 실시간 DB를 하나의 파이프라인으로 구성했습니다.</p>
-              <p>FastAPI 프록시가 국가유산청 Open API의 XML을 JSON으로 변환해 유산명·종목·지역·키워드 등 다중 조건 검색과 무한 페이지네이션을 제공합니다. 각 자산 화면에서 지정 현황, 소유·관리 주체, 소재지, 좌표 등의 정보를 확인하고 수동 등록도 지원합니다.</p>
-              <p>핵심은 AI 기반 손상 조사 모듈입니다. 현장 이미지 업로드 시 백엔드의 DETR 기반 PyTorch 모델이 갈램·균열·부후·압괴/터짐 4개 유형을 바운딩 박스, 라벨, 신뢰도로 반환하고 A–D 자동 심각도 등급을 산정합니다. 결과와 구성요소명·위치·메모·타임스탬프 등 메타데이터는 Firestore에 저장됩니다.</p>
-              <p>시스템은 현장 조사 프로세스를 3단계 탭 구조로 구성했다:</p>
-              <ul>
-                <li><strong>현장 조사:</strong> 기본 정보, 메타 정보, 현황 사진, AI 기반 손상 조사</li>
-                <li><strong>조사자 의견:</strong> 보존관리 이력, 조사 의견, 관리 사항, 수정 이력</li>
-                <li><strong>종합 진단:</strong> 손상 종합 분석, 등급 분류, AI 예측 결과</li>
-              </ul>
-              <p>Firestore 스트림으로 변경 사항이 즉시 반영되며, Storage 업로드 이미지도 실시간 갱신됩니다. 모든 편집 이력은 자동 기록되어 감사·추적이 가능합니다.</p>
-              <p>본 시스템은 AI 모델·실시간 데이터베이스·크로스플랫폼 UI·REST API 파이프라인을 하나의 현장 업무 시스템으로 통합한 사례로, 문화유산 보존 관리 업무의 디지털 전환을 위한 실제 운영 수준의 기반을 구축하였다. 향후에는 손상 지도(Spatial Damage Map), 오프라인 모드, 다국어 UI 등으로 확장할 수 있는 구조를 갖추고 있다.</p>
+              <p>국내 문화유산 현장 조사는 종이 기반으로 이루어져, 지정 현황·소유 관계·손상 심각도 변화를 구조적으로 추적할 방법이 없었고, 여러 조사자가 현장에서 실시간으로 정보를 공유할 수도 없었습니다.</p>
             </div>
+
+            <h3 class="section-title">Approach</h3>
+            <div class="project-description">
+              <p>종이 조사를 완전한 디지털·AI 보조 플랫폼으로 전환하는 크로스플랫폼 현장 조사 시스템을 구축했습니다. Flutter(Web/Android/iOS)가 현장용 UI를 제공하고, FastAPI 백엔드가 국가유산청 Open API(다중 조건 검색을 위한 XML→JSON 프록시 포함)와 손상 탐지를 위한 커스텀 DETR 기반 PyTorch 모델을 통합하며, Firebase가 실시간 저장·동기화를 담당합니다.</p>
+              <p>손상 탐지 모델은 현장 사진에서 갈램·균열·부후·압괴/터짐 4개 구조적 손상 유형을 분류하고, 바운딩 박스·라벨·신뢰도와 함께 A–D 자동 심각도 등급을 반환합니다. 조사 워크플로는 현장 조사(기본 정보, 메타 정보, 현황 사진, 손상 탐지), 조사자 의견(보존관리 이력, 조사 결과, 관리 사항), 종합 진단(손상 종합 분석, 등급 분류) 3단계 탭으로 구성됩니다. 모든 변경 사항은 Firestore 스트림으로 실시간 반영되며, 편집 이력은 감사·추적을 위해 자동 기록됩니다.</p>
+            </div>
+
+            <h3 class="section-title">Result</h3>
+            <div class="project-description">
+              <p>손상 탐지 모델은 4개 손상 유형 전체에서 <strong>F1 0.89</strong>를 달성했습니다. 손상 탐지 방법에 대한 특허를 전북대학교 Natural Language Learning Lab과 국가유산청이 공동으로 출원했으며, 소프트웨어는 저작권 등록을 마쳤습니다. 시스템은 현재 국가유산청에서 실제 운영되고 있습니다.</p>
+              <ul class="sub-list">
+                <li><strong>추론 지연</strong>: 이미지당 ~800–1200ms(CPU), ~200–400ms(GPU)</li>
+                <li><strong>API 응답</strong>: 유산 검색 &lt;150ms, AI 탐지 &lt;2s</li>
+                <li><strong>동기화 지연</strong>: Firestore 실시간 업데이트 &lt;500ms</li>
+                <li><strong>모델</strong>: DETR(ResNet‑50), 4 클래스, 클래스별 conf 0.15–0.30, NMS IoU 0.1, ~552MB</li>
+                <li><strong>플랫폼</strong>: 단일 코드베이스로 Web/Android/iOS, 동시 사용자 10+ 테스트</li>
+              </ul>
+              <!-- TODO: confirm training set size before publishing -->
+            </div>
+
+            <h3 class="section-title">My Role</h3>
+            <div class="project-description">
+              <p>Flutter 프론트엔드, FastAPI 백엔드, DETR 기반 손상 탐지 파이프라인을 포함한 엔드투엔드 시스템을 직접 설계했으며, 손상 조사 UI, 이미지 파이프라인, 실시간 편집 이력 추적까지 구현했습니다.</p>
+            </div>
+
             <div class="project-tech">기술 스택: Flutter 3.35.1, Dart 3.9.0, Firebase(Firestore/Storage), FastAPI, Python 3.10+, PyTorch, DETR(ResNet‑50), Docker, Docker Compose, Nginx, XML→JSON Proxy</div>
             <div class="project-links">
-              <a href="http://210.117.181.115:3001/" target="_blank" rel="noopener noreferrer">🌐 실제 웹 애플리케이션</a>
               <a href="https://github.com/andimsewon/heritage_services_app" target="_blank" rel="noopener noreferrer">📦 GitHub 저장소</a>
-              <a href="http://210.117.181.115:8080/docs" target="_blank" rel="noopener noreferrer">📄 API 문서</a>
             </div>
-
-            <h3 class="section-title">역할 및 기여</h3>
-            <ul class="sub-list">
-              <li>Flutter(Web/Android/iOS), FastAPI, Firebase 실시간 DB 기반의 엔드‑투‑엔드 아키텍처 설계</li>
-              <li>DETR(ResNet‑50) 기반 손상 탐지 구현: 클래스별 임계치/ NMS 적용(4개 손상 유형)</li>
-              <li>손상 조사 UI 설계: 바운딩 박스 시각화, 썸네일 그리드, 실시간 통계 대시보드</li>
-              <li>Firebase Storage와 캐싱/리사이징 프록시를 활용한 이미지 파이프라인 구축</li>
-              <li>필드 단위 변경 이력 기록, StreamBuilder 기반 실시간 동기화 구현</li>
-            </ul>
-
-            <h3 class="section-title">핵심 지표</h3>
-            <ul class="sub-list">
-              <li><strong>추론 지연</strong>: 이미지당 ~800–1200ms(CPU), ~200–400ms(GPU)</li>
-              <li><strong>API 응답</strong>: 유산 검색 &lt;150ms, AI 탐지 &lt;2s</li>
-              <li><strong>동기화 지연</strong>: Firestore 실시간 업데이트 &lt;500ms</li>
-              <li><strong>모델</strong>: DETR(ResNet‑50), 4 클래스, 클래스별 conf 0.15–0.30, NMS IoU 0.1, ~552MB</li>
-              <li><strong>플랫폼</strong>: 단일 코드베이스로 Web/Android/iOS, 동시 사용자 10+ 테스트</li>
-            </ul>
           </div>
-          
-          <!-- Web Application and Copyright Certificate -->
+
+          <!-- Copyright Certificate -->
           <div class="project-media-section">
-            <div class="project-web-wrapper">
-              <h3 class="section-title">실제 웹 애플리케이션</h3>
-              <div class="project-web-embed">
-                <div class="project-web-preview" id="webPreview">
-                  <iframe 
-                    id="webAppIframe"
-                    data-src="http://210.117.181.115:3001/" 
-                    style="width: 100%; height: 800px; border: 2px solid var(--border-light); border-radius: 12px; display: none;" 
-                    title="국가유산 모니터링 시스템"
-                    allow="fullscreen">
-                  </iframe>
-                  <div id="webPreviewFallback" class="project-web-fallback" style="display: flex;">
-                    <div class="project-web-fallback-content">
-                      <div class="project-web-fallback-icon">🌐</div>
-                      <h4>웹 애플리케이션 미리보기</h4>
-                      <p>보안 정책으로 인해 웹 애플리케이션을 임베드된 프레임에 표시할 수 없습니다. 아래 버튼을 클릭하여 새 탭에서 열어주세요.</p>
-                      <a href="http://210.117.181.115:3001/" target="_blank" rel="noopener noreferrer" class="external-link-button">웹 애플리케이션 열기 →</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="project-web-link">
-                  <a href="http://210.117.181.115:3001/" target="_blank" rel="noopener noreferrer" class="external-link">새 탭에서 열기 →</a>
-                </div>
-              </div>
-            </div>
-            
             <div class="project-certificate-wrapper">
               <h3 class="section-title">저작권 등록증</h3>
               <div class="project-certificate">
@@ -113,57 +83,5 @@ json_ld: |
     </div>
   </main>
   <script>
-    // Try to load iframe, show fallback by default
-    (function() {
-      var iframe = document.getElementById('webAppIframe');
-      var fallback = document.getElementById('webPreviewFallback');
-      
-      if (iframe && fallback) {
-        // Fallback is shown by default (inline style)
-        // Try to load iframe
-        var src = iframe.getAttribute('data-src');
-        if (src) {
-          // Set iframe src
-          iframe.src = src;
-          
-          var iframeLoaded = false;
-          
-          // Check if iframe loads successfully
-          iframe.onload = function() {
-            try {
-              // Try to access iframe content to verify it loaded
-              if (iframe.contentWindow && iframe.contentWindow.document) {
-                iframeLoaded = true;
-                iframe.style.display = 'block';
-                fallback.style.display = 'none';
-              }
-            } catch (e) {
-              // Cross-origin error means iframe loaded but we can't access it
-              // This is actually a good sign - the iframe loaded
-              iframeLoaded = true;
-              iframe.style.display = 'block';
-              fallback.style.display = 'none';
-            }
-          };
-          
-          // Check for iframe load errors
-          iframe.onerror = function() {
-            iframe.style.display = 'none';
-            fallback.style.display = 'flex';
-          };
-          
-          // Timeout: if iframe doesn't load within 3 seconds, keep fallback visible
-          setTimeout(function() {
-            if (!iframeLoaded) {
-              iframe.style.display = 'none';
-              fallback.style.display = 'flex';
-            }
-          }, 3000);
-        } else {
-          // No src, keep fallback visible
-          fallback.style.display = 'flex';
-        }
-      }
-    })();
     // Theme toggle is handled by /js/site.js
   </script>

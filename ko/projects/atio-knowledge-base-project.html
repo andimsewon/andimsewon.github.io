@@ -1,0 +1,64 @@
+---
+layout: default
+lang: ko
+title: "ATIO Knowledge Base — FAO (UN) | 김세원"
+description: "FAO 농식품 혁신 지식베이스에 대한 시맨틱 검색 및 LLM 기반 검색 시스템 - 김세원 포트폴리오"
+canonical: https://andimsewon.github.io/ko/atio-knowledge-base-project.html
+alternate_ko: https://andimsewon.github.io/ko/atio-knowledge-base-project.html
+alternate_en: https://andimsewon.github.io/atio-knowledge-base-project.html
+og_title: "ATIO Knowledge Base — FAO (UN) | 김세원"
+og_description: "FAO 농식품 혁신 지식베이스에 대한 시맨틱 검색 및 LLM 기반 검색 시스템"
+og_image_profile: true
+og_url: https://andimsewon.github.io/ko/atio-knowledge-base-project.html
+skip_id: project
+permalink: /ko/atio-knowledge-base-project.html
+json_ld: |
+  {"@context":"https://schema.org","@type":"WebPage","name":"ATIO Knowledge Base — FAO (UN) | 김세원","url":"https://andimsewon.github.io/ko/atio-knowledge-base-project.html"}
+---
+
+  <!-- Project Detail Section -->
+  <main id="project" class="page-section">
+    <div class="container">
+      <p class="back-link"><a href="/ko/projects.html" aria-label="프로젝트 목록으로">← 프로젝트 목록으로</a></p>
+      <div class="section-header">
+        <h2 class="page-title">ATIO Knowledge Base — FAO (UN)</h2>
+        <div class="project-card-metrics" aria-label="기술 스택">
+          <span class="metric-badge">Drupal 10</span>
+          <span class="metric-badge">Solr</span>
+          <span class="metric-badge">Milvus</span>
+          <span class="metric-badge">Vertex AI</span>
+        </div>
+      </div>
+      <!-- TODO: 이 페이지를 공개하기 전에 지도자(supervisor)와 공개 가능 범위를 확인할 것 -->
+      <div class="content-wrapper">
+        <div class="project-item">
+          <div class="project-main-full">
+
+            <h3 class="section-title">Problem</h3>
+            <div class="project-description">
+              <p>FAO의 Agrifood Technology and Innovation Outlook(ATIO) 지식베이스에는 수천 건의 농식품 혁신 사례가 담겨 있습니다. 키워드 검색만으로는 정책·혁신 담당자가 정확히 같은 용어를 쓰지 않는, 개념적으로 관련된 사례를 찾기 어렵습니다.</p>
+            </div>
+
+            <h3 class="section-title">Approach</h3>
+            <div class="project-description">
+              <p>기존 Drupal 10 콘텐츠 백엔드 위에 시맨틱 검색과 LLM 기반 검색을 구축하고 있습니다. Solr는 구조화·패싯 검색을 담당하고, Milvus는 시맨틱 유사도 검색을 위한 벡터 임베딩을 저장하며, Gemini(Vertex AI)는 LLM 기반 검색·요약을 제공합니다. 전체는 Google Cloud Platform 위에서 Python으로 오케스트레이션합니다.</p>
+            </div>
+
+            <h3 class="section-title">Result</h3>
+            <div class="project-description">
+              <p>혁신 사례 5,744건을 색인했습니다. 국제기구에서 진행 중인 프로젝트로, 현재도 개발이 이어지고 있습니다.</p>
+              <!-- TODO: confirm with supervisor what is safe to publish -->
+            </div>
+
+            <h3 class="section-title">My Role</h3>
+            <div class="project-description">
+              <p>FAO Office of Innovation의 Innovation Accelerator 팀 소속으로 시맨틱 검색 및 검색 파이프라인을 구축하고 있습니다.</p>
+            </div>
+
+            <div class="project-tech">기술 스택: Drupal 10, Solr, Milvus, Gemini (Vertex AI), Python, Google Cloud Platform</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- moved -->

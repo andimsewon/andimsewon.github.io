@@ -466,12 +466,13 @@ body.page-enter-active {
 
 .credential-strip {
   display: flex;
-  flex-wrap: wrap;
   gap: 0;
   margin: 0 0 28px 0;
 }
 
 .credential-item {
+  flex: 1 1 0;
+  min-width: 0;
   padding: 0 24px;
   border-right: 1px solid var(--hairline);
 }
@@ -521,7 +522,94 @@ body.page-enter-active {
     padding: 32px 16px 40px;
   }
   .hero-photo { width: 120px; height: 120px; }
-  .credential-strip { row-gap: 16px; }
+  .credential-strip { flex-direction: column; gap: 16px; }
+  .credential-item {
+    padding: 0 0 16px 0;
+    border-right: none;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .credential-item:last-child { border-bottom: none; padding-bottom: 0; }
+}
+
+/* Selected Work — .ledger rows linking to project detail pages */
+.work-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.work-item {
+  display: block;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--hairline);
+  text-decoration: none;
+  color: inherit;
+  transition: opacity var(--t-fast);
+}
+.work-item:first-child { padding-top: 0; }
+.work-item:last-child { border-bottom: none; }
+.work-item:hover { opacity: 0.85; }
+.work-item:hover .work-title { color: var(--accent); }
+
+.work-year { display: block; }
+.work-type { display: block; margin-top: 4px; }
+
+.work-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text);
+  margin: 0 0 8px 0;
+  transition: color var(--t-fast);
+}
+
+.work-description {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.5;
+  margin: 0 0 8px 0;
+}
+
+.work-result {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin: 0 0 8px 0;
+  line-height: 1.5;
+}
+
+.work-stack {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin: 0;
+}
+
+.todo { background:#FFE8E8; color:#B00; padding:0 4px; }
+
+/* Plain one-line list for de-emphasized projects */
+.other-projects-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.other-projects-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.other-projects-list li:last-child { border-bottom: none; }
+.other-projects-list a { color: var(--text); font-weight: 500; }
+.other-projects-list a:hover { color: var(--accent); }
+.other-projects-list .other-project-meta {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-left: 8px;
 }
 
 /* Main Layout - Two Column */
@@ -1365,114 +1453,7 @@ body.page-enter-active {
   text-align: center;
 }
 
-/* Web application and certificate styles */
-.project-web-wrapper {
-  margin-bottom: 32px;
-}
-
-.project-web-embed {
-  width: 100%;
-  margin-bottom: 12px;
-}
-
-.project-web-preview {
-  width: 100%;
-  min-height: 800px;
-  position: relative;
-}
-
-.project-web-embed iframe {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  height: auto;
-  max-height: min(85vh, 900px);
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius);
-  background: var(--surface);
-  transition: border-color 0.3s ease;
-}
-
-.project-web-embed iframe:hover {
-  border-color: var(--accent);
-}
-
-.project-web-fallback {
-  width: 100%;
-  min-height: 800px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius);
-  background: var(--surface);
-}
-
-.project-web-fallback-content {
-  text-align: center;
-  padding: 60px 40px;
-  max-width: 500px;
-}
-
-.project-web-fallback-icon {
-  font-size: 64px;
-  margin-bottom: 24px;
-}
-
-.project-web-fallback-content h4 {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 16px;
-  color: var(--text);
-}
-
-.project-web-fallback-content p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--muted);
-  margin-bottom: 32px;
-}
-
-.external-link-button {
-  display: inline-block;
-  padding: 12px 32px;
-  background: transparent;
-  color: var(--accent);
-  border: 1px solid var(--accent);
-  text-decoration: none;
-  border-radius: var(--radius);
-  font-weight: 500;
-  font-size: 16px;
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-}
-
-.external-link-button:hover {
-  background: var(--code-bg);
-  color: var(--accent-hi);
-  border-color: var(--accent-hi);
-}
-
-.external-link-button:active {
-  opacity: 0.9;
-}
-
-.project-web-link {
-  text-align: center;
-  margin-top: 12px;
-}
-
-.project-web-link .external-link {
-  color: var(--accent);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
-
-.project-web-link .external-link:hover {
-  color: var(--accent-hi);
-  text-decoration: underline;
-}
-
+/* Certificate styles */
 .project-certificate-wrapper {
   margin-top: 32px;
 }
@@ -1498,75 +1479,6 @@ body.page-enter-active {
   aspect-ratio: 4 / 3;
   height: auto;
   object-fit: cover;
-}
-
-@media (max-width: 768px) {
-  .project-web-embed iframe {
-    height: auto;
-    max-height: 75vh;
-    aspect-ratio: 4 / 3;
-  }
-
-  .project-web-preview {
-    min-height: min(75vh, 700px);
-  }
-
-  .project-web-fallback {
-    min-height: min(75vh, 700px);
-  }
-
-  .project-web-fallback-content {
-    padding: 40px 24px;
-  }
-
-  .project-web-fallback-icon {
-    font-size: 48px;
-    margin-bottom: 20px;
-  }
-
-  .project-web-fallback-content h4 {
-    font-size: 20px;
-  }
-
-  .project-web-fallback-content p {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .project-web-embed iframe {
-    height: 500px;
-  }
-
-  .project-web-preview {
-    min-height: 500px;
-  }
-
-  .project-web-fallback {
-    min-height: 500px;
-  }
-
-  .project-web-fallback-content {
-    padding: 32px 20px;
-  }
-
-  .project-web-fallback-icon {
-    font-size: 40px;
-    margin-bottom: 16px;
-  }
-
-  .project-web-fallback-content h4 {
-    font-size: 18px;
-  }
-
-  .project-web-fallback-content p {
-    font-size: 13px;
-  }
-
-  .external-link-button {
-    padding: 10px 24px;
-    font-size: 14px;
-  }
 }
 
 /* PDF Lightbox */

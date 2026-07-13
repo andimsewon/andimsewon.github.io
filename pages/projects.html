@@ -8,7 +8,7 @@ alternate_en: https://andimsewon.github.io/projects.html
 alternate_ko: https://andimsewon.github.io/ko/projects.html
 og_title: "Projects | Sewon Kim"
 og_description: "Selected Projects - Sewon Kim's Academic Portfolio"
-og_image: "{{ site.url }}{{ site.profile_image_path }}?v={{ site.profile_image_version }}"
+og_image_profile: true
 og_url: https://andimsewon.github.io/projects.html
 skip_id: projects
 permalink: /projects.html
@@ -24,6 +24,54 @@ json_ld: |
         <p class="lead mb-48">A selection of projects spanning AI, natural language processing, computer vision, IoT systems, and full‑stack development. Each project demonstrates careful problem formulation, empirical evaluation, and practical deployment considerations with emphasis on real-world applicability.</p>
       </div>
       <div class="content-wrapper">
+        <a href="heritage-monitoring-project.html" class="project-card">
+          <div class="project-card-visual">
+            <img src="assets/heritage-monitoring-project/main.jpeg" alt="Heritage-LLaVA" class="project-card-image" loading="lazy" decoding="async" width="4" height="3">
+          </div>
+          <div class="project-card-content">
+            <span class="project-card-category">Full-Stack Development & AI</span>
+            <h3 class="project-card-title">Heritage-LLaVA: Multimodal Damage Detection for Cultural Heritage</h3>
+            <p class="project-card-description">Multimodal damage detection for cultural heritage, built with the Korea Heritage Service. A cross-platform field-survey system (Flutter + FastAPI + PyTorch/DETR) with real-time Firebase sync; the damage-detection model is in operational use at the agency.</p>
+            <div class="project-card-metrics">
+              <span class="metric-badge">Flutter</span>
+              <span class="metric-badge">FastAPI</span>
+              <span class="metric-badge">DETR</span>
+            </div>
+            <div class="project-card-date caption mb-8">2024–2025 | Cultural Heritage Digital Transformation Project</div>
+            <div class="project-card-read-more">KEEP READING ></div>
+          </div>
+        </a>
+
+        <a href="kg-rag-project.html" class="project-card">
+          <div class="project-card-content">
+            <span class="project-card-category">AI & NLP Research</span>
+            <h3 class="project-card-title">KG-RAG: Knowledge-Graph-Augmented Retrieval</h3>
+            <p class="project-card-description">Knowledge-graph-augmented retrieval-augmented generation for multi-hop question answering, at the Natural Language Learning Lab (Advisor: Prof. Hyun-je Song).</p>
+            <div class="project-card-metrics">
+              <span class="metric-badge">PyTorch</span>
+              <span class="metric-badge">LangChain</span>
+              <span class="metric-badge">RAG</span>
+            </div>
+            <div class="project-card-date caption mb-8">2025 | Natural Language Learning Lab, Jeonbuk National University</div>
+            <div class="project-card-read-more">KEEP READING ></div>
+          </div>
+        </a>
+
+        <a href="atio-knowledge-base-project.html" class="project-card">
+          <div class="project-card-content">
+            <span class="project-card-category">AI Systems</span>
+            <h3 class="project-card-title">ATIO Knowledge Base — FAO (UN)</h3>
+            <p class="project-card-description">Semantic search and LLM-assisted retrieval over FAO's agrifood innovation knowledge base — 5,744 innovation records indexed, ongoing.</p>
+            <div class="project-card-metrics">
+              <span class="metric-badge">Solr</span>
+              <span class="metric-badge">Milvus</span>
+              <span class="metric-badge">Vertex AI</span>
+            </div>
+            <div class="project-card-date caption mb-8">2026 | FAO Office of Innovation, Innovation Accelerator</div>
+            <div class="project-card-read-more">KEEP READING ></div>
+          </div>
+        </a>
+
         <a href="waggle-net-project.html" class="project-card">
           <div class="project-card-visual">
             <picture>
@@ -34,7 +82,7 @@ json_ld: |
           <div class="project-card-content">
             <span class="project-card-category">IoT & Embedded Systems</span>
             <h3 class="project-card-title">WaggleNet: A LoRa and MQTT-Based Monitoring System for Internal and External Beehive Conditions</h3>
-            <p class="project-card-description">Developed a cost‑effective, scalable IoT monitoring system for smart beekeeping. WaggleNet integrates Wi‑Fi LoRa 32 (V3) modules and a LoRa–MQTT hybrid architecture to capture internal and external environmental conditions in real time.</p>
+            <p class="project-card-description">Dual-scope LoRa–MQTT sensing for beehive monitoring — internal hive conditions and external environment captured simultaneously. 100% packet delivery at 110 m; $25–30 per node, 70–85% below commercial systems.</p>
             <div class="project-card-metrics">
               <span class="metric-badge">LoRa</span>
               <span class="metric-badge">MQTT</span>
@@ -44,87 +92,25 @@ json_ld: |
             <div class="project-card-read-more">KEEP READING ></div>
           </div>
         </a>
-        
-        <a href="heritage-monitoring-project.html" class="project-card">
-          <div class="project-card-visual">
-            <img src="assets/heritage-monitoring-project/main.jpeg" alt="Heritage Monitoring and Registration System" class="project-card-image" loading="lazy" decoding="async" width="4" height="3">
-          </div>
-          <div class="project-card-content">
-            <span class="project-card-category">Full-Stack Development & AI</span>
-            <h3 class="project-card-title">Heritage Monitoring and Registration System</h3>
-            <p class="project-card-description">A cross-platform field-survey system integrating national heritage data, AI-based damage detection, and real-time cloud synchronization. Built with Flutter (Web/Android/iOS) and a FastAPI backend, the system integrates the National Heritage Service Open API, PyTorch-based damage detection, and Firebase real-time databases to support complete end-to-end survey and registration tasks.</p>
-            <div class="project-card-metrics">
-              <span class="metric-badge">Flutter</span>
-              <span class="metric-badge">FastAPI</span>
-              <span class="metric-badge">Firebase</span>
-            </div>
-            <div class="project-card-date caption mb-8">2024–2025 | Cultural Heritage Digital Transformation Project</div>
-            <div class="project-card-read-more">KEEP READING ></div>
-          </div>
-        </a>
-        
-        <a href="gaia-project.html" class="project-card">
-          <div class="project-card-visual">
-            <picture>
-              <source srcset="assets/gaia-project/main.webp" type="image/webp">
-              <img src="assets/gaia-project/main.png" alt="GAIA Project" class="project-card-image" loading="lazy" decoding="async" width="4" height="3">
-            </picture>
-          </div>
-          <div class="project-card-content">
-            <span class="project-card-category">AI & Data Analysis</span>
-            <h3 class="project-card-title">AI-Based Urban Air Impact Analysis System for Factory and Power Plant Emissions (GAIA Project)</h3>
-            <p class="project-card-description">This project aims to analyze and predict the urban air quality impact of industrial and power plant emissions using artificial intelligence. Based on seven years (2018–2024) of time-series data collected from the national Tele-Monitoring System (TMS), the team developed a hybrid prediction model combining the AERMOD physical diffusion model with a Transformer-based deep learning architecture.</p>
-            <div class="project-card-metrics">
-              <span class="metric-badge">Transformer</span>
-              <span class="metric-badge">AERMOD</span>
-              <span class="metric-badge">Time-Series</span>
-            </div>
-            <div class="project-card-date caption mb-8">Spring 2025 | Capstone Design Competition, Jeonbuk National University</div>
-            <div class="project-card-read-more">KEEP READING ></div>
-          </div>
-        </a>
-        
-        <a href="guardians-of-farm-project.html" class="project-card">
-          <div class="project-card-visual">
-            <picture>
-              <source srcset="assets/guardians-of-farm-project/main.webp" type="image/webp">
-              <img src="assets/guardians-of-farm-project/main.png" alt="Guardians of Farm Project" class="project-card-image" loading="lazy" decoding="async" width="4" height="3">
-            </picture>
-          </div>
-          <div class="project-card-content">
-            <span class="project-card-category">AI & Computer Vision</span>
-            <h3 class="project-card-title">Crop Quality Assessment Using Image Processing and Artificial Intelligence (Guardians of Farm Project)</h3>
-            <p class="project-card-description">Built an AI system for crop quality assessment in smart‑farm settings. Transitioned from unsupervised visual grounding (GroundingDINO + SAM) to a high‑performance supervised pipeline based on YOLOv8 for reliable disease detection and leaf‑health evaluation.</p>
-            <div class="project-card-metrics">
-              <span class="metric-badge">YOLOv8</span>
-              <span class="metric-badge">Vision</span>
-              <span class="metric-badge">Inference</span>
-            </div>
-            <div class="project-card-date caption mb-8">Fall 2024 | Capstone Design Competition, Jeonbuk National University</div>
-            <div class="project-card-read-more">KEEP READING ></div>
-          </div>
-        </a>
-        
-        <a href="sangsang-storyplay-project.html" class="project-card">
-          <div class="project-card-visual">
-            <img src="assets/sangsang-storyplay-project/main.png" alt="Sangsang StoryPlay Project" class="project-card-image" loading="lazy" decoding="async" width="4" height="3">
-          </div>
-          <div class="project-card-content">
-            <span class="project-card-category">AI & EdTech</span>
-            <h3 class="project-card-title">Sangsang StoryPlay – AI-Driven Interactive Storytelling Platform for Children</h3>
-            <p class="project-card-description">Designed an interactive AI storytelling platform that integrates child speech recognition, generative story creation, and developmental feedback. The system turns passive story consumption into a child‑led, voice‑driven experience.</p>
-            <div class="project-card-metrics">
-              <span class="metric-badge">ASR</span>
-              <span class="metric-badge">LLM</span>
-              <span class="metric-badge">EdTech</span>
-            </div>
-            <div class="project-card-date caption mb-8">2025 | Jeju National University Tech Business Mode (TBM) Startup Camp — Grand Prize</div>
-            <div class="project-card-read-more">KEEP READING ></div>
-          </div>
-        </a>
+      </div>
+
+      <div class="content-wrapper">
+        <div class="section-title">Other Projects</div>
+        <ul class="other-projects-list">
+          <li>
+            <a href="gaia-project.html">AI-Based Urban Air Impact Analysis System for Factory and Power Plant Emissions (GAIA Project)</a>
+            <span class="other-project-meta">Spring 2025 · Capstone Design Competition</span>
+          </li>
+          <li>
+            <a href="guardians-of-farm-project.html">Crop Quality Assessment Using Image Processing and Artificial Intelligence (Guardians of Farm Project)</a>
+            <span class="other-project-meta">Fall 2024 · Capstone Design Competition</span>
+          </li>
+          <li>
+            <a href="sangsang-storyplay-project.html">Sangsang StoryPlay – AI-Driven Interactive Storytelling Platform for Children</a>
+            <span class="other-project-meta">2025 · TBM Startup Camp, Grand Prize</span>
+          </li>
+        </ul>
       </div>
     </div>
   </main>
   <!-- moved -->
-
-  

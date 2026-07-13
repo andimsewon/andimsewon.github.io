@@ -38,7 +38,9 @@
   <link rel="dns-prefetch" href="https://github.com">
   <link rel="dns-prefetch" href="https://www.linkedin.com">
 
-  {% if page.preload_image %}
+  {% if page.preload_profile_image %}
+  <link rel="preload" as="image" href="{{ site.profile_image_path }}?v={{ site.profile_image_version }}" fetchpriority="high">
+  {% elsif page.preload_image %}
   <link rel="preload" as="image" href="{{ page.preload_image }}" fetchpriority="high">
   {% endif %}
 
@@ -48,7 +50,11 @@
   {% if page.og_description or page.description %}
   <meta property="og:description" content="{{ page.og_description | default: page.description }}">
   {% endif %}
-  {% if page.og_image %}
+  {% if page.og_image_profile %}
+  <meta property="og:image" content="{{ site.url }}{{ site.profile_image_path }}?v={{ site.profile_image_version }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ site.url }}{{ site.profile_image_path }}?v={{ site.profile_image_version }}">
+  {% elsif page.og_image %}
   <meta property="og:image" content="{{ page.og_image }}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="{{ page.og_image }}">

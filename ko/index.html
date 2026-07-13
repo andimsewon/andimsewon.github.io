@@ -9,7 +9,7 @@ alternate_en: https://andimsewon.github.io/
 alternate_default: https://andimsewon.github.io/
 og_image: https://andimsewon.github.io/assets/og.png?v=6
 og_url: https://andimsewon.github.io/ko/
-preload_image: "{{ site.profile_image_path }}?v={{ site.profile_image_version }}"
+preload_profile_image: true
 skip_id: main
 json_ld: |
   {
@@ -38,21 +38,16 @@ json_ld: |
 
         <div class="credential-strip">
           <div class="credential-item">
-            <div class="credential-label">Preprint</div>
-            <div class="credential-value">arXiv:2512.07408</div>
-          </div>
-          <div class="credential-item">
-            <div class="credential-label">Patent</div>
-            <!-- TODO: 저장소 전체를 검색해도 특허 출원 관련 내용이 전혀 없습니다.
-                 게시 전 실제 출원 상태/기관을 확인한 뒤 아래 줄을 채워주세요. -->
-            <div class="credential-value">—</div>
+            <div class="credential-label">IP</div>
+            <div class="credential-value">특허 출원 · SW 저작권 등록</div>
           </div>
           <div class="credential-item">
             <div class="credential-label">Deployed</div>
-            <!-- TODO: heritage-monitoring-project.html에는 "production-ready"라는 표현만 있고
-                 실제 배포 확인이나 "LLaVA" 언급은 없습니다. 게시 전 정확한 문구를 확인한 뒤
-                 아래 줄을 채워주세요. -->
-            <div class="credential-value">—</div>
+            <div class="credential-value">국가유산청 (실제 운영 중)</div>
+          </div>
+          <div class="credential-item">
+            <div class="credential-label">Preprint</div>
+            <div class="credential-value">arXiv:2512.07408</div>
           </div>
         </div>
 
@@ -64,10 +59,6 @@ json_ld: |
           <a href="https://www.linkedin.com/in/sewon-kim-742a492a6/" target="_blank" rel="me noopener noreferrer">LinkedIn</a>
           <span class="hero-links-sep">·</span>
           <a href="/Sewon_Kim_CV.pdf" target="_blank" rel="noopener noreferrer">이력서 (PDF)</a>
-          <span class="hero-links-sep">·</span>
-          <!-- TODO: 이 저장소 어디에도 Google Scholar 프로필 URL이 없습니다. 실제 URL을 추가한 뒤
-               아래 span을 <a href="...">로 바꿔주세요. -->
-          <span class="hero-links-placeholder">Google Scholar</span>
         </p>
       </div>
 
@@ -76,6 +67,81 @@ json_ld: |
       </div>
     </div>
   </main>
+
+  <!-- Selected Work -->
+  <section class="page-section">
+    <div class="container">
+      <div class="content-wrapper">
+        <div class="section-title">주요 프로젝트</div>
+        <div class="work-list">
+
+          <a href="/ko/heritage-monitoring-project.html" class="work-item">
+            <div class="ledger">
+              <div class="ledger-meta">
+                <span class="work-year">2025</span>
+                <span class="work-type">연구 · 배포</span>
+              </div>
+              <div class="ledger-content">
+                <h3 class="work-title">Heritage-LLaVA</h3>
+                <p class="work-description">국가유산청과 함께 구축한 문화유산 손상 탐지 멀티모달 시스템입니다.</p>
+                <p class="work-result">→ F1 0.89 · 특허 출원 · SW 저작권 등록 · 기관에서 실제 운영 중</p>
+                <!-- TODO: confirm training set size before publishing -->
+                <p class="work-stack">스택: <span class="todo">TODO_STACK</span></p>
+              </div>
+            </div>
+          </a>
+
+          <a href="/ko/kg-rag-project.html" class="work-item">
+            <div class="ledger">
+              <div class="ledger-meta">
+                <span class="work-year">2025</span>
+                <span class="work-type">연구</span>
+              </div>
+              <div class="ledger-content">
+                <h3 class="work-title">KG-RAG</h3>
+                <p class="work-description">전북대학교 Natural Language Learning Lab(지도교수: 송현제)에서 진행한, 다중 홉 질의응답을 위한 지식그래프 기반 검색 증강 생성(RAG) 연구입니다.</p>
+                <p class="work-result">→ 지식그래프를 활용한 멀티홉 추론으로 LLM 출력의 사실적 근거를 강화</p>
+                <!-- TODO: add benchmark result once available -->
+                <p class="work-stack">스택: PyTorch · LangChain</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="/ko/atio-knowledge-base-project.html" class="work-item">
+            <div class="ledger">
+              <div class="ledger-meta">
+                <span class="work-year">2026</span>
+                <span class="work-type">시스템</span>
+              </div>
+              <div class="ledger-content">
+                <h3 class="work-title">ATIO Knowledge Base — FAO (UN)</h3>
+                <p class="work-description">FAO의 농식품 혁신 지식베이스에 대한 시맨틱 검색과 LLM 기반 검색 지원 시스템입니다.</p>
+                <p class="work-result">→ 혁신 사례 5,744건 색인 완료 · 진행 중</p>
+                <!-- TODO: confirm with supervisor what is safe to publish -->
+                <p class="work-stack">스택: Drupal 10 · Solr · Milvus · Gemini (Vertex AI) · Python / GCP</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="/ko/waggle-net-project.html" class="work-item">
+            <div class="ledger">
+              <div class="ledger-meta">
+                <span class="work-year">2025</span>
+                <span class="work-type">연구 · IoT</span>
+              </div>
+              <div class="ledger-content">
+                <h3 class="work-title">WaggleNet</h3>
+                <p class="work-description">듀얼 스코프 LoRa–MQTT 벌통 모니터링 시스템 — 벌통 내부 환경과 외부 환경을 동시에 측정합니다 (Purdue University).</p>
+                <p class="work-result">→ 110m 거리에서 패킷 전송률 100% · 노드당 $25–30 (상용 제품 대비 70–85% 절감) · arXiv:2512.07408</p>
+                <p class="work-stack">스택: ESP32 · LoRa (SX1276) · MQTT · Flask · SQLite · Flutter</p>
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="page-section">
     <div class="container">

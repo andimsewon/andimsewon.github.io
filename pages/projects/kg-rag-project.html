@@ -1,0 +1,70 @@
+---
+layout: default
+lang: en
+title: "KG-RAG: Knowledge-Graph-Augmented Retrieval | Sewon Kim"
+description: "Knowledge-graph-augmented retrieval-augmented generation for multi-hop question answering - Sewon Kim's Academic Portfolio"
+canonical: https://andimsewon.github.io/kg-rag-project.html
+alternate_en: https://andimsewon.github.io/kg-rag-project.html
+alternate_ko: https://andimsewon.github.io/ko/kg-rag-project.html
+og_title: "KG-RAG: Knowledge-Graph-Augmented Retrieval | Sewon Kim"
+og_description: "Knowledge-graph-augmented retrieval-augmented generation for multi-hop question answering"
+og_image_profile: true
+og_url: https://andimsewon.github.io/kg-rag-project.html
+skip_id: project
+permalink: /kg-rag-project.html
+json_ld: |
+  {"@context":"https://schema.org","@type":"WebPage","name":"KG-RAG: Knowledge-Graph-Augmented Retrieval | Sewon Kim","url":"https://andimsewon.github.io/kg-rag-project.html"}
+---
+
+  <!-- Project Detail Section -->
+  <main id="project" class="page-section">
+    <div class="container">
+      <p class="back-link"><a href="projects.html" aria-label="Back to all projects">← Back to Projects</a></p>
+      <div class="section-header">
+        <h2 class="page-title">KG-RAG: Knowledge-Graph-Augmented Retrieval</h2>
+        <div class="project-card-metrics" aria-label="Technologies">
+          <span class="metric-badge">PyTorch</span>
+          <span class="metric-badge">LangChain</span>
+          <span class="metric-badge">RAG</span>
+        </div>
+      </div>
+      <div class="content-wrapper">
+        <div class="project-item">
+          <div class="project-main-full">
+
+            <h3 class="section-title">Problem</h3>
+            <div class="project-description">
+              <p>Standard retrieval-augmented generation retrieves flat text chunks by embedding similarity alone, which gives large language models little structured relational context. That limits factual accuracy and multi-hop reasoning — questions that require chaining facts across multiple connected entities.</p>
+            </div>
+
+            <h3 class="section-title">Approach</h3>
+            <div class="project-description">
+              <p>Designing and implementing knowledge graph–enhanced retrieval-augmented generation (RAG) architectures to improve factual accuracy and multi-hop reasoning capabilities in large language models, at the Natural Language Learning Lab, Jeonbuk National University (Advisor: Prof. Hyun-je Song).</p>
+              <ul>
+                <li>Developing graph-based retrieval pipelines that integrate structured knowledge (knowledge graphs) with neural embedding spaces, implemented using PyTorch and LangChain frameworks</li>
+                <li>Implementing multi-hop reasoning mechanisms over knowledge graphs to enable complex query answering in domain-specific applications, with focus on improving retrieval precision and model grounding</li>
+                <li>Conducting systematic ablation studies on embedding integration techniques (entity linking, relation extraction, graph embedding methods) to optimize retrieval performance and evaluate trade-offs between accuracy and computational efficiency</li>
+              </ul>
+            </div>
+
+            <h3 class="section-title">Result</h3>
+            <div class="project-description">
+              <p>Multi-hop reasoning over a knowledge graph to improve factual grounding in LLM outputs. A manuscript describing this work — "Knowledge Graph–Enhanced Retrieval-Augmented Generation for Multi-Hop Reasoning in Large Language Models" — is in preparation with the Natural Language Learning Lab.</p>
+              <!-- TODO: add benchmark result once available -->
+            </div>
+
+            <h3 class="section-title">My Role</h3>
+            <div class="project-description">
+              <p>I designed and implemented the knowledge-graph retrieval pipeline and multi-hop reasoning mechanism as an undergraduate researcher under Prof. Hyun-je Song.</p>
+            </div>
+
+            <div class="project-tech">Tech Stack: PyTorch, LangChain</div>
+            <div class="project-links">
+              <a href="publications.html">📄 Publications & Preprints</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- moved -->

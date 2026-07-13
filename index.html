@@ -9,7 +9,7 @@ alternate_ko: https://andimsewon.github.io/ko/
 alternate_default: https://andimsewon.github.io/
 og_image: https://andimsewon.github.io/assets/og.png?v=6
 og_url: https://andimsewon.github.io/
-preload_image: "{{ site.profile_image_path }}?v={{ site.profile_image_version }}"
+preload_profile_image: true
 skip_id: main
 json_ld: |
   {
@@ -39,21 +39,16 @@ json_ld: |
 
         <div class="credential-strip">
           <div class="credential-item">
-            <div class="credential-label">Preprint</div>
-            <div class="credential-value">arXiv:2512.07408</div>
-          </div>
-          <div class="credential-item">
-            <div class="credential-label">Patent</div>
-            <!-- TODO: no patent filing is mentioned anywhere in this repo (verified via repo-wide search).
-                 Confirm the real filing status/office before publishing, then replace the line below. -->
-            <div class="credential-value">—</div>
+            <div class="credential-label">IP</div>
+            <div class="credential-value">Patent filed · SW copyright registered</div>
           </div>
           <div class="credential-item">
             <div class="credential-label">Deployed</div>
-            <!-- TODO: heritage-monitoring-project.html describes the workflow as "production-ready" but never
-                 confirms an actual deployment, and never mentions "LLaVA". Confirm exact wording before
-                 publishing, then replace the line below. -->
-            <div class="credential-value">—</div>
+            <div class="credential-value">Korea Heritage Service (in operational use)</div>
+          </div>
+          <div class="credential-item">
+            <div class="credential-label">Preprint</div>
+            <div class="credential-value">arXiv:2512.07408</div>
           </div>
         </div>
 
@@ -65,10 +60,6 @@ json_ld: |
           <a href="https://www.linkedin.com/in/sewon-kim-742a492a6/" target="_blank" rel="me noopener noreferrer">LinkedIn</a>
           <span class="hero-links-sep">·</span>
           <a href="/Sewon_Kim_CV.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
-          <span class="hero-links-sep">·</span>
-          <!-- TODO: no Google Scholar profile URL exists anywhere in this repo. Add the real URL, then
-               turn the span below into an <a href="..."> link. -->
-          <span class="hero-links-placeholder">Google Scholar</span>
         </p>
       </div>
 
@@ -77,6 +68,81 @@ json_ld: |
       </div>
     </div>
   </main>
+
+  <!-- Selected Work -->
+  <section class="page-section">
+    <div class="container">
+      <div class="content-wrapper">
+        <div class="section-title">Selected Work</div>
+        <div class="work-list">
+
+          <a href="heritage-monitoring-project.html" class="work-item">
+            <div class="ledger">
+              <div class="ledger-meta">
+                <span class="work-year">2025</span>
+                <span class="work-type">Research · Deployed</span>
+              </div>
+              <div class="ledger-content">
+                <h3 class="work-title">Heritage-LLaVA</h3>
+                <p class="work-description">Multimodal damage detection for cultural heritage, built with the Korea Heritage Service.</p>
+                <p class="work-result">→ F1 0.89 · Patent filed · SW copyright registered · In operational use at the agency</p>
+                <!-- TODO: confirm training set size before publishing -->
+                <p class="work-stack">Stack: <span class="todo">TODO_STACK</span></p>
+              </div>
+            </div>
+          </a>
+
+          <a href="kg-rag-project.html" class="work-item">
+            <div class="ledger">
+              <div class="ledger-meta">
+                <span class="work-year">2025</span>
+                <span class="work-type">Research</span>
+              </div>
+              <div class="ledger-content">
+                <h3 class="work-title">KG-RAG</h3>
+                <p class="work-description">Knowledge-graph-augmented retrieval for multi-hop question answering, at the Natural Language Learning Lab (Advisor: Prof. Hyun-je Song).</p>
+                <p class="work-result">→ Multi-hop reasoning over a knowledge graph to improve factual grounding in LLM outputs</p>
+                <!-- TODO: add benchmark result once available -->
+                <p class="work-stack">Stack: PyTorch · LangChain</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="atio-knowledge-base-project.html" class="work-item">
+            <div class="ledger">
+              <div class="ledger-meta">
+                <span class="work-year">2026</span>
+                <span class="work-type">System</span>
+              </div>
+              <div class="ledger-content">
+                <h3 class="work-title">ATIO Knowledge Base — FAO (UN)</h3>
+                <p class="work-description">Semantic search and LLM-assisted retrieval over FAO's agrifood innovation knowledge base.</p>
+                <p class="work-result">→ 5,744 innovation records indexed · Ongoing</p>
+                <!-- TODO: confirm with supervisor what is safe to publish -->
+                <p class="work-stack">Stack: Drupal 10 · Solr · Milvus · Gemini (Vertex AI) · Python / GCP</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="waggle-net-project.html" class="work-item">
+            <div class="ledger">
+              <div class="ledger-meta">
+                <span class="work-year">2025</span>
+                <span class="work-type">Research · IoT</span>
+              </div>
+              <div class="ledger-content">
+                <h3 class="work-title">WaggleNet</h3>
+                <p class="work-description">Dual-scope LoRa–MQTT sensing for beehive monitoring — internal hive conditions and external environment captured simultaneously (Purdue University).</p>
+                <p class="work-result">→ 100% packet delivery at 110 m · $25–30 per node (70–85% below commercial systems) · arXiv:2512.07408</p>
+                <p class="work-stack">Stack: ESP32 · LoRa (SX1276) · MQTT · Flask · SQLite · Flutter</p>
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Overview Section -->
   <section class="page-section">

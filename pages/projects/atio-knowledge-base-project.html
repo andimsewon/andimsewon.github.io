@@ -1,0 +1,64 @@
+---
+layout: default
+lang: en
+title: "ATIO Knowledge Base — FAO (UN) | Sewon Kim"
+description: "Semantic search and LLM-assisted retrieval over FAO's agrifood innovation knowledge base - Sewon Kim's Academic Portfolio"
+canonical: https://andimsewon.github.io/atio-knowledge-base-project.html
+alternate_en: https://andimsewon.github.io/atio-knowledge-base-project.html
+alternate_ko: https://andimsewon.github.io/ko/atio-knowledge-base-project.html
+og_title: "ATIO Knowledge Base — FAO (UN) | Sewon Kim"
+og_description: "Semantic search and LLM-assisted retrieval over FAO's agrifood innovation knowledge base"
+og_image_profile: true
+og_url: https://andimsewon.github.io/atio-knowledge-base-project.html
+skip_id: project
+permalink: /atio-knowledge-base-project.html
+json_ld: |
+  {"@context":"https://schema.org","@type":"WebPage","name":"ATIO Knowledge Base — FAO (UN) | Sewon Kim","url":"https://andimsewon.github.io/atio-knowledge-base-project.html"}
+---
+
+  <!-- Project Detail Section -->
+  <main id="project" class="page-section">
+    <div class="container">
+      <p class="back-link"><a href="projects.html" aria-label="Back to all projects">← Back to Projects</a></p>
+      <div class="section-header">
+        <h2 class="page-title">ATIO Knowledge Base — FAO (UN)</h2>
+        <div class="project-card-metrics" aria-label="Technologies">
+          <span class="metric-badge">Drupal 10</span>
+          <span class="metric-badge">Solr</span>
+          <span class="metric-badge">Milvus</span>
+          <span class="metric-badge">Vertex AI</span>
+        </div>
+      </div>
+      <!-- TODO: confirm with supervisor what is safe to publish about this project before this page goes live -->
+      <div class="content-wrapper">
+        <div class="project-item">
+          <div class="project-main-full">
+
+            <h3 class="section-title">Problem</h3>
+            <div class="project-description">
+              <p>FAO's Agrifood Technology and Innovation Outlook (ATIO) knowledge base holds thousands of agrifood innovation records. Keyword search alone makes it hard for policy and innovation teams to find conceptually related records that don't share exact terms.</p>
+            </div>
+
+            <h3 class="section-title">Approach</h3>
+            <div class="project-description">
+              <p>Building semantic search and LLM-assisted retrieval on top of the existing Drupal 10 content backend: Solr handles structured/faceted search, Milvus stores vector embeddings for semantic similarity search, and Gemini (via Vertex AI) provides LLM-assisted retrieval and summarization, orchestrated with Python on Google Cloud Platform.</p>
+            </div>
+
+            <h3 class="section-title">Result</h3>
+            <div class="project-description">
+              <p>5,744 innovation records indexed. The system is ongoing — an active project at an intergovernmental organization, still in development.</p>
+              <!-- TODO: confirm with supervisor what is safe to publish -->
+            </div>
+
+            <h3 class="section-title">My Role</h3>
+            <div class="project-description">
+              <p>I am building the semantic search and retrieval pipeline as part of the Innovation Accelerator team at FAO's Office of Innovation.</p>
+            </div>
+
+            <div class="project-tech">Tech Stack: Drupal 10, Solr, Milvus, Gemini (Vertex AI), Python, Google Cloud Platform</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- moved -->

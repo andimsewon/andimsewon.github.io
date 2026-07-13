@@ -8,20 +8,68 @@ alternate_ko: https://andimsewon.github.io/ko/projects.html
 alternate_en: https://andimsewon.github.io/projects.html
 og_title: "프로젝트 | 김세원"
 og_description: "선정 프로젝트 - 김세원 포트폴리오"
-og_image: "{{ site.url }}{{ site.profile_image_path }}?v={{ site.profile_image_version }}"
+og_image_profile: true
 og_url: https://andimsewon.github.io/ko/projects.html
 skip_id: projects
 permalink: /ko/projects.html
 json_ld: |
   {"@context":"https://schema.org","@type":"WebPage","name":"프로젝트 | 김세원","url":"https://andimsewon.github.io/ko/projects.html"}
 ---
-  
+
   <main id="projects" class="page-section">
     <div class="container">
       <div class="section-header">
         <h1 class="page-title">선정 프로젝트</h1>
       </div>
       <div class="content-wrapper">
+        <a href="/ko/heritage-monitoring-project.html" class="project-card">
+          <div class="project-card-visual">
+            <img src="../assets/heritage-monitoring-project/main.jpeg" alt="Heritage-LLaVA" class="project-card-image" loading="lazy" decoding="async" width="4" height="3">
+          </div>
+          <div class="project-card-content">
+            <span class="project-card-category">풀스택 개발 & AI</span>
+            <h3 class="project-card-title">Heritage-LLaVA: 문화유산 손상 탐지 멀티모달 시스템</h3>
+            <p class="project-card-description">국가유산청과 함께 구축한 문화유산 손상 탐지 멀티모달 시스템입니다. Flutter + FastAPI + PyTorch/DETR 기반 크로스플랫폼 현장 조사 시스템으로, Firebase 실시간 동기화를 갖췄으며 손상 탐지 모델은 국가유산청에서 실제 운영 중입니다.</p>
+            <div class="project-card-metrics">
+              <span class="metric-badge">Flutter</span>
+              <span class="metric-badge">FastAPI</span>
+              <span class="metric-badge">DETR</span>
+            </div>
+            <div class="project-card-date">2024-2025, 문화재 디지털 전환 프로젝트</div>
+            <div class="project-card-read-more">더 보기 ></div>
+          </div>
+        </a>
+
+        <a href="/ko/kg-rag-project.html" class="project-card">
+          <div class="project-card-content">
+            <span class="project-card-category">AI & NLP 연구</span>
+            <h3 class="project-card-title">KG-RAG: 지식그래프 기반 검색 증강 생성</h3>
+            <p class="project-card-description">전북대학교 Natural Language Learning Lab(지도교수: 송현제)에서 진행한, 다중 홉 질의응답을 위한 지식그래프 기반 검색 증강 생성 연구입니다.</p>
+            <div class="project-card-metrics">
+              <span class="metric-badge">PyTorch</span>
+              <span class="metric-badge">LangChain</span>
+              <span class="metric-badge">RAG</span>
+            </div>
+            <div class="project-card-date">2025, 전북대학교 Natural Language Learning Lab</div>
+            <div class="project-card-read-more">더 보기 ></div>
+          </div>
+        </a>
+
+        <a href="/ko/atio-knowledge-base-project.html" class="project-card">
+          <div class="project-card-content">
+            <span class="project-card-category">AI 시스템</span>
+            <h3 class="project-card-title">ATIO Knowledge Base — FAO (UN)</h3>
+            <p class="project-card-description">FAO의 농식품 혁신 지식베이스에 대한 시맨틱 검색과 LLM 기반 검색 시스템입니다 — 혁신 사례 5,744건 색인, 진행 중.</p>
+            <div class="project-card-metrics">
+              <span class="metric-badge">Solr</span>
+              <span class="metric-badge">Milvus</span>
+              <span class="metric-badge">Vertex AI</span>
+            </div>
+            <div class="project-card-date">2026, FAO Office of Innovation, Innovation Accelerator</div>
+            <div class="project-card-read-more">더 보기 ></div>
+          </div>
+        </a>
+
         <a href="/ko/waggle-net-project.html" class="project-card">
           <div class="project-card-visual">
             <picture>
@@ -32,7 +80,7 @@ json_ld: |
           <div class="project-card-content">
             <span class="project-card-category">IoT & 임베디드 시스템</span>
             <h3 class="project-card-title">WaggleNet – LoRa 및 MQTT 기반 내부·외부 벌통 환경 모니터링 시스템</h3>
-            <p class="project-card-description">스마트 양봉 환경을 위한 저비용·확장형 IoT 모니터링 시스템을 개발했습니다. Wi‑Fi LoRa 32 (V3) 모듈과 LoRa–MQTT 하이브리드 아키텍처를 통합해 벌통 내·외부 환경을 실시간으로 수집·전송합니다.</p>
+            <p class="project-card-description">듀얼 스코프 LoRa–MQTT 벌통 모니터링 시스템 — 벌통 내부·외부 환경을 동시에 측정합니다. 110m 거리에서 패킷 전송률 100%, 노드당 $25–30로 상용 제품 대비 70–85% 절감.</p>
             <div class="project-card-metrics">
               <span class="metric-badge">LoRa</span>
               <span class="metric-badge">MQTT</span>
@@ -42,87 +90,25 @@ json_ld: |
             <div class="project-card-read-more">더 보기 ></div>
           </div>
         </a>
-        
-        <a href="/ko/heritage-monitoring-project.html" class="project-card">
-          <div class="project-card-visual">
-            <img src="../assets/heritage-monitoring-project/main.jpeg" alt="국가유산 모니터링·조사·등록 시스템" class="project-card-image" loading="lazy" decoding="async" width="4" height="3">
-          </div>
-          <div class="project-card-content">
-            <span class="project-card-category">풀스택 개발 & AI</span>
-            <h3 class="project-card-title">국가유산 모니터링·조사·등록 시스템</h3>
-            <p class="project-card-description">국가유산청 Open API, AI 손상 탐지, Firebase 실시간 동기화를 통합한 크로스플랫폼 현장 조사 시스템. Flutter(Web/Android/iOS) 기반 프론트엔드와 FastAPI 백엔드, PyTorch 손상 탐지 모델, Firebase 실시간 데이터베이스를 하나의 워크플로우로 통합하여 구축하였다.</p>
-            <div class="project-card-metrics">
-              <span class="metric-badge">Flutter</span>
-              <span class="metric-badge">FastAPI</span>
-              <span class="metric-badge">Firebase</span>
-            </div>
-            <div class="project-card-date">2024-2025, 문화재 디지털 전환 프로젝트</div>
-            <div class="project-card-read-more">더 보기 ></div>
-          </div>
-        </a>
-        
-        <a href="/ko/gaia-project.html" class="project-card">
-          <div class="project-card-visual">
-            <picture>
-              <source srcset="../assets/gaia-project/main.webp" type="image/webp">
-              <img src="../assets/gaia-project/main.png" alt="GAIA 프로젝트" class="project-card-image" loading="lazy" decoding="async" width="4" height="3">
-            </picture>
-          </div>
-          <div class="project-card-content">
-            <span class="project-card-category">AI & 데이터 분석</span>
-            <h3 class="project-card-title">AI 기반 공장 및 발전소 배출가스의 도시 대기 영향 분석 시스템 (GAIA Project)</h3>
-            <p class="project-card-description">이 프로젝트는 발전소와 공장에서 배출되는 대기오염 물질이 도시 대기질에 미치는 영향을 인공지능으로 분석하기 위해 수행한 캡스톤디자인 연구이다. 국가 대기오염 관측망(TMS)에서 수집된 7년간(2018–2024)의 시계열 데이터를 기반으로, AERMOD 물리 확산 모델과 Transformer 기반 딥러닝 모델을 융합한 하이브리드 예측 시스템을 구축하였다.</p>
-            <div class="project-card-metrics">
-              <span class="metric-badge">Transformer</span>
-              <span class="metric-badge">AERMOD</span>
-              <span class="metric-badge">Time-Series</span>
-            </div>
-            <div class="project-card-date">2025년 1학기, 캡스톤 디자인 경진대회, 전북대학교</div>
-            <div class="project-card-read-more">더 보기 ></div>
-          </div>
-        </a>
-        
-        <a href="/ko/guardians-of-farm-project.html" class="project-card">
-          <div class="project-card-visual">
-            <picture>
-              <source srcset="../assets/guardians-of-farm-project/main.webp" type="image/webp">
-              <img src="../assets/guardians-of-farm-project/main.png" alt="Guardians of Farm 프로젝트" class="project-card-image" loading="lazy" decoding="async" width="4" height="3">
-            </picture>
-          </div>
-          <div class="project-card-content">
-            <span class="project-card-category">AI & 컴퓨터 비전</span>
-            <h3 class="project-card-title">작물 품질 상태 판별: 이미지 프로세싱 및 인공지능 기술 (Guardians of Farm Project)</h3>
-            <p class="project-card-description">스마트팜 환경에서 작물 품질을 평가하는 AI 시스템을 구축했습니다. 비지도 시각 그라운딩(GroundingDINO + SAM)에서 YOLOv8 기반 지도 파이프라인으로 전환하여 질병 탐지와 엽면 상태 평가의 신뢰성을 높였습니다.</p>
-            <div class="project-card-metrics">
-              <span class="metric-badge">YOLOv8</span>
-              <span class="metric-badge">Vision</span>
-              <span class="metric-badge">Inference</span>
-            </div>
-            <div class="project-card-date">2024년 2학기, 캡스톤 디자인 경진대회, 전북대학교</div>
-            <div class="project-card-read-more">더 보기 ></div>
-          </div>
-        </a>
-        
-        <a href="/ko/sangsang-storyplay-project.html" class="project-card">
-          <div class="project-card-visual">
-            <img src="../assets/sangsang-storyplay-project/main.png" alt="상상의 나래팡 프로젝트" class="project-card-image" loading="lazy" decoding="async" width="4" height="3">
-          </div>
-          <div class="project-card-content">
-            <span class="project-card-category">AI & 에듀테크</span>
-            <h3 class="project-card-title">상상의 나래팡 – AI 기반 창의적 동화 생성·역할놀이 플랫폼</h3>
-            <p class="project-card-description">아동 음성 인식, 생성형 스토리 생성, 발달 피드백을 통합한 인터랙티브 스토리텔링 플랫폼을 설계했습니다. 수동적 청취 중심의 동화를 아이 주도·음성 상호작용 기반의 경험으로 전환합니다.</p>
-            <div class="project-card-metrics">
-              <span class="metric-badge">ASR</span>
-              <span class="metric-badge">LLM</span>
-              <span class="metric-badge">EdTech</span>
-            </div>
-            <div class="project-card-date">2025, 제주대학교 Tech Business Mode(TBM) 창업캠프 대상</div>
-            <div class="project-card-read-more">더 보기 ></div>
-          </div>
-        </a>
+      </div>
+
+      <div class="content-wrapper">
+        <div class="section-title">기타 프로젝트</div>
+        <ul class="other-projects-list">
+          <li>
+            <a href="/ko/gaia-project.html">AI 기반 공장 및 발전소 배출가스의 도시 대기 영향 분석 시스템 (GAIA Project)</a>
+            <span class="other-project-meta">2025년 1학기 · 캡스톤 디자인 경진대회</span>
+          </li>
+          <li>
+            <a href="/ko/guardians-of-farm-project.html">작물 품질 상태 판별: 이미지 프로세싱 및 인공지능 기술 (Guardians of Farm Project)</a>
+            <span class="other-project-meta">2024년 2학기 · 캡스톤 디자인 경진대회</span>
+          </li>
+          <li>
+            <a href="/ko/sangsang-storyplay-project.html">상상의 나래팡 – AI 기반 창의적 동화 생성·역할놀이 플랫폼</a>
+            <span class="other-project-meta">2025 · TBM 창업캠프 대상</span>
+          </li>
+        </ul>
       </div>
     </div>
   </main>
   <!-- moved -->
-
-  
