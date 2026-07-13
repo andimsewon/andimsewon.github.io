@@ -358,3 +358,155 @@
     } catch (_) {}
   } catch (_) {}
 })();
+
+// Interactive: spotlight background following cursor (subtle, desktop only)
+(function () {
+  try {
+    var prefersReduced = false;
+    try { prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (_) {}
+    var coarse = false;
+    try { coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches; } catch (_) {}
+    if (prefersReduced || coarse) return;
+
+    var overlay = document.createElement('div');
+    overlay.className = 'spotlight-overlay';
+    // Insert early so it sits under content but above bg
+    var target = document.body;
+    if (target.firstChild) target.insertBefore(overlay, target.firstChild); else target.appendChild(overlay);
+
+    var x = -1000, y = -1000, visible = false, raf = null;
+    function loop() {
+      raf = null;
+      try {
+        overlay.style.setProperty('--spot-x', x + 'px');
+        overlay.style.setProperty('--spot-y', y + 'px');
+        overlay.style.setProperty('--spot-opacity', visible ? '1' : '0');
+      } catch (_) {}
+    }
+    function schedule() { if (!raf) raf = requestAnimationFrame(loop); }
+
+    window.addEventListener('mousemove', function (e) {
+      visible = true; x = e.clientX; y = e.clientY; schedule();
+    }, { passive: true });
+    window.addEventListener('mouseout', function () { visible = false; schedule(); }, { passive: true });
+  } catch (_) {}
+})();
+
+// Custom cursor (dot + ring) with gentle easing (desktop only)
+(function () {
+  try {
+    var prefersReduced = false;
+    try { prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (_) {}
+    var coarse = false;
+    try { coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches; } catch (_) {}
+    if (prefersReduced || coarse) return;
+
+    var dot = document.createElement('div');
+    var ring = document.createElement('div');
+    dot.className = 'cursor-dot';
+    ring.className = 'cursor-ring';
+    document.body.appendChild(dot);
+    document.body.appendChild(ring);
+
+    var x = 0, y = 0, rx = 0, ry = 0;
+    var show = false;
+    var last = performance.now();
+    function move(t) {
+      var dt = Math.min(1, (t - last) / 16.7); // ~60fps baseline
+      last = t;
+      // Ease ring toward cursor
+      rx += (x - rx) * 0.15 * dt;
+      ry += (y - ry) * 0.15 * dt;
+      dot.style.transform = 'translate(' + x + 'px,' + y + 'px) translate(-50%, -50%)';
+      ring.style.transform = 'translate(' + rx + 'px,' + ry + 'px) translate(-50%, -50%)';
+      requestAnimationFrame(move);
+    }
+    requestAnimationFrame(move);
+
+    window.addEventListener('mousemove', function (e) {
+      x = e.clientX; y = e.clientY;
+      if (!show) { show = true; dot.style.opacity = '1'; ring.style.opacity = '1'; }
+    }, { passive: true });
+
+    // Subtle scale on interactive elements
+    function hoverize(selector) {
+      try {
+        var nodes = document.querySelectorAll(selector);
+        for (var i = 0; i < nodes.length; i++) {
+          (function(n){
+            n.addEventListener('mouseenter', function(){ ring.style.transform += ' scale(0.85)'; });
+            n.addEventListener('mouseleave', function(){ ring.style.transform = ring.style.transform.replace(/\s?scale\([^)]*\)/, ''); });
+          })(nodes[i]);
+        }
+      } catch (_) {}
+    }
+    hoverize('a, button, .quick-link-card, .project-card, .skill-tag, .chip, .contact-icon');
+  } catch (_) {}
+})();
+
+// Magnetic hover effect for small cards/chips (desktop only)
+(function () {
+  try {
+    var prefersReduced = false;
+    try { prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (_) {}
+    var coarse = false;
+    try { coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches; } catch (_) {}
+    if (prefersReduced || coarse) return;
+
+    var maxShift = 8; // px
+    var selectors = ['.chip', '.skill-tag', '.quick-link-card', '.contact-icon'];
+    var nodes = [];
+    try { nodes = document.querySelectorAll(selectors.join(',')); } catch (_) {}
+    for (var i = 0; i < nodes.length; i++) {
+      (function(el){
+        el.classList.add('magnetic');
+        var rect;
+        function onMove(e) {
+          try { rect = el.getBoundingClientRect(); } catch (_) { return; }
+          var cx = rect.left + rect.width/2;
+          var cy = rect.top + rect.height/2;
+          var dx = Math.max(-1, Math.min(1, (e.clientX - cx) / (rect.width/2)));
+          var dy = Math.max(-1, Math.min(1, (e.clientY - cy) / (rect.height/2)));
+          el.style.transform = 'translate(' + (dx*maxShift) + 'px,' + (dy*maxShift) + 'px)';
+        }
+        function reset(){ el.style.transform = ''; }
+        el.addEventListener('mousemove', onMove);
+        el.addEventListener('mouseleave', reset);
+      })(nodes[i]);
+    }
+  } catch (_) {}
+})();
+
+// 3D tilt on project cards (desktop only)
+(function () {
+  try {
+    var prefersReduced = false;
+    try { prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (_) {}
+    var coarse = false;
+    try { coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches; } catch (_) {}
+    if (prefersReduced || coarse) return;
+
+    var cards = [];
+    try { cards = document.querySelectorAll('.project-card'); } catch (_) {}
+    for (var i = 0; i < cards.length; i++) {
+      (function(card){
+        card.classList.add('tilt-active');
+        var hovering = false;
+        function onMove(e){
+          if (!hovering) return;
+          var r; try { r = card.getBoundingClientRect(); } catch (_) { return; }
+          var x = (e.clientX - r.left) / r.width; // 0..1
+          var y = (e.clientY - r.top) / r.height; // 0..1
+          var rotX = (0.5 - y) * 8; // deg
+          var rotY = (x - 0.5) * 10; // deg
+          card.style.transform = 'perspective(900px) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg) translateY(-6px)';
+        }
+        function onEnter(){ hovering = true; }
+        function onLeave(){ hovering = false; card.style.transform = ''; }
+        card.addEventListener('mouseenter', onEnter);
+        card.addEventListener('mousemove', onMove);
+        card.addEventListener('mouseleave', onLeave);
+      })(cards[i]);
+    }
+  } catch (_) {}
+})();

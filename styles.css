@@ -103,6 +103,29 @@ html, body {
   overflow-wrap: break-word;
 }
 
+/* Interactive spotlight overlay following cursor (subtle) */
+.spotlight-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--spot-opacity, 0);
+  transition: opacity var(--t-med);
+  background:
+    radial-gradient(600px 420px at var(--spot-x, -1000px) var(--spot-y, -1000px), rgba(232,145,166,0.18), transparent 60%);
+  mix-blend-mode: soft-light;
+}
+
+[data-theme="dark"] .spotlight-overlay {
+  background:
+    radial-gradient(600px 420px at var(--spot-x, -1000px) var(--spot-y, -1000px), rgba(245,184,200,0.22), transparent 62%);
+  mix-blend-mode: screen;
+}
+
+@media (prefers-reduced-motion: reduce), (pointer: coarse) {
+  .spotlight-overlay { display: none; }
+}
+
 /* Global media defaults to prevent overflow */
 img, video, iframe, canvas {
   max-width: 100%;
@@ -863,6 +886,9 @@ body.page-enter-active {
   content-visibility: auto;
   contain-intrinsic-size: 420px;
 }
+.project-card.tilt-active { transform-style: preserve-3d; }
+.project-card.tilt-active .project-card-visual,
+.project-card.tilt-active .project-content { transform: translateZ(0); }
 .project-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 32px rgba(0,0,0,0.18);
@@ -1109,6 +1135,41 @@ body.page-enter-active {
 .project-links a:active {
   transform: translateY(0);
   opacity: 0.9;
+}
+
+/* Magnetic hover targets (chips, tags, cards) */
+.magnetic {
+  transition: transform var(--t-fast) !important;
+  will-change: transform;
+}
+
+/* Custom cursor (desktop only) */
+.cursor-dot, .cursor-ring {
+  position: fixed;
+  top: 0; left: 0;
+  width: 6px; height: 6px;
+  pointer-events: none;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  opacity: 0; /* fade in after first move */
+  transition: opacity var(--t-fast);
+}
+.cursor-dot { background: var(--accent-dark); mix-blend-mode: multiply; }
+.cursor-ring {
+  width: 28px; height: 28px;
+  border: 2px solid var(--accent);
+  background: transparent;
+  mix-blend-mode: multiply;
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-theme="dark"] .cursor-dot { background: var(--accent); mix-blend-mode: screen; }
+  [data-theme="dark"] .cursor-ring { border-color: var(--accent); mix-blend-mode: screen; }
+}
+
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .cursor-dot, .cursor-ring { display: none; }
 }
 
 .project-tech {

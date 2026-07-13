@@ -21,7 +21,8 @@ andimsewon.github.io/
 ├── 404.html                # GitHub Pages 404 페이지
 ├── robots.txt              # 검색 엔진 크롤링 지시
 ├── sitemap.xml             # 사이트맵 (SEO)
-├── start-server.sh         # 로컬 서버 실행 스크립트
+├── Gemfile                 # github-pages gem 고정 (로컬 Jekyll 빌드용)
+├── .ruby-version           # rbenv용 고정 Ruby 버전
 ├── SewonKim_CV.pdf         # CV PDF 파일
 │
 ├── assets/                 # 이미지 및 미디어 파일
@@ -138,39 +139,30 @@ andimsewon.github.io/
 
 ## 🔧 로컬 개발 환경
 
-### ⚡ 가장 쉬운 방법: 스크립트 실행
+이 사이트는 GitHub Pages의 네이티브 Jekyll 빌드로 배포됩니다. `_includes`/`_layouts`의 Liquid 태그(헤더, 푸터, KO/EN 분기)는 정적 파일 서버(`python -m http.server` 등)로는 렌더링되지 않으므로, 반드시 Jekyll로 직접 빌드해서 확인해야 합니다.
 
-터미널에서 다음 명령어만 실행하면 됩니다:
+### 최초 설정 (한 번만)
+
+- Ruby 버전은 [`.ruby-version`](.ruby-version)에 고정되어 있습니다 ([rbenv](https://github.com/rbenv/rbenv) 사용 권장).
+- 의존성은 [`Gemfile`](Gemfile)에 GitHub Pages와 동일한 `github-pages` gem으로 고정되어 있습니다.
 
 ```bash
-./start-server.sh
+rbenv install   # .ruby-version에 명시된 버전 설치
+bundle install
 ```
 
-그 다음 브라우저에서 **http://localhost:8000** 접속
+### 서버 실행
 
-### 수동으로 서버 실행
-
-#### Python 사용 (권장)
 ```bash
-# Python 3
-python3 -m http.server 8000
-
-# 또는 Python 2
-python -m http.server 8000
+bundle exec jekyll serve --livereload
 ```
 
-#### Node.js 사용
-```bash
-npx http-server -p 8000
-# 또는
-npx serve
-```
+그 다음 브라우저에서 **http://localhost:4000** 접속 (영문 루트), **http://localhost:4000/ko/** (한국어).
 
 ### ⚠️ 파일 직접 열기 주의사항
 
-- HTML 파일을 브라우저로 직접 열면 일부 기능이 제대로 작동하지 않을 수 있습니다
-- `file://` 프로토콜에서는 일부 JavaScript 기능이 보안상 제한될 수 있습니다
-- **반드시 로컬 서버를 사용하는 것을 권장합니다**
+- HTML 파일을 브라우저로 직접 열거나 정적 서버로 열면 Liquid include/front matter가 렌더링되지 않아 실제 배포본과 다르게 보입니다
+- 반드시 `bundle exec jekyll serve`로 확인하세요
 
 ---
 
