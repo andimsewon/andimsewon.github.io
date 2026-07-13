@@ -65,8 +65,10 @@
   <meta property="og:type" content="{{ page.og_type | default: 'website' }}">
   <meta property="og:site_name" content="Sewon Kim">
   <meta property="og:title" content="{{ page.og_title | default: page.title }}">
+  <meta name="twitter:title" content="{{ page.og_title | default: page.title }}">
   {% if page.og_description or page.description %}
   <meta property="og:description" content="{{ page.og_description | default: page.description }}">
+  <meta name="twitter:description" content="{{ page.og_description | default: page.description }}">
   {% endif %}
   {% if page.og_image_default %}
   <meta property="og:image" content="{{ site.url }}{{ site.og_card_path }}?v={{ site.og_card_version }}">

@@ -21,7 +21,7 @@ json_ld: |
     <div class="container">
       <p class="back-link"><a href="projects.html" aria-label="Back to all projects">← Back to Projects</a></p>
       <div class="section-header">
-        <h2 class="page-title">KG-RAG: Knowledge-Graph-Augmented Retrieval</h2>
+        <h1 class="page-title">KG-RAG: Knowledge-Graph-Augmented Retrieval</h1>
         <div class="project-card-metrics" aria-label="Technologies">
           <span class="metric-badge">PyTorch</span>
           <span class="metric-badge">LangChain</span>
@@ -32,36 +32,50 @@ json_ld: |
         <div class="project-item">
           <div class="project-main-full">
 
-            <h3 class="section-title">Problem</h3>
+            <section class="case-overview" aria-labelledby="overview-title">
+                <div><p class="case-kicker">Retrieval research · 2025–2026</p><h2 id="overview-title">Overview</h2><p>Research on combining graph-structured knowledge with neural retrieval to provide large language models with relational context for multi-hop question answering.</p></div>
+              <dl class="case-facts"><div><dt>My contribution</dt><dd>Retrieval pipeline and multi-hop reasoning design</dd></div><div><dt>Context</dt><dd>Natural Language Learning Lab · Undergraduate research</dd></div><div><dt>Focus</dt><dd>Grounding · Multi-hop reasoning · Retrieval precision</dd></div></dl>
+            </section>
+
+            <h2 class="section-title">Problem</h2>
             <div class="project-description">
               <p>Standard retrieval-augmented generation retrieves flat text chunks by embedding similarity alone, which gives large language models little structured relational context. That limits factual accuracy and multi-hop reasoning — questions that require chaining facts across multiple connected entities.</p>
             </div>
 
-            <h3 class="section-title">Approach</h3>
+            <h2 class="section-title">Context and Constraints</h2>
             <div class="project-description">
-              <p>As an undergraduate researcher at the Natural Language Learning Lab, Jeonbuk National University (Feb 2025 – Feb 2026; Advisor: Prof. Hyun-je Song), I designed and implemented knowledge graph–enhanced retrieval-augmented generation (RAG) architectures to improve factual accuracy and multi-hop reasoning in large language models.</p>
+              <p>The work was conducted at the Natural Language Learning Lab, Jeonbuk National University, from February 2025 to February 2026 under Prof. Hyun-je Song. The research connected structured graph context with neural embedding spaces while examining retrieval quality and computational efficiency.</p>
+            </div>
+
+            <h2 class="section-title">My Role</h2>
+            <div class="project-description"><p>I designed and implemented the knowledge-graph retrieval pipeline and multi-hop reasoning mechanism as an undergraduate researcher. The wider research direction and resulting manuscript are lab work under Prof. Hyun-je Song.</p></div>
+
+            <h2 class="section-title">System Architecture</h2>
+            <div class="architecture-flow" aria-label="Retrieval and generation flow"><div><strong>Question</strong><span>Entity and relation cues</span></div><span aria-hidden="true">→</span><div><strong>Hybrid retrieval</strong><span>Graph context + neural embeddings</span></div><span aria-hidden="true">→</span><div><strong>Grounded response</strong><span>Multi-hop evidence context</span></div></div>
+
+            <h2 class="section-title">Technical Decisions</h2>
+            <div class="project-description">
               <ul>
-                <li>Developed graph-based retrieval pipelines that integrated structured knowledge with neural embedding spaces using PyTorch and LangChain</li>
-                <li>Implemented multi-hop reasoning mechanisms over knowledge graphs for complex domain-specific question answering, focusing on retrieval precision and model grounding</li>
-                <li>Conducted systematic ablation studies on embedding integration techniques to evaluate accuracy and computational-efficiency trade-offs</li>
+                <li><strong>Structured plus semantic context:</strong> graph retrieval preserved relations that embedding similarity alone can miss.</li>
+                <li><strong>Multi-hop traversal:</strong> connected evidence was assembled for questions requiring more than one factual link.</li>
+                <li><strong>Ablation-first evaluation:</strong> embedding integration techniques were isolated to examine accuracy and computational-efficiency trade-offs.</li>
               </ul>
             </div>
 
-            <h3 class="section-title">Result</h3>
-            <div class="project-description">
-              <p>The work used multi-hop reasoning over a knowledge graph to improve factual grounding in LLM outputs. A manuscript describing this research, conducted at the Natural Language Learning Lab from Feb 2025 to Feb 2026, is in preparation.</p>
-              <!-- TODO: add benchmark result once available -->
-            </div>
+            <h2 class="section-title">Implementation</h2>
+            <div class="project-description"><p>The research implementation used PyTorch and LangChain to integrate graph-derived context with embedding-based retrieval and pass connected evidence into the generation stage.</p></div>
 
-            <h3 class="section-title">My Role</h3>
-            <div class="project-description">
-              <p>I designed and implemented the knowledge-graph retrieval pipeline and multi-hop reasoning mechanism as an undergraduate researcher from Feb 2025 to Feb 2026 under Prof. Hyun-je Song.</p>
-            </div>
+            <h2 class="section-title">Evaluation and Validation</h2>
+            <div class="project-description"><p>Systematic ablation studies compared embedding integration approaches with attention to accuracy and computational-efficiency trade-offs.</p></div>
 
-            <div class="project-tech">Tech Stack: PyTorch, LangChain</div>
-            <div class="project-links">
-              <a href="publications.html">📄 Publications & Preprints</a>
-            </div>
+            <h2 class="section-title">Results</h2>
+            <div class="project-description"><p>The implemented pipeline supports multi-hop retrieval over a knowledge graph for grounded question-answering research.</p></div>
+
+            <h2 class="section-title">Limitations and Lessons</h2>
+            <div class="project-description"><p>Relational coverage and embedding quality need separate evaluation because either can become the retrieval bottleneck. Ablating the integration stages made those trade-offs easier to isolate.</p></div>
+
+            <h2 class="section-title">Related Links</h2>
+            <div class="project-links"><a href="publications.html">Publications &amp; preprints</a><a href="https://sites.google.com/view/nlllab/main" target="_blank" rel="noopener noreferrer">Natural Language Learning Lab <span aria-hidden="true">↗</span></a></div>
           </div>
         </div>
       </div>

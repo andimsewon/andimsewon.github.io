@@ -1,19 +1,33 @@
-<nav class="top-nav" aria-label="Primary">
+<nav class="top-nav" aria-label="{% if include.lang == 'ko' %}주요 탐색{% else %}Primary navigation{% endif %}">
   <div class="nav-container">
     <div class="nav-name"><a href="{% if include.lang == 'ko' %}/ko/index.html{% else %}/index.html{% endif %}">Sewon Kim</a></div>
     <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="primaryLinks" aria-label="{% if include.lang == 'ko' %}메뉴 열기{% else %}Open menu{% endif %}">☰</button>
     <div class="nav-links" id="primaryLinks">
       {% if include.lang == 'ko' %}
+        {% if page.home %}
+        <a href="#selected-work">프로젝트</a>
+        <a href="#experience">경력</a>
+        <a href="#research">연구</a>
+        <a href="#contact">연락</a>
+        {% else %}
         <a href="/ko/projects.html">프로젝트</a>
         <a href="/ko/research.html">연구</a>
         <a href="/ko/writing.html">글</a>
+        {% endif %}
         <a href="/Sewon_Kim_CV.pdf" target="_blank" rel="noopener noreferrer">이력서</a>
         <a href="/{{ page.name }}" lang="en" hreflang="en" aria-label="영문 페이지로 보기" title="영문 페이지로 보기">EN</a>
         <button id="themeToggle" class="theme-toggle" aria-label="다크 모드 전환" title="다크 모드 전환">🌙</button>
       {% else %}
+        {% if page.home %}
+        <a href="#selected-work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#research">Research</a>
+        <a href="#contact">Contact</a>
+        {% else %}
         <a href="/projects.html">Work</a>
         <a href="/research.html">Research</a>
         <a href="/writing.html">Writing</a>
+        {% endif %}
         <a href="/Sewon_Kim_CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
         <a href="/ko/{{ page.name }}" lang="ko" hreflang="ko" aria-label="View this page in Korean" title="View this page in Korean">한국어</a>
         <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>

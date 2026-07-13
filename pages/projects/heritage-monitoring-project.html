@@ -21,7 +21,7 @@ json_ld: |
     <div class="container">
       <p class="back-link"><a href="projects.html" aria-label="Back to all projects">← Back to Projects</a></p>
       <div class="section-header">
-        <h2 class="page-title">Heritage-LLaVA: Multimodal Damage Detection for Cultural Heritage</h2>
+        <h1 class="page-title">Heritage-LLaVA: Multimodal Damage Detection for Cultural Heritage</h1>
         <div class="project-card-metrics" aria-label="Technologies">
           <span class="metric-badge">Flutter</span>
           <span class="metric-badge">FastAPI</span>
@@ -34,39 +34,78 @@ json_ld: |
         <div class="project-item">
           <div class="project-main-full">
 
-            <h3 class="section-title">Problem</h3>
+            <section class="case-overview" aria-labelledby="overview-title">
+              <div>
+                <p class="case-kicker">Deployed multimodal system · 2025</p>
+                <h2 id="overview-title">Overview</h2>
+                <p>A cross-platform field-survey system that combines structured heritage records, real-time collaboration, and image-based damage detection for Korea Heritage Service inspectors.</p>
+              </div>
+              <dl class="case-facts">
+                <div><dt>My contribution</dt><dd>End-to-end system architecture and implementation</dd></div>
+                <div><dt>Status</dt><dd>Operational use · Patent filed · Copyright registered</dd></div>
+                <div><dt>Validation</dt><dd>F1 0.89 across four deterioration types</dd></div>
+              </dl>
+            </section>
+
+            <h2 class="section-title">Problem</h2>
             <div class="project-description">
               <p>Korea's cultural-heritage survey workflow was paper-based: inspectors recorded site condition and damage by hand, with no structured way to track designation status, ownership, or damage severity over time, and no shared real-time view across inspectors in the field.</p>
             </div>
 
-            <h3 class="section-title">Approach</h3>
+            <h2 class="section-title">Context and Constraints</h2>
             <div class="project-description">
-              <p>Built a cross-platform field-survey system that converts paper inspections into a fully digital, AI-assisted platform. Flutter (Web/Android/iOS) provides the field UI; a FastAPI backend integrates the National Heritage Service Open API (via an XML→JSON proxy for multi-criteria search) and a custom DETR-based PyTorch model for damage detection; Firebase provides real-time storage and sync.</p>
-              <p>The damage-detection model classifies four structural deterioration types — cracks, splits, biological decay, and crushing/burst damage — from on-site photos, returning bounding boxes, labels, confidence scores, and an automatically assigned severity grade (A–D). The inspector workflow is organized into three tabs: Field Survey (basic info, metadata, site photos, damage detection), Inspector Notes (preservation history, survey results, management actions), and Comprehensive Assessment (aggregated damage analysis and severity classification). All updates sync in real time via Firestore streams, with edit histories logged automatically for auditability.</p>
+              <p>The system needed to work across Web, Android, and iOS, integrate an XML-based public heritage API, support multiple field inspectors, and preserve an auditable edit history. The model needed to identify four documented deterioration types from field photographs and return a severity grade that inspectors could review.</p>
             </div>
 
-            <h3 class="section-title">Result</h3>
+            <h2 class="section-title">My Role</h2>
             <div class="project-description">
-              <p>The damage-detection model reaches <strong>F1 0.89</strong> across the four deterioration types. A patent covering the damage-detection method was filed jointly by the Natural Language Learning Lab (Jeonbuk National University), where I was an undergraduate researcher from Feb 2025 to Feb 2026, and the Korea Heritage Service; the software is registered for copyright. The system is in operational use at the Korea Heritage Service.</p>
+              <p>I architected and implemented the end-to-end system: the Flutter field interface, FastAPI backend, public-API integration, DETR-based image pipeline, and real-time edit-history tracking. The work was completed in collaboration with the Natural Language Learning Lab and Korea Heritage Service; the institutional deployment and jointly filed patent are team outcomes.</p>
+            </div>
+
+            <h2 class="section-title">System Architecture</h2>
+            <div class="architecture-flow" aria-label="System data flow">
+              <div><strong>Field inspector</strong><span>Flutter · Web / Android / iOS</span></div><span aria-hidden="true">→</span>
+              <div><strong>Application API</strong><span>FastAPI · XML-to-JSON proxy</span></div><span aria-hidden="true">→</span>
+              <div><strong>Detection &amp; data</strong><span>DETR inference · Firestore sync</span></div>
+            </div>
+
+            <h2 class="section-title">Technical Decisions</h2>
+            <div class="project-description">
+              <ul>
+                <li><strong>One field client:</strong> Flutter provided a shared codebase for Web, Android, and iOS.</li>
+                <li><strong>API normalization:</strong> A FastAPI proxy converted the public heritage API's XML into JSON and supported multi-criteria search.</li>
+                <li><strong>Reviewable inference:</strong> DETR returned bounding boxes, class labels, confidence scores, and A–D severity grades instead of an opaque single label.</li>
+                <li><strong>Auditability:</strong> Firestore streams synchronized records in real time while automatically recording edit history.</li>
+              </ul>
+            </div>
+
+            <h2 class="section-title">Implementation</h2>
+            <div class="project-description">
+              <p>The inspector workflow is organized into Field Survey, Inspector Notes, and Comprehensive Assessment. On-site photographs move through the image pipeline for four-class deterioration detection—cracks, splits, biological decay, and crushing or burst damage—while survey metadata and edits synchronize across clients.</p>
+            </div>
+
+            <h2 class="section-title">Evaluation and Validation</h2>
+            <div class="project-description">
               <ul class="sub-list">
+                <li><strong>Model quality</strong>: F1 0.89 across four deterioration types</li>
                 <li><strong>Inference latency</strong>: ~800–1200ms (CPU), ~200–400ms (GPU) per image</li>
                 <li><strong>API response</strong>: &lt;150ms (heritage search), &lt;2s (AI detection)</li>
                 <li><strong>Sync delay</strong>: &lt;500ms (Firestore real‑time updates)</li>
                 <li><strong>Model</strong>: DETR (ResNet‑50), 4 classes, class‑specific conf 0.15–0.30, NMS IoU 0.1, ~552MB</li>
                 <li><strong>Coverage</strong>: Single codebase → Web, Android, iOS; tested 10+ concurrent users</li>
               </ul>
-              <!-- TODO: confirm training set size before publishing -->
             </div>
 
-            <h3 class="section-title">My Role</h3>
+            <h2 class="section-title">Results</h2>
             <div class="project-description">
-              <p>I architected the end-to-end system — the Flutter frontend, the FastAPI backend, and the DETR-based damage-detection pipeline — including the interactive survey UI, the image pipeline, and real-time edit-history tracking.</p>
+              <p>The system is in operational use at Korea Heritage Service. A patent covering the damage-detection method was filed jointly by the Natural Language Learning Lab at Jeonbuk National University and Korea Heritage Service, and the software is registered for copyright.</p>
             </div>
 
-            <div class="project-tech">Tech Stack: PyTorch · LLaVA · CLIP · Detectron2 · FastAPI</div>
-            <div class="project-links">
-              <a href="https://github.com/andimsewon/heritage_services_app" target="_blank" rel="noopener noreferrer">📦 GitHub Repo</a>
-            </div>
+            <h2 class="section-title">Limitations and Lessons</h2>
+            <div class="project-description"><p>The evaluation covered four documented deterioration types. Keeping the inspector in the review flow is essential when model output informs field assessment.</p></div>
+
+            <h2 class="section-title">Related Links</h2>
+            <div class="project-links"><a href="https://github.com/andimsewon/heritage_services_app" target="_blank" rel="noopener noreferrer">GitHub repository <span aria-hidden="true">↗</span></a></div>
           </div>
 
           <!-- Copyright Certificate -->
@@ -87,4 +126,3 @@ json_ld: |
   <script>
     // Theme toggle is handled by js/site.js
   </script>
-  <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>

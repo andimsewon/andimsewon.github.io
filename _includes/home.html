@@ -1,0 +1,209 @@
+{% assign is_ko = false %}
+{% if include.lang == 'ko' %}{% assign is_ko = true %}{% endif %}
+
+<main id="main">
+  <section class="home-hero" aria-labelledby="hero-title">
+    <div class="home-shell">
+      <div class="hero-intro">
+        <div class="hero-identity">
+          <p class="hero-eyebrow">FAO · UN OFFICE OF INNOVATION — ROME</p>
+          <h1 id="hero-title" class="hero-name">{% if is_ko %}김세원{% else %}Sewon Kim{% endif %}</h1>
+          <p class="hero-tagline">{% if is_ko %}지식그래프 RAG, 비전–언어 모델, IoT 데이터 파이프라인을 아우르는 검색·멀티모달 시스템을 만듭니다.{% else %}I build retrieval and multimodal systems — knowledge-graph RAG, vision–language models, and IoT data pipelines.{% endif %}</p>
+          <div class="hero-actions" aria-label="{% if is_ko %}주요 링크{% else %}Primary actions{% endif %}">
+            <a class="action-primary" href="#selected-work">{% if is_ko %}주요 프로젝트 보기{% else %}View Selected Work{% endif %}</a>
+            <a class="action-secondary" href="/Sewon_Kim_CV.pdf" target="_blank" rel="noopener noreferrer">{% if is_ko %}이력서 다운로드 <span class="sr-only">(PDF, 새 창)</span>{% else %}Download CV <span class="sr-only">(PDF, opens in a new tab)</span>{% endif %}</a>
+          </div>
+          <nav class="hero-social" aria-label="{% if is_ko %}연락처 및 소셜 링크{% else %}Contact and social links{% endif %}">
+            <a href="mailto:sewonkim1018@gmail.com">{% if is_ko %}이메일{% else %}Email{% endif %}</a>
+            <a href="https://github.com/andimsewon" target="_blank" rel="me noopener noreferrer">GitHub<span class="sr-only">{% if is_ko %} (새 창){% else %} (opens in a new tab){% endif %}</span></a>
+            <a href="https://www.linkedin.com/in/sewon-kim-742a492a6/" target="_blank" rel="me noopener noreferrer">LinkedIn<span class="sr-only">{% if is_ko %} (새 창){% else %} (opens in a new tab){% endif %}</span></a>
+          </nav>
+        </div>
+
+        <aside class="selected-experience" aria-labelledby="selected-experience-title">
+          <div class="experience-heading-row">
+            <h2 id="selected-experience-title">{% if is_ko %}주요 경력{% else %}Selected Experience{% endif %}</h2>
+            <img src="{{ site.profile_image_path }}?v={{ site.profile_image_version }}" alt="{% if is_ko %}김세원 프로필 사진{% else %}Portrait of Sewon Kim{% endif %}" class="hero-photo" width="410" height="410" fetchpriority="high" decoding="async">
+          </div>
+          <ol class="experience-summary">
+            <li class="experience-summary-item is-current">
+              <p class="experience-date">{% if is_ko %}2026 — 현재{% else %}2026 — PRESENT{% endif %}</p>
+              <h3>{% if is_ko %}Innovation Accelerator 인턴{% else %}Innovation Accelerator Intern{% endif %}</h3>
+              <p class="experience-org">FAO · Office of Innovation</p>
+              <p class="experience-meta">{% if is_ko %}이탈리아 로마{% else %}Rome, Italy{% endif %}</p>
+            </li>
+            <li class="experience-summary-item">
+              <p class="experience-date">2025 — 2026</p>
+              <h3>{% if is_ko %}학부연구생{% else %}Undergraduate Researcher{% endif %}</h3>
+              <p class="experience-org">Natural Language Learning Lab · Jeonbuk National University</p>
+              <p class="experience-meta">{% if is_ko %}지도교수: 송현제 교수{% else %}Advisor: Prof. Hyun-je Song{% endif %}</p>
+            </li>
+            <li class="experience-summary-item">
+              <p class="experience-date">2025</p>
+              <h3>{% if is_ko %}국제 장학생{% else %}International Scholar{% endif %}</h3>
+              <p class="experience-org">IITP Korean AI Square Summer Program</p>
+              <p class="experience-meta">Korean Software Square · Purdue University</p>
+            </li>
+          </ol>
+        </aside>
+      </div>
+
+      <div class="evidence-strip" aria-label="{% if is_ko %}주요 성과{% else %}Evidence of impact{% endif %}">
+        <a class="evidence-item" href="{% if is_ko %}/ko/heritage-monitoring-project.html{% else %}/heritage-monitoring-project.html{% endif %}">
+          <span class="evidence-label">{% if is_ko %}지식재산{% else %}Intellectual Property{% endif %}</span>
+          <span class="evidence-value">{% if is_ko %}특허 출원 · 소프트웨어 저작권 등록{% else %}Patent filed · Software copyright registered{% endif %}</span>
+        </a>
+        <a class="evidence-item" href="{% if is_ko %}/ko/heritage-monitoring-project.html{% else %}/heritage-monitoring-project.html{% endif %}">
+          <span class="evidence-label">{% if is_ko %}프로덕션 배포{% else %}Production Deployment{% endif %}</span>
+          <span class="evidence-value">{% if is_ko %}국가유산청 · 실제 운영{% else %}Korea Heritage Service · Operational use{% endif %}</span>
+        </a>
+        <a class="evidence-item" href="https://arxiv.org/abs/2512.07408" target="_blank" rel="noopener noreferrer">
+          <span class="evidence-label">{% if is_ko %}연구{% else %}Research{% endif %}</span>
+          <span class="evidence-value">{% if is_ko %}프리프린트 · arXiv:2512.07408{% else %}Preprint · arXiv:2512.07408{% endif %}</span>
+          <span class="sr-only">{% if is_ko %}(새 창){% else %}(opens in a new tab){% endif %}</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="selected-work" class="home-section" aria-labelledby="selected-work-title">
+    <div class="home-shell">
+      <div class="section-intro">
+        <p class="section-kicker">01 / {% if is_ko %}프로젝트{% else %}Work{% endif %}</p>
+        <div>
+          <h2 id="selected-work-title" class="home-section-title">{% if is_ko %}주요 프로젝트{% else %}Selected Work{% endif %}</h2>
+          <p>{% if is_ko %}연구, 현장 검증, 실제 운영으로 이어진 시스템입니다.{% else %}Systems carried through research, field validation, and operational use.{% endif %}</p>
+        </div>
+      </div>
+      <div class="featured-work-list">
+        <article class="featured-work">
+          <div class="featured-work-index" aria-hidden="true">01</div>
+          <div class="featured-work-body">
+            <div class="featured-work-heading">
+              <div>
+                <p class="work-status">{% if is_ko %}멀티모달 AI · 운영 배포 · IP{% else %}Multimodal AI · Deployed · IP{% endif %}</p>
+                <h3>Heritage-LLaVA</h3>
+              </div>
+              <p class="work-result-strong">F1 0.89</p>
+            </div>
+            <p class="work-problem">{% if is_ko %}종이 기반 문화유산 현장 조사를 구조화된 실시간 손상 기록·평가 시스템으로 전환했습니다.{% else %}Replaced a paper-based heritage survey workflow with structured, real-time damage documentation and assessment.{% endif %}</p>
+            <dl class="work-evidence">
+              <div><dt>{% if is_ko %}역할{% else %}Role{% endif %}</dt><dd>{% if is_ko %}Flutter 현장 앱, FastAPI 백엔드, DETR 손상 탐지 파이프라인을 포함한 엔드투엔드 시스템 설계{% else %}Architected the end-to-end Flutter field app, FastAPI backend, and DETR damage-detection pipeline{% endif %}</dd></div>
+              <div><dt>{% if is_ko %}기술{% else %}Capabilities{% endif %}</dt><dd>PyTorch · DETR · FastAPI · Flutter · Firebase</dd></div>
+              <div><dt>{% if is_ko %}증거{% else %}Evidence{% endif %}</dt><dd>{% if is_ko %}국가유산청 운영 · 특허 출원 · 소프트웨어 저작권 등록{% else %}Operational use at Korea Heritage Service · Patent filed · Software copyright registered{% endif %}</dd></div>
+            </dl>
+            <div class="work-links"><a href="{% if is_ko %}/ko/heritage-monitoring-project.html{% else %}/heritage-monitoring-project.html{% endif %}">{% if is_ko %}케이스 스터디 보기{% else %}Read case study{% endif %} <span aria-hidden="true">→</span></a><a href="https://github.com/andimsewon/heritage_services_app" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div>
+          </div>
+        </article>
+
+        <article class="featured-work">
+          <div class="featured-work-index" aria-hidden="true">02</div>
+          <div class="featured-work-body">
+            <div class="featured-work-heading">
+              <div>
+                <p class="work-status">{% if is_ko %}검색 · 지식그래프 · 연구{% else %}Retrieval · Knowledge Graphs · Research{% endif %}</p>
+                <h3>KG-RAG</h3>
+              </div>
+              <p class="work-result-strong">2025—26</p>
+            </div>
+            <p class="work-problem">{% if is_ko %}평면 텍스트 유사도 검색의 한계를 보완하기 위해 구조화된 관계 정보를 활용하는 멀티홉 질의응답 검색 파이프라인을 설계했습니다.{% else %}Designed a multi-hop question-answering retrieval pipeline that uses structured relations beyond flat text similarity.{% endif %}</p>
+            <dl class="work-evidence">
+              <div><dt>{% if is_ko %}역할{% else %}Role{% endif %}</dt><dd>{% if is_ko %}지식그래프 검색 파이프라인과 멀티홉 추론 메커니즘 설계·구현{% else %}Designed and implemented the knowledge-graph retrieval pipeline and multi-hop reasoning mechanism{% endif %}</dd></div>
+              <div><dt>{% if is_ko %}기술{% else %}Capabilities{% endif %}</dt><dd>{% if is_ko %}그래프 검색 · 임베딩 통합 · 절제 연구 · PyTorch · LangChain{% else %}Graph retrieval · Embedding integration · Ablation studies · PyTorch · LangChain{% endif %}</dd></div>
+              <div><dt>{% if is_ko %}상태{% else %}Status{% endif %}</dt><dd>{% if is_ko %}Natural Language Learning Lab 연구 · 원고 준비 중{% else %}Natural Language Learning Lab research · Manuscript in preparation{% endif %}</dd></div>
+            </dl>
+            <div class="work-links"><a href="{% if is_ko %}/ko/kg-rag-project.html{% else %}/kg-rag-project.html{% endif %}">{% if is_ko %}케이스 스터디 보기{% else %}Read case study{% endif %} <span aria-hidden="true">→</span></a></div>
+          </div>
+        </article>
+
+        <article class="featured-work">
+          <div class="featured-work-index" aria-hidden="true">03</div>
+          <div class="featured-work-body">
+            <div class="featured-work-heading">
+              <div>
+                <p class="work-status">IoT · {% if is_ko %}데이터 파이프라인 · 프리프린트{% else %}Data Pipeline · Preprint{% endif %}</p>
+                <h3>WaggleNet</h3>
+              </div>
+              <p class="work-result-strong">100% PDR</p>
+            </div>
+            <p class="work-problem">{% if is_ko %}벌통 내·외부 환경을 저비용으로 함께 관측하기 위한 LoRa–MQTT 센서 네트워크와 모바일 모니터링 흐름을 구축했습니다.{% else %}Built a low-cost LoRa–MQTT sensor network and mobile monitoring flow for simultaneous conditions inside and outside beehives.{% endif %}</p>
+            <dl class="work-evidence">
+              <div><dt>{% if is_ko %}역할{% else %}Role{% endif %}</dt><dd>{% if is_ko %}국제 팀의 데이터 수집·현장 연구에 기여하고 6인 논문의 제3저자로 참여{% else %}Contributed to data collection and field research in an international team; third author of six{% endif %}</dd></div>
+              <div><dt>{% if is_ko %}기술{% else %}Capabilities{% endif %}</dt><dd>ESP32 · LoRa · MQTT · SQLite · Flutter · Firebase</dd></div>
+              <div><dt>{% if is_ko %}결과{% else %}Result{% endif %}</dt><dd>{% if is_ko %}가시선 110m에서 패킷 전송률 100% · 평균 지연 3.8초 · 2개월 현장 시험{% else %}100% packet delivery at 110 m line of sight · 3.8 s mean latency · Two-month field trial{% endif %}</dd></div>
+            </dl>
+            <div class="work-links"><a href="{% if is_ko %}/ko/waggle-net-project.html{% else %}/waggle-net-project.html{% endif %}">{% if is_ko %}케이스 스터디 보기{% else %}Read case study{% endif %} <span aria-hidden="true">→</span></a><a href="https://arxiv.org/abs/2512.07408" target="_blank" rel="noopener noreferrer">arXiv <span aria-hidden="true">↗</span></a></div>
+          </div>
+        </article>
+      </div>
+      <p class="section-more"><a href="{% if is_ko %}/ko/projects.html{% else %}/projects.html{% endif %}">{% if is_ko %}모든 프로젝트 보기{% else %}View all projects{% endif %} <span aria-hidden="true">→</span></a></p>
+    </div>
+  </section>
+
+  <section id="experience" class="home-section" aria-labelledby="experience-title">
+    <div class="home-shell">
+      <div class="section-intro">
+        <p class="section-kicker">02 / {% if is_ko %}경력{% else %}Experience{% endif %}</p>
+        <div><h2 id="experience-title" class="home-section-title">{% if is_ko %}경력{% else %}Experience{% endif %}</h2><p>{% if is_ko %}책임, 기여, 결과물 중심의 경력 요약입니다.{% else %}Experience framed by responsibility, contribution, and deliverable.{% endif %}</p></div>
+      </div>
+      <div class="career-list">
+        <article class="career-item">
+          <div class="career-meta"><p>2026 — {% if is_ko %}현재{% else %}Present{% endif %}</p><p>{% if is_ko %}이탈리아 로마{% else %}Rome, Italy{% endif %}</p></div>
+          <div class="career-body"><p class="current-marker">{% if is_ko %}현재{% else %}Current{% endif %}</p><h3>{% if is_ko %}Innovation Accelerator 인턴{% else %}Innovation Accelerator Intern{% endif %}</h3><p class="career-org">FAO · Office of Innovation</p><ul><li>{% if is_ko %}공개 가능한 범위에서 농식품 혁신 지식 발견을 위한 사용자 행동 분석, UX·데이터 시각화, AI enrichment prompt 평가를 지원합니다.{% else %}Supports user-behavior analysis, UX and data visualization, and AI-enrichment prompt evaluation for agrifood innovation knowledge discovery, within publicly shareable scope.{% endif %}</li><li>{% if is_ko %}UX, taxonomy, 데이터 수집 및 구현 담당자와 다학제 협업을 수행합니다.{% else %}Collaborates across UX, taxonomy, data-harvesting, and implementation workstreams.{% endif %}</li></ul><p class="confidential-note">{% if is_ko %}내부 시스템·데이터 및 비공개 결과는 제외했습니다.{% else %}Internal systems, data, and non-public outcomes are intentionally omitted.{% endif %}</p></div>
+        </article>
+        <article class="career-item">
+          <div class="career-meta"><p>2025 — 2026</p><p>{% if is_ko %}전북대학교{% else %}Jeonbuk National University{% endif %}</p></div>
+          <div class="career-body"><h3>{% if is_ko %}학부연구생{% else %}Undergraduate Researcher{% endif %}</h3><p class="career-org">Natural Language Learning Lab · {% if is_ko %}지도교수: 송현제 교수{% else %}Advisor: Prof. Hyun-je Song{% endif %}</p><ul><li>{% if is_ko %}지식그래프와 신경 임베딩을 결합한 검색 파이프라인 및 멀티홉 추론 메커니즘을 설계·구현했습니다.{% else %}Designed and implemented retrieval pipelines combining knowledge graphs with neural embedding spaces and multi-hop reasoning.{% endif %}</li><li>{% if is_ko %}임베딩 통합 방법의 정확도·계산 효율 트레이드오프를 검토하기 위한 절제 연구를 수행했습니다.{% else %}Conducted ablation studies on accuracy and computational-efficiency trade-offs in embedding integration.{% endif %}</li><li>{% if is_ko %}문화유산 손상 탐지 시스템의 앱, API, 모델 파이프라인을 설계해 운영 배포와 지식재산 등록으로 연결했습니다.{% else %}Architected the app, API, and model pipeline for heritage damage detection, leading to operational deployment and intellectual-property protection.{% endif %}</li></ul></div>
+        </article>
+        <article class="career-item">
+          <div class="career-meta"><p>2025</p><p>{% if is_ko %}미국 웨스트라피엣{% else %}West Lafayette, USA{% endif %}</p></div>
+          <div class="career-body"><h3>{% if is_ko %}국제 장학생{% else %}International Scholar{% endif %}</h3><p class="career-org">IITP Korean AI Square Summer Program · Korean Software Square at Purdue University</p><ul><li>{% if is_ko %}벌통 내·외부 조건을 수집하는 저비용 LoRa–MQTT 농업 모니터링 시스템의 현장 연구에 기여했습니다.{% else %}Contributed to field research on a low-cost LoRa–MQTT agricultural monitoring system capturing conditions inside and outside beehives.{% endif %}</li><li>{% if is_ko %}국제 팀의 데이터 수집과 논문 작성을 수행해 arXiv 프리프린트의 제3저자로 참여했습니다.{% else %}Supported data collection across an international team and co-authored the resulting arXiv preprint as third author.{% endif %}</li></ul></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="research" class="home-section" aria-labelledby="research-title">
+    <div class="home-shell">
+      <div class="section-intro"><p class="section-kicker">03 / {% if is_ko %}연구{% else %}Research{% endif %}</p><div><h2 id="research-title" class="home-section-title">{% if is_ko %}연구 및 출판{% else %}Research &amp; Publications{% endif %}</h2><p>{% if is_ko %}검증 가능한 논문, 원고 및 지식재산입니다.{% else %}Verified preprints, research in progress, and intellectual property.{% endif %}</p></div></div>
+      <div class="research-list">
+        <article class="research-item"><div class="research-type">{% if is_ko %}프리프린트 · 2025{% else %}Preprint · 2025{% endif %}</div><div><h3>WaggleNet: A LoRa and MQTT-Based Monitoring System for Internal and External Beehive Conditions</h3><p class="citation">Minju Jeon, Jiyun Kim, <strong>Sewon Kim</strong>, Seongmin Park, Bo Zhang, Anthony H. Smith. arXiv:2512.07408 [cs.NI].</p><p class="research-links"><a href="https://arxiv.org/abs/2512.07408" target="_blank" rel="noopener noreferrer">{% if is_ko %}초록 및 PDF{% else %}Abstract &amp; PDF{% endif %} <span aria-hidden="true">↗</span></a><a href="{% if is_ko %}/ko/waggle-net-project.html{% else %}/waggle-net-project.html{% endif %}">{% if is_ko %}프로젝트 페이지{% else %}Project page{% endif %}</a></p></div></article>
+        <article class="research-item"><div class="research-type">{% if is_ko %}연구 진행{% else %}Research in progress{% endif %}</div><div><h3>Knowledge Graph–Enhanced Retrieval-Augmented Generation for Multi-Hop Reasoning in Large Language Models</h3><p class="citation">{% if is_ko %}Natural Language Learning Lab에서 수행한 지식그래프 기반 검색 및 멀티홉 추론 연구.{% else %}Knowledge-graph retrieval and multi-hop reasoning research conducted at the Natural Language Learning Lab.{% endif %}</p><p class="research-links"><a href="{% if is_ko %}/ko/kg-rag-project.html{% else %}/kg-rag-project.html{% endif %}">{% if is_ko %}연구 개요{% else %}Research overview{% endif %}</a></p></div></article>
+        <article class="research-item"><div class="research-type">{% if is_ko %}지식재산 · 2025{% else %}Intellectual property · 2025{% endif %}</div><div><h3>{% if is_ko %}문화유산 손상 탐지 시스템{% else %}Cultural-heritage damage detection system{% endif %}</h3><p class="citation">{% if is_ko %}전북대학교 Natural Language Learning Lab과 국가유산청 공동 특허 출원 · 소프트웨어 저작권 등록.{% else %}Patent filed jointly by the Natural Language Learning Lab at Jeonbuk National University and Korea Heritage Service · Software copyright registered.{% endif %}</p><p class="research-links"><a href="{% if is_ko %}/ko/heritage-monitoring-project.html{% else %}/heritage-monitoring-project.html{% endif %}">{% if is_ko %}증거 및 상세 정보{% else %}Evidence and details{% endif %}</a></p></div></article>
+      </div>
+      <p class="section-more"><a href="{% if is_ko %}/ko/publications.html{% else %}/publications.html{% endif %}">{% if is_ko %}출판 목록 보기{% else %}View publications page{% endif %} <span aria-hidden="true">→</span></a></p>
+    </div>
+  </section>
+
+  <section id="capabilities" class="home-section" aria-labelledby="capabilities-title">
+    <div class="home-shell">
+      <div class="section-intro"><p class="section-kicker">04 / {% if is_ko %}역량{% else %}Capabilities{% endif %}</p><div><h2 id="capabilities-title" class="home-section-title">{% if is_ko %}기술 역량{% else %}Technical Capabilities{% endif %}</h2><p>{% if is_ko %}도구 목록이 아니라 실제 프로젝트에서 입증된 엔지니어링 영역입니다.{% else %}Engineering domains demonstrated in shipped systems and research—not self-rated proficiency.{% endif %}</p></div></div>
+      <div class="capability-grid">
+        <article><h3>{% if is_ko %}검색 및 지식 시스템{% else %}Retrieval &amp; Knowledge Systems{% endif %}</h3><p>{% if is_ko %}지식그래프 검색, 멀티홉 추론, 임베딩 통합, RAG grounding{% else %}Knowledge-graph retrieval, multi-hop reasoning, embedding integration, RAG grounding{% endif %}</p><a href="{% if is_ko %}/ko/kg-rag-project.html{% else %}/kg-rag-project.html{% endif %}">KG-RAG <span aria-hidden="true">→</span></a></article>
+        <article><h3>{% if is_ko %}머신러닝 및 멀티모달 AI{% else %}Machine Learning &amp; Multimodal AI{% endif %}</h3><p>{% if is_ko %}객체 탐지, 이미지 파이프라인, 모델 추론 API, 손상 분류{% else %}Object detection, image pipelines, model inference APIs, damage classification{% endif %}</p><a href="{% if is_ko %}/ko/heritage-monitoring-project.html{% else %}/heritage-monitoring-project.html{% endif %}">Heritage-LLaVA <span aria-hidden="true">→</span></a></article>
+        <article><h3>{% if is_ko %}데이터 및 IoT 파이프라인{% else %}Data &amp; IoT Pipelines{% endif %}</h3><p>{% if is_ko %}센서 수집, LoRa 전송, MQTT pub/sub, 시계열 저장 및 모바일 시각화{% else %}Sensor collection, LoRa transport, MQTT pub/sub, time-series storage, mobile visualization{% endif %}</p><a href="{% if is_ko %}/ko/waggle-net-project.html{% else %}/waggle-net-project.html{% endif %}">WaggleNet <span aria-hidden="true">→</span></a></article>
+        <article><h3>{% if is_ko %}소프트웨어 엔지니어링{% else %}Software Engineering{% endif %}</h3><p>{% if is_ko %}Python API, Flutter 크로스플랫폼 앱, 실시간 데이터 동기화, REST 통합{% else %}Python APIs, cross-platform Flutter apps, real-time data sync, REST integration{% endif %}</p><a href="{% if is_ko %}/ko/projects.html{% else %}/projects.html{% endif %}">{% if is_ko %}프로젝트 증거{% else %}Project evidence{% endif %} <span aria-hidden="true">→</span></a></article>
+        <article><h3>{% if is_ko %}연구 및 평가{% else %}Research &amp; Evaluation{% endif %}</h3><p>{% if is_ko %}현장 시험, 절제 연구, F1·전송률·지연 평가, 기술 문서화{% else %}Field trials, ablation studies, F1/PDR/latency evaluation, technical documentation{% endif %}</p><a href="{% if is_ko %}/ko/research.html{% else %}/research.html{% endif %}">{% if is_ko %}연구 활동{% else %}Research record{% endif %} <span aria-hidden="true">→</span></a></article>
+        <article><h3>{% if is_ko %}인프라 및 배포{% else %}Infrastructure &amp; Deployment{% endif %}</h3><p>{% if is_ko %}FastAPI 모델 서빙, Firebase 실시간 동기화, 다중 클라이언트 운영 흐름{% else %}FastAPI model serving, Firebase real-time synchronization, multi-client operational workflows{% endif %}</p><a href="{% if is_ko %}/ko/heritage-monitoring-project.html{% else %}/heritage-monitoring-project.html{% endif %}">{% if is_ko %}배포 사례{% else %}Deployment case{% endif %} <span aria-hidden="true">→</span></a></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="home-section" aria-labelledby="education-title">
+    <div class="home-shell">
+      <div class="section-intro"><p class="section-kicker">05 / {% if is_ko %}배경{% else %}Background{% endif %}</p><div><h2 id="education-title" class="home-section-title">{% if is_ko %}학력 및 활동{% else %}Education &amp; Activities{% endif %}</h2></div></div>
+      <div class="education-grid">
+        <article><p class="education-date">2022 — 2026 (Expected)</p><h3>{% if is_ko %}컴퓨터공학 학사{% else %}B.S. in Computer Science and Engineering{% endif %}</h3><p>Jeonbuk National University · GPA 4.09/4.5</p><p class="education-detail">{% if is_ko %}머신러닝, 데이터마이닝, 정보검색, 자연어처리, 데이터베이스{% else %}Machine Learning, Data Mining, Information Retrieval, NLP, Database Systems{% endif %}</p></article>
+        <article><p class="education-date">2023</p><h3>{% if is_ko %}교환학생{% else %}Exchange Student{% endif %}</h3><p>University of Malaya · Kuala Lumpur, Malaysia</p></article>
+        <article><p class="education-date">{% if is_ko %}리더십 및 교육{% else %}Leadership &amp; Teaching{% endif %}</p><h3>{% if is_ko %}학생대표 · 수업 조교{% else %}Student Representative · Teaching Assistant{% endif %}</h3><p>{% if is_ko %}Honors Residential College 학생대표. Algorithms &amp; Linux Programming 수업 조교로 130명 이상의 학생을 지원했습니다.{% else %}Student Representative for Honors Residential College. Supported 130+ students as a Teaching Assistant for Algorithms &amp; Linux Programming.{% endif %}</p><p class="research-links"><a href="{% if is_ko %}/ko/activities.html{% else %}/activities.html{% endif %}">{% if is_ko %}활동 전체 보기{% else %}View activities{% endif %}</a><a href="{% if is_ko %}/ko/awards.html{% else %}/awards.html{% endif %}">{% if is_ko %}수상 내역{% else %}Honors &amp; awards{% endif %}</a></p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section" aria-labelledby="contact-title">
+    <div class="home-shell contact-inner">
+      <p class="section-kicker">06 / {% if is_ko %}연락{% else %}Contact{% endif %}</p>
+      <div><h2 id="contact-title">{% if is_ko %}함께 이야기해요.{% else %}Let’s build something rigorous.{% endif %}</h2><p>{% if is_ko %}AI 연구 엔지니어링, 머신러닝, 데이터 및 소프트웨어 엔지니어링 기회에 열려 있습니다.{% else %}Open to AI research engineering, machine learning, data, and software engineering opportunities.{% endif %}</p><div class="contact-links"><a class="action-primary" href="mailto:sewonkim1018@gmail.com">sewonkim1018@gmail.com</a><a href="https://github.com/andimsewon" target="_blank" rel="me noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/sewon-kim-742a492a6/" target="_blank" rel="me noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div></div>
+    </div>
+  </section>
+</main>

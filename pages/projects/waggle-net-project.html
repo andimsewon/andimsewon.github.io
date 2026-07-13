@@ -38,34 +38,47 @@ json_ld: |
 
           <div class="project-main-full">
 
-            <h3 class="section-title">Problem</h3>
+            <section class="case-overview" aria-labelledby="overview-title">
+              <div><p class="case-kicker">IoT field research · 2025</p><h2 id="overview-title">Overview</h2><p>A three-tier LoRa–MQTT monitoring system that captures conditions inside and outside beehives and delivers the data to a mobile interface.</p></div>
+              <dl class="case-facts"><div><dt>My contribution</dt><dd>Field research, data collection, and paper co-authorship</dd></div><div><dt>Validation</dt><dd>Two-month field trial · 100% PDR at 110 m line of sight</dd></div><div><dt>Output</dt><dd>Third author · arXiv:2512.07408</dd></div></dl>
+            </section>
+
+            <h2 class="section-title">Problem</h2>
             <div class="project-description">
               <p>Most smart-hive systems track only internal temperature and humidity and often depend on costly GSM/LTE links, which constrain scale and drive up per-node cost — a poor fit for beekeepers who need to monitor many hives affordably.</p>
             </div>
 
-            <h3 class="section-title">Approach</h3>
+            <h2 class="section-title">Context and Constraints</h2>
             <div class="project-description">
               <p>This work was conducted during the government-funded IITP Korean AI Square Summer 2025 Program, hosted by Korean Software Square at Purdue University, while I remained affiliated with Jeonbuk National University. The research received guidance from Prof. Eric T. Matson and Prof. Anthony H. Smith, as acknowledged in the paper. WaggleNet uses a three-tier architecture — LoRa worker nodes → a LoRa–MQTT gateway → a cloud database and Flutter app — to capture internal hive and external ambient conditions simultaneously.</p>
-              <p>Each worker node (DHT22, LDR, GPS) samples every three minutes and transmits via LoRa to the gateway, which appends a UTC timestamp and forwards structured JSON over MQTT to a cloud database (SQLite). A Flutter app visualizes temperature, humidity, light intensity, and geolocation in real time, and dispatches threshold-based alerts via Firebase Cloud Messaging when readings cross configured limits.</p>
               <p>The field deployment used 2 Langstroth hives fitted with 4 worker nodes (2 internal, 2 external) over a two-month field trial at the host program's Korean Software Square facilities and a nearby bee yard in West Lafayette.</p>
             </div>
 
-            <h3 class="section-title">Result</h3>
-            <div class="project-description">
-              <p>100% packet delivery ratio at line-of-sight ranges of 110 m (urban) and 150 m (rural); end-to-end latency under 5 s (mean 3.8 s); &gt;95% uptime across the two-month deployment. Hardware cost is $25–30 per node, a 70–85% reduction versus $200–500 commercial systems. Results are published on arXiv (2512.07408).</p>
-            </div>
-
-            <h3 class="section-title">My Role</h3>
+            <h2 class="section-title">My Role</h2>
             <div class="project-description">
               <p>I contributed to the collaborative research and resulting paper as the third author of six. The work was conducted through the IITP Korean AI Square Summer 2025 Program hosted by Korean Software Square at Purdue University, with guidance from Prof. Eric T. Matson and Prof. Anthony H. Smith.</p>
             </div>
 
-            <div class="project-tech">Tech Stack: Hardware: ESP32 (Heltec Wi-Fi LoRa 32 V3), DHT22, LDR, GPS (NEO-6M) | Software: C++, Python, MQTT, SQLite, Flutter, Firebase | Protocols: LoRa (SX1276), MQTT Pub/Sub</div>
-            <div class="project-links">
-              <a href="/assets/polvo-de-purdue-project/video.mp4" target="_blank" rel="noopener noreferrer">🎥 Project Video</a>
-              <a href="/assets/polvo-de-purdue-project/presentation.optimized.pdf" target="_blank" rel="noopener noreferrer">📄 Presentation (PDF)</a>
-              <a href="https://arxiv.org/abs/2512.07408" target="_blank" rel="noopener noreferrer">📰 arXiv Paper</a>
-            </div>
+            <h2 class="section-title">System Architecture</h2>
+            <div class="architecture-flow" aria-label="Sensor data flow"><div><strong>Worker nodes</strong><span>ESP32 · DHT22 · LDR · GPS</span></div><span aria-hidden="true">→</span><div><strong>LoRa–MQTT gateway</strong><span>Timestamp · JSON · Pub/Sub</span></div><span aria-hidden="true">→</span><div><strong>Cloud &amp; mobile</strong><span>SQLite · Flutter · FCM alerts</span></div></div>
+
+            <h2 class="section-title">Technical Decisions</h2>
+            <div class="project-description"><ul><li><strong>Dual-scope sensing:</strong> paired internal and external nodes captured hive conditions with surrounding environmental context.</li><li><strong>LoRa at the edge:</strong> low-power radio kept worker nodes independent of per-node cellular connections.</li><li><strong>Protocol bridge:</strong> the gateway added UTC timestamps and translated LoRa packets into structured MQTT messages.</li><li><strong>Operational feedback:</strong> the Flutter client visualized live readings and Firebase Cloud Messaging delivered threshold-based alerts.</li></ul></div>
+
+            <h2 class="section-title">Implementation</h2>
+            <div class="project-description"><p>Each worker node sampled temperature, humidity, light, and location every three minutes, then transmitted the readings over LoRa. The gateway appended a UTC timestamp and forwarded structured JSON via MQTT to SQLite. The Flutter application displayed readings and geolocation in real time.</p></div>
+
+            <h2 class="section-title">Evaluation and Validation</h2>
+            <div class="project-description"><p>Four worker nodes were deployed across two Langstroth hives for two months. The field trial measured packet delivery, transmission range, end-to-end latency, uptime, and per-node hardware cost in urban and rural line-of-sight settings.</p></div>
+
+            <h2 class="section-title">Results</h2>
+            <div class="project-description"><ul><li><strong>Packet delivery:</strong> 100% at 110 m urban and 150 m rural line of sight</li><li><strong>Latency:</strong> under 5 seconds end to end; 3.8 seconds mean</li><li><strong>Uptime:</strong> over 95% across the two-month deployment</li><li><strong>Hardware cost:</strong> $25–30 per node, 70–85% below the $200–500 commercial systems used for comparison</li></ul></div>
+
+            <h2 class="section-title">Limitations and Lessons</h2>
+            <div class="project-description"><p>The evaluation scope was two hives and four nodes over two months. Separating low-power field transport from cloud messaging kept the field hardware inexpensive while preserving a conventional application interface.</p></div>
+
+            <h2 class="section-title">Related Links</h2>
+            <div class="project-links"><a href="/assets/polvo-de-purdue-project/video.mp4" target="_blank" rel="noopener noreferrer">Project video</a><a href="/assets/polvo-de-purdue-project/presentation.optimized.pdf" target="_blank" rel="noopener noreferrer">Presentation (PDF)</a><a href="https://arxiv.org/abs/2512.07408" target="_blank" rel="noopener noreferrer">arXiv paper <span aria-hidden="true">↗</span></a></div>
           </div>
 
           <!-- Video and Presentation at the bottom -->
