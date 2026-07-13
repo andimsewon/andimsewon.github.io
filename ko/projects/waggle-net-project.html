@@ -21,7 +21,7 @@ json_ld: |
     <div class="container">
       <p class="back-link"><a href="/ko/projects.html" aria-label="프로젝트 목록으로">← 프로젝트 목록으로</a></p>
       <div class="section-header">
-        <h2 class="page-title">WaggleNet – LoRa 및 MQTT 기반 내부·외부 벌통 환경 모니터링 시스템</h2>
+        <h1 class="page-title">WaggleNet – LoRa 및 MQTT 기반 내부·외부 벌통 환경 모니터링 시스템</h1>
         <div class="project-card-metrics" aria-label="기술 스택">
           <span class="metric-badge">LoRa</span>
           <span class="metric-badge">MQTT</span>
@@ -38,24 +38,24 @@ json_ld: |
 
           <div class="project-main-full">
 
-            <h3 class="section-title">Problem</h3>
+            <h2 class="section-title">Problem</h2>
             <div class="project-description">
               <p>기존 스마트 벌통 시스템 대부분은 내부 온습도만 측정하며, 고가의 GSM/LTE 통신에 의존하는 경우가 많아 규모 확장이 어렵고 노드당 비용이 높습니다. 여러 벌통을 저렴하게 모니터링하려는 양봉가에게는 적합하지 않은 방식입니다.</p>
             </div>
 
-            <h3 class="section-title">Approach</h3>
+            <h2 class="section-title">Approach</h2>
             <div class="project-description">
               <p>이 연구는 전북대학교 소속을 유지한 채, Purdue University의 Korean Software Square가 주관한 정부 지원 IITP Korean AI Square Summer 2025 Program에서 수행했습니다. 논문 사사에 명시된 Prof. Eric T. Matson과 Prof. Anthony H. Smith의 지도를 받았습니다. WaggleNet은 LoRa 워커 노드 → LoRa–MQTT 게이트웨이 → 클라우드 DB 및 Flutter 앱으로 이어지는 3단 아키텍처로 벌통 내부와 외부 환경을 동시에 측정합니다.</p>
               <p>각 워커 노드(DHT22, LDR, GPS)는 3분 간격으로 샘플링하여 LoRa로 게이트웨이에 전송하고, 게이트웨이는 UTC 타임스탬프를 추가해 JSON을 MQTT로 클라우드 DB(SQLite)에 전달합니다. Flutter 앱은 온도·습도·조도·위치를 실시간 시각화하며, 설정된 임계치를 벗어나면 Firebase Cloud Messaging으로 경보를 발송합니다.</p>
               <p>현장 실험은 Langstroth 벌통 2개에 워커 노드 4개(내부 2개, 외부 2개)를 설치하여 West Lafayette의 주관 기관 Korean Software Square 시설과 인근 양봉장에서 두 달간 진행했습니다.</p>
             </div>
 
-            <h3 class="section-title">Result</h3>
+            <h2 class="section-title">Result</h2>
             <div class="project-description">
               <p>가시선 기준 110m(도심)·150m(교외) 거리에서 패킷 전송률 100%를 달성했고, 종단 간 지연은 5초 이내(평균 3.8초)였습니다. 두 달간의 배포 기간 동안 가동률 95% 이상을 유지했습니다. 노드당 하드웨어 비용은 $25–30로, 상용 시스템($200–500) 대비 70–85% 절감되었습니다. 결과는 arXiv(2512.07408)에 게재되었습니다.</p>
             </div>
 
-            <h3 class="section-title">My Role</h3>
+            <h2 class="section-title">My Role</h2>
             <div class="project-description">
               <p>공동 연구와 그 결과물인 6인 저자 논문에 3저자로 기여했습니다. 이 연구는 Purdue University의 Korean Software Square가 주관한 IITP Korean AI Square Summer 2025 Program에서 Prof. Eric T. Matson과 Prof. Anthony H. Smith의 지도 아래 수행했습니다.</p>
             </div>
@@ -71,7 +71,7 @@ json_ld: |
           <!-- Video and Presentation at the bottom -->
           <div class="project-media-section">
             <div class="project-video-wrapper">
-              <h3 class="section-title">프로젝트 영상</h3>
+              <h2 class="section-title">프로젝트 영상</h2>
               <video controls>
                 <source src="/assets/polvo-de-purdue-project/video.mp4" type="video/mp4">
                 브라우저가 비디오 태그를 지원하지 않습니다.
@@ -79,7 +79,7 @@ json_ld: |
             </div>
 
             <div class="project-presentation-wrapper">
-              <h3 class="section-title">발표 자료</h3>
+              <h2 class="section-title">발표 자료</h2>
               <div class="project-presentation" id="presentationThumbnail" data-pdf="/assets/polvo-de-purdue-project/presentation.optimized.pdf">
                 <iframe data-src="/assets/polvo-de-purdue-project/presentation.optimized.pdf#page=1&zoom=fit" style="width: 100%; height: 600px; border: none; pointer-events: none;" loading="lazy"></iframe>
                 <div class="project-presentation-label">클릭하여 발표 자료 보기</div>

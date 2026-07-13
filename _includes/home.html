@@ -6,7 +6,7 @@
     <div class="home-shell">
       <div class="hero-intro">
         <div class="hero-identity">
-          <p class="hero-eyebrow">FAO · UN OFFICE OF INNOVATION — ROME</p>
+          <p class="hero-eyebrow">{% if is_ko %}ML 엔지니어 · 연구자 · 시스템 빌더{% else %}ML ENGINEER · RESEARCHER · SYSTEMS BUILDER{% endif %}</p>
           <h1 id="hero-title" class="hero-name">{% if is_ko %}김세원{% else %}Sewon Kim{% endif %}</h1>
           <p class="hero-tagline">{% if is_ko %}지식그래프 RAG, 비전–언어 모델, IoT 데이터 파이프라인을 아우르는 검색·멀티모달 시스템을 만듭니다.{% else %}I build retrieval and multimodal systems — knowledge-graph RAG, vision–language models, and IoT data pipelines.{% endif %}</p>
           <div class="hero-actions" aria-label="{% if is_ko %}주요 링크{% else %}Primary actions{% endif %}">
@@ -54,7 +54,7 @@
           <span class="evidence-value">{% if is_ko %}특허 출원 · 소프트웨어 저작권 등록{% else %}Patent filed · Software copyright registered{% endif %}</span>
         </a>
         <a class="evidence-item" href="{% if is_ko %}/ko/heritage-monitoring-project.html{% else %}/heritage-monitoring-project.html{% endif %}">
-          <span class="evidence-label">{% if is_ko %}프로덕션 배포{% else %}Production Deployment{% endif %}</span>
+          <span class="evidence-label">{% if is_ko %}운영 배포{% else %}Operational Deployment{% endif %}</span>
           <span class="evidence-value">{% if is_ko %}국가유산청 · 실제 운영{% else %}Korea Heritage Service · Operational use{% endif %}</span>
         </a>
         <a class="evidence-item" href="https://arxiv.org/abs/2512.07408" target="_blank" rel="noopener noreferrer">
@@ -84,13 +84,14 @@
                 <p class="work-status">{% if is_ko %}검색 · 지식그래프 · 연구{% else %}Retrieval · Knowledge Graphs · Research{% endif %}</p>
                 <h3>KG-RAG</h3>
               </div>
-              <span class="work-date">2025—2026</span>
+              <time class="work-date" datetime="2025/2026">2025—2026</time>
             </div>
             <p class="work-problem">{% if is_ko %}평면 텍스트 유사도 검색의 한계를 보완하기 위해 구조화된 관계 정보를 활용하는 멀티홉 질의응답 검색 파이프라인을 설계했습니다.{% else %}Designed a multi-hop question-answering retrieval pipeline that uses structured relations beyond flat text similarity.{% endif %}</p>
             <dl class="work-evidence">
-              <div><dt>{% if is_ko %}역할{% else %}Role{% endif %}</dt><dd>{% if is_ko %}지식그래프 검색 파이프라인과 멀티홉 추론 메커니즘 설계·구현{% else %}Designed and implemented the knowledge-graph retrieval pipeline and multi-hop reasoning mechanism{% endif %}</dd></div>
-              <div><dt>{% if is_ko %}기술{% else %}Approach{% endif %}</dt><dd>{% if is_ko %}그래프 검색 · 임베딩 통합 · 절제 연구 · PyTorch · LangChain{% else %}Graph retrieval · Embedding integration · Ablation studies · PyTorch · LangChain{% endif %}</dd></div>
-              <div><dt>{% if is_ko %}상태{% else %}Status{% endif %}</dt><dd>{% if is_ko %}Natural Language Learning Lab 연구 · 원고 준비 중{% else %}Natural Language Learning Lab research · Manuscript in preparation{% endif %}</dd></div>
+              <div><dt>{% if is_ko %}나의 역할{% else %}My role{% endif %}</dt><dd>{% if is_ko %}지식그래프 검색 파이프라인과 멀티홉 추론 메커니즘 설계·구현{% else %}Designed and implemented the knowledge-graph retrieval pipeline and multi-hop reasoning mechanism{% endif %}</dd></div>
+              <div><dt>{% if is_ko %}시스템{% else %}System{% endif %}</dt><dd>{% if is_ko %}그래프 검색 · 신경 임베딩 통합 · PyTorch · LangChain{% else %}Graph retrieval · Neural embedding integration · PyTorch · LangChain{% endif %}</dd></div>
+              <div><dt>{% if is_ko %}엔지니어링 증거{% else %}Engineering evidence{% endif %}</dt><dd>{% if is_ko %}임베딩 통합 방식의 정확도·연산 효율 트레이드오프를 절제 연구로 평가{% else %}Ablation studies evaluated accuracy and computational-efficiency trade-offs across embedding-integration approaches{% endif %}</dd></div>
+              <div><dt>{% if is_ko %}영향 및 책임{% else %}Impact &amp; responsibility{% endif %}</dt><dd>{% if is_ko %}근거 기반 멀티홉 질의응답 연구 · Natural Language Learning Lab 원고 준비 중{% else %}Grounded multi-hop question-answering research · Lab manuscript in preparation{% endif %}</dd></div>
             </dl>
             <div class="work-links"><a href="{% if is_ko %}/ko/kg-rag-project.html{% else %}/kg-rag-project.html{% endif %}">{% if is_ko %}케이스 스터디 보기{% else %}Read case study{% endif %} <span aria-hidden="true">→</span></a></div>
           </div>
@@ -108,9 +109,10 @@
             </div>
             <p class="work-problem">{% if is_ko %}종이 기반 문화유산 현장 조사를 구조화된 실시간 손상 기록·평가 시스템으로 전환했습니다.{% else %}Replaced a paper-based heritage survey workflow with structured, real-time damage documentation and assessment.{% endif %}</p>
             <dl class="work-evidence">
-              <div><dt>{% if is_ko %}역할{% else %}Role{% endif %}</dt><dd>{% if is_ko %}Flutter 현장 앱, FastAPI 백엔드, DETR 손상 탐지 파이프라인을 포함한 엔드투엔드 시스템 설계{% else %}Architected the end-to-end Flutter field app, FastAPI backend, and DETR damage-detection pipeline{% endif %}</dd></div>
-              <div><dt>{% if is_ko %}기술{% else %}Approach{% endif %}</dt><dd>PyTorch · DETR · FastAPI · Flutter · Firebase</dd></div>
-              <div><dt>{% if is_ko %}증거{% else %}Evidence{% endif %}</dt><dd>{% if is_ko %}국가유산청 운영 · 특허 출원 · 소프트웨어 저작권 등록{% else %}Operational use at Korea Heritage Service · Patent filed · Software copyright registered{% endif %}</dd></div>
+              <div><dt>{% if is_ko %}나의 역할{% else %}My role{% endif %}</dt><dd>{% if is_ko %}Flutter 현장 앱, FastAPI 백엔드, DETR 손상 탐지 파이프라인을 포함한 엔드투엔드 시스템 설계{% else %}Architected the end-to-end Flutter field app, FastAPI backend, and DETR damage-detection pipeline{% endif %}</dd></div>
+              <div><dt>{% if is_ko %}시스템{% else %}System{% endif %}</dt><dd>PyTorch · DETR · FastAPI · Flutter · Firebase</dd></div>
+              <div><dt>{% if is_ko %}엔지니어링 증거{% else %}Engineering evidence{% endif %}</dt><dd>{% if is_ko %}F1 0.89 · AI 탐지 응답 2초 미만 · Firestore 동기화 500ms 미만{% else %}F1 0.89 · AI detection response under 2 s · Firestore synchronization under 500 ms{% endif %}</dd></div>
+              <div><dt>{% if is_ko %}영향 및 책임{% else %}Impact &amp; responsibility{% endif %}</dt><dd>{% if is_ko %}국가유산청 운영 · 특허 출원 · 소프트웨어 저작권 등록 · 조사자 검토 유지{% else %}Operational use at Korea Heritage Service · Patent filed · Software copyright registered · Inspector review retained{% endif %}</dd></div>
             </dl>
             <div class="work-links"><a href="{% if is_ko %}/ko/heritage-monitoring-project.html{% else %}/heritage-monitoring-project.html{% endif %}">{% if is_ko %}케이스 스터디 보기{% else %}Read case study{% endif %} <span aria-hidden="true">→</span></a><a href="https://github.com/andimsewon/heritage_services_app" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div>
           </div>
@@ -126,11 +128,12 @@
               </div>
               <div class="work-heading-meta"><time class="work-date" datetime="2025">2025</time><strong>100% PDR</strong></div>
             </div>
-            <p class="work-problem">{% if is_ko %}벌통 내·외부 환경을 저비용으로 함께 관측하기 위한 LoRa–MQTT 센서 네트워크와 모바일 모니터링 흐름을 구축했습니다.{% else %}Built a low-cost LoRa–MQTT sensor network and mobile monitoring flow for simultaneous conditions inside and outside beehives.{% endif %}</p>
+            <p class="work-problem">{% if is_ko %}벌통 내·외부 환경을 저비용으로 함께 관측할 수 있도록 LoRa–MQTT 센서 네트워크와 모바일 모니터링 흐름을 검증한 프로젝트입니다.{% else %}The project validated a low-cost LoRa–MQTT sensor network and mobile monitoring flow for simultaneous conditions inside and outside beehives.{% endif %}</p>
             <dl class="work-evidence">
-              <div><dt>{% if is_ko %}역할{% else %}Role{% endif %}</dt><dd>{% if is_ko %}국제 팀의 데이터 수집·현장 연구에 기여하고 6인 논문의 제3저자로 참여{% else %}Contributed to data collection and field research in an international team; third author of six{% endif %}</dd></div>
-              <div><dt>{% if is_ko %}기술{% else %}Approach{% endif %}</dt><dd>ESP32 · LoRa · MQTT · SQLite · Flutter</dd></div>
-              <div><dt>{% if is_ko %}결과{% else %}Result{% endif %}</dt><dd>{% if is_ko %}가시선 110m에서 패킷 전송률 100% · 평균 지연 3.8초 · 2개월 현장 시험{% else %}100% packet delivery at 110 m line of sight · 3.8 s mean latency · Two-month field trial{% endif %}</dd></div>
+              <div><dt>{% if is_ko %}나의 역할{% else %}My role{% endif %}</dt><dd>{% if is_ko %}국제 팀의 데이터 수집·현장 연구에 기여하고 6인 논문의 제3저자로 참여{% else %}Contributed to data collection and field research in an international team; third author of six{% endif %}</dd></div>
+              <div><dt>{% if is_ko %}시스템{% else %}System{% endif %}</dt><dd>ESP32 · LoRa · MQTT · SQLite · Flutter</dd></div>
+              <div><dt>{% if is_ko %}엔지니어링 증거{% else %}Engineering evidence{% endif %}</dt><dd>{% if is_ko %}110m 가시선에서 패킷 전송률 100% · 평균 지연 3.8초 · 2개월 현장 시험에서 가동률 95% 이상{% else %}100% packet delivery at 110 m line of sight · 3.8 s mean latency · Over 95% uptime in a two-month field trial{% endif %}</dd></div>
+              <div><dt>{% if is_ko %}영향 및 책임{% else %}Impact &amp; responsibility{% endif %}</dt><dd>{% if is_ko %}상용 시스템 대비 하드웨어 비용 70–85% 절감 · 국제 공동 연구 · arXiv 프리프린트{% else %}70–85% lower hardware cost than commercial systems · International collaboration · arXiv preprint{% endif %}</dd></div>
             </dl>
             <div class="work-links"><a href="{% if is_ko %}/ko/waggle-net-project.html{% else %}/waggle-net-project.html{% endif %}">{% if is_ko %}케이스 스터디 보기{% else %}Read case study{% endif %} <span aria-hidden="true">→</span></a><a href="https://arxiv.org/abs/2512.07408" target="_blank" rel="noopener noreferrer">arXiv <span aria-hidden="true">↗</span></a></div>
           </div>
@@ -167,9 +170,9 @@
     <div class="home-shell">
       <div class="section-intro"><p class="section-kicker">03 / {% if is_ko %}연구{% else %}Research{% endif %}</p><div><h2 id="research-title" class="home-section-title">{% if is_ko %}연구 및 출판{% else %}Research &amp; Publications{% endif %}</h2><p>{% if is_ko %}검증 가능한 논문, 원고 및 지식재산입니다.{% else %}Verified preprints, research in progress, and intellectual property.{% endif %}</p></div></div>
       <div class="research-list">
-        <article class="research-item"><div class="research-type">{% if is_ko %}연구 · 2025—2026{% else %}Research · 2025—2026{% endif %}</div><div><h3>Knowledge Graph–Enhanced Retrieval-Augmented Generation for Multi-Hop Reasoning in Large Language Models</h3><p class="citation">{% if is_ko %}Natural Language Learning Lab에서 수행한 지식그래프 기반 검색 및 멀티홉 추론 연구.{% else %}Knowledge-graph retrieval and multi-hop reasoning research conducted at the Natural Language Learning Lab.{% endif %}</p><p class="research-links"><a href="{% if is_ko %}/ko/kg-rag-project.html{% else %}/kg-rag-project.html{% endif %}">{% if is_ko %}연구 개요{% else %}Research overview{% endif %}</a></p></div></article>
+        <article class="research-item"><div class="research-type">{% if is_ko %}원고 준비 중 · 2025—2026{% else %}Manuscript in preparation · 2025—2026{% endif %}</div><div><h3>Knowledge Graph–Enhanced Retrieval-Augmented Generation for Multi-Hop Reasoning in Large Language Models</h3><p class="citation">{% if is_ko %}Natural Language Learning Lab에서 수행한 지식그래프 기반 검색 및 멀티홉 추론 연구.{% else %}Knowledge-graph retrieval and multi-hop reasoning research conducted at the Natural Language Learning Lab.{% endif %}</p><p class="research-links"><a href="{% if is_ko %}/ko/kg-rag-project.html{% else %}/kg-rag-project.html{% endif %}">{% if is_ko %}연구 개요{% else %}Research overview{% endif %}</a></p></div></article>
         <article class="research-item"><div class="research-type">{% if is_ko %}프리프린트 · 2025{% else %}Preprint · 2025{% endif %}</div><div><h3>WaggleNet: A LoRa and MQTT-Based Monitoring System for Internal and External Beehive Conditions</h3><p class="citation">Minju Jeon, Jiyun Kim, <strong>Sewon Kim</strong>, Seongmin Park, Bo Zhang, Anthony H. Smith. arXiv:2512.07408 [cs.NI].</p><p class="research-links"><a href="https://arxiv.org/abs/2512.07408" target="_blank" rel="noopener noreferrer">{% if is_ko %}초록 및 PDF{% else %}Abstract &amp; PDF{% endif %} <span aria-hidden="true">↗</span></a><a href="{% if is_ko %}/ko/waggle-net-project.html{% else %}/waggle-net-project.html{% endif %}">{% if is_ko %}프로젝트 페이지{% else %}Project page{% endif %}</a></p></div></article>
-        <article class="research-item"><div class="research-type">{% if is_ko %}지식재산 · 2025{% else %}Intellectual property · 2025{% endif %}</div><div><h3>{% if is_ko %}문화유산 손상 탐지 시스템{% else %}Cultural-heritage damage detection system{% endif %}</h3><p class="citation">{% if is_ko %}전북대학교 Natural Language Learning Lab과 국가유산청 공동 특허 출원 · 소프트웨어 저작권 등록.{% else %}Patent filed jointly by the Natural Language Learning Lab at Jeonbuk National University and Korea Heritage Service · Software copyright registered.{% endif %}</p><p class="research-links"><a href="{% if is_ko %}/ko/heritage-monitoring-project.html{% else %}/heritage-monitoring-project.html{% endif %}">{% if is_ko %}증거 및 상세 정보{% else %}Evidence and details{% endif %}</a></p></div></article>
+        <article class="research-item"><div class="research-type">{% if is_ko %}특허 출원 · 등록 저작권 · 2025{% else %}Patent application · Registered copyright · 2025{% endif %}</div><div><h3>{% if is_ko %}문화유산 손상 탐지 시스템{% else %}Cultural-heritage damage detection system{% endif %}</h3><p class="citation">{% if is_ko %}전북대학교 Natural Language Learning Lab과 국가유산청 공동 특허 출원 · 소프트웨어 저작권 등록.{% else %}Patent application filed jointly by the Natural Language Learning Lab at Jeonbuk National University and Korea Heritage Service · Software copyright registered.{% endif %}</p><p class="research-links"><a href="{% if is_ko %}/ko/heritage-monitoring-project.html{% else %}/heritage-monitoring-project.html{% endif %}">{% if is_ko %}증거 및 상세 정보{% else %}Evidence and details{% endif %}</a></p></div></article>
       </div>
       <p class="section-more"><a href="{% if is_ko %}/ko/publications.html{% else %}/publications.html{% endif %}">{% if is_ko %}출판 목록 보기{% else %}View publications page{% endif %} <span aria-hidden="true">→</span></a></p>
     </div>
@@ -194,9 +197,9 @@
       <div class="section-intro"><p class="section-kicker">05 / {% if is_ko %}배경{% else %}Background{% endif %}</p><div><h2 id="education-title" class="home-section-title">{% if is_ko %}학력 및 주요 활동{% else %}Education &amp; Selected Activities{% endif %}</h2></div></div>
       <div class="education-grid">
         <article><p class="education-date">2022 — 2026 (Expected)</p><h3>{% if is_ko %}컴퓨터공학 학사{% else %}B.S. in Computer Science and Engineering{% endif %}</h3><p>Jeonbuk National University · GPA 4.09/4.5</p><p class="education-detail">{% if is_ko %}머신러닝, 데이터마이닝, 정보검색, 자연어처리, 데이터베이스{% else %}Machine Learning, Data Mining, Information Retrieval, NLP, Database Systems{% endif %}</p></article>
+        <article><p class="education-date">2022 — {% if is_ko %}현재{% else %}Present{% endif %}</p><h3>{% if is_ko %}학생대표{% else %}Student Representative{% endif %}</h3><p>Honors Residential College · Jeonbuk National University</p><p class="research-links"><a href="{% if is_ko %}/ko/activities.html{% else %}/activities.html{% endif %}">{% if is_ko %}활동 전체 보기{% else %}View activities{% endif %}</a><a href="{% if is_ko %}/ko/awards.html{% else %}/awards.html{% endif %}">{% if is_ko %}수상 내역{% else %}Honors &amp; awards{% endif %}</a></p></article>
         <article><p class="education-date">2025</p><h3>{% if is_ko %}수업 조교{% else %}Teaching Assistant{% endif %}</h3><p>Algorithms &amp; Linux Programming · Jeonbuk National University</p><p class="education-detail">{% if is_ko %}주간 워크숍, 오피스 아워, 문제 해결 세션으로 130명 이상의 학생을 지원했습니다.{% else %}Supported 130+ students through weekly workshops, office hours, and problem-solving sessions.{% endif %}</p></article>
         <article><p class="education-date">2023</p><h3>{% if is_ko %}교환학생{% else %}Exchange Student{% endif %}</h3><p>University of Malaya · Kuala Lumpur, Malaysia</p></article>
-        <article><p class="education-date">{% if is_ko %}리더십{% else %}Leadership{% endif %}</p><h3>{% if is_ko %}학생대표{% else %}Student Representative{% endif %}</h3><p>Honors Residential College · Jeonbuk National University</p><p class="research-links"><a href="{% if is_ko %}/ko/activities.html{% else %}/activities.html{% endif %}">{% if is_ko %}활동 전체 보기{% else %}View activities{% endif %}</a><a href="{% if is_ko %}/ko/awards.html{% else %}/awards.html{% endif %}">{% if is_ko %}수상 내역{% else %}Honors &amp; awards{% endif %}</a></p></article>
       </div>
     </div>
   </section>

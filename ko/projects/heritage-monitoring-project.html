@@ -21,7 +21,7 @@ json_ld: |
     <div class="container">
       <p class="back-link"><a href="/ko/projects.html" aria-label="프로젝트 목록으로">← 프로젝트 목록으로</a></p>
       <div class="section-header">
-        <h2 class="page-title">Heritage-LLaVA: 문화유산 손상 탐지 멀티모달 시스템</h2>
+        <h1 class="page-title">Heritage-LLaVA: 문화유산 손상 탐지 멀티모달 시스템</h1>
         <div class="project-card-metrics" aria-label="기술 스택">
           <span class="metric-badge">Flutter</span>
           <span class="metric-badge">FastAPI</span>
@@ -34,18 +34,18 @@ json_ld: |
         <div class="project-item">
           <div class="project-main-full">
 
-            <h3 class="section-title">Problem</h3>
+            <h2 class="section-title">Problem</h2>
             <div class="project-description">
               <p>국내 문화유산 현장 조사는 종이 기반으로 이루어져, 지정 현황·소유 관계·손상 심각도 변화를 구조적으로 추적할 방법이 없었고, 여러 조사자가 현장에서 실시간으로 정보를 공유할 수도 없었습니다.</p>
             </div>
 
-            <h3 class="section-title">Approach</h3>
+            <h2 class="section-title">Approach</h2>
             <div class="project-description">
               <p>종이 조사를 완전한 디지털·AI 보조 플랫폼으로 전환하는 크로스플랫폼 현장 조사 시스템을 구축했습니다. Flutter(Web/Android/iOS)가 현장용 UI를 제공하고, FastAPI 백엔드가 국가유산청 Open API(다중 조건 검색을 위한 XML→JSON 프록시 포함)와 손상 탐지를 위한 커스텀 DETR 기반 PyTorch 모델을 통합하며, Firebase가 실시간 저장·동기화를 담당합니다.</p>
               <p>손상 탐지 모델은 현장 사진에서 갈램·균열·부후·압괴/터짐 4개 구조적 손상 유형을 분류하고, 바운딩 박스·라벨·신뢰도와 함께 A–D 자동 심각도 등급을 반환합니다. 조사 워크플로는 현장 조사(기본 정보, 메타 정보, 현황 사진, 손상 탐지), 조사자 의견(보존관리 이력, 조사 결과, 관리 사항), 종합 진단(손상 종합 분석, 등급 분류) 3단계 탭으로 구성됩니다. 모든 변경 사항은 Firestore 스트림으로 실시간 반영되며, 편집 이력은 감사·추적을 위해 자동 기록됩니다.</p>
             </div>
 
-            <h3 class="section-title">Result</h3>
+            <h2 class="section-title">Result</h2>
             <div class="project-description">
               <p>손상 탐지 모델은 4개 손상 유형 전체에서 <strong>F1 0.89</strong>를 달성했습니다. 제가 2025년 2월부터 2026년 2월까지 학부연구생으로 활동했던 전북대학교 Natural Language Learning Lab과 국가유산청이 손상 탐지 방법에 대한 특허를 공동 출원했으며, 소프트웨어는 저작권 등록을 마쳤습니다. 시스템은 현재 국가유산청에서 실제 운영되고 있습니다.</p>
               <ul class="sub-list">
@@ -58,7 +58,7 @@ json_ld: |
               <!-- TODO: confirm training set size before publishing -->
             </div>
 
-            <h3 class="section-title">My Role</h3>
+            <h2 class="section-title">My Role</h2>
             <div class="project-description">
               <p>Flutter 프론트엔드, FastAPI 백엔드, DETR 기반 손상 탐지 파이프라인을 포함한 엔드투엔드 시스템을 직접 설계했으며, 손상 조사 UI, 이미지 파이프라인, 실시간 편집 이력 추적까지 구현했습니다.</p>
             </div>
@@ -72,7 +72,7 @@ json_ld: |
           <!-- Copyright Certificate -->
           <div class="project-media-section">
             <div class="project-certificate-wrapper">
-              <h3 class="section-title">저작권 등록증</h3>
+              <h2 class="section-title">저작권 등록증</h2>
               <div class="project-certificate">
                 <img src="/assets/heritage-monitoring-project/copyright-certificate.jpeg" alt="저작권 등록증" loading="lazy" decoding="async" class="full-bleed-image">
               </div>
