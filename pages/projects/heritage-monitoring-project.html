@@ -1,19 +1,19 @@
 ---
 layout: default
 lang: en
-title: "Heritage-LLaVA: Multimodal Damage Detection for Cultural Heritage | Sewon Kim"
-description: "Multimodal damage detection for cultural heritage, built with the Korea Heritage Service — by Sewon Kim, machine learning engineer."
+title: "Heritage Damage Detection | Sewon Kim"
+description: "Object detection for cultural-heritage damage assessment, built with the Korea Heritage Service — by Sewon Kim, machine learning engineer."
 canonical: https://andimsewon.github.io/heritage-monitoring-project.html
 alternate_en: https://andimsewon.github.io/heritage-monitoring-project.html
 alternate_ko: https://andimsewon.github.io/ko/heritage-monitoring-project.html
-og_title: "Heritage-LLaVA: Multimodal Damage Detection for Cultural Heritage | Sewon Kim"
-og_description: "Multimodal damage detection for cultural heritage, built with the Korea Heritage Service"
+og_title: "Heritage Damage Detection | Sewon Kim"
+og_description: "Object detection for cultural-heritage damage assessment, built with the Korea Heritage Service"
 og_image: https://andimsewon.github.io/assets/heritage-monitoring-project/main.jpeg
 og_url: https://andimsewon.github.io/heritage-monitoring-project.html
 skip_id: project
 permalink: /heritage-monitoring-project.html
 json_ld: |
-  {"@context":"https://schema.org","@type":"WebPage","name":"Heritage-LLaVA: Multimodal Damage Detection for Cultural Heritage | Sewon Kim","url":"https://andimsewon.github.io/heritage-monitoring-project.html"}
+  {"@context":"https://schema.org","@type":"WebPage","name":"Heritage Damage Detection | Sewon Kim","url":"https://andimsewon.github.io/heritage-monitoring-project.html"}
 ---
 
   <!-- Project Detail Section -->
@@ -21,13 +21,14 @@ json_ld: |
     <div class="container">
       <p class="back-link"><a href="projects.html" aria-label="Back to all projects">← Back to Projects</a></p>
       <div class="section-header">
-        <h1 class="page-title">Heritage-LLaVA: Multimodal Damage Detection for Cultural Heritage</h1>
+        <h1 class="page-title">Heritage Damage Detection</h1>
         <div class="project-card-metrics" aria-label="Technologies">
           <span class="metric-badge">Flutter</span>
           <span class="metric-badge">FastAPI</span>
           <span class="metric-badge">PyTorch</span>
           <span class="metric-badge">Firebase</span>
           <span class="metric-badge">DETR</span>
+          <span class="metric-badge">CLIP</span>
         </div>
       </div>
       <div class="content-wrapper">
@@ -36,14 +37,14 @@ json_ld: |
 
             <section class="case-overview" aria-labelledby="overview-title">
               <div>
-                <p class="case-kicker">Deployed multimodal system · 2025</p>
+                <p class="case-kicker">Deployed detection system · 2025</p>
                 <h2 id="overview-title">Overview</h2>
-                <p>A cross-platform field-survey system that combines structured heritage records, real-time collaboration, and image-based damage detection for Korea Heritage Service inspectors.</p>
+                <p>A cross-platform field-survey system that combines structured heritage records, real-time collaboration, and image-based object detection for Korea Heritage Service inspectors.</p>
               </div>
               <dl class="case-facts">
                 <div><dt>My contribution</dt><dd>End-to-end system architecture and implementation</dd></div>
                 <div><dt>Status</dt><dd>Operational use · Patent filed · Copyright registered</dd></div>
-                <div><dt>Validation</dt><dd>F1 0.89 across four deterioration types</dd></div>
+                <div><dt>Validation</dt><dd>F1 0.89 (detection model) across four deterioration types</dd></div>
               </dl>
             </section>
 
@@ -59,14 +60,14 @@ json_ld: |
 
             <h2 class="section-title">My Role</h2>
             <div class="project-description">
-              <p>I architected and implemented the end-to-end system: the Flutter field interface, FastAPI backend, public-API integration, DETR-based image pipeline, and real-time edit-history tracking. The work was completed in collaboration with the Natural Language Learning Lab and Korea Heritage Service; the institutional deployment and jointly filed patent are team outcomes.</p>
+              <p>I architected and implemented the end-to-end object-detection system — a PyTorch pipeline (DETR, CLIP) that localizes damage in field photographs with bounding boxes, classifies the deterioration type, and attaches a confidence score, reviewable through the Flutter field app and FastAPI backend. The work was completed in collaboration with the Natural Language Learning Lab and Korea Heritage Service; the institutional deployment and jointly filed patent are team outcomes.</p>
             </div>
 
             <h2 class="section-title">System Architecture</h2>
             <div class="architecture-flow" aria-label="System data flow">
               <div><strong>Field inspector</strong><span>Flutter · Web / Android / iOS</span></div><span aria-hidden="true">→</span>
               <div><strong>Application API</strong><span>FastAPI · XML-to-JSON proxy</span></div><span aria-hidden="true">→</span>
-              <div><strong>Detection &amp; data</strong><span>DETR inference · Firestore sync</span></div>
+              <div><strong>Detection &amp; data</strong><span>DETR + CLIP inference · Firestore sync</span></div>
             </div>
 
             <h2 class="section-title">Technical Decisions</h2>
@@ -74,26 +75,27 @@ json_ld: |
               <ul>
                 <li><strong>One field client:</strong> Flutter provided a shared codebase for Web, Android, and iOS.</li>
                 <li><strong>API normalization:</strong> A FastAPI proxy converted the public heritage API's XML into JSON and supported multi-criteria search.</li>
-                <li><strong>Reviewable inference:</strong> DETR returned bounding boxes, class labels, confidence scores, and A–D severity grades instead of an opaque single label.</li>
+                <li><strong>Reviewable inference:</strong> The detection pipeline (DETR, CLIP) returns bounding boxes, class labels, confidence scores, and A–D severity grades instead of an opaque single label.</li>
                 <li><strong>Auditability:</strong> Firestore streams synchronized records in real time while automatically recording edit history.</li>
               </ul>
             </div>
 
             <h2 class="section-title">Implementation</h2>
             <div class="project-description">
-              <p>The inspector workflow is organized into Field Survey, Inspector Notes, and Comprehensive Assessment. On-site photographs move through the image pipeline for four-class deterioration detection—cracks, splits, biological decay, and crushing or burst damage—while survey metadata and edits synchronize across clients.</p>
+              <p>The inspector workflow is organized into Field Survey, Inspector Notes, and Comprehensive Assessment. On-site photographs move through the detection pipeline for four-class deterioration detection—cracks, splits, biological decay, and crushing or burst damage—while survey metadata and edits synchronize across clients.</p>
             </div>
 
             <h2 class="section-title">Evaluation and Validation</h2>
             <div class="project-description">
               <ul class="sub-list">
-                <li><strong>Model quality</strong>: F1 0.89 across four deterioration types</li>
+                <li><strong>Model quality</strong>: F1 0.89 (detection model) across four deterioration types</li>
                 <li><strong>Inference latency</strong>: ~800–1200ms (CPU), ~200–400ms (GPU) per image</li>
                 <li><strong>API response</strong>: &lt;150ms (heritage search), &lt;2s (AI detection)</li>
                 <li><strong>Sync delay</strong>: &lt;500ms (Firestore real‑time updates)</li>
                 <li><strong>Model</strong>: DETR (ResNet‑50), 4 classes, class‑specific conf 0.15–0.30, NMS IoU 0.1, ~552MB</li>
                 <li><strong>Coverage</strong>: Single codebase → Web, Android, iOS; tested 10+ concurrent users</li>
               </ul>
+              <!-- TODO: confirm training set size before publishing -->
             </div>
 
             <h2 class="section-title">Results</h2>
@@ -103,6 +105,8 @@ json_ld: |
 
             <h2 class="section-title">Limitations and Lessons</h2>
             <div class="project-description"><p>The evaluation covered four documented deterioration types. Keeping the inspector in the review flow is essential when model output informs field assessment.</p></div>
+
+            <div class="project-tech">Tech Stack: PyTorch · DETR · CLIP · FastAPI · Flutter · Firebase</div>
 
             <h2 class="section-title">Related Links</h2>
             <div class="project-links"><a href="https://github.com/andimsewon/heritage_services_app" target="_blank" rel="noopener noreferrer">GitHub repository <span aria-hidden="true">↗</span></a></div>
