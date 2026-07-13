@@ -267,8 +267,8 @@ p { max-width: 68ch; }
   background: var(--surface);
   color: var(--text);
   border-radius: var(--radius);
-  width: 40px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -287,8 +287,8 @@ p { max-width: 68ch; }
   background: var(--surface);
   color: var(--text);
   border-radius: var(--radius);
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -498,8 +498,9 @@ body.page-enter-active {
   font-size: 0.9rem;
   color: var(--muted);
   margin: 0;
+  line-height: 2.4;
 }
-.hero-links a { color: var(--accent); }
+.hero-links a { color: var(--accent); display: inline-block; padding: 10px 2px; margin: -10px 0; }
 .hero-links a:hover { color: var(--accent-hi); }
 .hero-links-sep { margin: 0 8px; color: var(--hairline); }
 .hero-links-placeholder { color: var(--muted); }
@@ -587,8 +588,6 @@ body.page-enter-active {
   color: var(--muted);
   margin: 0;
 }
-
-.todo { background:#FFE8E8; color:#B00; padding:0 4px; }
 
 /* Plain one-line list for de-emphasized projects */
 .other-projects-list {
@@ -1900,7 +1899,7 @@ b, strong { font-weight: 600; }
   }
 
   .project-description {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .project-links a {
@@ -2045,7 +2044,7 @@ b, strong { font-weight: 600; }
   }
 
   .project-description {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.7;
   }
 

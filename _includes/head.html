@@ -38,6 +38,24 @@
   <link rel="dns-prefetch" href="https://github.com">
   <link rel="dns-prefetch" href="https://www.linkedin.com">
 
+  <!-- The mobile hamburger menu depends on JS to toggle open. Without JS, force the
+       nav links back into normal flow so navigation never becomes unreachable. -->
+  <noscript>
+  <style>
+    .nav-toggle { display: none !important; }
+    .nav-links {
+      position: static !important;
+      max-height: none !important;
+      overflow: visible !important;
+      flex-direction: row !important;
+      flex-wrap: wrap !important;
+      background: transparent !important;
+      border-top: none !important;
+    }
+    .nav-links a { padding: 4px 0 !important; width: auto !important; }
+  </style>
+  </noscript>
+
   {% if page.preload_profile_image %}
   <link rel="preload" as="image" href="{{ site.profile_image_path }}?v={{ site.profile_image_version }}" fetchpriority="high">
   {% elsif page.preload_image %}
@@ -50,10 +68,10 @@
   {% if page.og_description or page.description %}
   <meta property="og:description" content="{{ page.og_description | default: page.description }}">
   {% endif %}
-  {% if page.og_image_profile %}
-  <meta property="og:image" content="{{ site.url }}{{ site.profile_image_path }}?v={{ site.profile_image_version }}">
+  {% if page.og_image_default %}
+  <meta property="og:image" content="{{ site.url }}{{ site.og_card_path }}?v={{ site.og_card_version }}">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="{{ site.url }}{{ site.profile_image_path }}?v={{ site.profile_image_version }}">
+  <meta name="twitter:image" content="{{ site.url }}{{ site.og_card_path }}?v={{ site.og_card_version }}">
   {% elsif page.og_image %}
   <meta property="og:image" content="{{ page.og_image }}">
   <meta name="twitter:card" content="summary_large_image">

@@ -12,3 +12,7 @@ url: "https://andimsewon.github.io"
 # Centralized profile image settings
 profile_image_path: "/assets/profile_2607.optimized.jpeg"
 profile_image_version: "20260713"
+
+# Centralized default social-share card (used when a page sets og_image_default: true)
+og_card_path: "/assets/og-image.png"
+og_card_version: "20260713"
