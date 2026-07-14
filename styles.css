@@ -134,6 +134,7 @@ iframe { border: none; }
   --beaver-tilt: 0deg;
   --look-x: 0px;
   --look-y: 0px;
+  --run-speed: 280ms;
   position: fixed;
   z-index: 90;
   left: 0;
@@ -157,11 +158,30 @@ iframe { border: none; }
 .cursor-beaver.is-surprised .cursor-beaver__art { animation: beaver-hop .4s var(--ease); }
 .cursor-beaver.is-surprised .cursor-beaver__eyes { transform-origin: 66px 54px; animation: beaver-blink .4s ease; }
 .cursor-beaver.is-surprised .cursor-beaver__paws { transform-origin: 66px 84px; animation: beaver-paws .4s ease; }
+.cursor-beaver__tongue { transform-origin: 68px 88px; animation: beaver-tongue 1.7s ease-in-out infinite; }
+.cursor-beaver.is-running:not(.is-dizzy) .cursor-beaver__art { animation: beaver-run-bob var(--run-speed) ease-in-out infinite; }
+.cursor-beaver.is-running .cursor-beaver__foot--left { transform-origin: 45px 106px; animation: beaver-run-left var(--run-speed) ease-in-out infinite; }
+.cursor-beaver.is-running .cursor-beaver__foot--right { transform-origin: 87px 106px; animation: beaver-run-right var(--run-speed) ease-in-out infinite; }
+.cursor-beaver.is-running .cursor-beaver__paws { transform-origin: 66px 84px; animation: beaver-run-paws var(--run-speed) ease-in-out infinite; }
+.cursor-beaver.is-running .cursor-beaver__tongue { animation-duration: var(--run-speed); }
+.cursor-beaver__dizzy-stars { opacity: 0; transform-origin: 66px 31px; }
+.cursor-beaver.is-dizzy .cursor-beaver__art { animation: beaver-wobble .18s ease-in-out infinite alternate; }
+.cursor-beaver.is-dizzy .cursor-beaver__eyes { transform-origin: 66px 54px; animation: beaver-dizzy-eyes .55s linear infinite; }
+.cursor-beaver.is-dizzy .cursor-beaver__dizzy-stars { opacity: 1; animation: beaver-stars .8s linear infinite; }
+.cursor-beaver.is-dizzy .cursor-beaver__tail { animation-duration: .16s; }
 
 @keyframes beaver-tail { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(5deg); } }
 @keyframes beaver-hop { 0%, 100% { transform: translateY(0); } 45% { transform: translateY(-13px) rotate(-3deg); } }
 @keyframes beaver-blink { 0%, 100% { transform: scaleY(1); } 35%, 60% { transform: scaleY(.12); } }
 @keyframes beaver-paws { 0%, 100% { transform: rotate(0); } 40% { transform: rotate(-8deg) scale(1.08); } 65% { transform: rotate(8deg) scale(1.08); } }
+@keyframes beaver-tongue { 0%, 72%, 100% { transform: rotate(0); } 82% { transform: rotate(7deg) translateY(1px); } 91% { transform: rotate(-5deg); } }
+@keyframes beaver-run-bob { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-7px) rotate(2deg) scaleY(1.03); } }
+@keyframes beaver-run-left { 0%, 100% { transform: translate(-5px, -2px) rotate(12deg); } 50% { transform: translate(6px, 1px) rotate(-10deg); } }
+@keyframes beaver-run-right { 0%, 100% { transform: translate(6px, 1px) rotate(-10deg); } 50% { transform: translate(-5px, -2px) rotate(12deg); } }
+@keyframes beaver-run-paws { 0%, 100% { transform: rotate(-7deg) translateX(-2px); } 50% { transform: rotate(7deg) translateX(2px); } }
+@keyframes beaver-wobble { from { transform: rotate(-5deg) translateX(-2px); } to { transform: rotate(5deg) translateX(2px); } }
+@keyframes beaver-dizzy-eyes { to { transform: rotate(360deg) scale(.88); } }
+@keyframes beaver-stars { to { transform: rotate(360deg); } }
 
 @media (hover: none), (pointer: coarse), (max-width: 768px), (prefers-reduced-motion: reduce) {
   .cursor-beaver { display: none; }

@@ -119,32 +119,75 @@
   var lastX = x;
   var raf = 0;
   var idleTimer = 0;
+  var stopTimer = 0;
+  var lastPointerX = 0;
+  var lastPointerTime = 0;
+  var lastDirection = 0;
+  var shakeScore = 0;
+  var lastShakeTime = 0;
+  var dizzyTimer = 0;
 
   function clamp(value, min, max) {
     return Math.min(Math.max(value, min), max);
   }
 
   function animate() {
+    var distance = Math.sqrt(Math.pow(targetX - x, 2) + Math.pow(targetY - y, 2));
     x += (targetX - x) * 0.13;
     y += (targetY - y) * 0.13;
     var tilt = clamp((targetX - lastX) * 0.12, -9, 9);
     beaver.style.setProperty('--beaver-x', x + 'px');
     beaver.style.setProperty('--beaver-y', y + 'px');
     beaver.style.setProperty('--beaver-tilt', tilt + 'deg');
+    beaver.style.setProperty('--run-speed', Math.max(180, 420 - Math.min(distance, 180)) + 'ms');
     lastX += (targetX - lastX) * 0.2;
     raf = window.requestAnimationFrame(animate);
   }
 
   function wake() {
-    beaver.classList.add('is-visible', 'is-moving');
+    beaver.classList.add('is-visible', 'is-moving', 'is-running');
     window.clearTimeout(idleTimer);
+    window.clearTimeout(stopTimer);
     idleTimer = window.setTimeout(function () {
       beaver.classList.remove('is-moving');
+      stopTimer = window.setTimeout(function () {
+        beaver.classList.remove('is-running');
+      }, 260);
     }, 180);
     if (!raf) raf = window.requestAnimationFrame(animate);
   }
 
+  function detectShake(event) {
+    var now = performance.now();
+    if (lastPointerTime) {
+      var elapsed = Math.max(now - lastPointerTime, 1);
+      var deltaX = event.clientX - lastPointerX;
+      var direction = deltaX === 0 ? lastDirection : (deltaX > 0 ? 1 : -1);
+      var speed = Math.abs(deltaX) / elapsed;
+
+      // Reward quick, substantial direction changes and rapidly decay old movement.
+      shakeScore *= Math.pow(0.5, elapsed / 260);
+      if (direction !== lastDirection && Math.abs(deltaX) > 16 && speed > 0.65) {
+        shakeScore += Math.min(speed * 1.8, 3.2);
+        lastShakeTime = now;
+      }
+      if (direction) lastDirection = direction;
+
+      if (shakeScore > 7 && now - lastShakeTime < 180) {
+        beaver.classList.add('is-dizzy');
+        window.clearTimeout(dizzyTimer);
+        dizzyTimer = window.setTimeout(function () {
+          beaver.classList.remove('is-dizzy');
+          shakeScore = 0;
+        }, 1800);
+      }
+    }
+    lastPointerX = event.clientX;
+    lastPointerTime = now;
+  }
+
   document.addEventListener('pointermove', function (event) {
+    detectShake(event);
     var offsetX = event.clientX > window.innerWidth - 130 ? -64 : 38;
     var offsetY = event.clientY > window.innerHeight - 120 ? -58 : 34;
     targetX = clamp(event.clientX + offsetX, 54, window.innerWidth - 54);
