@@ -138,8 +138,8 @@ iframe { border: none; }
   z-index: 90;
   left: 0;
   top: 0;
-  width: 92px;
-  height: 76px;
+  width: 98px;
+  height: 86px;
   pointer-events: none;
   opacity: 0;
   transform: translate3d(calc(var(--beaver-x) - 50%), calc(var(--beaver-y) - 50%), 0) rotate(var(--beaver-tilt)) scale(.82);
@@ -155,11 +155,13 @@ iframe { border: none; }
 .cursor-beaver__tail { transform-origin: 101px 79px; animation: beaver-tail 1.8s ease-in-out infinite; }
 .cursor-beaver.is-moving .cursor-beaver__tail { animation-duration: .34s; }
 .cursor-beaver.is-surprised .cursor-beaver__art { animation: beaver-hop .4s var(--ease); }
-.cursor-beaver.is-surprised .cursor-beaver__eyes { transform-origin: 66px 52px; animation: beaver-blink .4s ease; }
+.cursor-beaver.is-surprised .cursor-beaver__eyes { transform-origin: 66px 54px; animation: beaver-blink .4s ease; }
+.cursor-beaver.is-surprised .cursor-beaver__paws { transform-origin: 66px 84px; animation: beaver-paws .4s ease; }
 
 @keyframes beaver-tail { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(5deg); } }
 @keyframes beaver-hop { 0%, 100% { transform: translateY(0); } 45% { transform: translateY(-13px) rotate(-3deg); } }
 @keyframes beaver-blink { 0%, 100% { transform: scaleY(1); } 35%, 60% { transform: scaleY(.12); } }
+@keyframes beaver-paws { 0%, 100% { transform: rotate(0); } 40% { transform: rotate(-8deg) scale(1.08); } 65% { transform: rotate(8deg) scale(1.08); } }
 
 @media (hover: none), (pointer: coarse), (max-width: 768px), (prefers-reduced-motion: reduce) {
   .cursor-beaver { display: none; }
