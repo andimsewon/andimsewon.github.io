@@ -161,7 +161,10 @@ iframe { border: none; }
 .cursor-beaver.is-running:not(.is-dizzy) .cursor-beaver__art { animation: beaver-run-bob var(--run-speed) ease-in-out infinite; }
 .cursor-beaver.is-running .cursor-beaver__foot--left { transform-origin: 48px 140px; animation: beaver-run-left var(--run-speed) ease-in-out infinite; }
 .cursor-beaver.is-running .cursor-beaver__foot--right { transform-origin: 101px 140px; animation: beaver-run-right var(--run-speed) ease-in-out infinite; }
-.cursor-beaver.is-running .cursor-beaver__paws { transform-origin: 80px 100px; animation: beaver-run-paws var(--run-speed) ease-in-out infinite; }
+.cursor-beaver.is-running .cursor-beaver__arm--left,
+.cursor-beaver.is-running .cursor-beaver__paw--left { transform-origin: 40px 93px; animation: beaver-crawl-left var(--run-speed) ease-in-out infinite; }
+.cursor-beaver.is-running .cursor-beaver__arm--right,
+.cursor-beaver.is-running .cursor-beaver__paw--right { transform-origin: 118px 90px; animation: beaver-crawl-right var(--run-speed) ease-in-out infinite; }
 .cursor-beaver.is-running .cursor-beaver__tongue { animation-duration: var(--run-speed); }
 .cursor-beaver.is-dizzy .cursor-beaver__art { animation: beaver-wobble .28s ease-in-out 5 alternate; }
 .cursor-beaver.is-dizzy .cursor-beaver__eyes { transform-origin: 80px 60px; animation: beaver-dizzy-eyes .8s ease-in-out 2; }
@@ -171,10 +174,11 @@ iframe { border: none; }
 @keyframes beaver-blink { 0%, 100% { transform: scaleY(1); } 35%, 60% { transform: scaleY(.12); } }
 @keyframes beaver-paws { 0%, 100% { transform: rotate(0); } 40% { transform: rotate(-8deg) scale(1.08); } 65% { transform: rotate(8deg) scale(1.08); } }
 @keyframes beaver-tongue { 0%, 84%, 100% { transform: rotate(0); } 91% { transform: rotate(4deg) translateY(1px); } }
-@keyframes beaver-run-bob { 0%, 100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-4px) rotate(1deg); } }
-@keyframes beaver-run-left { 0%, 100% { transform: translate(-5px, -2px) rotate(12deg); } 50% { transform: translate(6px, 1px) rotate(-10deg); } }
-@keyframes beaver-run-right { 0%, 100% { transform: translate(6px, 1px) rotate(-10deg); } 50% { transform: translate(-5px, -2px) rotate(12deg); } }
-@keyframes beaver-run-paws { 0%, 100% { transform: rotate(-7deg) translateX(-2px); } 50% { transform: rotate(7deg) translateX(2px); } }
+@keyframes beaver-run-bob { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-5px) rotate(2deg); } }
+@keyframes beaver-run-left { 0%, 100% { transform: translate(-6px, -3px) rotate(15deg); } 50% { transform: translate(7px, 2px) rotate(-13deg); } }
+@keyframes beaver-run-right { 0%, 100% { transform: translate(7px, 2px) rotate(-13deg); } 50% { transform: translate(-6px, -3px) rotate(15deg); } }
+@keyframes beaver-crawl-left { 0%, 100% { transform: rotate(20deg) translate(-3px, 3px); } 50% { transform: rotate(-16deg) translate(4px, -4px); } }
+@keyframes beaver-crawl-right { 0%, 100% { transform: rotate(-16deg) translate(4px, -4px); } 50% { transform: rotate(20deg) translate(-3px, 3px); } }
 @keyframes beaver-wobble { from { transform: rotate(-5deg) translateX(-2px); } to { transform: rotate(5deg) translateX(2px); } }
 @keyframes beaver-dizzy-eyes { 50% { transform: translateY(1px) scaleY(.75); } }
 
