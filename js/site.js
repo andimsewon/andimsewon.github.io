@@ -112,8 +112,8 @@
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (!canHover.matches || reduceMotion.matches) return;
 
-  var x = window.innerWidth - 92;
-  var y = window.innerHeight - 92;
+  var x = window.innerWidth - 76;
+  var y = window.innerHeight - 76;
   var targetX = x;
   var targetY = y;
   var lastX = x;
@@ -188,10 +188,10 @@
 
   document.addEventListener('pointermove', function (event) {
     detectShake(event);
-    var offsetX = event.clientX > window.innerWidth - 130 ? -64 : 38;
-    var offsetY = event.clientY > window.innerHeight - 120 ? -58 : 34;
-    targetX = clamp(event.clientX + offsetX, 54, window.innerWidth - 54);
-    targetY = clamp(event.clientY + offsetY, 54, window.innerHeight - 54);
+    var offsetX = event.clientX > window.innerWidth - 112 ? -54 : 32;
+    var offsetY = event.clientY > window.innerHeight - 104 ? -50 : 30;
+    targetX = clamp(event.clientX + offsetX, 44, window.innerWidth - 44);
+    targetY = clamp(event.clientY + offsetY, 44, window.innerHeight - 44);
     var lookX = clamp((event.clientX - x) / 55, -1, 1);
     var lookY = clamp((event.clientY - y) / 55, -1, 1);
     beaver.style.setProperty('--look-x', (lookX * 2.4) + 'px');
