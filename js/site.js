@@ -103,6 +103,71 @@
   } catch (err) {}
 })();
 
+// A small beaver companion that follows pointer movement without intercepting input.
+(function () {
+  var beaver = document.getElementById('cursorBeaver');
+  if (!beaver || !window.matchMedia) return;
+
+  var canHover = window.matchMedia('(hover: hover) and (pointer: fine)');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (!canHover.matches || reduceMotion.matches) return;
+
+  var x = window.innerWidth - 92;
+  var y = window.innerHeight - 92;
+  var targetX = x;
+  var targetY = y;
+  var lastX = x;
+  var raf = 0;
+  var idleTimer = 0;
+
+  function clamp(value, min, max) {
+    return Math.min(Math.max(value, min), max);
+  }
+
+  function animate() {
+    x += (targetX - x) * 0.13;
+    y += (targetY - y) * 0.13;
+    var tilt = clamp((targetX - lastX) * 0.12, -9, 9);
+    beaver.style.setProperty('--beaver-x', x + 'px');
+    beaver.style.setProperty('--beaver-y', y + 'px');
+    beaver.style.setProperty('--beaver-tilt', tilt + 'deg');
+    lastX += (targetX - lastX) * 0.2;
+    raf = window.requestAnimationFrame(animate);
+  }
+
+  function wake() {
+    beaver.classList.add('is-visible', 'is-moving');
+    window.clearTimeout(idleTimer);
+    idleTimer = window.setTimeout(function () {
+      beaver.classList.remove('is-moving');
+    }, 180);
+    if (!raf) raf = window.requestAnimationFrame(animate);
+  }
+
+  document.addEventListener('pointermove', function (event) {
+    var offsetX = event.clientX > window.innerWidth - 130 ? -64 : 38;
+    var offsetY = event.clientY > window.innerHeight - 120 ? -58 : 34;
+    targetX = clamp(event.clientX + offsetX, 54, window.innerWidth - 54);
+    targetY = clamp(event.clientY + offsetY, 54, window.innerHeight - 54);
+    var lookX = clamp((event.clientX - x) / 55, -1, 1);
+    var lookY = clamp((event.clientY - y) / 55, -1, 1);
+    beaver.style.setProperty('--look-x', (lookX * 2.4) + 'px');
+    beaver.style.setProperty('--look-y', (lookY * 2) + 'px');
+    wake();
+  }, { passive: true });
+
+  document.addEventListener('pointerdown', function () {
+    beaver.classList.remove('is-surprised');
+    void beaver.offsetWidth;
+    beaver.classList.add('is-surprised');
+    window.setTimeout(function () { beaver.classList.remove('is-surprised'); }, 420);
+  }, { passive: true });
+
+  document.addEventListener('mouseout', function (event) {
+    if (!event.relatedTarget) beaver.classList.remove('is-visible');
+  });
+})();
+
 // Mobile nav toggle and Back-to-top
 (function () {
   try {
