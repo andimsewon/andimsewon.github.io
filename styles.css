@@ -129,8 +129,8 @@ iframe { border: none; }
 
 /* Pointer companion — decorative and non-blocking. */
 .cursor-beaver {
-  --beaver-x: calc(100vw - 76px);
-  --beaver-y: calc(100vh - 76px);
+  --beaver-x: calc(100vw - 63px);
+  --beaver-y: calc(100vh - 63px);
   --beaver-tilt: 0deg;
   --look-x: 0px;
   --look-y: 0px;
@@ -139,7 +139,7 @@ iframe { border: none; }
   z-index: 90;
   left: 0;
   top: 0;
-  width: clamp(74px, 6.25vw, 80px);
+  width: clamp(61px, 5.2vw, 66px);
   aspect-ratio: 168 / 156;
   pointer-events: none;
   opacity: 0;
@@ -180,10 +180,10 @@ iframe { border: none; }
 
 @media (hover: none), (pointer: coarse), (max-width: 768px) {
   .cursor-beaver {
-    --beaver-x: calc(100vw - 44px);
-    --beaver-y: calc(100vh - 48px);
+    --beaver-x: calc(100vw - 37px);
+    --beaver-y: calc(100vh - 40px);
     z-index: 45;
-    width: clamp(56px, 16vw, 64px);
+    width: clamp(46px, 13vw, 53px);
     opacity: .92;
     transform: translate3d(calc(var(--beaver-x) - 50%), calc(var(--beaver-y) - 50%), 0);
     transition: none;
@@ -195,8 +195,8 @@ iframe { border: none; }
 
 @media (prefers-reduced-motion: reduce) {
   .cursor-beaver {
-    --beaver-x: calc(100vw - 56px);
-    --beaver-y: calc(100vh - 58px);
+    --beaver-x: calc(100vw - 47px);
+    --beaver-y: calc(100vh - 48px);
     z-index: 45;
     opacity: .92;
     transform: translate3d(calc(var(--beaver-x) - 50%), calc(var(--beaver-y) - 50%), 0);
