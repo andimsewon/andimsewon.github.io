@@ -1,77 +1,132 @@
 <div class="cursor-beaver" id="cursorBeaver" aria-hidden="true">
-  <svg class="cursor-beaver__art" viewBox="0 0 168 156" role="presentation" focusable="false">
-    <defs>
-      <linearGradient id="beaver-wash" x1="0" y1="0" x2="1" y2="1">
-        <stop stop-color="#e8a77f"/>
-        <stop offset="1" stop-color="#c98762"/>
-      </linearGradient>
-      <pattern id="beaver-tail-lines" width="13" height="13" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-        <path d="M0 0V13" stroke="#b98370" stroke-width="1.4" opacity=".42"/>
-      </pattern>
-    </defs>
+  <svg class="cursor-beaver__art companion-art is-active" data-character="beaver" viewBox="0 0 168 156" role="presentation" focusable="false">
+    <ellipse cx="84" cy="148" rx="32" ry="4" fill="#3a2a22" opacity=".13"/>
+    <g stroke="#5b4035" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+      <path class="cursor-beaver__tail" d="M118 100c18-6 34 4 34 18 0 13-14 22-30 18-6-10-8-26-4-36Z" fill="#a8714f"/>
 
-    <ellipse class="cursor-beaver__ground" cx="82" cy="147" rx="39" ry="4" fill="#352722" opacity=".13"/>
-    <g class="cursor-beaver__character" stroke="#5b4035" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-      <g class="cursor-beaver__tail">
-        <path d="M116 105c15-16 38-15 44-2 7 15-9 34-36 38-10-10-14-24-8-36Z" fill="#9f6b58"/>
-        <path d="M121 106c13-11 29-10 34-2 5 10-8 25-29 31-7-8-10-19-5-29Z" fill="url(#beaver-tail-lines)" stroke="none"/>
+      <g class="cursor-beaver__paws" fill="#a8714f">
+        <ellipse class="cursor-beaver__paw--left" cx="36" cy="98" rx="11" ry="10"/>
+        <ellipse class="cursor-beaver__paw--right" cx="132" cy="98" rx="11" ry="10"/>
+      </g>
+      <g fill="#8f5c40">
+        <ellipse class="cursor-beaver__foot--left" cx="56" cy="139" rx="15" ry="9"/>
+        <ellipse class="cursor-beaver__foot--right" cx="106" cy="139" rx="15" ry="9"/>
       </g>
 
-      <g class="cursor-beaver__feet" fill="#6b4030">
-        <ellipse class="cursor-beaver__foot cursor-beaver__foot--left" cx="52" cy="140" rx="17" ry="9"/>
-        <ellipse class="cursor-beaver__foot cursor-beaver__foot--right" cx="99" cy="140" rx="17" ry="9"/>
-      </g>
+      <circle cx="52" cy="46" r="13" fill="#a8714f"/>
+      <circle cx="116" cy="46" r="13" fill="#a8714f"/>
+      <circle cx="52" cy="46" r="6" fill="#e3a878" stroke="none"/>
+      <circle cx="116" cy="46" r="6" fill="#e3a878" stroke="none"/>
 
-      <g class="cursor-beaver__ears">
-        <circle cx="42" cy="52" r="14" fill="#c98762"/>
-        <circle cx="117" cy="52" r="14" fill="#c98762"/>
-        <circle cx="42" cy="52" r="7" fill="#efb493" stroke-width="1.7"/>
-        <circle cx="117" cy="52" r="7" fill="#efb493" stroke-width="1.7"/>
-      </g>
+      <ellipse class="cursor-beaver__body" cx="84" cy="92" rx="45" ry="47" fill="#c98861"/>
+      <ellipse cx="84" cy="115" rx="27" ry="22" fill="#f6dfc0" stroke="none"/>
+      <ellipse cx="63" cy="62" rx="12" ry="8" fill="#fff" opacity=".28" stroke="none" transform="rotate(-18 63 62)"/>
 
-      <path class="cursor-beaver__body" d="M80 18c28 0 46 18 47 43 1 13-3 22-2 34 1 30-14 47-45 48-31 0-47-17-46-48 1-12-3-21-2-34 1-25 19-43 48-43Z" fill="url(#beaver-wash)"/>
-      <ellipse cx="60" cy="41" rx="16" ry="11" fill="#fff5e8" opacity=".38" stroke="none" transform="rotate(-18 60 41)"/>
-      <ellipse cx="80" cy="119" rx="31" ry="22" fill="#f8dfc0" opacity=".42" stroke="none"/>
+      <ellipse cx="47" cy="86" rx="10" ry="6" fill="#f4a9a0" stroke="none" opacity=".75"/>
+      <ellipse cx="121" cy="86" rx="10" ry="6" fill="#f4a9a0" stroke="none" opacity=".75"/>
 
-      <g class="cursor-beaver__hair-tuft" fill="#c98762">
-        <path d="M67 19c-1-7 3-12 9-14 0 6 3 9 7 11 1-6 5-9 10-9-3 5-2 9 1 13"/>
-      </g>
-
-      <g class="cursor-beaver__eyebrows" fill="none" stroke="#6a4a3d" stroke-width="2.2">
-        <path d="M50 47c5-3 10-3 15-1"/>
-        <path d="M91 45c5-2 10 0 14 3"/>
-      </g>
       <g class="cursor-beaver__eyes">
-        <g class="cursor-beaver__pupil" fill="#352722" stroke="none">
-          <circle cx="63" cy="62" r="4.5"/>
+        <g class="cursor-beaver__pupil" fill="#3a2a22" stroke="none">
+          <circle cx="66" cy="72" r="6.5"/>
+          <circle cx="69" cy="69" r="2" fill="#fff"/>
         </g>
-        <g class="cursor-beaver__pupil" fill="#352722" stroke="none">
-          <circle cx="95" cy="61" r="4.2"/>
+        <g class="cursor-beaver__pupil" fill="#3a2a22" stroke="none">
+          <circle cx="102" cy="72" r="6.5"/>
+          <circle cx="105" cy="69" r="2" fill="#fff"/>
         </g>
       </g>
 
-      <ellipse cx="45" cy="84" rx="12" ry="7" fill="#f3a79d" stroke="none" opacity=".72"/>
-      <ellipse cx="114" cy="83" rx="12" ry="7" fill="#f3a79d" stroke="none" opacity=".68"/>
-      <g class="cursor-beaver__muzzle" fill="#f8dfc0" stroke-width="1.8">
-        <ellipse cx="79" cy="87" rx="36" ry="21"/>
-      </g>
-      <path d="M70 75c5-5 14-5 19 0-1 7-5 10-10 10s-8-4-9-10Z" fill="#352722" stroke="none"/>
-      <path d="M79 85v4" fill="none"/>
-      <path class="cursor-beaver__mouth" d="M60 90c9 3 30 3 39-1-1 16-8 24-20 24-12 0-19-9-19-23Z" fill="#684142"/>
-      <path class="cursor-beaver__tongue" d="M69 107c6-4 15-4 20 0-2 4-6 6-10 6s-8-2-10-6Z" fill="#e48f8b" stroke="none"/>
-      <g class="cursor-beaver__teeth" fill="#fff3d9" stroke="#ad8059" stroke-width="1.2">
-        <path d="M67 90h12v14c-7 1-12-4-12-14Z"/>
-        <path d="M80 90h12c0 9-4 14-12 14Z"/>
-      </g>
-
-      <g class="cursor-beaver__arms" fill="#c98762">
-        <path class="cursor-beaver__arm cursor-beaver__arm--left" d="M43 94c-12-7-23-4-24 5-1 8 9 13 21 10 6-2 7-10 3-15Z"/>
-        <path class="cursor-beaver__arm cursor-beaver__arm--right" d="M116 92c12-9 24-5 24 4 0 8-10 13-21 10-6-2-7-9-3-14Z"/>
-        <g class="cursor-beaver__paws" fill="#6b4030">
-          <ellipse class="cursor-beaver__paw cursor-beaver__paw--left" cx="17" cy="99" rx="9" ry="8"/>
-          <ellipse class="cursor-beaver__paw cursor-beaver__paw--right" cx="142" cy="95" rx="9" ry="8"/>
-        </g>
+      <ellipse cx="84" cy="83" rx="4" ry="3" fill="#3a2a22" stroke="none"/>
+      <path class="cursor-beaver__mouth" d="M70 92c9 6 19 6 28 0" fill="none" stroke-width="3"/>
+      <g fill="#fff6e2" stroke="none">
+        <rect x="79" y="94" width="5" height="8" rx="1.5"/>
+        <rect x="85" y="94" width="5" height="8" rx="1.5"/>
       </g>
     </g>
   </svg>
+
+  <svg class="cursor-beaver__art companion-art" data-character="lizard" viewBox="0 0 168 156" role="presentation" focusable="false">
+    <ellipse cx="84" cy="148" rx="32" ry="4" fill="#2f4d34" opacity=".12"/>
+    <g stroke="#4c6b3f" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+      <path class="cursor-beaver__tail" d="M120 108c20 4 32 18 26 30-6 11-22 10-24-1-1-7 5-9 8-4" fill="none" stroke="#8bc773" stroke-width="13"/>
+
+      <g class="cursor-beaver__paws" fill="#8bc773">
+        <ellipse class="cursor-beaver__paw--left" cx="34" cy="100" rx="12" ry="9" transform="rotate(-14 34 100)"/>
+        <ellipse class="cursor-beaver__paw--right" cx="134" cy="100" rx="12" ry="9" transform="rotate(14 134 100)"/>
+      </g>
+      <g fill="#8bc773">
+        <ellipse class="cursor-beaver__foot--left" cx="56" cy="139" rx="15" ry="8"/>
+        <ellipse class="cursor-beaver__foot--right" cx="106" cy="139" rx="15" ry="8"/>
+      </g>
+
+      <ellipse class="cursor-beaver__body" cx="84" cy="92" rx="44" ry="46" fill="#9ed787"/>
+      <ellipse cx="84" cy="115" rx="25" ry="20" fill="#eaf9d8" stroke="none"/>
+      <ellipse cx="63" cy="62" rx="12" ry="8" fill="#fff" opacity=".3" stroke="none" transform="rotate(-18 63 62)"/>
+
+      <ellipse cx="47" cy="86" rx="10" ry="6" fill="#f4a9a0" stroke="none" opacity=".65"/>
+      <ellipse cx="121" cy="86" rx="10" ry="6" fill="#f4a9a0" stroke="none" opacity=".65"/>
+
+      <g class="cursor-beaver__eyes">
+        <g class="cursor-beaver__pupil" fill="#2f4d34" stroke="none">
+          <circle cx="66" cy="70" r="6.5"/>
+          <circle cx="69" cy="67" r="2" fill="#fff"/>
+        </g>
+        <g class="cursor-beaver__pupil" fill="#2f4d34" stroke="none">
+          <circle cx="102" cy="70" r="6.5"/>
+          <circle cx="105" cy="67" r="2" fill="#fff"/>
+        </g>
+      </g>
+
+      <path class="cursor-beaver__mouth" d="M70 90c9 5 19 5 28 0" fill="none" stroke-width="3"/>
+    </g>
+  </svg>
+
+  <svg class="cursor-beaver__art companion-art" data-character="cat" viewBox="0 0 168 156" role="presentation" focusable="false">
+    <ellipse cx="84" cy="148" rx="32" ry="4" fill="#4a3b2b" opacity=".12"/>
+    <g stroke="#7a5738" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+      <path class="cursor-beaver__tail" d="M122 106c22-2 34 10 30 22-4 11-20 12-23 1-2-6 4-9 8-5" fill="none" stroke="#eccb98" stroke-width="13"/>
+
+      <g class="cursor-beaver__paws" fill="#eccb98">
+        <ellipse class="cursor-beaver__paw--left" cx="34" cy="100" rx="12" ry="9" transform="rotate(-14 34 100)"/>
+        <ellipse class="cursor-beaver__paw--right" cx="134" cy="100" rx="12" ry="9" transform="rotate(14 134 100)"/>
+      </g>
+      <g fill="#eccb98">
+        <ellipse class="cursor-beaver__foot--left" cx="56" cy="139" rx="15" ry="8"/>
+        <ellipse class="cursor-beaver__foot--right" cx="106" cy="139" rx="15" ry="8"/>
+      </g>
+
+      <path d="M38 52C34 38 34 24 42 18c9 7 16 18 18 30-6 5-14 7-22 4Z" fill="#f6d9a8"/>
+      <path d="M130 52C134 38 134 24 126 18c-9 7-16 18-18 30 6 5 14 7 22 4Z" fill="#f6d9a8"/>
+      <path d="M43 46C40 36 40 27 45 22c6 5 11 13 12 22-4 4-9 5-14 2Z" fill="#f7b8b0" stroke-width="1.6"/>
+      <path d="M125 46C128 36 128 27 123 22c-6 5-11 13-12 22 4 4 9 5 14 2Z" fill="#f7b8b0" stroke-width="1.6"/>
+
+      <ellipse class="cursor-beaver__body" cx="84" cy="94" rx="44" ry="45" fill="#f6d9a8"/>
+      <ellipse cx="84" cy="116" rx="25" ry="19" fill="#fdf0d9" stroke="none"/>
+      <ellipse cx="63" cy="64" rx="12" ry="8" fill="#fff" opacity=".35" stroke="none" transform="rotate(-18 63 64)"/>
+
+      <ellipse cx="47" cy="88" rx="10" ry="6" fill="#f4a9a0" stroke="none" opacity=".7"/>
+      <ellipse cx="121" cy="88" rx="10" ry="6" fill="#f4a9a0" stroke="none" opacity=".7"/>
+      <path d="M40 84 20 80m20 6-20 3m88-9 20-4m-20 10 20 3" stroke-width="1.6" opacity=".7"/>
+
+      <g class="cursor-beaver__eyes">
+        <g class="cursor-beaver__pupil" fill="#4a3b2b" stroke="none">
+          <ellipse cx="66" cy="72" rx="5" ry="6.5"/>
+          <circle cx="68" cy="69" r="1.8" fill="#fff"/>
+        </g>
+        <g class="cursor-beaver__pupil" fill="#4a3b2b" stroke="none">
+          <ellipse cx="102" cy="72" rx="5" ry="6.5"/>
+          <circle cx="104" cy="69" r="1.8" fill="#fff"/>
+        </g>
+      </g>
+
+      <path d="M80 81c3-2 5-2 8 0" fill="none" stroke="#4a3b2b" stroke-width="2.6"/>
+      <path class="cursor-beaver__mouth" d="M70 90c5 5 9 5 14 3m0-3c5 2 9 2 14-3" fill="none" stroke="#4a3b2b" stroke-width="2.6"/>
+    </g>
+  </svg>
+</div>
+
+<div class="companion-picker" role="group" aria-label="Choose a cursor companion">
+  <button class="companion-picker__button is-active" type="button" data-companion="beaver" aria-label="Beaver" aria-pressed="true"><span aria-hidden="true">🦫</span></button>
+  <button class="companion-picker__button" type="button" data-companion="lizard" aria-label="Lizard" aria-pressed="false"><span aria-hidden="true">🦎</span></button>
+  <button class="companion-picker__button" type="button" data-companion="cat" aria-label="Cat" aria-pressed="false"><span aria-hidden="true">🐱</span></button>
 </div>

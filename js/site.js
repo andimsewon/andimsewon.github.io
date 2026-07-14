@@ -103,10 +103,40 @@
   } catch (err) {}
 })();
 
-// A small beaver companion that follows pointer movement without intercepting input.
+// A small chosen companion that follows pointer movement without intercepting input.
 (function () {
   var beaver = document.getElementById('cursorBeaver');
   if (!beaver || !window.matchMedia) return;
+
+  var companionButtons = document.querySelectorAll('[data-companion]');
+  var companionArt = beaver.querySelectorAll('[data-character]');
+  var companionNames = { beaver: true, lizard: true, cat: true };
+
+  function chooseCompanion(name, remember) {
+    if (!companionNames[name]) name = 'beaver';
+    for (var i = 0; i < companionArt.length; i++) {
+      companionArt[i].classList.toggle('is-active', companionArt[i].getAttribute('data-character') === name);
+    }
+    for (var j = 0; j < companionButtons.length; j++) {
+      var selected = companionButtons[j].getAttribute('data-companion') === name;
+      companionButtons[j].classList.toggle('is-active', selected);
+      companionButtons[j].setAttribute('aria-pressed', selected ? 'true' : 'false');
+    }
+    if (remember) {
+      try { window.localStorage.setItem('cursor-companion', name); } catch (err) {}
+    }
+  }
+
+  var savedCompanion = 'beaver';
+  try { savedCompanion = window.localStorage.getItem('cursor-companion') || 'beaver'; } catch (err) {}
+  chooseCompanion(savedCompanion, false);
+
+  for (var buttonIndex = 0; buttonIndex < companionButtons.length; buttonIndex++) {
+    companionButtons[buttonIndex].addEventListener('click', function () {
+      chooseCompanion(this.getAttribute('data-companion'), true);
+      beaver.classList.add('is-visible');
+    });
+  }
 
   var canHover = window.matchMedia('(hover: hover) and (pointer: fine)');
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
