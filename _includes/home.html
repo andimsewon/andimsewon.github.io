@@ -3,6 +3,35 @@
 
 <main id="main">
   <section class="home-hero" aria-labelledby="hero-title">
+    <svg class="hero-graph" viewBox="0 0 900 700" aria-hidden="true" focusable="false">
+      <g class="hg-edges">
+        <line x1="620" y1="260" x2="420" y2="140"/>
+        <line x1="620" y1="260" x2="500" y2="390"/>
+        <line x1="620" y1="260" x2="760" y2="150"/>
+        <line x1="620" y1="260" x2="800" y2="340"/>
+        <line x1="420" y1="140" x2="280" y2="90"/>
+        <line x1="420" y1="140" x2="310" y2="230"/>
+        <line x1="500" y1="390" x2="370" y2="480"/>
+        <line x1="760" y1="150" x2="830" y2="60"/>
+        <line x1="760" y1="150" x2="700" y2="40"/>
+        <line x1="800" y1="340" x2="870" y2="430"/>
+        <line x1="800" y1="340" x2="760" y2="470"/>
+      </g>
+      <g class="hg-nodes">
+        <circle class="hg-node" cx="420" cy="140" r="4.5"/>
+        <circle class="hg-node" cx="500" cy="390" r="4.5"/>
+        <circle class="hg-node" cx="760" cy="150" r="4.5"/>
+        <circle class="hg-node" cx="800" cy="340" r="4.5"/>
+        <circle class="hg-node" cx="280" cy="90" r="3"/>
+        <circle class="hg-node" cx="310" cy="230" r="3"/>
+        <circle class="hg-node" cx="370" cy="480" r="3"/>
+        <circle class="hg-node" cx="830" cy="60" r="3"/>
+        <circle class="hg-node" cx="700" cy="40" r="3"/>
+        <circle class="hg-node" cx="870" cy="430" r="3"/>
+        <circle class="hg-node" cx="760" cy="470" r="3"/>
+        <circle class="hg-node hg-node--root" cx="620" cy="260" r="7"/>
+      </g>
+    </svg>
     <div class="home-shell">
       <div class="hero-intro">
         <div class="hero-identity">
@@ -69,7 +98,7 @@
   <section id="experience" class="home-section" aria-labelledby="experience-title">
     <div class="home-shell">
       <div class="section-intro">
-        <p class="section-kicker">01 / {% if is_ko %}경력{% else %}Experience{% endif %}</p>
+        <p class="section-kicker"><span class="section-kicker-index">[01]</span> {% if is_ko %}경력{% else %}Experience{% endif %}</p>
         <div><h2 id="experience-title" class="home-section-title">{% if is_ko %}경력{% else %}Experience{% endif %}</h2><p>{% if is_ko %}책임, 기여, 결과물 중심의 경력 요약입니다.{% else %}Experience framed by responsibility, contribution, and deliverable.{% endif %}</p></div>
       </div>
       <div class="career-list">
@@ -91,7 +120,7 @@
 
   <section id="capabilities" class="home-section" aria-labelledby="capabilities-title">
     <div class="home-shell">
-      <div class="section-intro"><p class="section-kicker">02 / {% if is_ko %}역량{% else %}Capabilities{% endif %}</p><div><h2 id="capabilities-title" class="home-section-title">{% if is_ko %}기술 역량{% else %}Technical Capabilities{% endif %}</h2><p>{% if is_ko %}도구 목록이 아니라 실제 프로젝트에서 입증된 엔지니어링 영역입니다.{% else %}Engineering domains demonstrated in shipped systems and research—not self-rated proficiency.{% endif %}</p></div></div>
+      <div class="section-intro"><p class="section-kicker"><span class="section-kicker-index">[02]</span> {% if is_ko %}역량{% else %}Capabilities{% endif %}</p><div><h2 id="capabilities-title" class="home-section-title">{% if is_ko %}기술 역량{% else %}Technical Capabilities{% endif %}</h2><p>{% if is_ko %}도구 목록이 아니라 실제 프로젝트에서 입증된 엔지니어링 영역입니다.{% else %}Engineering domains demonstrated in shipped systems and research—not self-rated proficiency.{% endif %}</p></div></div>
       <div class="capability-grid">
         <article><h3>{% if is_ko %}검색 및 지식 시스템{% else %}Retrieval &amp; Knowledge Systems{% endif %}</h3><p>{% if is_ko %}지식그래프 검색, 멀티홉 추론, 임베딩 통합, RAG grounding{% else %}Knowledge-graph retrieval, multi-hop reasoning, embedding integration, RAG grounding{% endif %}</p><a href="{% if is_ko %}/ko/kg-rag-project.html{% else %}/kg-rag-project.html{% endif %}">KG-RAG <span aria-hidden="true">→</span></a></article>
         <article><h3>{% if is_ko %}머신러닝 및 컴퓨터 비전{% else %}Machine Learning &amp; Computer Vision{% endif %}</h3><p>{% if is_ko %}객체 탐지, 이미지 파이프라인, 모델 추론 API, 손상 분류{% else %}Object detection, image pipelines, model inference APIs, damage classification{% endif %}</p><a href="{% if is_ko %}/ko/heritage-monitoring-project.html{% else %}/heritage-monitoring-project.html{% endif %}">Heritage Damage Detection <span aria-hidden="true">→</span></a></article>
@@ -106,7 +135,7 @@
   <section id="selected-work" class="home-section" aria-labelledby="selected-work-title">
     <div class="home-shell">
       <div class="section-intro">
-        <p class="section-kicker">03 / {% if is_ko %}프로젝트{% else %}Work{% endif %}</p>
+        <p class="section-kicker"><span class="section-kicker-index">[03]</span> {% if is_ko %}프로젝트{% else %}Work{% endif %}</p>
         <div>
           <h2 id="selected-work-title" class="home-section-title">{% if is_ko %}주요 프로젝트{% else %}Selected Work{% endif %}</h2>
           <p>{% if is_ko %}연구, 현장 검증, 실제 운영으로 이어진 시스템입니다.{% else %}Systems carried through research, field validation, and operational use.{% endif %}</p>
@@ -182,7 +211,7 @@
 
   <section id="research" class="home-section" aria-labelledby="research-title">
     <div class="home-shell">
-      <div class="section-intro"><p class="section-kicker">04 / {% if is_ko %}연구{% else %}Research{% endif %}</p><div><h2 id="research-title" class="home-section-title">{% if is_ko %}연구 및 출판{% else %}Research &amp; Publications{% endif %}</h2><p>{% if is_ko %}검증 가능한 논문, 원고 및 지식재산입니다.{% else %}Verified preprints, research in progress, and intellectual property.{% endif %}</p></div></div>
+      <div class="section-intro"><p class="section-kicker"><span class="section-kicker-index">[04]</span> {% if is_ko %}연구{% else %}Research{% endif %}</p><div><h2 id="research-title" class="home-section-title">{% if is_ko %}연구 및 출판{% else %}Research &amp; Publications{% endif %}</h2><p>{% if is_ko %}검증 가능한 논문, 원고 및 지식재산입니다.{% else %}Verified preprints, research in progress, and intellectual property.{% endif %}</p></div></div>
       <div class="research-list">
         <!-- TODO: confirm manuscript preparation date range before publishing a specific timeframe -->
         <article class="research-item"><div class="research-type">{% if is_ko %}원고 준비 중{% else %}Manuscript in preparation{% endif %}</div><div><h3>Knowledge Graph–Enhanced Retrieval-Augmented Generation for Multi-Hop Reasoning in Large Language Models</h3><p class="citation">{% if is_ko %}Natural Language Learning Lab에서 수행한 지식그래프 기반 검색 및 멀티홉 추론 연구.{% else %}Knowledge-graph retrieval and multi-hop reasoning research conducted at the Natural Language Learning Lab.{% endif %}</p><p class="research-links"><a href="{% if is_ko %}/ko/kg-rag-project.html{% else %}/kg-rag-project.html{% endif %}">{% if is_ko %}연구 개요{% else %}Research overview{% endif %}</a></p></div></article>
@@ -195,7 +224,7 @@
 
   <section id="education" class="home-section" aria-labelledby="education-title">
     <div class="home-shell">
-      <div class="section-intro"><p class="section-kicker">05 / {% if is_ko %}배경{% else %}Background{% endif %}</p><div><h2 id="education-title" class="home-section-title">{% if is_ko %}학력 및 주요 활동{% else %}Education &amp; Selected Activities{% endif %}</h2></div></div>
+      <div class="section-intro"><p class="section-kicker"><span class="section-kicker-index">[05]</span> {% if is_ko %}배경{% else %}Background{% endif %}</p><div><h2 id="education-title" class="home-section-title">{% if is_ko %}학력 및 주요 활동{% else %}Education &amp; Selected Activities{% endif %}</h2></div></div>
       <div class="education-grid">
         <article><p class="education-date">2022 — 2026 (Expected)</p><h3>{% if is_ko %}컴퓨터공학 학사{% else %}B.S. in Computer Science and Engineering{% endif %}</h3><p>Jeonbuk National University · GPA 4.09/4.5</p><p class="education-detail">{% if is_ko %}머신러닝, 데이터마이닝, 정보검색, 자연어처리, 데이터베이스{% else %}Machine Learning, Data Mining, Information Retrieval, NLP, Database Systems{% endif %}</p></article>
         <article><p class="education-date">2022 — {% if is_ko %}현재{% else %}Present{% endif %}</p><h3>{% if is_ko %}학생대표{% else %}Student Representative{% endif %}</h3><p>Honors Residential College · Jeonbuk National University</p><p class="research-links"><a href="{% if is_ko %}/ko/activities.html{% else %}/activities.html{% endif %}">{% if is_ko %}활동 전체 보기{% else %}View activities{% endif %}</a><a href="{% if is_ko %}/ko/awards.html{% else %}/awards.html{% endif %}">{% if is_ko %}수상 내역{% else %}Honors &amp; awards{% endif %}</a></p></article>
@@ -207,7 +236,7 @@
 
   <section id="contact" class="contact-section" aria-labelledby="contact-title">
     <div class="home-shell contact-inner">
-      <p class="section-kicker">06 / {% if is_ko %}연락{% else %}Contact{% endif %}</p>
+      <p class="section-kicker"><span class="section-kicker-index">[06]</span> {% if is_ko %}연락{% else %}Contact{% endif %}</p>
       <div><h2 id="contact-title">{% if is_ko %}함께 이야기해요.{% else %}Let’s build something rigorous.{% endif %}</h2><p>{% if is_ko %}AI 연구 엔지니어링, 머신러닝, 데이터 및 소프트웨어 엔지니어링 기회에 열려 있습니다.{% else %}Open to AI research engineering, machine learning, data, and software engineering opportunities.{% endif %}</p><div class="contact-links"><a class="action-primary" href="mailto:sewonkim1018@gmail.com">sewonkim1018@gmail.com</a><a href="https://github.com/andimsewon" target="_blank" rel="me noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/sewon-kim-742a492a6/" target="_blank" rel="me noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div></div>
     </div>
   </section>
