@@ -19,9 +19,9 @@
   if (!canFollow.matches || reduceMotion.matches) return;
 
   // ---- Tunable constants -------------------------------------------------
-  var SPRING_STIFFNESS = 150;   // higher = snappier catch-up
-  var SPRING_DAMPING_RATIO = 0.62; // < 1 = a light, "playful" overshoot/settle
-  var OFFSET_BEHIND = 44;       // px trailing distance behind the cursor (spec: 35-55)
+  var SPRING_STIFFNESS = 72;    // deliberately soft: the dog follows one beat behind
+  var SPRING_DAMPING_RATIO = 0.78; // gentle catch-up without a distracting long wobble
+  var OFFSET_BEHIND = 50;       // px trailing distance behind the cursor
   var OFFSET_DOWN = 18;         // px, small supplementary drop so a purely
                                  // vertical cursor move can't park the dog on the hotspot
   var DIRECTION_ENTER = 14;     // px the cursor must lead by to flip facing
@@ -29,6 +29,7 @@
   var DEAD_ZONE_ENTER = 24;     // px from target to start walking (spec: ~18-25)
   var DEAD_ZONE_EXIT = 18;      // px from target to settle back to idle (hysteresis floor)
   var WALK_FRAME_MS = 115;      // ~8.7fps, within the requested 8-10fps
+  var POINTER_ACTIVE_MS = 140;  // keep trotting between ordinary pointermove events
   var CLICK_FRAME_MS = 55;      // within the requested 45-65ms/frame
   var EDGE_MARGIN = 6;          // px kept clear of the viewport edge
 
@@ -103,6 +104,7 @@
   var walkAccumMs = 0;
   var clickElapsedMs = 0;
   var state = STATE.IDLE;
+  var lastPointerMotionTime = -Infinity;
 
   var hasMouseMoved = false;
   function revealIfReady() {
@@ -114,6 +116,7 @@
   }
 
   var onPointerMove = function (event) {
+    var moved = Math.hypot(event.clientX - pointerX, event.clientY - pointerY);
     pointerX = event.clientX;
     pointerY = event.clientY;
     if (!hasMouseMoved) {
@@ -123,6 +126,12 @@
       posY = pointerY;
       hasMouseMoved = true;
       revealIfReady();
+    } else if (moved > 0.5) {
+      // Distance alone is not enough to describe walking: while the dog is
+      // already near its target, small/slow mouse movements used to leave it
+      // on the neutral frame. Remember real pointer activity so its feet keep
+      // trotting for the whole chase.
+      lastPointerMotionTime = event.timeStamp;
     }
   };
   document.addEventListener('pointermove', onPointerMove, { passive: true });
@@ -186,7 +195,9 @@
     posY += velY * dt;
 
     var distToTarget = Math.hypot(targetX - posX, targetY - posY);
-    isMoving = isMoving ? distToTarget > DEAD_ZONE_EXIT : distToTarget > DEAD_ZONE_ENTER;
+    var pointerIsMoving = (now - lastPointerMotionTime) < POINTER_ACTIVE_MS;
+    var stillCatchingUp = isMoving ? distToTarget > DEAD_ZONE_EXIT : distToTarget > DEAD_ZONE_ENTER;
+    isMoving = pointerIsMoving || stillCatchingUp;
 
     // ---- State machine: clicking > walking > idle ----------------------
     if (state === STATE.CLICKING) {
