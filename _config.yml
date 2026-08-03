@@ -10,8 +10,8 @@ highlighter: rouge
 url: "https://andimsewon.github.io"
 
 # Centralized profile image settings
-profile_image_path: "/assets/profile_2607.optimized.jpeg"
-profile_image_version: "20260713"
+profile_image_path: "/assets/profile_fao.optimized.jpg"
+profile_image_version: "20260715"
 
 # Centralized default social-share card (used when a page sets og_image_default: true)
 og_card_path: "/assets/og-image.png"

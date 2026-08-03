@@ -50,9 +50,9 @@
         </div>
 
         <aside class="selected-experience" aria-labelledby="selected-experience-title">
+          <img src="{{ site.profile_image_path }}?v={{ site.profile_image_version }}" alt="{% if is_ko %}이탈리아 로마 FAO 본부에서의 김세원{% else %}Sewon Kim at the FAO headquarters in Rome{% endif %}" class="hero-photo" width="960" height="720" fetchpriority="high" decoding="async">
           <div class="experience-heading-row">
             <h2 id="selected-experience-title">{% if is_ko %}주요 경력{% else %}Selected Experience{% endif %}</h2>
-            <img src="{{ site.profile_image_path }}?v={{ site.profile_image_version }}" alt="{% if is_ko %}김세원 프로필 사진{% else %}Portrait of Sewon Kim{% endif %}" class="hero-photo" width="410" height="410" fetchpriority="high" decoding="async">
           </div>
           <ol class="experience-summary">
             <li class="experience-summary-item is-current">

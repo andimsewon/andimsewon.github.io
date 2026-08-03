@@ -2475,12 +2475,15 @@ b, strong { font-weight: 600; }
   text-transform: uppercase;
 }
 
-.experience-heading-row .hero-photo {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
+/* Profile photo — full frame, not circle-cropped, sized to be the dominant
+   visual in the hero's right column rather than a small avatar icon. */
+.selected-experience > .hero-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 var(--space-5);
+  border-radius: var(--radius);
   border: 1px solid var(--hairline);
-  flex: 0 0 auto;
 }
 
 .experience-summary {
@@ -2685,7 +2688,6 @@ b, strong { font-weight: 600; }
 
 @media (max-width: 900px) {
   .hero-intro { grid-template-columns: 1fr; gap: 52px; }
-  .experience-heading-row .hero-photo { width: 84px; height: 84px; }
   .capability-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -2717,8 +2719,6 @@ b, strong { font-weight: 600; }
   .home-shell { width: calc(100% - 28px); }
   .hero-actions { align-items: stretch; }
   .hero-actions a { flex: 1 1 100%; }
-  .experience-heading-row { align-items: center; }
-  .experience-heading-row .hero-photo { width: 68px; height: 68px; }
   .featured-work { grid-template-columns: 1fr; }
   .featured-work-index { display: none; }
   .featured-work-heading { flex-direction: column; gap: 8px; }
