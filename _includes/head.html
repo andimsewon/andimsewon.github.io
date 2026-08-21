@@ -21,7 +21,11 @@
   {% if page.canonical %}<link rel="canonical" href="{{ page.canonical }}">{% endif %}
   {% if page.alternate_en %}<link rel="alternate" hreflang="en" href="{{ page.alternate_en }}">{% endif %}
   {% if page.alternate_ko %}<link rel="alternate" hreflang="ko" href="{{ page.alternate_ko }}">{% endif %}
-  {% if page.alternate_default %}<link rel="alternate" hreflang="x-default" href="{{ page.alternate_default }}">{% endif %}
+  {% if page.alternate_default %}
+  <link rel="alternate" hreflang="x-default" href="{{ page.alternate_default }}">
+  {% elsif page.alternate_en %}
+  <link rel="alternate" hreflang="x-default" href="{{ page.alternate_en }}">
+  {% endif %}
 
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">

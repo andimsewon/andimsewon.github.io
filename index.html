@@ -2,8 +2,8 @@
 layout: default
 lang: en
 home: true
-title: "Sewon Kim — AI Research Engineer, Data Analyst & Software Developer"
-description: "Sewon Kim builds retrieval, computer-vision, and IoT data systems, with research, operational deployment, and intellectual-property outcomes."
+title: "Sewon Kim | AI Researcher, ML and Software Engineer"
+description: "Sewon Kim is an AI researcher and software engineer working on knowledge-graph RAG, computer vision, data analysis, and IoT systems."
 canonical: https://andimsewon.github.io/
 alternate_en: https://andimsewon.github.io/
 alternate_ko: https://andimsewon.github.io/ko/
@@ -15,17 +15,26 @@ skip_id: main
 json_ld: |
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Sewon Kim",
-    "alternateName": "김세원",
+    "@type": "ProfilePage",
+    "@id": "https://andimsewon.github.io/#profile-page",
     "url": "https://andimsewon.github.io/",
-    "image": "https://andimsewon.github.io/assets/profile_fao.optimized.jpg",
-    "jobTitle": "AI Research Engineer, Data Analyst, and Software Developer",
-    "worksFor": {"@type": "Organization", "name": "Food and Agriculture Organization of the United Nations", "alternateName": "FAO"},
-    "alumniOf": {"@type": "CollegeOrUniversity", "name": "Jeonbuk National University"},
-    "knowsAbout": ["Retrieval-Augmented Generation", "Knowledge Graphs", "Computer Vision", "Object Detection", "IoT Data Pipelines"],
-    "sameAs": ["https://github.com/andimsewon", "https://www.linkedin.com/in/sewon-kim-742a492a6/"],
-    "email": "mailto:sewonkim1018@gmail.com"
+    "name": "Sewon Kim | AI Researcher, ML and Software Engineer",
+    "mainEntity": {
+      "@type": "Person",
+      "@id": "https://andimsewon.github.io/#sewon-kim",
+      "name": "Sewon Kim",
+      "alternateName": ["김세원", "Kim Sewon", "andimsewon"],
+      "url": "https://andimsewon.github.io/",
+      "image": {"@type": "ImageObject", "url": "https://andimsewon.github.io/assets/profile_fao.optimized.jpg"},
+      "description": "AI researcher and software engineer working across retrieval-augmented generation, knowledge graphs, computer vision, data systems, and IoT.",
+      "jobTitle": ["AI Researcher", "Machine Learning Engineer", "Data Analyst", "Software Engineer"],
+      "affiliation": [
+        {"@type": "Organization", "name": "Food and Agriculture Organization of the United Nations", "alternateName": "FAO", "url": "https://www.fao.org/"},
+        {"@type": "CollegeOrUniversity", "name": "Jeonbuk National University", "alternateName": "JBNU", "url": "https://www.jbnu.ac.kr/"}
+      ],
+      "knowsAbout": ["Artificial Intelligence", "Machine Learning", "Retrieval-Augmented Generation", "Knowledge Graphs", "Computer Vision", "Data Mining", "Internet of Things", "LoRa", "MQTT"],
+      "sameAs": ["https://github.com/andimsewon", "https://www.linkedin.com/in/sewon-kim-742a492a6/"]
+    }
   }
 ---
 {% include home.html lang='en' %}

@@ -151,24 +151,24 @@ layout: null
       <a href="#skills">기술 역량</a>
       <a href="#projects">대표 프로젝트 개요</a>
       <a href="#waggle">WaggleNet</a>
-      <a href="#waggle-arch">— 아키텍처</a>
-      <a href="#waggle-results">— 실험·결과</a>
+      <a href="#waggle-arch">아키텍처</a>
+      <a href="#waggle-results">실험·결과</a>
       <a href="#heritage">Heritage Monitoring</a>
-      <a href="#heritage-arch">— 아키텍처</a>
-      <a href="#heritage-results">— 실험·결과</a>
+      <a href="#heritage-arch">아키텍처</a>
+      <a href="#heritage-results">실험·결과</a>
       <a href="#gaia">GAIA</a>
-      <a href="#gaia-arch">— 파이프라인</a>
-      <a href="#gaia-results">— 결과</a>
+      <a href="#gaia-arch">파이프라인</a>
+      <a href="#gaia-results">결과</a>
       <a href="#gof">Guardians of Farm</a>
-      <a href="#gof-arch">— 데이터·모델</a>
-      <a href="#gof-results">— 결과</a>
+      <a href="#gof-arch">데이터·모델</a>
+      <a href="#gof-results">결과</a>
       <a href="#story">Sangsang StoryPlay</a>
-      <a href="#story-arch">— 구조</a>
-      <a href="#story-results">— 성과</a>
+      <a href="#story-arch">구조</a>
+      <a href="#story-results">성과</a>
       <a href="#awards">수상</a>
       <a href="#certs">인증·프로그램</a>
       <a href="#lead">리더십·활동</a>
-      <a href="#activities-detail">— 활동 상세</a>
+      <a href="#activities-detail">활동 상세</a>
       <a href="#teach">교육·멘토링</a>
       <a href="#plan">향후 계획</a>
       <a href="#gallery">갤러리</a>
@@ -197,7 +197,7 @@ layout: null
     <ul>
       <li><strong>전북대학교</strong>, B.S. in Computer Science and Engineering (GPA 4.09/4.5), 2022.03 – 2026.08(졸업 예정)
         <ul>
-          <li>JST공유대학 스마트모빌리티SW 마이크로디그리 — 이수</li>
+          <li>JST공유대학 스마트모빌리티SW 마이크로디그리 이수</li>
           <li>HRC 학생대표, SW중심대학 사업 참여</li>
         </ul>
       </li>
@@ -240,7 +240,7 @@ layout: null
 
   <section class="slide" id="waggle" data-title="WaggleNet">
     <div class="slide-header">
-      <h2 class="slide-title">WaggleNet — LoRa & MQTT 기반 벌통 내부·외부 동시 모니터링</h2>
+      <h2 class="slide-title">WaggleNet: LoRa & MQTT 기반 벌통 내부·외부 동시 모니터링</h2>
       <div class="meta"><a href="ko/waggle-net-project.html" target="_blank">프로젝트 상세</a></div>
     </div>
     <div class="two-col">
@@ -248,7 +248,7 @@ layout: null
     <ul>
       <li>내·외부 동시 환경 모니터링 LoRa–MQTT 듀얼 스코프, ESP32-S3 기반 워커/마스터 구조</li>
       <li>센서: DHT22, LDR, GPS; 3분 주기 JSON → LoRa → MQTT → SQLite/클라우드</li>
-       <li>전송거리 110m(LOS)/95m(차폐), LoRa 전파 &lt;1s, 모듈당 $10–15, 2개월 필드 운용</li>
+      <li>전송거리 110m(도심 LOS)/95m(차폐), 농촌 LOS 150m, 노드당 $25–30, 2개월 필드 운용</li>
       <li>Flutter 모바일 실시간 대시보드 + Firebase FCM 알림</li>
       <li>논문: arXiv: <a href="https://arxiv.org/abs/2512.07408" target="_blank">https://arxiv.org/abs/2512.07408</a></li>
     </ul>
@@ -263,7 +263,7 @@ layout: null
 
   <!-- WaggleNet Deep Dives -->
   <section class="slide" id="waggle-arch" data-title="WaggleNet 아키텍처">
-    <div class="slide-header"><h2 class="slide-title">WaggleNet — 시스템 아키텍처</h2></div>
+    <div class="slide-header"><h2 class="slide-title">WaggleNet: 시스템 아키텍처</h2></div>
     <div class="two-col">
       <div>
         <ul>
@@ -274,10 +274,10 @@ layout: null
           <li>센서: DHT22(온습도), LDR(조도), GPS(위치)</li>
         </ul>
         <div class="metrics">
-          <span class="metric">8 노드(필드)</span>
+          <span class="metric">워커 노드 4개</span>
           <span class="metric">LOS 110m / 차폐 95m</span>
           <span class="metric">LoRa 전파 &lt;1s</span>
-          <span class="metric">$10–15 / 노드</span>
+          <span class="metric">$25–30 / 노드</span>
         </div>
       </div>
       <div>
@@ -288,9 +288,9 @@ layout: null
   </section>
 
   <section class="slide" id="waggle-results" data-title="WaggleNet 실험·결과">
-    <div class="slide-header"><h2 class="slide-title">WaggleNet — 실험 결과 & 개선점</h2></div>
+    <div class="slide-header"><h2 class="slide-title">WaggleNet: 실험 결과 & 개선점</h2></div>
     <ul>
-      <li>거리·지연: 개활지 110m/도심 차폐 95m까지 패킷 안정 수신, LoRa 홉 지연 &lt;1s</li>
+      <li>거리: 도심 LOS 110m와 차폐 환경 95m, 농촌 LOS 150m에서 측정</li>
       <li>신뢰성: MQTT QoS1 + 재전송 로직으로 누락률 저감</li>
       <li>운영: 2개월 필드 테스트(꿀벌 군집 환경), 온습도/조도 이벤트 기반 알림 정상 동작</li>
       <li>개선점: 저전력 최적화(딥슬립/샘플링 주기 적응), LoRa 채널 혼잡 시 주파수 호핑</li>
@@ -320,13 +320,13 @@ layout: null
 
   <!-- Heritage Deep Dives -->
   <section class="slide" id="heritage-arch" data-title="Heritage 아키텍처">
-    <div class="slide-header"><h2 class="slide-title">Heritage Monitoring — 워크플로우 & 아키텍처</h2></div>
+    <div class="slide-header"><h2 class="slide-title">Heritage Monitoring: 워크플로우 & 아키텍처</h2></div>
     <div class="two-col">
       <div>
         <ul>
-          <li>클라이언트: Flutter(웹/모바일) — 실측, 노트, 종합평가 3-탭 UX</li>
-          <li>백엔드: FastAPI — 문화유산 Open API XML→JSON 프록시, 인증/권한</li>
-          <li>탐지: PyTorch DETR — 손상 4종(크랙/분리/생물/파손) 탐지 및 등급 A–D 산출</li>
+          <li>클라이언트: Flutter(웹/모바일), 실측, 노트, 종합평가 3-탭 UX</li>
+          <li>백엔드: FastAPI, 문화유산 Open API XML→JSON 프록시, 인증/권한</li>
+          <li>탐지: PyTorch DETR, 손상 4종(크랙/분리/생물/파손) 탐지 및 등급 A–D 산출</li>
           <li>데이터: Firebase Firestore 실시간 동기화, Storage 이미지 보관</li>
           <li>배포: Docker + Nginx</li>
         </ul>
@@ -339,10 +339,10 @@ layout: null
   </section>
 
   <section class="slide" id="heritage-results" data-title="Heritage 실험·결과">
-    <div class="slide-header"><h2 class="slide-title">Heritage Monitoring — 성과 & 지식재산</h2></div>
+    <div class="slide-header"><h2 class="slide-title">Heritage Monitoring: 성과 & 지식재산</h2></div>
     <ul>
-      <li>현장 점검 시간 단축: 자동 탐지 + 실측 기록 일원화로 보고서 작성 효율 향상</li>
-      <li>운영 안정성: Firestore 오프라인 캐시로 현장 네트워크 변동 대응</li>
+      <li>현장 워크플로우: 자동 탐지 결과와 실측 기록을 한 화면에서 검토하도록 설계</li>
+      <li>데이터 동기화: Firestore를 통해 현장 기록과 수정 내역을 클라이언트 간 동기화</li>
       <li>저작권 등록 완료: C-2025-044615</li>
       <li>특허 출원 진행</li>
     </ul>
@@ -350,7 +350,7 @@ layout: null
   </section>
 
   <section class="slide" id="gaia" data-title="GAIA">
-    <div class="slide-header"><h2 class="slide-title">GAIA — AI-Based Urban Air Impact Analysis</h2><div class="meta"><a href="ko/gaia-project.html" target="_blank">프로젝트 상세</a></div></div>
+    <div class="slide-header"><h2 class="slide-title">GAIA: AI-Based Urban Air Impact Analysis</h2><div class="meta"><a href="ko/gaia-project.html" target="_blank">프로젝트 상세</a></div></div>
     <div class="two-col">
       <div>
     <ul>
@@ -369,19 +369,19 @@ layout: null
 
   <!-- GAIA Deep Dives -->
   <section class="slide" id="gaia-arch" data-title="GAIA 파이프라인">
-    <div class="slide-header"><h2 class="slide-title">GAIA — 데이터·모델 파이프라인</h2></div>
+    <div class="slide-header"><h2 class="slide-title">GAIA: 데이터·모델 파이프라인</h2></div>
     <ul>
       <li>데이터: 7년 TMS 시계열 + 기상 + AirKorea 통합 ETL</li>
       <li>모델: AERMOD(물리 확산) + Transformer 하이브리드</li>
       <li>불확실성: Gaussian Diffusion 기반 분포 추정</li>
-      <li>대시보드: Streamlit — 3D 플룸, 시나리오 비교, 시계열 예측</li>
+      <li>대시보드: Streamlit, 3D 플룸, 시나리오 비교, 시계열 예측</li>
     </ul>
     <div class="metrics"><span class="metric">GeoPandas</span><span class="metric">Xarray</span><span class="metric">Folium</span></div>
     <div class="foot"><div class="num"></div><div class="links"><a href="ko/gaia-project.html" target="_blank">상세</a></div></div>
   </section>
 
   <section class="slide" id="gaia-results" data-title="GAIA 결과">
-    <div class="slide-header"><h2 class="slide-title">GAIA — 인사이트 & 활용</h2></div>
+    <div class="slide-header"><h2 class="slide-title">GAIA: 인사이트 & 활용</h2></div>
     <ul>
       <li>시설별 배출 시나리오 비교를 통한 영향권 가시화</li>
       <li>물리·딥러닝 결합으로 해석력과 예측력 균형 확보</li>
@@ -391,7 +391,7 @@ layout: null
   </section>
 
   <section class="slide" id="gof" data-title="Guardians of Farm">
-    <div class="slide-header"><h2 class="slide-title">Guardians of Farm — 작물 질병 탐지</h2><div class="meta"><a href="ko/guardians-of-farm-project.html" target="_blank">프로젝트 상세</a></div></div>
+    <div class="slide-header"><h2 class="slide-title">Guardians of Farm: 작물 질병 탐지</h2><div class="meta"><a href="ko/guardians-of-farm-project.html" target="_blank">프로젝트 상세</a></div></div>
     <div class="two-col">
       <div>
     <ul>
@@ -409,7 +409,7 @@ layout: null
 
   <!-- Guardians Deep Dives -->
   <section class="slide" id="gof-arch" data-title="Guardians 아키텍처">
-    <div class="slide-header"><h2 class="slide-title">Guardians of Farm — 데이터셋·모델</h2></div>
+    <div class="slide-header"><h2 class="slide-title">Guardians of Farm: 데이터셋·모델</h2></div>
     <ul>
       <li>비지도 → 지도 전환: GroundingDINO + SAM → YOLOv8</li>
       <li>라벨링: RoboFlow 대규모 수작업 + 증강 파이프라인</li>
@@ -421,7 +421,7 @@ layout: null
   </section>
 
   <section class="slide" id="gof-results" data-title="Guardians 결과">
-    <div class="slide-header"><h2 class="slide-title">Guardians of Farm — 적용 & 개선</h2></div>
+    <div class="slide-header"><h2 class="slide-title">Guardians of Farm: 적용 & 개선</h2></div>
     <ul>
       <li>현장 적용: 질병 조기 탐지로 방제 의사결정 보조</li>
       <li>개선 방향: 도메인 적응/경량화(엣지 추론), 클래스 확장</li>
@@ -430,7 +430,7 @@ layout: null
   </section>
 
   <section class="slide" id="story" data-title="Sangsang StoryPlay">
-    <div class="slide-header"><h2 class="slide-title">Sangsang StoryPlay — 아동 음성-생성형 스토리텔링</h2></div>
+    <div class="slide-header"><h2 class="slide-title">Sangsang StoryPlay: 아동 음성-생성형 스토리텔링</h2></div>
     <div class="two-col">
       <div>
     <ul>
@@ -449,7 +449,7 @@ layout: null
 
   <!-- StoryPlay Deep Dives -->
   <section class="slide" id="story-arch" data-title="StoryPlay 구조">
-    <div class="slide-header"><h2 class="slide-title">Sangsang StoryPlay — 음성·생성 파이프라인</h2></div>
+    <div class="slide-header"><h2 class="slide-title">Sangsang StoryPlay: 음성·생성 파이프라인</h2></div>
     <ul>
       <li>입력: 아동 음성 ASR → 문장 정제</li>
       <li>생성: GPT 기반 씬/대사 생성, 맥락 상태 유지</li>
@@ -460,7 +460,7 @@ layout: null
   </section>
 
   <section class="slide" id="story-results" data-title="StoryPlay 결과">
-    <div class="slide-header"><h2 class="slide-title">Sangsang StoryPlay — 성과 & 확장</h2></div>
+    <div class="slide-header"><h2 class="slide-title">Sangsang StoryPlay: 성과 & 확장</h2></div>
     <ul>
       <li>성과: 제주대 TBM 창업캠프 대상(2025)</li>
       <li>확장: 읽기 유창성·감정 코칭·부모 리포트 고도화</li>
@@ -503,13 +503,13 @@ layout: null
   <section class="slide" id="awards" data-title="수상">
     <div class="slide-header"><h2 class="slide-title">수상</h2></div>
     <ul>
-      <li>2025 — 전북대학교, 6대 핵심역량인재상 총장상(최우수, 문화인재) — 장학금 1,500,000원 (<a href="https://www.news1.kr/local/jeonbuk/5939128" target="_blank">기사 링크</a>)</li>
-      <li>2025 — 전북대학교, 큰사람 블랙벨트 장학 프로그램 총장상 — 장학금 5,000,000원</li>
-      <li>2025 — SW중심대학, 1학기 캡스톤 디자인 경진대회 우수상</li>
-      <li>2024 — SW중심대학, 2학기 캡스톤 디자인 경진대회 우수상</li>
-      <li>2024 — HRC 우수학생 총장상 — 장학금 300,000원</li>
-      <li>2025 — 과학기술정보통신부, 빅데이터 서포터즈 우수상</li>
-      <li>2025 — 제주대학교, TBM 창업캠프 대상</li>
+      <li>2025: 전북대학교, 6대 핵심역량인재상 총장상(최우수, 문화인재), 장학금 1,500,000원 (<a href="https://www.news1.kr/local/jeonbuk/5939128" target="_blank">기사 링크</a>)</li>
+      <li>2025: 전북대학교, 큰사람 블랙벨트 장학 프로그램 총장상, 장학금 5,000,000원</li>
+      <li>2025: SW중심대학, 1학기 캡스톤 디자인 경진대회 우수상</li>
+      <li>2024: SW중심대학, 2학기 캡스톤 디자인 경진대회 우수상</li>
+      <li>2024: HRC 우수학생 총장상, 장학금 300,000원</li>
+      <li>2025: 과학기술정보통신부, 빅데이터 서포터즈 우수상</li>
+      <li>2025: 제주대학교, TBM 창업캠프 대상</li>
     </ul>
     <div class="foot"><div class="num">15 / Awards</div><div></div></div>
   </section>
@@ -517,10 +517,10 @@ layout: null
   <section class="slide" id="certs" data-title="인증·프로그램">
     <div class="slide-header"><h2 class="slide-title">인증 · 프로그램</h2></div>
     <ul>
-      <li>2025 — 한국데이터산업진흥원, 데이터아키텍처 준전문가(DAsP)</li>
-      <li>2025 — 정부 지원 선발 국제 연구 프로그램 IITP Korean AI Square Summer 2025 Program 국제 장학생(Purdue University Korean Software Square 주관)</li>
-      <li>2024 — Data Science & AI Summer School, Bucharest Univ. (42h)</li>
-      <li>2024 — 전북대 빅데이터 캠프(동계) 이수</li>
+      <li>2025: 한국데이터산업진흥원, 데이터아키텍처 준전문가(DAsP)</li>
+      <li>2025: 정부 지원 선발 국제 연구 프로그램 IITP Korean AI Square Summer 2025 Program 국제 장학생(Purdue University Korean Software Square 주관)</li>
+      <li>2024: Data Science & AI Summer School, Bucharest Univ. (42h)</li>
+      <li>2024: 전북대 빅데이터 캠프(동계) 이수</li>
     </ul>
     <div class="foot"><div class="num">16 / Certificates</div><div></div></div>
   </section>
@@ -537,7 +537,7 @@ layout: null
   </section>
 
   <section class="slide" id="activities-detail" data-title="활동 상세">
-    <div class="slide-header"><h2 class="slide-title">활동 상세 — 프로그램 & 커뮤니티</h2></div>
+    <div class="slide-header"><h2 class="slide-title">활동 상세: 프로그램 & 커뮤니티</h2></div>
     <ul>
       <li>Data Science & AI Summer School (Bucharest Univ., 42h)
         <ul>
@@ -554,7 +554,7 @@ layout: null
   </section>
 
   <section class="slide" id="gallery" data-title="갤러리">
-    <div class="slide-header"><h2 class="slide-title">Gallery — 현장 스냅샷</h2></div>
+    <div class="slide-header"><h2 class="slide-title">Gallery: 현장 스냅샷</h2></div>
     <div class="grid">
       <div class="img-wrap"><img src="assets/gallery/2025Purdue_KSW.jpeg" alt="Purdue Summer" class="img"></div>
       <div class="img-wrap"><img src="assets/gallery/2025Purdue_KSW1.jpeg" alt="Purdue Lab" class="img"></div>
@@ -563,7 +563,7 @@ layout: null
   </section>
 
   <section class="slide" id="appendix" data-title="부록: 문서/발표">
-    <div class="slide-header"><h2 class="slide-title">Appendix — 문서 & 발표 자료</h2></div>
+    <div class="slide-header"><h2 class="slide-title">Appendix: 문서 & 발표 자료</h2></div>
     <ul>
       <li>WaggleNet Paper: assets/polvo-de-purdue-project/paper.pdf</li>
       <li>WaggleNet Presentation: assets/polvo-de-purdue-project/presentation.pdf</li>

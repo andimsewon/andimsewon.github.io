@@ -103,6 +103,54 @@
   } catch (err) {}
 })();
 
+// Editorial motion system: staged entry, scroll reveals, and restrained
+// interaction feedback. Content remains fully visible without JavaScript.
+(function () {
+  'use strict';
+
+  if (!window.matchMedia || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var root = document.documentElement;
+  var revealSelectors = [
+    '.section-intro',
+    '.career-item',
+    '.capability-grid article',
+    '.featured-work',
+    '.research-item',
+    '.education-grid article',
+    '.project-card',
+    '.case-overview',
+    '.project-main-full > .section-title',
+    '.project-main-full > .project-description',
+    '.content-wrapper > .section-title',
+    '.content-wrapper > .info-list',
+    '.gallery-item'
+  ];
+  var items = document.querySelectorAll(revealSelectors.join(','));
+
+  root.classList.add('motion-enabled');
+
+  for (var i = 0; i < items.length; i++) {
+    items[i].classList.add('motion-reveal');
+    items[i].style.setProperty('--motion-order', String(i % 4));
+  }
+
+  if (!('IntersectionObserver' in window)) {
+    for (var j = 0; j < items.length; j++) items[j].classList.add('is-revealed');
+    return;
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    for (var k = 0; k < entries.length; k++) {
+      if (!entries[k].isIntersecting) continue;
+      entries[k].target.classList.add('is-revealed');
+      observer.unobserve(entries[k].target);
+    }
+  }, { rootMargin: '0px 0px -9% 0px', threshold: 0.08 });
+
+  for (var n = 0; n < items.length; n++) observer.observe(items[n]);
+})();
+
 // Mobile nav toggle and Back-to-top
 (function () {
   try {

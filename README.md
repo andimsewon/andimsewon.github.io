@@ -157,6 +157,15 @@ bundle install
 bundle exec jekyll serve --livereload
 ```
 
+### 프로덕션 SEO 검증
+
+```bash
+bundle exec jekyll build --trace
+bundle exec ruby scripts/validate_seo.rb
+```
+
+페이지 메타데이터를 변경한 뒤에는 `bundle exec ruby scripts/validate_seo.rb --write-manifest`로 `docs/seo-page-manifest.md`를 갱신합니다. GitHub Actions는 빌드된 30개 canonical 페이지의 메타데이터, hreflang, JSON-LD, 사이트맵, 이미지 속성 및 내부 링크를 검사합니다.
+
 그 다음 브라우저에서 **http://localhost:4000** 접속 (영문 루트), **http://localhost:4000/ko/** (한국어).
 
 ### ⚠️ 파일 직접 열기 주의사항

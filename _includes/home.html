@@ -35,9 +35,10 @@
     <div class="home-shell">
       <div class="hero-intro">
         <div class="hero-identity">
-          <p class="hero-eyebrow">{% if is_ko %}ML 엔지니어 · 데이터 분석가 · 연구자 · 시스템 빌더{% else %}ML ENGINEER · DATA ANALYST · RESEARCHER · SYSTEMS BUILDER{% endif %}</p>
+          <p class="hero-eyebrow">{% if is_ko %}AI 연구자 · ML 및 소프트웨어 엔지니어{% else %}AI RESEARCHER · ML &amp; SOFTWARE ENGINEER{% endif %}</p>
           <h1 id="hero-title" class="hero-name">{% if is_ko %}김세원{% else %}Sewon Kim{% endif %}</h1>
-          <p class="hero-tagline">{% if is_ko %}지식그래프 RAG, 현장에 배포된 손상 탐지, IoT 데이터 파이프라인을 아우르는 검색·컴퓨터 비전 시스템을 만듭니다.{% else %}I build retrieval and computer-vision systems — knowledge-graph RAG, damage detection deployed in the field, and IoT data pipelines.{% endif %}</p>
+          <p class="hero-identity-line">{% if is_ko %}김세원(Sewon Kim)은 온라인에서 andimsewon으로도 활동하는 AI 연구자이자 소프트웨어 엔지니어입니다.{% else %}Sewon Kim (김세원), also known online as andimsewon, is an AI researcher and software engineer.{% endif %}</p>
+          <p class="hero-tagline">{% if is_ko %}지식그래프 RAG, 현장에 배포된 손상 탐지, IoT 데이터 파이프라인을 아우르는 검색·컴퓨터 비전 시스템을 만듭니다.{% else %}I build retrieval and computer-vision systems, including knowledge-graph RAG, field-deployed damage detection, and IoT data pipelines.{% endif %}</p>
           <div class="hero-actions" aria-label="{% if is_ko %}주요 링크{% else %}Primary actions{% endif %}">
             <a class="action-primary" href="#selected-work">{% if is_ko %}주요 프로젝트 보기{% else %}View Selected Work{% endif %}</a>
             <a class="action-secondary" href="{{ site.cv_path }}?v={{ site.cv_version }}" target="_blank" rel="noopener noreferrer">{% if is_ko %}이력서 다운로드 <span class="sr-only">(PDF, 새 창)</span>{% else %}Download CV <span class="sr-only">(PDF, opens in a new tab)</span>{% endif %}</a>
@@ -56,13 +57,13 @@
           </div>
           <ol class="experience-summary">
             <li class="experience-summary-item is-current">
-              <p class="experience-date">{% if is_ko %}2026 — 현재{% else %}2026 — PRESENT{% endif %}</p>
+              <p class="experience-date">{% if is_ko %}2026년–현재{% else %}2026–PRESENT{% endif %}</p>
               <h3>{% if is_ko %}Innovation Accelerator 인턴{% else %}Innovation Accelerator Intern{% endif %}</h3>
               <p class="experience-org">FAO · Office of Innovation</p>
               <p class="experience-meta">{% if is_ko %}이탈리아 로마{% else %}Rome, Italy{% endif %}</p>
             </li>
             <li class="experience-summary-item">
-              <p class="experience-date">2025 — 2026</p>
+              <p class="experience-date">2025–2026</p>
               <h3>{% if is_ko %}학부연구생{% else %}Undergraduate Researcher{% endif %}</h3>
               <p class="experience-org">Natural Language Learning Lab · Jeonbuk National University</p>
               <p class="experience-meta">{% if is_ko %}지도교수: 송현제 교수{% else %}Advisor: Prof. Hyun-je Song{% endif %}</p>
@@ -99,19 +100,48 @@
     <div class="home-shell">
       <div class="section-intro">
         <p class="section-kicker"><span class="section-kicker-index">[01]</span> {% if is_ko %}경력{% else %}Experience{% endif %}</p>
-        <div><h2 id="experience-title" class="home-section-title">{% if is_ko %}경력{% else %}Experience{% endif %}</h2><p>{% if is_ko %}책임, 기여, 결과물 중심의 경력 요약입니다.{% else %}Experience framed by responsibility, contribution, and deliverable.{% endif %}</p></div>
+        <div><h2 id="experience-title" class="home-section-title">{% if is_ko %}경력{% else %}Experience{% endif %}</h2><p>{% if is_ko %}개인 기여와 팀 성과를 구분해 정리한 경력입니다.{% else %}Roles and research work, with my contribution separated from team outcomes.{% endif %}</p></div>
       </div>
       <div class="career-list">
         <article class="career-item">
-          <div class="career-meta"><p>{% if is_ko %}2026년 6월 — 현재{% else %}Jun 2026 — Present{% endif %}</p><p>{% if is_ko %}이탈리아 로마{% else %}Rome, Italy{% endif %}</p></div>
-          <div class="career-body"><p class="current-marker">{% if is_ko %}현재{% else %}Current{% endif %}</p><h3>{% if is_ko %}Innovation Accelerator 인턴{% else %}Innovation Accelerator Intern{% endif %}</h3><p class="career-org">{% if is_ko %}유엔식량농업기구(FAO) · Office of Innovation{% else %}Food and Agriculture Organization of the United Nations (FAO) · Office of Innovation{% endif %}</p><p class="role-summary">{% if is_ko %}국제 혁신팀에서 농식품 혁신 지식 플랫폼의 사용자 행동, 인터페이스, AI enrichment 평가를 지원합니다.{% else %}Supports analysis and evaluation of an agrifood innovation knowledge platform within an international innovation team, focusing on user behavior, interface design, and AI enrichment.{% endif %}</p><ul><li>{% if is_ko %}ATIO Knowledge Base에서 사용자가 농식품 혁신 기록을 탐색·이용하는 방식을 파악하기 위한 사용자 참여 및 행동 분석을 수행합니다.{% else %}Conducts user-engagement and behavior analysis for the ATIO Knowledge Base to examine how users discover and interact with agrifood innovation records.{% endif %}</li><li>{% if is_ko %}AI enrichment prompt를 평가하고, prompt 개선 작업에 분석 의견을 제공합니다.{% else %}Evaluates AI-enrichment prompts and contributes analytical observations to ongoing prompt refinement.{% endif %}</li><li>{% if is_ko %}UX·데이터 시각화 작업을 지원하고 taxonomy, data harvesting, Drupal 구현 담당자와 협업합니다.{% else %}Supports UX and data-visualization work and collaborates with colleagues responsible for taxonomy, data harvesting, and Drupal implementation.{% endif %}</li></ul><p class="confidential-note">{% if is_ko %}내부 시스템·데이터 및 비공개 결과는 제외했습니다.{% else %}Internal systems, data, and non-public outcomes are intentionally omitted.{% endif %}</p></div>
+          <div class="career-meta"><p>{% if is_ko %}2026년 6월–현재{% else %}Jun 2026–Present{% endif %}</p><p>{% if is_ko %}이탈리아 로마{% else %}Rome, Italy{% endif %}</p></div>
+          <div class="career-body">
+            <p class="current-marker">{% if is_ko %}현재{% else %}Current{% endif %}</p>
+            <h3>{% if is_ko %}Innovation Accelerator 인턴{% else %}Innovation Accelerator Intern{% endif %}</h3>
+            <p class="career-org">{% if is_ko %}유엔식량농업기구(FAO) · Office of Innovation{% else %}Food and Agriculture Organization of the United Nations (FAO) · Office of Innovation{% endif %}</p>
+
+            <section class="atio-project-focus" aria-labelledby="atio-project-title">
+              <p class="atio-project-label">{% if is_ko %}주요 프로젝트 · FAO 공개 프로젝트{% else %}Main project · Public FAO project{% endif %}</p>
+              <h4 id="atio-project-title">ATIO Knowledge Base</h4>
+              <a class="atio-project-cta" href="https://sti-portal.fao.org/pages/atio-knowledge-base" target="_blank" rel="noopener noreferrer" aria-label="{% if is_ko %}FAO ATIO Knowledge Base 살펴보기, 새 창에서 열림{% else %}Explore the FAO ATIO Knowledge Base, opens in a new tab{% endif %}">
+                {% if is_ko %}ATIO Knowledge Base 살펴보기{% else %}Explore ATIO Knowledge Base{% endif %}
+                <span aria-hidden="true">↗</span>
+              </a>
+              <ul class="atio-project-tags" aria-label="{% if is_ko %}ATIO 업무 영역{% else %}ATIO work areas{% endif %}">
+                <li>GA4 Analytics</li>
+                <li>Search UX</li>
+                <li>AI Enrichment</li>
+                <li>Knowledge Discovery</li>
+                <li>Data Visualization</li>
+              </ul>
+            </section>
+
+            <p class="role-summary">{% if is_ko %}<strong>ATIO Knowledge Base</strong>, 즉 Agrifood Systems Technologies and Innovations Outlook 지식 플랫폼에서 사용자 참여, 행동 분석, 검색 및 UX 평가, AI enrichment 품질, 지식 탐색 흐름을 중심으로 업무를 수행합니다.{% else %}At FAO, I work on the <strong>ATIO Knowledge Base</strong>, the Agrifood Systems Technologies and Innovations Outlook knowledge platform. My responsibilities cover <strong>user engagement, behavioral analytics, search and UX evaluation, AI-enrichment quality, and knowledge-discovery workflows</strong>.{% endif %}</p>
+            <ul>
+              <li>{% if is_ko %}<strong>ATIO Knowledge Base의 사용자 참여 업무를 이끌고 행동을 분석하며</strong>, GA4를 활용해 사용자가 농식품 혁신 콘텐츠를 발견하고 탐색하는 방식을 파악합니다.{% else %}<strong>Leads the user-engagement workstream and conducts behavioral analysis</strong> for the ATIO Knowledge Base, using GA4 to study how users discover and navigate agrifood innovation content.{% endif %}</li>
+              <li>{% if is_ko %}<strong>검색, 기기, 진입점 및 프로필에서 탐색으로 이어지는 행동을 분석해</strong> UX 마찰을 파악하고 결과를 제품 요구사항으로 전환합니다.{% else %}<strong>Analyzes search, device, entry-point, and profile-to-discovery behavior</strong> to identify UX friction and translate findings into product requirements.{% endif %}</li>
+              <li>{% if is_ko %}<strong>AI enrichment 품질을 평가하고</strong> prompt, metadata 및 지식 탐색 개선을 위한 근거를 제공합니다.{% else %}<strong>Evaluates AI-enrichment quality</strong> and contributes evidence for prompt, metadata, and knowledge-discovery improvements.{% endif %}</li>
+              <li>{% if is_ko %}<strong>검색, 시각화 및 taxonomy 기반 탐색 업무를 지원하며</strong> UX, Drupal, taxonomy, data harvesting 및 AI 업무 담당자와 협업합니다.{% else %}<strong>Supports search, visualization, and taxonomy-aware discovery work</strong>, collaborating across UX, Drupal, taxonomy, data-harvesting, and AI workstreams.{% endif %}</li>
+            </ul>
+            <p class="confidential-note">{% if is_ko %}내부 시스템, 비공개 데이터 및 제한된 구현 세부사항은 의도적으로 제외했습니다.{% else %}Internal systems, non-public data, and restricted implementation details are intentionally omitted.{% endif %}</p>
+          </div>
         </article>
         <article class="career-item">
-          <div class="career-meta"><p>{% if is_ko %}2025년 2월 — 2026년 2월{% else %}Feb 2025 — Feb 2026{% endif %}</p><p>{% if is_ko %}대한민국 전주{% else %}Jeonju, Republic of Korea{% endif %}</p></div>
+          <div class="career-meta"><p>{% if is_ko %}2025년 2월–2026년 2월{% else %}Feb 2025–Feb 2026{% endif %}</p><p>{% if is_ko %}대한민국 전주{% else %}Jeonju, Republic of Korea{% endif %}</p></div>
           <div class="career-body"><h3>{% if is_ko %}학부연구생{% else %}Undergraduate Researcher{% endif %}</h3><p class="career-org">Natural Language Learning Lab · Jeonbuk National University · {% if is_ko %}지도교수: 송현제 교수{% else %}Advisor: Prof. Hyun-je Song{% endif %}</p><p class="role-summary">{% if is_ko %}교수 지도하의 연구 환경에서 지식그래프 기반 검색과 컴퓨터 비전 시스템을 연구하고, 검색 파이프라인·모델 통합·응용 시스템 구현을 담당했습니다.{% else %}Investigated knowledge-graph retrieval and computer-vision systems in a faculty-supervised lab, with responsibility for retrieval-pipeline, model-integration, and application-system implementation.{% endif %}</p><ul><li>{% if is_ko %}PyTorch와 LangChain으로 지식그래프의 관계 정보와 신경 임베딩을 결합하는 검색 파이프라인 및 멀티홉 추론 메커니즘을 설계·구현했습니다.{% else %}Designed and implemented a retrieval pipeline and multi-hop reasoning mechanism that combined graph relations with neural embeddings using PyTorch and LangChain.{% endif %}</li><li>{% if is_ko %}임베딩 통합 방식을 분리한 절제 연구를 수행해 정확도와 계산 효율의 트레이드오프를 비교했습니다.{% else %}Conducted ablation studies that isolated embedding-integration approaches to compare accuracy and computational-efficiency trade-offs.{% endif %}</li><li>{% if is_ko %}문화유산 손상 탐지 공동 프로젝트에서 Flutter 현장 앱, FastAPI 백엔드, DETR·CLIP 탐지 파이프라인을 구현했습니다.{% else %}Implemented the Flutter field application, FastAPI backend, and DETR/CLIP detection pipeline for a collaborative cultural-heritage damage-assessment project.{% endif %}</li><li>{% if is_ko %}연구 구현, 시스템 구조, 평가 결과를 기술 문서와 프로젝트 자료로 정리했습니다.{% else %}Documented research implementations, system architecture, and evaluation findings for lab and project materials.{% endif %}</li></ul></div>
         </article>
         <article class="career-item">
-          <div class="career-meta"><p>{% if is_ko %}2025년 6월 — 8월{% else %}Jun — Aug 2025{% endif %}</p><p>{% if is_ko %}미국 웨스트라피엣{% else %}West Lafayette, USA{% endif %}</p></div>
+          <div class="career-meta"><p>{% if is_ko %}2025년 6–8월{% else %}Jun–Aug 2025{% endif %}</p><p>{% if is_ko %}미국 웨스트라피엣{% else %}West Lafayette, USA{% endif %}</p></div>
           <div class="career-body"><h3>{% if is_ko %}국제 장학생{% else %}International Scholar{% endif %}</h3><p class="career-org">IITP Korean AI Square Summer 2025 Program · Korean Software Square at Purdue University</p><p class="role-summary">{% if is_ko %}정부 지원 국제 연구 프로그램에서 벌통 내·외부 환경을 측정하는 LoRa–MQTT 농업 모니터링 연구의 현장 조사와 데이터 수집에 기여했습니다.{% else %}Contributed field research and data collection to a government-funded international research project evaluating LoRa–MQTT monitoring of conditions inside and outside beehives.{% endif %}</p><ul><li>{% if is_ko %}두 달간 진행된 2개 벌통·4개 센서 노드 현장 시험에서 데이터 수집과 실험 수행을 지원했습니다.{% else %}Supported data collection and field-test execution for a two-month trial using four sensor nodes across two beehives.{% endif %}</li><li>{% if is_ko %}LoRa 전송, MQTT 메시징, 센서 데이터 흐름을 사용하는 공동 시스템의 성능 평가에 기여했습니다.{% else %}Contributed to evaluating the collaborative system's LoRa transport, MQTT messaging, and sensor-data flow.{% endif %}</li><li>{% if is_ko %}국제 연구팀과 결과를 정리하고, 6인 저자 arXiv 프리프린트의 제3저자로 참여했습니다.{% else %}Worked with the international research team to document the results and co-authored the six-author arXiv preprint as third author.{% endif %}</li></ul></div>
         </article>
       </div>
@@ -120,7 +150,7 @@
 
   <section id="capabilities" class="home-section" aria-labelledby="capabilities-title">
     <div class="home-shell">
-      <div class="section-intro"><p class="section-kicker"><span class="section-kicker-index">[02]</span> {% if is_ko %}역량{% else %}Capabilities{% endif %}</p><div><h2 id="capabilities-title" class="home-section-title">{% if is_ko %}기술 역량{% else %}Technical Capabilities{% endif %}</h2><p>{% if is_ko %}도구 목록이 아니라 실제 프로젝트에서 입증된 엔지니어링 영역입니다.{% else %}Engineering domains demonstrated in shipped systems and research—not self-rated proficiency.{% endif %}</p></div></div>
+      <div class="section-intro"><p class="section-kicker"><span class="section-kicker-index">[02]</span> {% if is_ko %}역량{% else %}Capabilities{% endif %}</p><div><h2 id="capabilities-title" class="home-section-title">{% if is_ko %}기술 역량{% else %}Technical Capabilities{% endif %}</h2><p>{% if is_ko %}프로젝트와 연구에서 사용한 엔지니어링 영역입니다.{% else %}Engineering areas used across my projects and research.{% endif %}</p></div></div>
       <div class="capability-grid">
         <article><h3>{% if is_ko %}검색 및 지식 시스템{% else %}Retrieval &amp; Knowledge Systems{% endif %}</h3><p>{% if is_ko %}지식그래프 검색, 멀티홉 추론, 임베딩 통합, RAG grounding{% else %}Knowledge-graph retrieval, multi-hop reasoning, embedding integration, RAG grounding{% endif %}</p><a href="{% if is_ko %}/ko/kg-rag-project.html{% else %}/kg-rag-project.html{% endif %}">KG-RAG <span aria-hidden="true">→</span></a></article>
         <article><h3>{% if is_ko %}머신러닝 및 컴퓨터 비전{% else %}Machine Learning &amp; Computer Vision{% endif %}</h3><p>{% if is_ko %}객체 탐지, 이미지 파이프라인, 모델 추론 API, 손상 분류{% else %}Object detection, image pipelines, model inference APIs, damage classification{% endif %}</p><a href="{% if is_ko %}/ko/heritage-monitoring-project.html{% else %}/heritage-monitoring-project.html{% endif %}">Heritage Damage Detection <span aria-hidden="true">→</span></a></article>
@@ -138,7 +168,7 @@
         <p class="section-kicker"><span class="section-kicker-index">[03]</span> {% if is_ko %}프로젝트{% else %}Work{% endif %}</p>
         <div>
           <h2 id="selected-work-title" class="home-section-title">{% if is_ko %}주요 프로젝트{% else %}Selected Work{% endif %}</h2>
-          <p>{% if is_ko %}연구, 현장 검증, 실제 운영으로 이어진 시스템입니다.{% else %}Systems carried through research, field validation, and operational use.{% endif %}</p>
+          <p>{% if is_ko %}연구 결과, 현장 시험 또는 실제 운영 근거가 있는 프로젝트입니다.{% else %}Selected projects with research results, field trials, or evidence of operational use.{% endif %}</p>
         </div>
       </div>
       <div class="featured-work-list">
@@ -150,7 +180,7 @@
                 <p class="work-status">{% if is_ko %}검색 · 지식그래프 · 연구{% else %}Retrieval · Knowledge Graphs · Research{% endif %}</p>
                 <h3>KG-RAG</h3>
               </div>
-              <time class="work-date" datetime="2025/2026">2025—2026</time>
+              <time class="work-date" datetime="2025/2026">2025–2026</time>
             </div>
             <p class="work-problem">{% if is_ko %}평면 텍스트 유사도 검색의 한계를 보완하기 위해 구조화된 관계 정보를 활용하는 멀티홉 질의응답 검색 파이프라인을 설계했습니다.{% else %}Designed a multi-hop question-answering retrieval pipeline that uses structured relations beyond flat text similarity.{% endif %}</p>
             <dl class="work-evidence">
@@ -175,7 +205,7 @@
             </div>
             <p class="work-problem">{% if is_ko %}종이 기반 문화유산 현장 조사를 구조화된 손상 기록·평가 흐름으로 전환하도록 설계한 공동 현장 조사 시스템입니다.{% else %}A collaborative field-survey system designed to replace paper-based heritage surveys with structured damage documentation and assessment.{% endif %}</p>
             <dl class="work-evidence">
-              <div><dt>{% if is_ko %}나의 역할{% else %}My role{% endif %}</dt><dd>{% if is_ko %}Flutter 현장 앱, FastAPI 백엔드, DETR·CLIP 기반 객체 탐지 파이프라인을 포함한 엔드투엔드 시스템 설계{% else %}Architected the end-to-end Flutter field app, FastAPI backend, and DETR/CLIP object-detection pipeline{% endif %}</dd></div>
+              <div><dt>{% if is_ko %}나의 역할{% else %}My role{% endif %}</dt><dd>{% if is_ko %}Flutter 현장 앱, FastAPI 백엔드 및 DETR·CLIP 기반 객체 탐지 파이프라인 설계·구현{% else %}Designed and implemented the Flutter field app, FastAPI backend, and DETR/CLIP object-detection pipeline{% endif %}</dd></div>
               <div><dt>{% if is_ko %}시스템{% else %}System{% endif %}</dt><dd>PyTorch · DETR · CLIP · FastAPI · Flutter · Firebase</dd></div>
               <div><dt>{% if is_ko %}엔지니어링 증거{% else %}Engineering evidence{% endif %}</dt><dd>{% if is_ko %}탐지 모델 F1 0.89 · AI 탐지 응답 2초 미만 · Firestore 동기화 500ms 미만{% else %}Detection model F1 0.89 · AI detection response under 2 s · Firestore synchronization under 500 ms{% endif %}</dd></div>
               <div><dt>{% if is_ko %}영향 및 책임{% else %}Impact &amp; responsibility{% endif %}</dt><dd>{% if is_ko %}팀 성과: 국가유산청 운영 · 특허 출원 · 소프트웨어 저작권 등록 · 조사자 검토 유지{% else %}Team outcomes: operational use at Korea Heritage Service · Patent filed · Software copyright registered · Inspector review retained{% endif %}</dd></div>
@@ -211,7 +241,7 @@
 
   <section id="research" class="home-section" aria-labelledby="research-title">
     <div class="home-shell">
-      <div class="section-intro"><p class="section-kicker"><span class="section-kicker-index">[04]</span> {% if is_ko %}연구{% else %}Research{% endif %}</p><div><h2 id="research-title" class="home-section-title">{% if is_ko %}연구 및 출판{% else %}Research &amp; Publications{% endif %}</h2><p>{% if is_ko %}검증 가능한 논문, 원고 및 지식재산입니다.{% else %}Verified preprints, research in progress, and intellectual property.{% endif %}</p></div></div>
+      <div class="section-intro"><p class="section-kicker"><span class="section-kicker-index">[04]</span> {% if is_ko %}연구{% else %}Research{% endif %}</p><div><h2 id="research-title" class="home-section-title">{% if is_ko %}연구 및 출판{% else %}Research &amp; Publications{% endif %}</h2><p>{% if is_ko %}프리프린트, 진행 중인 연구 및 지식재산 기록입니다.{% else %}Preprints, ongoing research, and intellectual property records.{% endif %}</p></div></div>
       <div class="research-list">
         <!-- TODO: confirm manuscript preparation date range before publishing a specific timeframe -->
         <article class="research-item"><div class="research-type">{% if is_ko %}원고 준비 중{% else %}Manuscript in preparation{% endif %}</div><div><h3>Knowledge Graph–Enhanced Retrieval-Augmented Generation for Multi-Hop Reasoning in Large Language Models</h3><p class="citation">{% if is_ko %}Natural Language Learning Lab에서 수행한 지식그래프 기반 검색 및 멀티홉 추론 연구.{% else %}Knowledge-graph retrieval and multi-hop reasoning research conducted at the Natural Language Learning Lab.{% endif %}</p><p class="research-links"><a href="{% if is_ko %}/ko/kg-rag-project.html{% else %}/kg-rag-project.html{% endif %}">{% if is_ko %}연구 개요{% else %}Research overview{% endif %}</a></p></div></article>
@@ -226,8 +256,8 @@
     <div class="home-shell">
       <div class="section-intro"><p class="section-kicker"><span class="section-kicker-index">[05]</span> {% if is_ko %}배경{% else %}Background{% endif %}</p><div><h2 id="education-title" class="home-section-title">{% if is_ko %}학력 및 주요 활동{% else %}Education &amp; Selected Activities{% endif %}</h2></div></div>
       <div class="education-grid">
-        <article><p class="education-date">2022 — 2026 (Expected)</p><h3>{% if is_ko %}컴퓨터공학 학사{% else %}B.S. in Computer Science and Engineering{% endif %}</h3><p>Jeonbuk National University · GPA 4.09/4.5</p><p class="education-detail">{% if is_ko %}머신러닝, 데이터마이닝, 정보검색, 자연어처리, 데이터베이스{% else %}Machine Learning, Data Mining, Information Retrieval, NLP, Database Systems{% endif %}</p></article>
-        <article><p class="education-date">2022 — {% if is_ko %}현재{% else %}Present{% endif %}</p><h3>{% if is_ko %}학생대표{% else %}Student Representative{% endif %}</h3><p>Honors Residential College · Jeonbuk National University</p><p class="research-links"><a href="{% if is_ko %}/ko/activities.html{% else %}/activities.html{% endif %}">{% if is_ko %}활동 전체 보기{% else %}View activities{% endif %}</a><a href="{% if is_ko %}/ko/awards.html{% else %}/awards.html{% endif %}">{% if is_ko %}수상 내역{% else %}Honors &amp; awards{% endif %}</a></p></article>
+        <article><p class="education-date">2022–2026 (Expected)</p><h3>{% if is_ko %}컴퓨터공학 학사{% else %}B.S. in Computer Science and Engineering{% endif %}</h3><p>Jeonbuk National University · GPA 4.09/4.5</p><p class="education-detail">{% if is_ko %}머신러닝, 데이터마이닝, 정보검색, 자연어처리, 데이터베이스{% else %}Machine Learning, Data Mining, Information Retrieval, NLP, Database Systems{% endif %}</p></article>
+        <article><p class="education-date">2022–{% if is_ko %}현재{% else %}Present{% endif %}</p><h3>{% if is_ko %}학생대표{% else %}Student Representative{% endif %}</h3><p>Honors Residential College · Jeonbuk National University</p><p class="research-links"><a href="{% if is_ko %}/ko/activities.html{% else %}/activities.html{% endif %}">{% if is_ko %}활동 전체 보기{% else %}View activities{% endif %}</a><a href="{% if is_ko %}/ko/awards.html{% else %}/awards.html{% endif %}">{% if is_ko %}수상 내역{% else %}Honors &amp; awards{% endif %}</a></p></article>
         <article><p class="education-date">2025</p><h3>{% if is_ko %}수업 조교{% else %}Teaching Assistant{% endif %}</h3><p>Algorithms &amp; Linux Programming · Jeonbuk National University</p><p class="education-detail">{% if is_ko %}주간 워크숍, 오피스 아워, 문제 해결 세션으로 130명 이상의 학생을 지원했습니다.{% else %}Supported 130+ students through weekly workshops, office hours, and problem-solving sessions.{% endif %}</p></article>
         <article><p class="education-date">2023</p><h3>{% if is_ko %}교환학생{% else %}Exchange Student{% endif %}</h3><p>University of Malaya · Kuala Lumpur, Malaysia</p></article>
       </div>
@@ -237,7 +267,7 @@
   <section id="contact" class="contact-section" aria-labelledby="contact-title">
     <div class="home-shell contact-inner">
       <p class="section-kicker"><span class="section-kicker-index">[06]</span> {% if is_ko %}연락{% else %}Contact{% endif %}</p>
-      <div><h2 id="contact-title">{% if is_ko %}함께 이야기해요.{% else %}Let’s build something rigorous.{% endif %}</h2><p>{% if is_ko %}AI 연구 엔지니어링, 머신러닝, 데이터 및 소프트웨어 엔지니어링 기회에 열려 있습니다.{% else %}Open to AI research engineering, machine learning, data, and software engineering opportunities.{% endif %}</p><div class="contact-links"><a class="action-primary" href="mailto:sewonkim1018@gmail.com">sewonkim1018@gmail.com</a><a href="https://github.com/andimsewon" target="_blank" rel="me noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/sewon-kim-742a492a6/" target="_blank" rel="me noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div></div>
+      <div><h2 id="contact-title">{% if is_ko %}연락하기{% else %}Get in touch.{% endif %}</h2><p>{% if is_ko %}AI 연구 엔지니어링, 머신러닝, 데이터 및 소프트웨어 엔지니어링 기회에 열려 있습니다.{% else %}I am open to roles in AI research engineering, machine learning, data, and software engineering.{% endif %}</p><div class="contact-links"><a class="action-primary" href="mailto:sewonkim1018@gmail.com">sewonkim1018@gmail.com</a><a href="https://github.com/andimsewon" target="_blank" rel="me noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/sewon-kim-742a492a6/" target="_blank" rel="me noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div></div>
     </div>
   </section>
 </main>

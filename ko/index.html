@@ -2,7 +2,7 @@
 layout: default
 lang: ko
 home: true
-title: "김세원 — AI 리서치 엔지니어, 데이터 분석가 & 소프트웨어 개발자"
+title: "김세원 | AI 연구자, ML 및 소프트웨어 엔지니어"
 description: "김세원은 연구, 실제 운영 배포, 지식재산 성과로 이어진 검색·컴퓨터 비전·IoT 데이터 시스템을 만듭니다."
 canonical: https://andimsewon.github.io/ko/
 alternate_ko: https://andimsewon.github.io/ko/
@@ -15,17 +15,26 @@ skip_id: main
 json_ld: |
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Sewon Kim",
-    "alternateName": "김세원",
+    "@type": "ProfilePage",
+    "@id": "https://andimsewon.github.io/ko/#profile-page",
     "url": "https://andimsewon.github.io/ko/",
-    "image": "https://andimsewon.github.io/assets/profile_fao.optimized.jpg",
-    "jobTitle": "AI 리서치 엔지니어, 데이터 분석가 및 소프트웨어 개발자",
-    "worksFor": {"@type": "Organization", "name": "Food and Agriculture Organization of the United Nations", "alternateName": "FAO"},
-    "alumniOf": {"@type": "CollegeOrUniversity", "name": "Jeonbuk National University"},
-    "knowsAbout": ["검색 증강 생성", "지식그래프", "컴퓨터 비전", "객체 탐지", "IoT 데이터 파이프라인"],
-    "sameAs": ["https://github.com/andimsewon", "https://www.linkedin.com/in/sewon-kim-742a492a6/"],
-    "email": "mailto:sewonkim1018@gmail.com"
+    "name": "김세원 | AI 연구자, ML 및 소프트웨어 엔지니어",
+    "mainEntity": {
+      "@type": "Person",
+      "@id": "https://andimsewon.github.io/#sewon-kim",
+      "name": "Sewon Kim",
+      "alternateName": ["김세원", "Kim Sewon", "andimsewon"],
+      "url": "https://andimsewon.github.io/",
+      "image": {"@type": "ImageObject", "url": "https://andimsewon.github.io/assets/profile_fao.optimized.jpg"},
+      "description": "검색 증강 생성, 지식그래프, 컴퓨터 비전, 데이터 시스템 및 IoT를 다루는 AI 연구자이자 소프트웨어 엔지니어입니다.",
+      "jobTitle": ["AI 연구자", "머신러닝 엔지니어", "데이터 분석가", "소프트웨어 엔지니어"],
+      "affiliation": [
+        {"@type": "Organization", "name": "Food and Agriculture Organization of the United Nations", "alternateName": "FAO", "url": "https://www.fao.org/"},
+        {"@type": "CollegeOrUniversity", "name": "Jeonbuk National University", "alternateName": "JBNU", "url": "https://www.jbnu.ac.kr/"}
+      ],
+      "knowsAbout": ["인공지능", "머신러닝", "검색 증강 생성", "지식그래프", "컴퓨터 비전", "데이터 마이닝", "사물인터넷", "LoRa", "MQTT"],
+      "sameAs": ["https://github.com/andimsewon", "https://www.linkedin.com/in/sewon-kim-742a492a6/"]
+    }
   }
 ---
 {% include home.html lang='ko' %}
