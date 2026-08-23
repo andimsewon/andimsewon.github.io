@@ -2,6 +2,7 @@
 # frozen_string_literal: true
 
 require "json"
+require "date"
 require "nokogiri"
 require "pathname"
 require "set"
@@ -54,6 +55,15 @@ def json_urls(value, result = [])
     result << value if value.match?(%r{\Ahttps?://})
   end
   result
+end
+
+def valid_iso8601_datetime?(value)
+  return false unless value.is_a?(String) && value.match?(/\A\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})\z/)
+
+  DateTime.iso8601(value)
+  true
+rescue Date::Error
+  false
 end
 
 Dir.glob(SITE_DIR.join("**/*.html")).sort.each do |filename|
@@ -174,7 +184,9 @@ end
   errors << "#{page[:file]}: stable Person @id is missing" unless person&.fetch("@id", nil) == "#{SITE_ORIGIN}/#sewon-kim"
   errors << "#{page[:file]}: expected all verified alternate names" unless person&.fetch("alternateName", nil) == ["김세원", "Kim Sewon", "andimsewon"]
   errors << "#{page[:file]}: stable profile identifier is missing" unless person&.fetch("identifier", nil) == "andimsewon"
-  errors << "#{page[:file]}: ProfilePage dates are missing" unless schema["dateCreated"] && schema["dateModified"]
+  %w[dateCreated dateModified].each do |property|
+    errors << "#{page[:file]}: ProfilePage #{property} must be an ISO 8601 DateTime with timezone" unless valid_iso8601_datetime?(schema[property])
+  end
   errors << "#{page[:file]}: current relationships must use affiliation, not alumniOf" if person&.key?("alumniOf") || !person&.key?("affiliation")
   visible = page[:document].at_css("body").text.gsub(/\s+/, " ")
   ["Sewon Kim", "김세원", "andimsewon"].each { |name| errors << "#{page[:file]}: structured identity #{name} is not visible" unless visible.include?(name) }
