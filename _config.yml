@@ -5,6 +5,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - vendor
 markdown: kramdown
 highlighter: rouge
 url: "https://andimsewon.github.io"
