@@ -155,6 +155,12 @@ if sitemap_file.file?
   (sitemap_urls - pages.keys).each { |url| errors << "sitemap.xml contains non-canonical or unresolved URL: #{url}" }
   (pages.keys - sitemap_urls).each { |url| errors << "canonical page missing from sitemap.xml: #{url}" }
   errors << "sitemap.xml must not use ignored priority/changefreq fields" if sitemap.at_css("priority, changefreq")
+  sitemap.css("url").each do |entry|
+    lastmod = entry.at_css("lastmod")&.text&.strip
+    next unless lastmod
+
+    errors << "sitemap.xml contains invalid lastmod for #{entry.at_css('loc')&.text}: #{lastmod}" unless lastmod.match?(/\A\d{4}-\d{2}-\d{2}\z/)
+  end
 else
   errors << "sitemap.xml was not generated"
 end
@@ -167,6 +173,8 @@ end
   errors << "#{page[:file]}: homepage JSON-LD must be ProfilePage" unless schema["@type"] == "ProfilePage"
   errors << "#{page[:file]}: stable Person @id is missing" unless person&.fetch("@id", nil) == "#{SITE_ORIGIN}/#sewon-kim"
   errors << "#{page[:file]}: expected all verified alternate names" unless person&.fetch("alternateName", nil) == ["김세원", "Kim Sewon", "andimsewon"]
+  errors << "#{page[:file]}: stable profile identifier is missing" unless person&.fetch("identifier", nil) == "andimsewon"
+  errors << "#{page[:file]}: ProfilePage dates are missing" unless schema["dateCreated"] && schema["dateModified"]
   errors << "#{page[:file]}: current relationships must use affiliation, not alumniOf" if person&.key?("alumniOf") || !person&.key?("affiliation")
   visible = page[:document].at_css("body").text.gsub(/\s+/, " ")
   ["Sewon Kim", "김세원", "andimsewon"].each { |name| errors << "#{page[:file]}: structured identity #{name} is not visible" unless visible.include?(name) }

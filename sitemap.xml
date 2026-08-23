@@ -6,5 +6,7 @@ layout: null
 {% assign indexable_pages = site.pages | where_exp: "item", "item.canonical" | sort: "canonical" %}
 {% for item in indexable_pages %}  <url>
     <loc>{{ item.canonical }}</loc>
+{% if item.last_modified %}    <lastmod>{{ item.last_modified | date: "%Y-%m-%d" }}</lastmod>
+{% endif %}
   </url>
 {% endfor %}</urlset>
