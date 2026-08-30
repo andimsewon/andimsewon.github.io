@@ -158,13 +158,46 @@ end
 
 sitemap_file = SITE_DIR.join("sitemap.xml")
 if sitemap_file.file?
-  sitemap = Nokogiri::XML(sitemap_file.read)
+  sitemap_bytes = sitemap_file.binread
+
+  # Google's Sitemaps pipeline fetches the file as raw bytes and parses it strictly,
+  # unlike the recovering parsers used by browsers, `xmllint` without flags, and the
+  # URL Inspection tool. A UTF-8 BOM, or any byte before the XML declaration (a stray
+  # newline left by front matter, an accidentally injected layout), can make a strict
+  # sitemap parser reject a file that every lenient check still accepts. Byte 0 must
+  # be the start of the XML declaration.
+  errors << "sitemap.xml begins with a UTF-8 BOM" if sitemap_bytes.start_with?("\xEF\xBB\xBF".b)
+  unless sitemap_bytes.start_with?(%(<?xml version="1.0" encoding="UTF-8"?>))
+    errors << "sitemap.xml must begin with the XML declaration at byte 0 (no BOM, leading whitespace, or front matter)"
+  end
+  trailing = sitemap_bytes[(sitemap_bytes.rindex(">").to_i + 1)..].to_s
+  errors << "sitemap.xml has trailing content after the root element: #{trailing.inspect}" unless trailing.strip.empty?
+
+  well_formed = Nokogiri::XML(sitemap_bytes)
+  errors << "sitemap.xml is not well-formed XML: #{well_formed.errors.map(&:message).join('; ')}" unless well_formed.errors.empty?
+
+  sitemap = Nokogiri::XML(sitemap_bytes)
   sitemap.remove_namespaces!
+  errors << "sitemap.xml root element is <#{sitemap.root&.name}>, expected <urlset>" unless sitemap.root&.name == "urlset"
   sitemap_urls = sitemap.css("url > loc").map { |node| node.text.strip }
   errors << "sitemap.xml contains duplicate URLs" unless sitemap_urls.uniq.length == sitemap_urls.length
   (sitemap_urls - pages.keys).each { |url| errors << "sitemap.xml contains non-canonical or unresolved URL: #{url}" }
   (pages.keys - sitemap_urls).each { |url| errors << "canonical page missing from sitemap.xml: #{url}" }
   errors << "sitemap.xml must not use ignored priority/changefreq fields" if sitemap.at_css("priority, changefreq")
+
+  # <loc> content, after XML entity decoding, must be a bare absolute URL: no ASCII
+  # control characters, no spaces, no DEL, and no raw markup characters that only
+  # survived parsing because they were escaped in source.
+  unsafe_loc = /[\u0000-\u0020\u007F<>"]/
+  sitemap.css("url > loc").each do |node|
+    raw = node.text
+    loc = raw.strip
+    errors << "sitemap.xml <loc> has surrounding whitespace: #{raw.inspect}" unless raw == loc
+    errors << "sitemap.xml <loc> is not an absolute URL on #{SITE_ORIGIN}: #{loc}" unless loc == SITE_ORIGIN || loc.start_with?("#{SITE_ORIGIN}/")
+    errors << "sitemap.xml <loc> contains a fragment identifier: #{loc}" if loc.include?("#")
+    errors << "sitemap.xml <loc> contains whitespace, control, or unescaped markup characters: #{loc.inspect}" if loc.match?(unsafe_loc)
+  end
+
   sitemap.css("url").each do |entry|
     lastmod = entry.at_css("lastmod")&.text&.strip
     next unless lastmod
